@@ -1,0 +1,403 @@
+{
+ "structure": [
+  {
+   "chain": "Manage Contracts > Customers > Details",
+   "path": "/Contracts Admin/Customer.aspx",
+   "h1": "Customer Details",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Customer Details",
+    "QAL Number:",
+    "Name:",
+    "Initial Start Date:",
+    "Currency:",
+    "Payment Non-UK:",
+    "Registered File Number:",
+    "Is Active:",
+    "Inactive-Error:",
+    "Inactive from:",
+    "Contact Details:",
+    "Contact Name:",
+    "Organisation Name:",
+    "Address 1:",
+    "Address 2:",
+    "Address 3:",
+    "Address 4:",
+    "Address 5:",
+    "Country:",
+    "Telephone:",
+    "Telephone 2:",
+    "Fax:",
+    "Email:",
+    "Invoice Details:",
+    "Invoice Contact Name:",
+    "Invoice Organisation Name:",
+    "Invoice Address 1:",
+    "Invoice Address 2:",
+    "Invoice Address 3:",
+    "Invoice Address 4:",
+    "Invoice Address 5:",
+    "Invoice Country:",
+    "Invoice Telephone:",
+    "Invoice Telephone 2:",
+    "Invoice Fax:",
+    "Invoice Email:",
+    "Comments:",
+    "Postage Arrangements:"
+   ],
+   "buttons": [
+    "Copy from Customer Contact",
+    "Save",
+    "Cancel",
+    "Print Contact Address Label",
+    "Print Invoice Address Label",
+    "Go to Participants Page",
+    "Go to Contracts Page"
+   ],
+   "tabs": [],
+   "headers": []
+  },
+  {
+   "chain": "Manage Contracts > Customers > Participants",
+   "path": "/Contracts Admin/ParticipantList.aspx",
+   "h1": "Participants",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Participants",
+    "QAL/0030, Customer Name 1083, Customer Organisation 1083",
+    "*** Service Unavailable ***",
+    "Active"
+   ],
+   "buttons": [
+    "Go to Contracts Page",
+    "Go to Customer Details"
+   ],
+   "tabs": [],
+   "headers": [
+    "Lab Code",
+    "Lab Name",
+    "Contact Name",
+    "External Website Login",
+    "Details",
+    "Viewers",
+    "Status"
+   ]
+  },
+  {
+   "chain": "Manage Contracts > Customers > Contracts",
+   "path": "/Contracts Admin/ContractList.aspx",
+   "h1": "Contracts",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Contracts",
+    "QAL/0030, Customer Name 1083, Customer Organisation 1083",
+    "Current Year / Next Year",
+    "History"
+   ],
+   "buttons": [
+    "Go to Participants Page",
+    "Go to Customer Details"
+   ],
+   "tabs": [],
+   "headers": [
+    "Year",
+    "Suffix",
+    "Details",
+    "Contract Items",
+    "Export",
+    "Year",
+    "Suffix",
+    "Details",
+    "Contract Items",
+    "Export"
+   ]
+  },
+  {
+   "chain": "Manage Contracts > Customers > Participants > Details",
+   "path": "/Contracts Admin/Participant.aspx",
+   "h1": "Participant Details",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Participant Details",
+    "QAL/0030, Customer Name 1083",
+    "Lab Code:",
+    "Lab Name:",
+    "Sso Login:",
+    "Active:",
+    "Inactive-Error:",
+    "Inactive from:",
+    "Lab Type:",
+    "Other Packaging Requirements:",
+    "Participant Details:",
+    "Contact Name:",
+    "Organisation Name:",
+    "Address 1:",
+    "Address 2:",
+    "Address 3:",
+    "Address 4:",
+    "Address 5:",
+    "Country:",
+    "Telephone:",
+    "Fax:",
+    "Email (Primary):",
+    "Email (Secondary):"
+   ],
+   "buttons": [
+    "Copy from Customer Contact",
+    "Save",
+    "Cancel",
+    "Print Address Label"
+   ],
+   "tabs": [],
+   "headers": []
+  },
+  {
+   "chain": "Manage Contracts > Customers > Participants > Viewers",
+   "path": "/Contracts Admin/ParticipantViewers.aspx",
+   "h1": "Participant Viewers",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Participant Viewers",
+    "1833: Norway, Bergen"
+   ],
+   "buttons": [
+    "Add-->",
+    "<--Remove",
+    "Save",
+    "Cancel"
+   ],
+   "tabs": [],
+   "headers": []
+  },
+  {
+   "chain": "Manage Contracts > Customers > Contracts > Details",
+   "path": "/Contracts Admin/Contract.aspx",
+   "h1": "Contract Details",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Contract Details",
+    "QAL/0030, 2026",
+    "Contract Type:",
+    "UT Number:",
+    "Commencement Date:",
+    "Suffix:",
+    "Year:",
+    "Contract Signatory:",
+    "Discount Rate: (%)",
+    "Administration Charge: (£)",
+    "Purchase Order Number:",
+    "Online Order",
+    "Postage + Packaging:",
+    "Number of Courier Items:",
+    "Courier Price per Item: (£)",
+    "Number of Postage Items:",
+    "Postage Price per Item: (£)",
+    "Number of Special Delivery Items:",
+    "Special Delivery Price per Item: (£)",
+    "Contract Setup:",
+    "Acknowledgement Posted Date: (dd/mm/yyyy)",
+    "Acknowledgement Returned Date: (dd/mm/yyyy)",
+    "Job Sheet Sent Date: (dd/mm/yyyy)",
+    "Contract Status:",
+    "Contract Is Active:",
+    "Cancellation Date: (dd/mm/yyyy)",
+    "Invoice Generation:",
+    "Opt Out of Invoice Generation:",
+    "Has Been Invoiced:",
+    "Actions Required:",
+    "Renewal Information:",
+    "Cancellation Reason:"
+   ],
+   "buttons": [
+    "Save",
+    "Cancel"
+   ],
+   "tabs": [],
+   "headers": []
+  },
+  {
+   "chain": "Manage Schemes > Schemes > Details",
+   "path": "/Scheme Admin/Scheme.aspx",
+   "h1": "Scheme Details",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Scheme Details",
+    "PT0001: African Horse Sickness (AHS)",
+    "Identifier:",
+    "Name:",
+    "Year:",
+    "Start Date:",
+    "Schedule:",
+    "Schedule Code:",
+    "27/03/2026",
+    "Distribution Months:",
+    "Apr:",
+    "May:",
+    "Jun:",
+    "Jul:",
+    "Aug:",
+    "Sep:",
+    "As Available:",
+    "Oct:",
+    "Nov:",
+    "Dec:",
+    "Jan:",
+    "Feb:",
+    "Mar:",
+    "Week No:",
+    "Day of Week:",
+    "Number of Samples:",
+    "Sample No Sequence:",
+    "Sample Origin:",
+    "Deadline (days):",
+    "Subcontractor",
+    "Combined Packaging:",
+    "Postage Type:",
+    "Sample Volume:",
+    "Sample Packing Instructions:",
+    "Requires Assessment:",
+    "Ext. Comments Required:",
+    "Pilot Scheme:",
+    "Limited Sample Availability:",
+    "Accredited:",
+    "No VLA Labs:",
+    "Commercially available:",
+    "£ - GBP",
+    "€ - Euro",
+    "Customs Description:",
+    "Data Consent Declaration active:",
+    "Consent text:"
+   ],
+   "buttons": [
+    "Save",
+    "Apply",
+    "Cancel"
+   ],
+   "tabs": [
+    "Details",
+    "Tests",
+    "Distribution Level Data",
+    "Results Tabulations",
+    "Test consultants",
+    "Viewers"
+   ],
+   "headers": [
+    "Currency",
+    "Price",
+    "Test: ELISA Remove Test"
+   ]
+  },
+  {
+   "chain": "Manage Schemes > Schemes > View",
+   "path": "/Scheme Admin/SchemeHistory.aspx",
+   "h1": "Scheme History",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Scheme History"
+   ],
+   "buttons": [],
+   "tabs": [],
+   "headers": [
+    "Identifier",
+    "Name",
+    "Year",
+    "Details"
+   ]
+  },
+  {
+   "chain": "Assessor > View",
+   "path": "/Assessor/AssessmentItemList.aspx",
+   "h1": "Assessment Items",
+   "error": false,
+   "labels": [
+    "Guest",
+    "Assessment Items",
+    "February 2020",
+    "14070/HI: PT0166 Cellular Pathology Technique (CPT)",
+    "Grocott's"
+   ],
+   "buttons": [
+    "Submit",
+    "Back"
+   ],
+   "tabs": [],
+   "headers": [
+    "Labcode",
+    "Assessment Entered",
+    "View/Edit"
+   ]
+  }
+ ],
+ "cancel": [
+  {
+   "chain": "Manage Contracts > Customers > Details",
+   "path": "/Contracts Admin/CustomerList.aspx",
+   "h1": "Customers",
+   "error": false
+  },
+  {
+   "chain": "Manage Contracts > Customers > Participants > Details",
+   "path": "/Contracts Admin/ParticipantList.aspx",
+   "h1": "Participants",
+   "error": false
+  },
+  {
+   "chain": "Manage Contracts > Customers > Participants > Viewers",
+   "path": "/Contracts Admin/ParticipantList.aspx",
+   "h1": "Participants",
+   "error": false
+  },
+  {
+   "chain": "Manage Contracts > Customers > Contracts > Details",
+   "path": "/Contracts Admin/ContractList.aspx",
+   "h1": "Contracts",
+   "error": false
+  },
+  {
+   "chain": "Manage Schemes > Schemes > Details",
+   "path": "/Scheme Admin/SchemeList.aspx",
+   "h1": "Schemes",
+   "error": false
+  }
+ ],
+ "paging": {
+  "failed": "locator.allTextContents: Execution context was destroyed, mo"
+ },
+ "years": [
+  {
+   "page": "Weighted Pricing Plan",
+   "failed": "page.goto: Navigation to \"http://localhost:1946/home.aspx\" i"
+  },
+  {
+   "page": "Postage Pricing Plan",
+   "failed": "page.goto: Navigation to \"http://localhost:1946/home.aspx\" i"
+  },
+  {
+   "page": "Test Types",
+   "failed": "page.goto: Navigation to \"http://localhost:1946/home.aspx\" i"
+  }
+ ],
+ "searches": [
+  {
+   "label": "QAL search",
+   "failed": "page.goto: Navigation to \"http://localhost:1946/home.aspx\" i"
+  }
+ ],
+ "soap": [
+  {
+   "service": "CountryCollection.asmx",
+   "operation": "GetCountryCollection",
+   "status": 200,
+   "response": true,
+   "fault": false
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+[
+ {
+  "form": "customer",
+  "rel": "Contracts Admin/Customer.aspx",
+  "button": "ButtonSave",
+  "rows": [
+   {
+    "id": "ValidatorNameRequired",
+    "text": "The Name for this customer must be specified"
+   },
+   {
+    "id": "ValidatorCustomerTypeRequired",
+    "text": "The Customer Type for this customer must be specified"
+   },
+   {
+    "id": "ValidatorContactNameRequired",
+    "text": "The Contact Name for this customer must be specified"
+   },
+   {
+    "id": "ValidatorOrganisationNameRequired",
+    "text": "The Organisation Name for this customer must be specified"
+   },
+   {
+    "id": "ValidatorAddress1Required",
+    "text": "At least two Address lines are required for this customer"
+   },
+   {
+    "id": "ValidatorAddress2Required",
+    "text": "At least two Address lines are required for this customer"
+   },
+   {
+    "id": "ValidatorCountryRequired",
+    "text": "The Country for this customer must be specified"
+   },
+   {
+    "id": "ValidatorTelephoneRequired",
+    "text": "A Telephone Number for this customer must be specified"
+   },
+   {
+    "id": "ValidatorEmailRequired",
+    "text": "An Email Address for this customer must be supplied"
+   },
+   {
+    "id": "ValidatorInvoiceOrganisationNameRequired",
+    "text": "The name of the Organisation for the invoice address of this customer is required"
+   },
+   {
+    "id": "ValidatorInvoiceAddress1Required",
+    "text": "At least two Address lines for the invoice details are required"
+   },
+   {
+    "id": "ValidatorInvoiceAddress2Required",
+    "text": "At least two addres lines for the invoice details are required"
+   },
+   {
+    "id": "ValidatorInvoiceCountryRequired",
+    "text": "The Country for this invoice address must be specified"
+   }
+  ]
+ },
+ {
+  "form": "scheme",
+  "rel": "Scheme Admin/Scheme.aspx",
+  "button": "ButtonSave1",
+  "rows": [
+   {
+    "id": "TabContainer1_TabPanelDistributionLevelData_ValidatorInstructionsRequired",
+    "text": "The Scheme Instructions must be specified"
+   }
+  ]
+ },
+ {
+  "form": "groupAddress",
+  "rel": "Contracts Admin/GroupAddress.aspx",
+  "button": "ButtonSave",
+  "rows": [
+   {
+    "id": "ValidatorIdentifierRequired",
+    "text": "An identifier must be specified for this group address"
+   },
+   {
+    "id": "ValidatorAddress1Required",
+    "text": "At least two Address lines are required for this group address"
+   },
+   {
+    "id": "ValidatorAddress2Required",
+    "text": "At least two Address lines are required for this group address"
+   },
+   {
+    "id": "ValidatorCountryRequired",
+    "text": "The Country for this group address must be specified"
+   }
+  ]
+ }
+]

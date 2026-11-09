@@ -1,0 +1,44 @@
+[
+ {
+  "list": "contracts-admin-customerlist",
+  "link": "Create Customer",
+  "heading": "Create Customer",
+  "from": "Contracts Admin/CustomerList.aspx"
+ },
+ {
+  "list": "contracts-admin-customerlist",
+  "link": "Details",
+  "heading": "Customer Details",
+  "from": "Contracts Admin/CustomerList.aspx"
+ },
+ {
+  "list": "contracts-admin-customerlist",
+  "link": "Participants",
+  "heading": "Participants",
+  "from": "Contracts Admin/CustomerList.aspx"
+ },
+ {
+  "list": "contracts-admin-customerlist",
+  "link": "Contracts",
+  "heading": "Contracts",
+  "from": "Contracts Admin/CustomerList.aspx"
+ },
+ {
+  "list": "scheme-admin-schemelist",
+  "link": "Printable Schemes",
+  "heading": "Printable Schemes",
+  "from": "Scheme Admin/SchemeList.aspx"
+ },
+ {
+  "list": "scheme-admin-schemelist",
+  "link": "Details",
+  "heading": "Scheme Details",
+  "from": "Scheme Admin/SchemeList.aspx"
+ },
+ {
+  "list": "scheme-admin-schemelist",
+  "link": "View",
+  "heading": "Scheme History",
+  "from": "Scheme Admin/SchemeList.aspx"
+ }
+]

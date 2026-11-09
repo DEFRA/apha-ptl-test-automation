@@ -1,0 +1,185 @@
+[
+ {
+  "service": "AssessmentResultCollection.asmx",
+  "ops": [
+   "GetAssessmentResultCollection"
+  ]
+ },
+ {
+  "service": "AvailableSchemeCollection.asmx",
+  "ops": [
+   "FetchAvailableSchemes"
+  ]
+ },
+ {
+  "service": "CountryCollection.asmx",
+  "ops": [
+   "GetCountryCollection"
+  ]
+ },
+ {
+  "service": "CurrentDistributionCollection.asmx",
+  "ops": [
+   "GetCurrentDistributionCollection"
+  ]
+ },
+ {
+  "service": "CurrentlyParticipatingSchemeCollection.asmx",
+  "ops": [
+   "FetchCurrentlyParticipatingSchemes"
+  ]
+ },
+ {
+  "service": "Customer.asmx",
+  "ops": [
+   "GetCustomer"
+  ]
+ },
+ {
+  "service": "DistributionForComment.asmx",
+  "ops": [
+   "GetDistributionForComment",
+   "UpdateTestConsultantComments"
+  ]
+ },
+ {
+  "service": "DistributionForCommentCollection.asmx",
+  "ops": [
+   "GetDistributionForCommentCollection"
+  ]
+ },
+ {
+  "service": "MainPageMessage.asmx",
+  "ops": [
+   "GetMainPageMessage"
+  ]
+ },
+ {
+  "service": "Participant.asmx",
+  "ops": [
+   "GetParticipant"
+  ]
+ },
+ {
+  "service": "ParticipantCollection.asmx",
+  "ops": [
+   "FetchParticipantCollection"
+  ]
+ },
+ {
+  "service": "PastDistributionCollection.asmx",
+  "ops": [
+   "GetPastDistributionCollection"
+  ]
+ },
+ {
+  "service": "PendingContractOrder.asmx",
+  "ops": [
+   "GetPendingContractOrder",
+   "InsertPendingContractOrder",
+   "UpdatePendingContractOrder"
+  ]
+ },
+ {
+  "service": "PendingCustomerUpdate.asmx",
+  "ops": [
+   "GetPendingCustomerUpdate",
+   "UpdatePendingCustomerUpdate",
+   "InsertPendingCustomerUpdate"
+  ]
+ },
+ {
+  "service": "PendingParticipantScheme.asmx",
+  "ops": [
+   "GetPendingParticipantScheme",
+   "InsertPendingParticipantScheme",
+   "UpdatePendingParticipantScheme",
+   "DeletePendingParticipantScheme"
+  ]
+ },
+ {
+  "service": "PendingParticipantSchemeCollection.asmx",
+  "ops": [
+   "FetchPendingParticipantSchemeCollection"
+  ]
+ },
+ {
+  "service": "PendingParticipantUpdate.asmx",
+  "ops": [
+   "GetPendingParticipantUpdate",
+   "UpdatePendingParticipantUpdate",
+   "InsertPendingParticipantUpdate"
+  ]
+ },
+ {
+  "service": "PostagePricingPlan.asmx",
+  "ops": [
+   "GetPostagePricingPlan",
+   "GetAllPostagePricingPlans"
+  ]
+ },
+ {
+  "service": "ResultsEntry.asmx",
+  "ops": [
+   "GetResultsEntry",
+   "UpdateResults"
+  ]
+ },
+ {
+  "service": "Scheme.asmx",
+  "ops": [
+   "GetScheme",
+   "GetFullSchemeInformationListCollection"
+  ]
+ },
+ {
+  "service": "SchemeCurrency.asmx",
+  "ops": [
+   "GetSchemeCurrency",
+   "GetAllSchemeCurrency"
+  ]
+ },
+ {
+  "service": "SchemeListCollection.asmx",
+  "ops": [
+   "GetSchemeListCollection",
+   "GetSchemeInfoListCollection"
+  ]
+ },
+ {
+  "service": "SystemInformation.asmx",
+  "ops": [
+   "GetSystemInformation"
+  ]
+ },
+ {
+  "service": "SystemSettings.asmx",
+  "ops": [
+   "GetSystemSettings"
+  ]
+ },
+ {
+  "service": "Tabulation.asmx",
+  "ops": [
+   "GetTabulation"
+  ]
+ },
+ {
+  "service": "TabulationCollection.asmx",
+  "ops": [
+   "GetTabulationCollection"
+  ]
+ },
+ {
+  "service": "TestConsultant.asmx",
+  "ops": [
+   "GetTestConsultant"
+  ]
+ },
+ {
+  "service": "Viewer.asmx",
+  "ops": [
+   "GetViewer"
+  ]
+ }
+]

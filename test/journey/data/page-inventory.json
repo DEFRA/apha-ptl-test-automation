@@ -1,0 +1,182 @@
+[
+  {
+    "profile": "legacy",
+    "route": "/Home.aspx",
+    "name": "VETQAS Proficiency Testing",
+    "role": "applicant"
+  },
+  {
+    "profile": "legacy",
+    "route": "/ViewInformation.aspx",
+    "name": "Information",
+    "role": "applicant"
+  },
+  {
+    "profile": "legacy",
+    "route": "/home.aspx",
+    "name": "Home",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Admin/MenuAdmin.aspx",
+    "name": "System Administration",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Contracts Admin/MenuContracts.aspx",
+    "name": "Manage Contracts",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/MenuSchemes.aspx",
+    "name": "Manage Schemes",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Distributions/MenuDistributions.aspx",
+    "name": "Distributions",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Test Consultant/MenuTestConsultants.aspx",
+    "name": "Test Consultant",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Assessor/MenuAssessor.aspx",
+    "name": "Assessor",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Results Sign-off/SignOff.aspx",
+    "name": "Results Sign-off",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Home.aspx",
+    "name": "Home",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Admin/UserRoles.aspx",
+    "name": "Manage Roles",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Admin/UserCreate.aspx",
+    "name": "Create User",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Admin/TCDepartment.aspx",
+    "name": "Internal Test Consultant Department",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Admin/WeightedPricingPlan.aspx",
+    "name": "Weighted Pricing Plan",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Admin/PostagePricingPlan.aspx",
+    "name": "Postage Pricing Plan",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Contracts Admin/CustomerList.aspx",
+    "name": "Customers",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Contracts Admin/Search.aspx",
+    "name": "Search",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Contracts Admin/GroupAddressList.aspx",
+    "name": "Group Addresses",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Contracts Admin/ExportMenu.aspx",
+    "name": "Exports",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/SchemeList.aspx",
+    "name": "Schemes",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/Search.aspx",
+    "name": "Search",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/TestTypeList.aspx",
+    "name": "Test Types",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/TestResultItemTypeList.aspx",
+    "name": "Test Result Items",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/TestMethodItemTypeList.aspx",
+    "name": "Test Method Items",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/CategoryItemTypeList.aspx",
+    "name": "Category Items",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Scheme Admin/CriterionItemTypeList.aspx",
+    "name": "Criterion Items",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Distributions/ParticipantAddress.aspx",
+    "name": "Participant Address Labels",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Distributions/GroupAddress.aspx",
+    "name": "Group Address Labels",
+    "role": "admin"
+  },
+  {
+    "profile": "legacy",
+    "route": "/Distributions/Search.aspx",
+    "name": "Search",
+    "role": "admin"
+  }
+]

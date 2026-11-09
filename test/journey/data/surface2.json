@@ -1,0 +1,415 @@
+{
+ "drill": [
+  {
+   "from": "Contracts Admin/CustomerList.aspx",
+   "link": "Create Customer",
+   "path": "/Contracts Admin/Customer.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Create Customer"
+   ],
+   "error": false
+  },
+  {
+   "from": "Contracts Admin/CustomerList.aspx",
+   "link": "Details",
+   "path": "/Contracts Admin/Customer.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Customer Details"
+   ],
+   "error": false
+  },
+  {
+   "from": "Contracts Admin/CustomerList.aspx",
+   "link": "Participants",
+   "path": "/Contracts Admin/ParticipantList.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Participants"
+   ],
+   "error": false
+  },
+  {
+   "from": "Contracts Admin/CustomerList.aspx",
+   "link": "Contracts",
+   "path": "/Contracts Admin/ContractList.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Contracts"
+   ],
+   "error": false
+  },
+  {
+   "from": "Scheme Admin/SchemeList.aspx",
+   "link": "Printable Schemes",
+   "path": "/Scheme Admin/SchemeListForPrinting.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Printable Schemes"
+   ],
+   "error": false
+  },
+  {
+   "from": "Scheme Admin/SchemeList.aspx",
+   "link": "Details",
+   "path": "/Scheme Admin/Scheme.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Scheme Details"
+   ],
+   "error": false
+  },
+  {
+   "from": "Scheme Admin/SchemeList.aspx",
+   "link": "View",
+   "path": "/Scheme Admin/SchemeHistory.aspx",
+   "title": "Proficiency Testing",
+   "h1": [
+    "Scheme History"
+   ],
+   "error": false
+  },
+  {
+   "from": "Contracts Admin/ReviewPendingOrders.aspx",
+   "link": "Details",
+   "failed": "locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - wa"
+  }
+ ],
+ "validation": [
+  {
+   "rel": "Contracts Admin/Customer.aspx",
+   "button": "ButtonSave",
+   "after": "/Contracts Admin/Customer.aspx",
+   "visible": [
+    {
+     "id": "ValidatorNameRequired",
+     "text": "The Name for this customer must be specified"
+    },
+    {
+     "id": "ValidatorCustomerTypeRequired",
+     "text": "The Customer Type for this customer must be specified"
+    },
+    {
+     "id": "ValidatorContactNameRequired",
+     "text": "The Contact Name for this customer must be specified"
+    },
+    {
+     "id": "ValidatorOrganisationNameRequired",
+     "text": "The Organisation Name for this customer must be specified"
+    },
+    {
+     "id": "ValidatorAddress1Required",
+     "text": "At least two Address lines are required for this customer"
+    },
+    {
+     "id": "ValidatorAddress2Required",
+     "text": "At least two Address lines are required for this customer"
+    },
+    {
+     "id": "ValidatorCountryRequired",
+     "text": "The Country for this customer must be specified"
+    },
+    {
+     "id": "ValidatorTelephoneRequired",
+     "text": "A Telephone Number for this customer must be specified"
+    },
+    {
+     "id": "ValidatorEmailRequired",
+     "text": "An Email Address for this customer must be supplied"
+    },
+    {
+     "id": "ValidatorInvoiceOrganisationNameRequired",
+     "text": "The name of the Organisation for the invoice address of this customer is required"
+    },
+    {
+     "id": "ValidatorInvoiceAddress1Required",
+     "text": "At least two Address lines for the invoice details are required"
+    },
+    {
+     "id": "ValidatorInvoiceAddress2Required",
+     "text": "At least two addres lines for the invoice details are required"
+    },
+    {
+     "id": "ValidatorInvoiceCountryRequired",
+     "text": "The Country for this invoice address must be specified"
+    }
+   ]
+  },
+  {
+   "rel": "Scheme Admin/Scheme.aspx",
+   "button": "ButtonSave1",
+   "after": "/Scheme Admin/Scheme.aspx",
+   "visible": [
+    {
+     "id": "TabContainer1_TabPanelDistributionLevelData_ValidatorInstructionsRequired",
+     "text": "The Scheme Instructions must be specified"
+    }
+   ]
+  },
+  {
+   "rel": "Contracts Admin/GroupAddress.aspx",
+   "button": "ButtonSave",
+   "after": "/Contracts Admin/GroupAddress.aspx",
+   "visible": [
+    {
+     "id": "ValidatorIdentifierRequired",
+     "text": "An identifier must be specified for this group address"
+    },
+    {
+     "id": "ValidatorAddress1Required",
+     "text": "At least two Address lines are required for this group address"
+    },
+    {
+     "id": "ValidatorAddress2Required",
+     "text": "At least two Address lines are required for this group address"
+    },
+    {
+     "id": "ValidatorCountryRequired",
+     "text": "The Country for this group address must be specified"
+    }
+   ]
+  }
+ ],
+ "services": [
+  {
+   "rel": "AssessmentResultCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetAssessmentResultCollection"
+   ]
+  },
+  {
+   "rel": "AvailableSchemeCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "FetchAvailableSchemes"
+   ]
+  },
+  {
+   "rel": "CountryCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetCountryCollection"
+   ]
+  },
+  {
+   "rel": "CurrentDistributionCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetCurrentDistributionCollection"
+   ]
+  },
+  {
+   "rel": "CurrentlyParticipatingSchemeCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "FetchCurrentlyParticipatingSchemes"
+   ]
+  },
+  {
+   "rel": "Customer.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetCustomer"
+   ]
+  },
+  {
+   "rel": "DistributionForComment.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetDistributionForComment",
+    "UpdateTestConsultantComments"
+   ]
+  },
+  {
+   "rel": "DistributionForCommentCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetDistributionForCommentCollection"
+   ]
+  },
+  {
+   "rel": "MainPageMessage.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetMainPageMessage"
+   ]
+  },
+  {
+   "rel": "Participant.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetParticipant"
+   ]
+  },
+  {
+   "rel": "ParticipantCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "FetchParticipantCollection"
+   ]
+  },
+  {
+   "rel": "PastDistributionCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetPastDistributionCollection"
+   ]
+  },
+  {
+   "rel": "PendingContractOrder.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetPendingContractOrder",
+    "InsertPendingContractOrder",
+    "UpdatePendingContractOrder"
+   ]
+  },
+  {
+   "rel": "PendingCustomerUpdate.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetPendingCustomerUpdate",
+    "UpdatePendingCustomerUpdate",
+    "InsertPendingCustomerUpdate"
+   ]
+  },
+  {
+   "rel": "PendingParticipantScheme.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetPendingParticipantScheme",
+    "InsertPendingParticipantScheme",
+    "UpdatePendingParticipantScheme",
+    "DeletePendingParticipantScheme"
+   ]
+  },
+  {
+   "rel": "PendingParticipantSchemeCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "FetchPendingParticipantSchemeCollection"
+   ]
+  },
+  {
+   "rel": "PendingParticipantUpdate.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetPendingParticipantUpdate",
+    "UpdatePendingParticipantUpdate",
+    "InsertPendingParticipantUpdate"
+   ]
+  },
+  {
+   "rel": "PostagePricingPlan.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetPostagePricingPlan",
+    "GetAllPostagePricingPlans"
+   ]
+  },
+  {
+   "rel": "ResultsEntry.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetResultsEntry",
+    "UpdateResults"
+   ]
+  },
+  {
+   "rel": "Scheme.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetScheme",
+    "GetFullSchemeInformationListCollection"
+   ]
+  },
+  {
+   "rel": "SchemeCurrency.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetSchemeCurrency",
+    "GetAllSchemeCurrency"
+   ]
+  },
+  {
+   "rel": "SchemeListCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetSchemeListCollection",
+    "GetSchemeInfoListCollection"
+   ]
+  },
+  {
+   "rel": "SystemInformation.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetSystemInformation"
+   ]
+  },
+  {
+   "rel": "SystemSettings.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetSystemSettings"
+   ]
+  },
+  {
+   "rel": "Tabulation.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetTabulation"
+   ]
+  },
+  {
+   "rel": "TabulationCollection.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetTabulationCollection"
+   ]
+  },
+  {
+   "rel": "TestConsultant.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetTestConsultant"
+   ]
+  },
+  {
+   "rel": "Viewer.asmx",
+   "status": 200,
+   "xml": true,
+   "ops": [
+    "GetViewer"
+   ]
+  }
+ ]
+}

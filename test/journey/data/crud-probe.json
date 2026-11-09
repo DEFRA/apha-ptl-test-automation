@@ -1,0 +1,645 @@
+{
+ "countries": {
+  "h1": [
+   "Manage Countries"
+  ],
+  "rowCount": 138,
+  "rows": [
+   [
+    "Name",
+    "Country Type",
+    "Actions"
+   ],
+   [
+    "Afghanistan",
+    "NonEU",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "Albania",
+    "NonEU",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "Algeria",
+    "NonEU",
+    "Edit Remove [Edit/Remove]"
+   ]
+  ],
+  "buttons": [
+   "Add",
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "input:text#TextboxNewName",
+   "select:select-one#NewDropDownCountryType=4fb1e3c8-cd6",
+   "input:submit#ButtonAdd",
+   "input:submit#ButtonSave",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": [
+   "Edit",
+   "Remove"
+  ]
+ },
+ "externalTCs": {
+  "h1": [
+   "Manage External Test Consultants"
+  ],
+  "rowCount": 16,
+  "rows": [
+   [
+    "Name",
+    "Department",
+    "Email",
+    "External Website Login",
+    "Actions",
+    "Status",
+    "Inactive Date"
+   ],
+   [
+    "External Test Consultant Name 1",
+    "External Test Consultant Department",
+    "a@a.com",
+    "*** Service Unavailable ***",
+    "Edit Remove [Edit/Remove]",
+    "Active [Active]",
+    ""
+   ],
+   [
+    "External Test Consultant Name 10",
+    "External Test Consultant Department",
+    "a@a.com",
+    "*** Service Unavailable ***",
+    "Edit Remove [Edit/Remove]",
+    "Active [Active]",
+    ""
+   ],
+   [
+    "External Test Consultant Name 11",
+    "External Test Consultant Department",
+    "a@a.com",
+    "*** Service Unavailable ***",
+    "Edit Remove [Edit/Remove]",
+    "Inactive [Inactive]",
+    "24/08/2026"
+   ]
+  ],
+  "buttons": [
+   "Add",
+   "Save",
+   "Apply",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "input:text#TextboxNewName",
+   "input:text#TextboxNewDepartment",
+   "input:text#TextboxNewEmail",
+   "input:submit#ButtonAdd",
+   "input:submit#ButtonSave",
+   "input:submit#ButtonApply",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": [
+   "Edit",
+   "Remove",
+   "Active"
+  ]
+ },
+ "tcDepartment": {
+  "h1": [
+   "Internal Test Consultant Department"
+  ],
+  "rowCount": 92,
+  "rows": [
+   [
+    "Username",
+    "Name",
+    "Department",
+    "Actions",
+    "Status",
+    "Inactive Date"
+   ],
+   [
+    "Username 1",
+    "User Friendly Name 1",
+    "User Department",
+    "Edit [Edit]",
+    "Active [Active]",
+    ""
+   ],
+   [
+    "Username 10",
+    "User Friendly Name 10",
+    "User Department",
+    "Edit [Edit]",
+    "Active [Active]",
+    ""
+   ],
+   [
+    "Username 100",
+    "User Friendly Name 100",
+    "User Department",
+    "Edit [Edit]",
+    "Active [Active]",
+    ""
+   ]
+  ],
+  "buttons": [
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "input:submit#ButtonSubmit",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": [
+   "Edit",
+   "Active"
+  ]
+ },
+ "adminCharges": {
+  "h1": [
+   "Administration Charges"
+  ],
+  "rowCount": 2,
+  "rows": [
+   [
+    "Charge Name",
+    "€ - Euro",
+    "£ - GBP"
+   ],
+   [
+    "Standard",
+    " {text}",
+    " {text}"
+   ]
+  ],
+  "buttons": [
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "input:text#GridViewAdminCharges_78e94431_a734_4a58_ba2f_b0dbf=0.00",
+   "input:text#GridViewAdminCharges_78e94431_a734_4a58_ba2f_b0dbf=0.00",
+   "input:submit#ButtonSubmit",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": []
+ },
+ "postage": {
+  "h1": [
+   "Postage Pricing Plan"
+  ],
+  "rowCount": 4,
+  "rows": [
+   [
+    "Postage Type",
+    "UK",
+    "EU",
+    "Non-EU",
+    "Actions"
+   ],
+   [
+    "Biofreeze",
+    "0",
+    "140",
+    "190",
+    "Edit [Edit]"
+   ],
+   [
+    "Courier",
+    "0",
+    "90",
+    "125",
+    "Edit [Edit]"
+   ],
+   [
+    "Dry Ice",
+    "0",
+    "0",
+    "0",
+    "Edit [Edit]"
+   ]
+  ],
+  "buttons": [
+   "Renew pricing plan for financial year 2027/28",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#ddlYear=2026",
+   "input:submit#btnRenew"
+  ],
+  "pager": [
+   "Edit"
+  ]
+ },
+ "siteMessage": {
+  "h1": [
+   "External Site Management"
+  ],
+  "rowCount": 0,
+  "rows": [],
+  "buttons": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "inputs": [
+   "textarea:textarea#TxtMessage=<p>Welcome t",
+   "textarea:textarea#TxtImportantMessage=<p><span sty",
+   "input:text#EmailTextBox=vetqas@apha.",
+   "input:submit#ButtonSave",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": []
+ },
+ "userCreate": {
+  "h1": [
+   "Create User"
+  ],
+  "rowCount": 0,
+  "rows": [],
+  "buttons": [
+   "Search",
+   "Yes"
+  ],
+  "inputs": [
+   "input:text#TextboxSearch",
+   "input:submit#Button_Search"
+  ],
+  "pager": []
+ },
+ "userDelete": {
+  "h1": [
+   "Remove User"
+  ],
+  "rowCount": 0,
+  "rows": [],
+  "buttons": [
+   "Remove User",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#DropDownList_Users=Select an ex",
+   "input:submit#Button_DeleteUser"
+  ],
+  "pager": []
+ },
+ "testTypes": {
+  "h1": [
+   "Test Types"
+  ],
+  "rowCount": 18,
+  "rows": [
+   [
+    "Test Name",
+    "No Longer in Use",
+    "Actions"
+   ],
+   [
+    "1 A B Testing",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "1st Alternative Test",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "2nd Alternative Test",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ]
+  ],
+  "buttons": [
+   "Add",
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#DropDownListYear=2026",
+   "input:checkbox#GridViewTestType_ctl02_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl03_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl04_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl05_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl06_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl07_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl08_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl09_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl10_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl11_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl12_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl13_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl14_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl15_CheckboxNoLongerInUse=on",
+   "input:checkbox#GridViewTestType_ctl16_CheckboxNoLongerInUse=on",
+   "input:text#TextboxNewName",
+   "input:checkbox#NewCheckboxNoLongerInUse=on",
+   "input:submit#ButtonAdd",
+   "input:submit#ButtonSave",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": [
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "..."
+  ]
+ },
+ "testResultItems": {
+  "h1": [
+   "Test Result Items"
+  ],
+  "rowCount": 18,
+  "rows": [
+   [
+    "Test Result Item Name",
+    "Return Type",
+    "No Longer in Use",
+    "Actions"
+   ],
+   [
+    "\"Avian Like\" H1N1",
+    "9999",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "% Haemolysis",
+    "X(7)",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "% Inhibition",
+    "X(7)",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ]
+  ],
+  "buttons": [
+   "Search",
+   "Add",
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#DropDownListYear=2026",
+   "input:text#TextboxSearchResultItemName",
+   "input:submit#ButtonSearchByResultItemName",
+   "input:checkbox#GridViewTestResultItemType_ctl02_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl03_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl04_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl05_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl06_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl07_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl08_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl09_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl10_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl11_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl12_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl13_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl14_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl15_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestResultItemType_ctl16_CheckboxNoLongerI=on",
+   "input:text#TextboxNewName",
+   "select:select-one#DropDownNewReturnValueType=00000000-000",
+   "input:checkbox#NewCheckboxNoLongerInUse=on",
+   "input:submit#ButtonAdd"
+  ],
+  "pager": [
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "..."
+  ]
+ },
+ "testMethodItems": {
+  "h1": [
+   "Test Method Items"
+  ],
+  "rowCount": 18,
+  "rows": [
+   [
+    "Test Method Item Name",
+    "Return Type",
+    "No Longer in Use",
+    "Actions"
+   ],
+   [
+    "% Foetal Calf Serum",
+    "Percentage",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "% Haemolysis",
+    "X(12)",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "% High +ve OD",
+    "Percentage",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ]
+  ],
+  "buttons": [
+   "Search",
+   "Add",
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#DropDownListYear=2026",
+   "input:text#TextboxSearchMethodItemName",
+   "input:submit#ButtonSearchByMethodItemName",
+   "input:checkbox#GridViewTestMethodItemType_ctl02_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl03_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl04_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl05_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl06_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl07_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl08_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl09_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl10_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl11_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl12_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl13_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl14_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl15_CheckboxNoLongerI=on",
+   "input:checkbox#GridViewTestMethodItemType_ctl16_CheckboxNoLongerI=on",
+   "input:text#TextboxNewName",
+   "select:select-one#DropDownNewReturnValueType=00000000-000",
+   "input:checkbox#NewCheckboxNoLongerInUse=on",
+   "input:submit#ButtonAdd"
+  ],
+  "pager": [
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "..."
+  ]
+ },
+ "categoryItems": {
+  "h1": [
+   "Category Items"
+  ],
+  "rowCount": 12,
+  "rows": [
+   [
+    "Category Item Type Name",
+    "No Longer in Use",
+    "Actions"
+   ],
+   [
+    "Counterstain",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "Eosin",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "Fixation",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ]
+  ],
+  "buttons": [
+   "Add",
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#DropDownListYear=2026",
+   "input:checkbox#GridViewCategoryItemType_ctl02_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl03_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl04_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl05_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl06_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl07_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl08_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl09_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl10_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl11_CheckboxNoLongerInU=on",
+   "input:checkbox#GridViewCategoryItemType_ctl12_CheckboxNoLongerInU=on",
+   "input:text#TextboxNewCategoryName",
+   "input:checkbox#NewCheckboxNoLongerInUse=on",
+   "input:submit#ButtonAddCategory",
+   "input:submit#ButtonSave",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": [
+   "Edit",
+   "Remove"
+  ]
+ },
+ "criterionItems": {
+  "h1": [
+   "Criterion Items"
+  ],
+  "rowCount": 18,
+  "rows": [
+   [
+    "Criterion Item Type Name",
+    "No Longer in Use",
+    "Actions"
+   ],
+   [
+    "Accuracy",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "Adequacy",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ],
+   [
+    "Air bubbles",
+    " {checkbox}",
+    "Edit Remove [Edit/Remove]"
+   ]
+  ],
+  "buttons": [
+   "Add",
+   "Save",
+   "Cancel",
+   "Yes"
+  ],
+  "inputs": [
+   "select:select-one#DropDownListYear=2026",
+   "input:checkbox#GridViewCriterionItemType_ctl02_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl03_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl04_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl05_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl06_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl07_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl08_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl09_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl10_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl11_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl12_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl13_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl14_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl15_CheckboxNoLongerIn=on",
+   "input:checkbox#GridViewCriterionItemType_ctl16_CheckboxNoLongerIn=on",
+   "input:text#TextboxNewName",
+   "input:checkbox#NewCheckboxNoLongerInUse=on",
+   "input:submit#ButtonAdd",
+   "input:submit#ButtonSave",
+   "input:submit#ButtonCancel"
+  ],
+  "pager": [
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8"
+  ]
+ }
+}

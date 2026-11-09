@@ -1,0 +1,12 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Verify user can fail AA export application after inspection,Step 1,Log in to the application as an user,user dashboard is displayed,Path x,,Design
+,,,Step 2,Open the AA export application <application number> that has inspection recorded,Application details page opens,,,
+,,,Step 3,Click the Inspection Result dropdown,Options Pass and Fail are listed,,,
+,,,Step 4,Select Fail,Fail Reason field becomes mandatory,,,
+,,,Step 5,"Enter a fail reason, with ""quotes"", in the Fail Reason field",Text is displayed with no validation error,,,
+,,,Step 6,Click the Submit button,Application status shows Failed,,,
+,Test Case,Verify fail is blocked when fail reason is empty,Step 1,Log in as an User,Dashboard displayed,Path x,,Design
+,,,Step 2,Open application <application number>,Details page opens,,,
+,,,Step 3,Select Fail in Inspection Result,Fail Reason is shown,,,
+,,,Step 4,Leave Fail Reason empty,Field is blank,,,
+,,,Step 5,Click Submit,Validation error shown and status is unchanged,,,

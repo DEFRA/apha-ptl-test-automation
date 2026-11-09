@@ -1,0 +1,145 @@
+[
+ {
+  "chain": [
+   "Manage Contracts",
+   "Customers",
+   "Details"
+  ],
+  "path": "/Contracts Admin/Customer.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Customer Details"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Contracts",
+   "Customers",
+   "Participants"
+  ],
+  "path": "/Contracts Admin/ParticipantList.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Participants"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Contracts",
+   "Customers",
+   "Contracts"
+  ],
+  "path": "/Contracts Admin/ContractList.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Contracts"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Contracts",
+   "Customers",
+   "Participants",
+   "Details"
+  ],
+  "path": "/Contracts Admin/Participant.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Participant Details"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Contracts",
+   "Customers",
+   "Participants",
+   "Viewers"
+  ],
+  "path": "/Contracts Admin/ParticipantViewers.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Participant Viewers"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Contracts",
+   "Customers",
+   "Contracts",
+   "Details"
+  ],
+  "path": "/Contracts Admin/Contract.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Contract Details"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Schemes",
+   "Schemes",
+   "Details"
+  ],
+  "path": "/Scheme Admin/Scheme.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Scheme Details"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Schemes",
+   "Schemes",
+   "View"
+  ],
+  "path": "/Scheme Admin/SchemeHistory.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Scheme History"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Manage Schemes",
+   "Schemes",
+   "Details",
+   "Schemes"
+  ],
+  "path": "/Scheme Admin/SchemeList.aspx",
+  "hasQuery": false,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Schemes"
+  ],
+  "error": false
+ },
+ {
+  "chain": [
+   "Assessor",
+   "View"
+  ],
+  "path": "/Assessor/AssessmentItemList.aspx",
+  "hasQuery": true,
+  "title": "Proficiency Testing",
+  "h1": [
+   "Assessment Items"
+  ],
+  "error": false
+ }
+]

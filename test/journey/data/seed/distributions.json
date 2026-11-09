@@ -1,0 +1,211 @@
+{
+ "previous": [
+  {
+   "reference": "17347/BA",
+   "code": "PT0210",
+   "name": "Mycobacterium bovis PCR",
+   "date": "Tuesday 6 October 2026"
+  },
+  {
+   "reference": "17313/SE",
+   "code": "PT0015",
+   "name": "Brucella abortus CFT/SAT",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17314/SE",
+   "code": "PT0016",
+   "name": "Brucella abortus ELISA",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17315/SE",
+   "code": "PT0018",
+   "name": "Brucella abortus milk",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17316/SE",
+   "code": "PT0036",
+   "name": "Classical Swine Fever (CSF)",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17317/SE",
+   "code": "PT0042",
+   "name": "Ehrlichia canis",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17321/SE",
+   "code": "PT0105",
+   "name": "Transmissible Gastroenteritis (TGE)",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17323/SE",
+   "code": "PT0137",
+   "name": "African Swine Fever (ASF)",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17324/SE",
+   "code": "PT0138",
+   "name": "Bluetongue",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17325/SE",
+   "code": "PT0139",
+   "name": "Foot & Mouth Disease (FMD) - Eurasian strains",
+   "date": "Tuesday 22 September 2026"
+  },
+  {
+   "reference": "17261/SE",
+   "code": "PT0071",
+   "name": "PHS Mycoplasma gallisepticum & meleagridis Turkey Sera",
+   "date": "Tuesday 18 August 2026"
+  },
+  {
+   "reference": "17282/SE",
+   "code": "PT0024",
+   "name": "Brucella ovis CFT",
+   "date": "Tuesday 18 August 2026"
+  },
+  {
+   "reference": "17286/SE",
+   "code": "PT0077",
+   "name": "Porcine Reproductive & Respiratory Syndrome (PRRS) serum",
+   "date": "Tuesday 18 August 2026"
+  },
+  {
+   "reference": "17288/SE",
+   "code": "PT0128",
+   "name": "Contagious Bovine Pleuropneumonia (CBPP) - CFT",
+   "date": "Tuesday 18 August 2026"
+  },
+  {
+   "reference": "17290/SE",
+   "code": "PT0172",
+   "name": "Fasciola hepatica (Liver Fluke) serum",
+   "date": "Tuesday 18 August 2026"
+  }
+ ],
+ "reports": [
+  {
+   "reference": "13941/SE",
+   "code": "PT0004",
+   "name": "Aujeszky's disease - blood disc",
+   "date": "Tuesday 8 October 2019"
+  },
+  {
+   "reference": "13943/SE",
+   "code": "PT0035",
+   "name": "Chlamydophila",
+   "date": "Tuesday 8 October 2019"
+  },
+  {
+   "reference": "13946/SE",
+   "code": "PT0011",
+   "name": "Bovine Viral Diarrhoea (BVD) bulk milk",
+   "date": "Tuesday 15 October 2019"
+  },
+  {
+   "reference": "13949/SE",
+   "code": "PT0068",
+   "name": "Mycobacterium paratuberculosis bovine serum",
+   "date": "Tuesday 15 October 2019"
+  },
+  {
+   "reference": "13950/SE",
+   "code": "PT0072",
+   "name": "Mycoplasma hyopneumoniae serum",
+   "date": "Tuesday 15 October 2019"
+  },
+  {
+   "reference": "13951/PA",
+   "code": "PT0110",
+   "name": "Toxoplasma gondii",
+   "date": "Tuesday 15 October 2019"
+  },
+  {
+   "reference": "13955/SE",
+   "code": "PT0018",
+   "name": "Brucella abortus milk",
+   "date": "Tuesday 15 October 2019"
+  },
+  {
+   "reference": "13956/SE",
+   "code": "PT0044",
+   "name": "Enzootic Bovine Leukosis (EBL) milk",
+   "date": "Tuesday 15 October 2019"
+  },
+  {
+   "reference": "13967/SE",
+   "code": "PT0005",
+   "name": "Avian Influenza (AI)",
+   "date": "Tuesday 22 October 2019"
+  },
+  {
+   "reference": "13977/SE",
+   "code": "PT0001",
+   "name": "African Horse Sickness (AHS)",
+   "date": "Tuesday 22 October 2019"
+  },
+  {
+   "reference": "13978/SE",
+   "code": "PT0007",
+   "name": "Babesia caballi IFAT/CFT/ELISA",
+   "date": "Tuesday 22 October 2019"
+  },
+  {
+   "reference": "13980/SE",
+   "code": "PT0020",
+   "name": "Brucella abortus Rose Bengal Test (RBT)",
+   "date": "Tuesday 22 October 2019"
+  },
+  {
+   "reference": "13981/SE",
+   "code": "PT0022",
+   "name": "Brucella canis",
+   "date": "Tuesday 22 October 2019"
+  },
+  {
+   "reference": "13982/SE",
+   "code": "PT0046",
+   "name": "Equine Infectious Anaemia (EIA)",
+   "date": "Tuesday 22 October 2019"
+  },
+  {
+   "reference": "13983/SE",
+   "code": "PT0047",
+   "name": "Equine Viral Arteritis (EVA)",
+   "date": "Tuesday 22 October 2019"
+  }
+ ],
+ "views": [
+  {
+   "link": "ResultsView",
+   "url": "http://localhost:1688/ResultsView.aspx?ref=…",
+   "h1": [
+    "View Results"
+   ],
+   "buttons": [
+    "BACK"
+   ],
+   "text": "View Results 17347/BA PT0210: Mycobacterium bovis PCR The tables below show the results that were entered for this distribution. Manual PCR Sample 26/1734 Beta Actin Cq value 1 - Beta Actin Cq value 2 - IS1081 Cq value 1 - IS1081 Cq value 2 - RD4 Cq value 1 - RD4 Cq value 2 - Overall result (M.bovis/Complex positive/−ve) - Sample 26/1735 Beta Actin Cq value 1 - Beta Actin Cq value 2 - IS1081 Cq va"
+  },
+  {
+   "link": "TabulationView",
+   "url": "http://localhost:1688/TabulationView.aspx?ref=…",
+   "h1": [
+    "View reports"
+   ],
+   "buttons": [
+    "GENERATE PDF",
+    "BACK"
+   ],
+   "text": "View reports FINAL REPORT for 13941/SE PT0004: Aujeszky's disease - blood disc Distribution Date: 08/10/2019 Auj -gB ELISA Method items Auj -gB ELISA Kit Manufacturer Kit Batch Number +/- Cut Off Intended 1300 IDEXX KP966 S/N <= 0.7 = Positive / S/N > 0.7 = Negative 19/7755 Auj -gB ELISA Individual Result Individual Result Mean Result Interpretation (+ve/−ve/IC) Intended 1/20 dilution +ve 1300 0.1"
+  }
+ ]
+}

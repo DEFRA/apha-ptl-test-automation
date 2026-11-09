@@ -1,0 +1,162 @@
+[
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxName",
+  "validator": "ValidatorNameRequired",
+  "message": "The Name for this customer must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxContactName",
+  "validator": "ValidatorContactNameRequired",
+  "message": "The Contact Name for this customer must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxOrganisationName",
+  "validator": "ValidatorOrganisationNameRequired",
+  "message": "The Organisation Name for this customer must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxAddress1",
+  "validator": "ValidatorAddress1Required",
+  "message": "At least two Address lines are required for this customer",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxAddress2",
+  "validator": "ValidatorAddress2Required",
+  "message": "At least two Address lines are required for this customer",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxTelephone",
+  "validator": "ValidatorTelephoneRequired",
+  "message": "A Telephone Number for this customer must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxEmail",
+  "validator": "ValidatorEmailRequired",
+  "message": "An Email Address for this customer must be supplied",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxInvoiceOrganisationName",
+  "validator": "ValidatorInvoiceOrganisationNameRequired",
+  "message": "The name of the Organisation for the invoice address of this customer is required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxInvoiceAddress1",
+  "validator": "ValidatorInvoiceAddress1Required",
+  "message": "At least two Address lines for the invoice details are required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "customerDetails",
+  "chain": "Manage Contracts > Customers > Details",
+  "field": "TextboxInvoiceAddress2",
+  "validator": "ValidatorInvoiceAddress2Required",
+  "message": "At least two addres lines for the invoice details are required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxLabName",
+  "validator": "ValidatorLabNameRequired",
+  "message": "The Name of the lab for this participant must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxContactName",
+  "validator": "ValidatorContactNameRequired",
+  "message": "The Contact Name for this participant is required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxOrganisationName",
+  "validator": "ValidatorOrganisationNameRequired",
+  "message": "The Organisation Name for this participant is required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxAddress1",
+  "validator": "ValidatorAddress1Required",
+  "message": "At least two Address lines for this participant are required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxAddress2",
+  "validator": "ValidatorAddress2Required",
+  "message": "At least two address lines for this participant are required",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxTelephone",
+  "validator": "ValidatorTelephoneRequired",
+  "message": "The Telephone Number for this participant must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "participantDetails",
+  "chain": "Manage Contracts > Customers > Participants > Details",
+  "field": "TextboxEmail",
+  "validator": "ValidatorEmailRequired",
+  "message": "An Email Address for this participant must be specified",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "groupAddressEdit",
+  "chain": "Manage Contracts > Group Addresses > Edit",
+  "field": "TextboxIdentifier",
+  "validator": "ValidatorIdentifierRequired",
+  "message": "An identifier must be specified for this group address",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "groupAddressEdit",
+  "chain": "Manage Contracts > Group Addresses > Edit",
+  "field": "TextboxAddress1",
+  "validator": "ValidatorAddress1Required",
+  "message": "At least two Address lines are required for this group address",
+  "button": "ButtonSave"
+ },
+ {
+  "form": "groupAddressEdit",
+  "chain": "Manage Contracts > Group Addresses > Edit",
+  "field": "TextboxAddress2",
+  "validator": "ValidatorAddress2Required",
+  "message": "At least two Address lines are required for this group address",
+  "button": "ButtonSave"
+ }
+]

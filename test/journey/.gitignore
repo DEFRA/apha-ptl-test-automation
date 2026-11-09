@@ -1,0 +1,19 @@
+# Dependencies and generated tests
+node_modules/
+.features-gen/
+
+# Saved auth state holds live session cookies. Never commit it.
+.auth/
+
+# Run artefacts: traces, screenshots, JUnit, HTML and accessibility reports
+reports/
+test-results/
+playwright-report/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx

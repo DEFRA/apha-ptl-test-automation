@@ -1,0 +1,276 @@
+{
+ "container": "UL#subMenu.",
+ "sections": [
+  {
+   "name": "System Administration",
+   "url": "/Admin/MenuAdmin.aspx",
+   "menu": [
+    "Manage Roles",
+    "Create User",
+    "Remove User",
+    "Internal Test Consultant Department",
+    "Manage External Test Consultants",
+    "Manage Viewers",
+    "Manage Countries",
+    "External Site Management",
+    "Administration Charges",
+    "Weighted Pricing Plan",
+    "Postage Pricing Plan"
+   ],
+   "entries": [
+    {
+     "item": "Manage Roles",
+     "url": "/Admin/UserRoles.aspx",
+     "h1": [
+      "Manage Roles"
+     ],
+     "error": false
+    },
+    {
+     "item": "Create User",
+     "url": "/Admin/UserCreate.aspx",
+     "h1": [
+      "Create User"
+     ],
+     "error": false
+    },
+    {
+     "item": "Remove User",
+     "url": "/Admin/UserDelete.aspx",
+     "h1": [
+      "Remove User"
+     ],
+     "error": false
+    },
+    {
+     "item": "Internal Test Consultant Department",
+     "url": "/Admin/TCDepartment.aspx",
+     "h1": [
+      "Internal Test Consultant Department"
+     ],
+     "error": false
+    },
+    {
+     "item": "Manage External Test Consultants",
+     "url": "/Admin/ManageExternalTCs.aspx",
+     "h1": [
+      "Manage External Test Consultants"
+     ],
+     "error": false
+    },
+    {
+     "item": "Manage Viewers",
+     "error": "click failed locator.click: Timeout 90000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole"
+    },
+    {
+     "item": "Manage Countries",
+     "url": "/Admin/ManageCountries.aspx",
+     "h1": [
+      "Manage Countries"
+     ],
+     "error": false
+    },
+    {
+     "item": "External Site Management",
+     "url": "/Admin/EditMessageOnWebsite.aspx",
+     "h1": [
+      "External Site Management"
+     ],
+     "error": false
+    },
+    {
+     "item": "Administration Charges",
+     "url": "/Admin/AdministrationChargeCurrency.aspx",
+     "h1": [
+      "Administration Charges"
+     ],
+     "error": false
+    },
+    {
+     "item": "Weighted Pricing Plan",
+     "url": "/Admin/WeightedPricingPlan.aspx",
+     "h1": [
+      "Weighted Pricing Plan"
+     ],
+     "error": false
+    },
+    {
+     "item": "Postage Pricing Plan",
+     "url": "/Admin/PostagePricingPlan.aspx",
+     "h1": [
+      "Postage Pricing Plan"
+     ],
+     "error": false
+    }
+   ]
+  },
+  {
+   "name": "Manage Contracts",
+   "url": "/Contracts Admin/MenuContracts.aspx",
+   "menu": [
+    "Customers",
+    "Search",
+    "Group Addresses",
+    "Exports"
+   ],
+   "entries": [
+    {
+     "item": "Customers",
+     "url": "/Contracts%20Admin/CustomerList.aspx",
+     "h1": [
+      "Customers"
+     ],
+     "error": false
+    },
+    {
+     "item": "Search",
+     "url": "/Contracts%20Admin/Search.aspx",
+     "h1": [
+      "Search"
+     ],
+     "error": false
+    },
+    {
+     "item": "Group Addresses",
+     "url": "/Contracts%20Admin/GroupAddressList.aspx",
+     "h1": [
+      "Group Addresses"
+     ],
+     "error": false
+    },
+    {
+     "item": "Exports",
+     "url": "/Contracts%20Admin/ExportMenu.aspx",
+     "h1": [
+      "Exports"
+     ],
+     "error": false
+    }
+   ]
+  },
+  {
+   "name": "Manage Schemes",
+   "url": "/Scheme Admin/MenuSchemes.aspx",
+   "menu": [
+    "Schemes",
+    "Search",
+    "Test Types",
+    "Test Result Items",
+    "Test Method Items",
+    "Category Items",
+    "Criterion Items"
+   ],
+   "entries": [
+    {
+     "item": "Schemes",
+     "url": "/Scheme%20Admin/SchemeList.aspx",
+     "h1": [
+      "Schemes"
+     ],
+     "error": false
+    },
+    {
+     "item": "Search",
+     "url": "/Scheme%20Admin/Search.aspx",
+     "h1": [
+      "Search"
+     ],
+     "error": false
+    },
+    {
+     "item": "Test Types",
+     "url": "/Scheme%20Admin/TestTypeList.aspx",
+     "h1": [
+      "Test Types"
+     ],
+     "error": false
+    },
+    {
+     "item": "Test Result Items",
+     "url": "/Scheme%20Admin/TestResultItemTypeList.aspx",
+     "h1": [
+      "Test Result Items"
+     ],
+     "error": false
+    },
+    {
+     "item": "Test Method Items",
+     "url": "/Scheme%20Admin/TestMethodItemTypeList.aspx",
+     "h1": [
+      "Test Method Items"
+     ],
+     "error": false
+    },
+    {
+     "item": "Category Items",
+     "url": "/Scheme%20Admin/CategoryItemTypeList.aspx",
+     "h1": [
+      "Category Items"
+     ],
+     "error": false
+    },
+    {
+     "item": "Criterion Items",
+     "url": "/Scheme%20Admin/CriterionItemTypeList.aspx",
+     "h1": [
+      "Criterion Items"
+     ],
+     "error": false
+    }
+   ]
+  },
+  {
+   "name": "Distributions",
+   "url": "/Distributions/MenuDistributions.aspx",
+   "menu": [
+    "Participant Address Labels",
+    "Group Address Labels",
+    "Search"
+   ],
+   "entries": [
+    {
+     "item": "Participant Address Labels",
+     "url": "/Distributions/ParticipantAddress.aspx",
+     "h1": [
+      "Participant Address Labels"
+     ],
+     "error": false
+    },
+    {
+     "item": "Group Address Labels",
+     "url": "/Distributions/GroupAddress.aspx",
+     "h1": [
+      "Group Address Labels"
+     ],
+     "error": false
+    },
+    {
+     "item": "Search",
+     "url": "/Distributions/Search.aspx",
+     "h1": [
+      "Search"
+     ],
+     "error": false
+    }
+   ]
+  }
+ ],
+ "results": {
+  "url": "/Results%20Sign-off/SignOff.aspx",
+  "h1": [
+   "Results Sign-off"
+  ],
+  "links": [
+   "Home",
+   "Help",
+   "Home",
+   "View",
+   "View",
+   "View",
+   "View",
+   "View",
+   "View",
+   "System information"
+  ]
+ }
+}

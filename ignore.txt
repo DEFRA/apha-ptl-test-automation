@@ -1,0 +1,57 @@
+# The single ignore list for this repository.
+#
+# install.sh / install.ps1 merge it into .gitignore (the part that actually stops a file being
+# committed) and also write it to .copilotignore, which is the file Defra's Copilot guidance uses
+# for context exclusion. Treat .copilotignore as a second line of defence: GitHub documents content
+# exclusion as an administrator setting and does not guarantee it in agent mode, so nothing secret
+# belongs in the workspace at all. See README, "Keeping the app out of context".
+
+# Environment files with real values
+.env
+.env.*
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+secrets/
+config/secrets/
+
+# Files that may contain real personal data
+test/fixtures/real-data/
+fixtures/pii/
+test-data/production/
+**/*-prod-data.*
+**/*-real-data.*
+
+# OFFICIAL-SENSITIVE documents
+docs/official-sensitive/
+OFFICIAL-SENSITIVE/
+*-OFFICIAL-SENSITIVE.*
+
+# Azure and cloud credentials
+.azure/
+.aws/credentials
+service-account-key.json
+
+# Generated secrets
+*-secret-*
+*credentials*.json
+
+# Saved auth state and run artefacts: session tokens, screenshots, traces, page HTML
+test/journey/.auth/
+test/journey/reports/
+test/journey/test-results/
+test/journey/.features-gen/
+playwright-report/
+test-results/
+
+# Noise that wastes context and pollutes diffs
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store

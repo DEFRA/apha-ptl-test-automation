@@ -1,0 +1,602 @@
+[
+ {
+  "key": "admin-about",
+  "app": "admin",
+  "rel": "About.aspx",
+  "route": "/About.aspx",
+  "heading": "System Information",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-accessdenied",
+  "app": "admin",
+  "rel": "AccessDenied.aspx",
+  "route": "/AccessDenied.aspx",
+  "heading": null,
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-administrationchargecurrency",
+  "app": "admin",
+  "rel": "Admin/AdministrationChargeCurrency.aspx",
+  "route": "/Admin/AdministrationChargeCurrency.aspx",
+  "heading": "Administration Charges",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-editmessageonwebsite",
+  "app": "admin",
+  "rel": "Admin/EditMessageOnWebsite.aspx",
+  "route": "/Admin/EditMessageOnWebsite.aspx",
+  "heading": "External Site Management",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-managecountries",
+  "app": "admin",
+  "rel": "Admin/ManageCountries.aspx",
+  "route": "/Admin/ManageCountries.aspx",
+  "heading": "Manage Countries",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-menuadmin",
+  "app": "admin",
+  "rel": "Admin/MenuAdmin.aspx",
+  "route": "/Admin/MenuAdmin.aspx",
+  "heading": "System Administration",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-postagepricingplan",
+  "app": "admin",
+  "rel": "Admin/PostagePricingPlan.aspx",
+  "route": "/Admin/PostagePricingPlan.aspx",
+  "heading": "Postage Pricing Plan",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-tcdepartment",
+  "app": "admin",
+  "rel": "Admin/TCDepartment.aspx",
+  "route": "/Admin/TCDepartment.aspx",
+  "heading": "Internal Test Consultant Department",
+  "title": "Role Management"
+ },
+ {
+  "key": "admin-admin-usercreate",
+  "app": "admin",
+  "rel": "Admin/UserCreate.aspx",
+  "route": "/Admin/UserCreate.aspx",
+  "heading": "Create User",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-userdelete",
+  "app": "admin",
+  "rel": "Admin/UserDelete.aspx",
+  "route": "/Admin/UserDelete.aspx",
+  "heading": "Remove User",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-admin-userroles",
+  "app": "admin",
+  "rel": "Admin/UserRoles.aspx",
+  "route": "/Admin/UserRoles.aspx",
+  "heading": "Manage Roles",
+  "title": "Role Management"
+ },
+ {
+  "key": "admin-admin-weightedpricingplan",
+  "app": "admin",
+  "rel": "Admin/WeightedPricingPlan.aspx",
+  "route": "/Admin/WeightedPricingPlan.aspx",
+  "heading": "Weighted Pricing Plan",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-customer",
+  "app": "admin",
+  "rel": "Contracts Admin/Customer.aspx",
+  "route": "/Contracts Admin/Customer.aspx",
+  "heading": "Create Customer",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-customerlist",
+  "app": "admin",
+  "rel": "Contracts Admin/CustomerList.aspx",
+  "route": "/Contracts Admin/CustomerList.aspx",
+  "heading": "Customers",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-exportaddressconfirmationletters",
+  "app": "admin",
+  "rel": "Contracts Admin/ExportAddressConfirmationLetters.aspx",
+  "route": "/Contracts Admin/ExportAddressConfirmationLetters.aspx",
+  "heading": "Export Address Confirmation Letters",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-exportcontracts",
+  "app": "admin",
+  "rel": "Contracts Admin/ExportContracts.aspx",
+  "route": "/Contracts Admin/ExportContracts.aspx",
+  "heading": "Export Contracts",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-exportjobsheets",
+  "app": "admin",
+  "rel": "Contracts Admin/ExportJobSheets.aspx",
+  "route": "/Contracts Admin/ExportJobSheets.aspx",
+  "heading": "Export Job Sheets",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-exportmenu",
+  "app": "admin",
+  "rel": "Contracts Admin/ExportMenu.aspx",
+  "route": "/Contracts Admin/ExportMenu.aspx",
+  "heading": "Exports",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-exportrenewalletters",
+  "app": "admin",
+  "rel": "Contracts Admin/ExportRenewalLetters.aspx",
+  "route": "/Contracts Admin/ExportRenewalLetters.aspx",
+  "heading": "Export Renewal Letters",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-groupaddress",
+  "app": "admin",
+  "rel": "Contracts Admin/GroupAddress.aspx",
+  "route": "/Contracts Admin/GroupAddress.aspx",
+  "heading": "Create Group Address",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-groupaddresslist",
+  "app": "admin",
+  "rel": "Contracts Admin/GroupAddressList.aspx",
+  "route": "/Contracts Admin/GroupAddressList.aspx",
+  "heading": "Group Addresses",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-invoicegeneration",
+  "app": "admin",
+  "rel": "Contracts Admin/InvoiceGeneration.aspx",
+  "route": "/Contracts Admin/InvoiceGeneration.aspx",
+  "heading": null,
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-menucontracts",
+  "app": "admin",
+  "rel": "Contracts Admin/MenuContracts.aspx",
+  "route": "/Contracts Admin/MenuContracts.aspx",
+  "heading": "Manage Contracts",
+  "title": "Contracts Admin"
+ },
+ {
+  "key": "admin-contracts-admin-mergecontracts",
+  "app": "admin",
+  "rel": "Contracts Admin/MergeContracts.aspx",
+  "route": "/Contracts Admin/MergeContracts.aspx",
+  "heading": "Customers",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-participant",
+  "app": "admin",
+  "rel": "Contracts Admin/Participant.aspx",
+  "route": "/Contracts Admin/Participant.aspx",
+  "heading": "Manage Contracts",
+  "title": "Contracts Admin"
+ },
+ {
+  "key": "admin-contracts-admin-participantlist",
+  "app": "admin",
+  "rel": "Contracts Admin/ParticipantList.aspx",
+  "route": "/Contracts Admin/ParticipantList.aspx",
+  "heading": "Manage Contracts",
+  "title": "Contracts Admin"
+ },
+ {
+  "key": "admin-contracts-admin-reviewpendingcustomerupdates",
+  "app": "admin",
+  "rel": "Contracts Admin/ReviewPendingCustomerUpdates.aspx",
+  "route": "/Contracts Admin/ReviewPendingCustomerUpdates.aspx",
+  "heading": "Review Pending Customer Updates",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-reviewpendingorders",
+  "app": "admin",
+  "rel": "Contracts Admin/ReviewPendingOrders.aspx",
+  "route": "/Contracts Admin/ReviewPendingOrders.aspx",
+  "heading": "Review Pending Orders",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-reviewpendingparticipantupdates",
+  "app": "admin",
+  "rel": "Contracts Admin/ReviewPendingParticipantUpdates.aspx",
+  "route": "/Contracts Admin/ReviewPendingParticipantUpdates.aspx",
+  "heading": "Review Pending Participant Updates",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-contracts-admin-search",
+  "app": "admin",
+  "rel": "Contracts Admin/Search.aspx",
+  "route": "/Contracts Admin/Search.aspx",
+  "heading": "Search",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-distributions-groupaddress",
+  "app": "admin",
+  "rel": "Distributions/GroupAddress.aspx",
+  "route": "/Distributions/GroupAddress.aspx",
+  "heading": "Group Address Labels",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-distributions-menudistributions",
+  "app": "admin",
+  "rel": "Distributions/MenuDistributions.aspx",
+  "route": "/Distributions/MenuDistributions.aspx",
+  "heading": "Distributions",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-distributions-participantaddress",
+  "app": "admin",
+  "rel": "Distributions/ParticipantAddress.aspx",
+  "route": "/Distributions/ParticipantAddress.aspx",
+  "heading": "Participant Address Labels",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-distributions-search",
+  "app": "admin",
+  "rel": "Distributions/Search.aspx",
+  "route": "/Distributions/Search.aspx",
+  "heading": "Search",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-errorgeneric",
+  "app": "admin",
+  "rel": "ErrorGeneric.aspx",
+  "route": "/ErrorGeneric.aspx",
+  "heading": null,
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-errorpagenotfound",
+  "app": "admin",
+  "rel": "ErrorPageNotFound.aspx",
+  "route": "/ErrorPageNotFound.aspx",
+  "heading": null,
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-home",
+  "app": "admin",
+  "rel": "Home.aspx",
+  "route": "/Home.aspx",
+  "heading": "Home",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-results-sign-off-signoff",
+  "app": "admin",
+  "rel": "Results Sign-off/SignOff.aspx",
+  "route": "/Results Sign-off/SignOff.aspx",
+  "heading": "Results Sign-off",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-results-sign-off-tabulation",
+  "app": "admin",
+  "rel": "Results Sign-off/Tabulation.aspx",
+  "route": "/Results Sign-off/Tabulation.aspx",
+  "heading": "Results Sign-off",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheduling-intendedresults",
+  "app": "admin",
+  "rel": "Scheduling/IntendedResults.aspx",
+  "route": "/Scheduling/IntendedResults.aspx",
+  "heading": "Distributions",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheduling-monthlys",
+  "app": "admin",
+  "rel": "Scheduling/monthlys.aspx",
+  "route": "/Scheduling/monthlys.aspx",
+  "heading": "Distributions",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheduling-publishedtabulations",
+  "app": "admin",
+  "rel": "Scheduling/PublishedTabulations.aspx",
+  "route": "/Scheduling/PublishedTabulations.aspx",
+  "heading": "Distributions",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheduling-tabulation",
+  "app": "admin",
+  "rel": "Scheduling/Tabulation.aspx",
+  "route": "/Scheduling/Tabulation.aspx",
+  "heading": "Distributions",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheduling-tabulations",
+  "app": "admin",
+  "rel": "Scheduling/Tabulations.aspx",
+  "route": "/Scheduling/Tabulations.aspx",
+  "heading": "Distributions",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-categoryitemtypelist",
+  "app": "admin",
+  "rel": "Scheme Admin/CategoryItemTypeList.aspx",
+  "route": "/Scheme Admin/CategoryItemTypeList.aspx",
+  "heading": "Category Items",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-criterionitemtypelist",
+  "app": "admin",
+  "rel": "Scheme Admin/CriterionItemTypeList.aspx",
+  "route": "/Scheme Admin/CriterionItemTypeList.aspx",
+  "heading": "Criterion Items",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-menuschemes",
+  "app": "admin",
+  "rel": "Scheme Admin/MenuSchemes.aspx",
+  "route": "/Scheme Admin/MenuSchemes.aspx",
+  "heading": "Manage Schemes",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-scheme",
+  "app": "admin",
+  "rel": "Scheme Admin/Scheme.aspx",
+  "route": "/Scheme Admin/Scheme.aspx",
+  "heading": "Create Scheme",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-schemelist",
+  "app": "admin",
+  "rel": "Scheme Admin/SchemeList.aspx",
+  "route": "/Scheme Admin/SchemeList.aspx",
+  "heading": "Schemes",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-schemelistforprinting",
+  "app": "admin",
+  "rel": "Scheme Admin/SchemeListForPrinting.aspx",
+  "route": "/Scheme Admin/SchemeListForPrinting.aspx",
+  "heading": "Printable Schemes",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-search",
+  "app": "admin",
+  "rel": "Scheme Admin/Search.aspx",
+  "route": "/Scheme Admin/Search.aspx",
+  "heading": "Search",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-testmethoditemtypelist",
+  "app": "admin",
+  "rel": "Scheme Admin/TestMethodItemTypeList.aspx",
+  "route": "/Scheme Admin/TestMethodItemTypeList.aspx",
+  "heading": "Test Method Items",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-testresultitemtypelist",
+  "app": "admin",
+  "rel": "Scheme Admin/TestResultItemTypeList.aspx",
+  "route": "/Scheme Admin/TestResultItemTypeList.aspx",
+  "heading": "Test Result Items",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-scheme-admin-testtypelist",
+  "app": "admin",
+  "rel": "Scheme Admin/TestTypeList.aspx",
+  "route": "/Scheme Admin/TestTypeList.aspx",
+  "heading": "Test Types",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "admin-test-consultant-menutestconsultants",
+  "app": "admin",
+  "rel": "Test Consultant/MenuTestConsultants.aspx",
+  "route": "/Test Consultant/MenuTestConsultants.aspx",
+  "heading": "Test Consultant",
+  "title": "Proficiency Testing"
+ },
+ {
+  "key": "external-about",
+  "app": "external",
+  "rel": "About.aspx",
+  "route": "/About.aspx",
+  "heading": "About",
+  "title": "About - Proficiency Testing"
+ },
+ {
+  "key": "external-accessibilitystatement",
+  "app": "external",
+  "rel": "AccessibilityStatement.aspx",
+  "route": "/AccessibilityStatement.aspx",
+  "heading": "Accessibility statement for the PT‑LIMS website",
+  "title": "Accessibility statement - Proficiency Testing"
+ },
+ {
+  "key": "external-commentsentry",
+  "app": "external",
+  "rel": "CommentsEntry.aspx",
+  "route": "/CommentsEntry.aspx",
+  "heading": "Distributions",
+  "title": "Distribution comments - Proficiency Testing"
+ },
+ {
+  "key": "external-distributioncomments",
+  "app": "external",
+  "rel": "DistributionComments.aspx",
+  "route": "/DistributionComments.aspx",
+  "heading": "Distributions",
+  "title": "Distribution comments - Proficiency Testing"
+ },
+ {
+  "key": "external-distributionscurrent",
+  "app": "external",
+  "rel": "DistributionsCurrent.aspx",
+  "route": "/DistributionsCurrent.aspx",
+  "heading": "Current Distributions",
+  "title": "Current distributions - Proficiency Testing"
+ },
+ {
+  "key": "external-distributionsprevious",
+  "app": "external",
+  "rel": "DistributionsPrevious.aspx",
+  "route": "/DistributionsPrevious.aspx",
+  "heading": "Previous Distributions",
+  "title": "Previous distributions - Proficiency Testing"
+ },
+ {
+  "key": "external-editcustomerdetails",
+  "app": "external",
+  "rel": "EditCustomerDetails.aspx",
+  "route": "/EditCustomerDetails.aspx",
+  "heading": "My account",
+  "title": "Edit customer details - Proficiency Testing"
+ },
+ {
+  "key": "external-editparticipantdetails",
+  "app": "external",
+  "rel": "EditParticipantDetails.aspx",
+  "route": "/EditParticipantDetails.aspx",
+  "heading": "My account",
+  "title": "Edit participant details - Proficiency Testing"
+ },
+ {
+  "key": "external-errorgeneric",
+  "app": "external",
+  "rel": "ErrorGeneric.aspx",
+  "route": "/ErrorGeneric.aspx",
+  "heading": "Error",
+  "title": "Error generic page - Proficiency Testing"
+ },
+ {
+  "key": "external-errorpagenotfound",
+  "app": "external",
+  "rel": "ErrorPageNotFound.aspx",
+  "route": "/ErrorPageNotFound.aspx",
+  "heading": "Page not found",
+  "title": "Error, page not found - Proficiency Testing"
+ },
+ {
+  "key": "external-erroruserinactive",
+  "app": "external",
+  "rel": "ErrorUserInactive.aspx",
+  "route": "/ErrorUserInactive.aspx",
+  "heading": "Invalid Permissions",
+  "title": "- Proficiency Testing"
+ },
+ {
+  "key": "external-help",
+  "app": "external",
+  "rel": "Help.aspx",
+  "route": "/Help.aspx",
+  "heading": "Help",
+  "title": "Help - Proficiency Testing"
+ },
+ {
+  "key": "external-home",
+  "app": "external",
+  "rel": "Home.aspx",
+  "route": "/Home.aspx",
+  "heading": "VETQAS Proficiency Testing",
+  "title": "Homepage - Proficiency Testing"
+ },
+ {
+  "key": "external-privacypolicy",
+  "app": "external",
+  "rel": "PrivacyPolicy.aspx",
+  "route": "/PrivacyPolicy.aspx",
+  "heading": "VETQAS Privacy Notice",
+  "title": "Privacy Policy - Proficiency Testing"
+ },
+ {
+  "key": "external-resultsentry",
+  "app": "external",
+  "rel": "ResultsEntry.aspx",
+  "route": "/ResultsEntry.aspx",
+  "heading": "Current Distributions",
+  "title": "Current distributions - Proficiency Testing"
+ },
+ {
+  "key": "external-resultsview",
+  "app": "external",
+  "rel": "ResultsView.aspx",
+  "route": "/ResultsView.aspx",
+  "heading": "Previous Distributions",
+  "title": "Previous distributions - Proficiency Testing"
+ },
+ {
+  "key": "external-schemelist",
+  "app": "external",
+  "rel": "SchemeList.aspx",
+  "route": "/SchemeList.aspx",
+  "heading": "View Schemes",
+  "title": "Scheme list - Proficiency Testing"
+ },
+ {
+  "key": "external-tabulations",
+  "app": "external",
+  "rel": "Tabulations.aspx",
+  "route": "/Tabulations.aspx",
+  "heading": "Reports",
+  "title": "Tabulations - Proficiency Testing"
+ },
+ {
+  "key": "external-tabulationview",
+  "app": "external",
+  "rel": "TabulationView.aspx",
+  "route": "/TabulationView.aspx",
+  "heading": "Reports",
+  "title": "Tabulations - Proficiency Testing"
+ },
+ {
+  "key": "external-viewinformation",
+  "app": "external",
+  "rel": "ViewInformation.aspx",
+  "route": "/ViewInformation.aspx",
+  "heading": "Information",
+  "title": "System information - Proficiency Testing"
+ }
+]

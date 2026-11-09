@@ -1,0 +1,26 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+
+# Saved auth state and run artefacts (session tokens, screenshots, traces)
+test/journey/.auth/
+test/journey/reports/
+playwright-report/
+test-results/
+
+# Fixtures with real personal data (use synthetic data only)
+test/fixtures/real/
+
+# OFFICIAL-SENSITIVE material
+docs/official-sensitive/
+
+# Noise that wastes context
+node_modules/
+dist/
+build/
+coverage/
+package-lock.json

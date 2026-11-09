@@ -1,0 +1,107 @@
+{
+ "paging": {
+  "before": "QAL/0030 Customer Name 1083 Customer Organisation 1083 Details Participants Contracts",
+  "after": "QAL/0151 Customer Name 502 Customer Organisation 502 Details Participants Contracts",
+  "path": "/Contracts Admin/CustomerList.aspx",
+  "h1": "Customers",
+  "error": false
+ },
+ "years": [
+  {
+   "page": "Weighted Pricing Plan",
+   "chain": "System Administration > Weighted Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2010/11",
+   "path": "/Admin/WeightedPricingPlan.aspx",
+   "h1": "Weighted Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Weighted Pricing Plan",
+   "chain": "System Administration > Weighted Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2014/15",
+   "path": "/Admin/WeightedPricingPlan.aspx",
+   "h1": "Weighted Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Weighted Pricing Plan",
+   "chain": "System Administration > Weighted Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2018/19",
+   "path": "/Admin/WeightedPricingPlan.aspx",
+   "h1": "Weighted Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Weighted Pricing Plan",
+   "chain": "System Administration > Weighted Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2022/23",
+   "path": "/Admin/WeightedPricingPlan.aspx",
+   "h1": "Weighted Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Weighted Pricing Plan",
+   "chain": "System Administration > Weighted Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2026/27",
+   "path": "/Admin/WeightedPricingPlan.aspx",
+   "h1": "Weighted Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Postage Pricing Plan",
+   "chain": "System Administration > Postage Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2016/17",
+   "path": "/Admin/PostagePricingPlan.aspx",
+   "h1": "Postage Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Postage Pricing Plan",
+   "chain": "System Administration > Postage Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2020/21",
+   "path": "/Admin/PostagePricingPlan.aspx",
+   "h1": "Postage Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Postage Pricing Plan",
+   "chain": "System Administration > Postage Pricing Plan",
+   "selector": "ddlYear",
+   "year": "2024/25",
+   "path": "/Admin/PostagePricingPlan.aspx",
+   "h1": "Postage Pricing Plan",
+   "error": false
+  },
+  {
+   "page": "Test Types",
+   "chain": "Manage Schemes > Test Types",
+   "selector": "DropDownListYear",
+   "year": "2026",
+   "path": "/Scheme Admin/TestTypeList.aspx",
+   "h1": "Test Types",
+   "error": false
+  }
+ ],
+ "searches": [
+  {
+   "label": "QAL search",
+   "box": "TextboxSearchQAL",
+   "button": "ButtonSearchCustomer",
+   "value": "QAL/0344",
+   "rows": [
+    "QAL/0344Account Number 883Customer Name 883Customer Contact Name 883Customer Organisation 883Turkey Details"
+   ],
+   "path": "/Contracts Admin/Search.aspx",
+   "h1": "Search",
+   "error": false
+  }
+ ],
+ "soap": []
+}

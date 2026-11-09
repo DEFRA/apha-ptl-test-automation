@@ -1,0 +1,39 @@
+{
+  "name": "journey-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Playwright + playwright-bdd journey tests for the service under test",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "bdd": "bddgen && playwright test",
+    "test": "npm run bdd",
+    "smoke": "bddgen && playwright test --grep @smoke",
+    "regression": "bddgen && playwright test --grep @regression",
+    "feature": "bddgen && playwright test --grep",
+    "role": "bddgen && playwright test --project",
+    "auth": "playwright test --project=setup",
+    "lint": "eslint .",
+    "trace": "node scripts/trace-check.js",
+    "grounding": "node scripts/check-grounding.js",
+    "readiness": "node scripts/migration-readiness.js",
+    "a11y:report": "node support/a11y-report.js",
+    "a11y:coverage": "node scripts/a11y-coverage.js",
+    "a11y:baseline": "node scripts/a11y-baseline.js",
+    "automation:map": "node scripts/automation-map.js"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@eslint/js": "^9.20.0",
+    "@faker-js/faker": "^9.5.0",
+    "@playwright/test": "^1.64.0",
+    "dotenv": "^16.4.0",
+    "eslint": "^9.20.0",
+    "eslint-plugin-playwright": "^2.2.0",
+    "globals": "^15.15.0",
+    "playwright-bdd": "^9.2.0",
+    "zod": "^3.24.0"
+  }
+}
