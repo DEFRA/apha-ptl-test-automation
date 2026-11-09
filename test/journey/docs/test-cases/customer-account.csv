@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Customer can update their details with valid contact information,Step 1,Open the Edit Customer/Invoice details page for the signed-in customer.,The page heading is Edit Customer/Invoice details and the customer and invoice form fields are visible.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,"Fill the required customer fields with valid values for contact name, organisation, address, telephone and email.",The entered values match the expected values and no validation warning is shown for the required customer fields.,,,
+,,,Step 3,"Fill the required invoice details with valid values for organisation, address and email.",The invoice section accepts the values and shows no validation warning for the required invoice fields.,,,
+,,,Step 4,Submit the updated details by selecting UPDATE DETAILS.,The page submits without a client-side validation error and the update request is sent.,,,
+,,,Step 5,Review the post-submit state.,The customer detail update is confirmed and the user can continue without being blocked by validation errors.,,,
+,Test Case,Customer is blocked from saving when required contact details are empty,Step 1,Open the Edit Customer/Invoice details page for the signed-in customer.,The form is loaded and the required field controls are visible.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,"Clear the Contact Name, Organisation name, Address line 1, Address line 2, Telephone and Email fields.",The fields are empty and the form is ready to validate.,,,
+,,,Step 3,Attempt to update the customer details.,The page stops the save and shows the required-field validation messages for the empty customer data.,,,
+,,,Step 4,Check the form state after the validation failure.,The required fields remain highlighted and the update is not persisted.,,,
+,,,Step 5,Change the Contact Name field to a value and resubmit.,The validation error clears only for the Contact Name field and the remaining required fields remain enforced.,,,
+,Test Case,Customer cannot submit an order until terms and required consent declarations are accepted,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Tick the last scheme that has a month available to order.,The scheme is ticked and its months are ticked.,,,
+,,,Step 3,Click Next.,The Pending Order summary is shown.,,,
+,,,Step 4,Leave the terms and conditions unticked.,The terms box is unticked.,,,
+,,,Step 5,Look at SUBMIT.,SUBMIT is disabled.,,,

@@ -1,0 +1,159 @@
+{
+  "feature": "external-schemes",
+  "test_cases": [
+    {
+      "ref": "TC-027",
+      "layer": "ui",
+      "title": "View schemes card on Home opens the View Schemes page",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The View schemes card on /Home.aspx opens /SchemeList.aspx with h1 View Schemes - app/ProficiencyTestingExternalWeb/SchemeList.aspx (route /Home.aspx to /SchemeList.aspx)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "The card opens the page by postback."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Click the View schemes card under the Schemes section.",
+          "expected": "The browser navigates to the address path /SchemeList.aspx."
+        },
+        {
+          "action": "Read the main heading of the page that opened.",
+          "expected": "The h1 reads View Schemes."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Read the browser tab title.",
+          "expected": "The title reads Scheme list - Proficiency Testing."
+        }
+      ]
+    },
+    {
+      "ref": "TC-028",
+      "layer": "ui",
+      "title": "Scheme list shows the table columns and at least one scheme",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /SchemeList.aspx shows a table with the columns Scheme Code, Scheme Name, Participating and Current Contract Year, and at least one data row when schemes exist - app/ProficiencyTestingExternalWeb/SchemeList.aspx (route /SchemeList.aspx)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active.",
+        "Local data has schemes seeded. The exact number of rows is not checked.",
+        "Column data: Scheme Code; Scheme Name; Participating; Current Contract Year."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/SchemeList.aspx as a signed-in external user.",
+          "expected": "The page loads with the h1 View Schemes and no server error page is shown."
+        },
+        {
+          "action": "Read the table column headings.",
+          "expected": "The columns Scheme Code, Scheme Name, Participating and Current Contract Year are shown."
+        },
+        {
+          "action": "Look at the rows below the column headings.",
+          "expected": "At least one scheme row is shown."
+        },
+        {
+          "action": "Read the first scheme row.",
+          "expected": "The row has a value in the Scheme Code and Scheme Name columns."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still View Schemes."
+        }
+      ]
+    },
+    {
+      "ref": "TC-029",
+      "layer": "ui",
+      "title": "Scheme list keeps its heading after a reload",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /SchemeList.aspx reloads without error and keeps the h1 View Schemes and the title Scheme list - Proficiency Testing - route /SchemeList.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/SchemeList.aspx as a signed-in external user.",
+          "expected": "The page loads with the h1 View Schemes."
+        },
+        {
+          "action": "Read the browser tab title.",
+          "expected": "The title reads Scheme list - Proficiency Testing."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The page reloads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading and the table column headings again.",
+          "expected": "The h1 is still View Schemes and the four columns are still shown."
+        },
+        {
+          "action": "Look at the rows below the column headings.",
+          "expected": "At least one scheme row is still shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-030",
+      "layer": "ui",
+      "title": "Browser Back from the scheme list returns to Home",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Going back from /SchemeList.aspx returns to /Home.aspx with h1 VETQAS Proficiency Testing - route /SchemeList.aspx to /Home.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active.",
+        "The View schemes card opens the page by postback, so browser Back may re-request the home page."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Click the View schemes card.",
+          "expected": "The h1 reads View Schemes."
+        },
+        {
+          "action": "Select the browser Back button.",
+          "expected": "The browser returns to the address path /Home.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads VETQAS Proficiency Testing and no server error page is shown."
+        },
+        {
+          "action": "Look for the View schemes card under the Schemes section.",
+          "expected": "The View schemes card is still visible."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl and SchemeList.aspx only; confirm the heading, columns and title are the intended behaviour.",
+    "SchemeList.aspx line numbers are not recorded in coverage-plan.md; add file:line evidence if required.",
+    "TODO: confirm whether the sort icons on Scheme Code, Scheme Name and Current Contract Year change the row order; sorting is not covered.",
+    "TODO: confirm the message shown when no schemes exist; none observed locally."
+  ]
+}

@@ -1,0 +1,23 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,View reports card on Home opens the Reports page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Look for the View reports card under the Results section.,The View reports card is visible.,,,
+,,,Step 3,Click the View reports card.,The browser navigates to the address path /Tabulations.aspx.,,,
+,,,Step 4,Read the main heading of the page that opened.,The h1 reads Reports.,,,
+,,,Step 5,Read the browser tab title.,The title reads Tabulations - Proficiency Testing and no server error page is shown.,,,
+,Test Case,Reports page shows the search form and the empty-state message,Step 1,Open http://localhost:1688/Tabulations.aspx as a signed-in external user.,The page loads with the h1 Reports and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the labels of the search form.,"The labels Distribution Reference, Scheme Code and Scheme Name are shown.",,,
+,,,Step 3,Look for the search buttons.,The SEARCH button and the SHOW ALL button are visible.,,,
+,,,Step 4,Read the message below the search form.,The message reads There are no distributions to display.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Searching reports with an unknown reference keeps the empty result and SHOW ALL restores the list,Step 1,Open http://localhost:1688/Tabulations.aspx as a signed-in external user.,The page loads with the h1 Reports.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Type ZZ-NO-SUCH-REF in the Distribution Reference box.,The box shows ZZ-NO-SUCH-REF.,,,
+,,,Step 3,Click the SEARCH button.,The page reloads with the h1 Reports and no server error page is shown.,,,
+,,,Step 4,Read the message below the search form.,The message reads There are no distributions to display.,,,
+,,,Step 5,Click the SHOW ALL button.,The page reloads with the h1 Reports and the search form is still shown.,,,
+,,,Step 6,Read the Distribution Reference box and the message.,The Distribution Reference box is cleared or empty and the message reads There are no distributions to display.,,,
+,Test Case,Reports page keeps its heading after a reload and Back returns to Home,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Click the View reports card.,The h1 reads Reports.,,,
+,,,Step 3,Reload the page.,The page reloads and no server error page is shown.,,,
+,,,Step 4,Read the main heading of the page.,The h1 is still Reports.,,,
+,,,Step 5,Select the browser Back button.,The browser returns to the address path /Home.aspx.,,,
+,,,Step 6,Read the main heading of the page.,The h1 reads VETQAS Proficiency Testing and no server error page is shown.,,,

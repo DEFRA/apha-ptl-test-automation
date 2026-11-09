@@ -1,0 +1,235 @@
+{
+  "feature": "admin-remaining-functions",
+  "test_cases": [
+    {
+      "ref": "TC-137",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A customer's Participants and Contracts lists open from the Customers list",
+      "acs": [
+        "DERIVED: Each customer row links to its Participants and Contracts lists - /Contracts Admin/CustomerList.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers.",
+          "expected": "The Customers list opens."
+        },
+        {
+          "action": "Check the row has the link of the row.",
+          "expected": "The link is shown."
+        },
+        {
+          "action": "Click the link of the row.",
+          "expected": "The page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads without a server error."
+        },
+        {
+          "action": "Check the page heading.",
+          "expected": "The heading is the one of the row."
+        }
+      ]
+    },
+    {
+      "ref": "TC-138",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "The customer pages link to each other",
+      "acs": [
+        "DERIVED: The Participants page has Go to Contracts Page and Go to Customer Details buttons - ParticipantList.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers.",
+          "expected": "The Customers list opens."
+        },
+        {
+          "action": "Click Participants on the first customer.",
+          "expected": "The Participants page opens."
+        },
+        {
+          "action": "Check the buttons on the page.",
+          "expected": "The button of the row is shown."
+        },
+        {
+          "action": "Click the button of the row.",
+          "expected": "The target page opens without a server error."
+        },
+        {
+          "action": "Check the page heading.",
+          "expected": "The heading is the one of the row."
+        }
+      ]
+    },
+    {
+      "ref": "TC-139",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Scheme History opens from the Schemes list",
+      "acs": [
+        "DERIVED: The History column of the Schemes list links to Scheme History - SchemeList.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes.",
+          "expected": "The Schemes list opens."
+        },
+        {
+          "action": "Find the History column.",
+          "expected": "A View link is shown on each row."
+        },
+        {
+          "action": "Click View on the first scheme.",
+          "expected": "The Scheme History page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads without a server error."
+        },
+        {
+          "action": "Check the page heading.",
+          "expected": "The heading is Scheme History."
+        }
+      ]
+    },
+    {
+      "ref": "TC-140",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The test only looks at the page. It never clicks Generate Invoices or Reset All Invoices."
+      ],
+      "title": "Invoice Generation shows its Generate Invoices button for an admin with the role",
+      "acs": [
+        "DERIVED: Invoice Generation is available to users with the Generate Invoices role - InvoiceGeneration.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration > Manage Roles and tick Generate Invoices for yourself.",
+          "expected": "The role is saved."
+        },
+        {
+          "action": "Open Home and Manage Contracts.",
+          "expected": "The menu lists Invoice Generation."
+        },
+        {
+          "action": "Click Invoice Generation.",
+          "expected": "The Invoice Generation page opens."
+        },
+        {
+          "action": "Check the buttons on the page.",
+          "expected": "A Generate Invoices button is shown."
+        },
+        {
+          "action": "Do not click Generate Invoices; untick the role again.",
+          "expected": "The role is removed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-141",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "A customer cannot be deleted, so the test leaves it inactive."
+      ],
+      "title": "A new customer with every required field is saved",
+      "acs": [
+        "DERIVED: A customer can be created when every required field is filled - Customer.aspx.vb ButtonSave_Click"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers > Create Customer.",
+          "expected": "The empty Create Customer form opens."
+        },
+        {
+          "action": "Fill the required fields with synthetic values and choose a Customer Type and both Countries.",
+          "expected": "The fields show the values."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "An alert says Customer details saved successfully."
+        },
+        {
+          "action": "Check the buttons after the save.",
+          "expected": "Go to Participants Page and Go to Contracts Page appear."
+        },
+        {
+          "action": "Untick Active and Save again.",
+          "expected": "The test customer is set inactive."
+        }
+      ]
+    },
+    {
+      "ref": "TC-142",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "This sends one label request to the configured printer service."
+      ],
+      "title": "Printing a group address label is answered by the page",
+      "acs": [
+        "DERIVED: Print on Group Address Labels reports the result of the label request - GroupAddress.aspx.vb LinkButtonPrint_Click"
+      ],
+      "steps": [
+        {
+          "action": "Open Distributions > Group Address Labels.",
+          "expected": "The list of group addresses opens."
+        },
+        {
+          "action": "Check the Print column.",
+          "expected": "A Print link is shown on each row."
+        },
+        {
+          "action": "Click Print on the first row.",
+          "expected": "The page reloads."
+        },
+        {
+          "action": "Read the message above the list.",
+          "expected": "It says Label sent to Printer or Error Printing Label."
+        },
+        {
+          "action": "Check the page after the print.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source and a read-only probe; confirm they are the intended behaviour.",
+    "TODO: a Create Scheme, Create Participant and Create Contract scenario needs a delete or restore path; none exists in the application, so they are not automated.",
+    "TODO: Create User and Remove User need a directory lookup; Manage Viewers does not load (DEF-010)."
+  ]
+}

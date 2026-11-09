@@ -1,0 +1,277 @@
+{
+  "feature": "admin-settings-functions",
+  "test_cases": [
+    {
+      "ref": "TC-130",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A settings value is changed, kept after reloading and restored",
+      "acs": [
+        "DERIVED: Values on External Site Management, Administration Charges, Postage Pricing Plan and Internal Test Consultant Department can be changed and are kept - app/ProficiencyTestingWeb/Admin/*.aspx.vb"
+      ],
+      "steps": [
+        {
+          "action": "Open the settings page of the row (System Administration menu).",
+          "expected": "The page opens with its heading."
+        },
+        {
+          "action": "Change the field of the row to the new value.",
+          "expected": "The field shows the new value."
+        },
+        {
+          "action": "Save (page Save button, row Save link, or leave the box for Administration Charges).",
+          "expected": "The save completes without an error page."
+        },
+        {
+          "action": "Open the page again and read the field.",
+          "expected": "The field shows the new value."
+        },
+        {
+          "action": "Put the original value back.",
+          "expected": "The original value is stored."
+        }
+      ]
+    },
+    {
+      "ref": "TC-131",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "An invalid settings value is not kept",
+      "acs": [
+        "DERIVED: Email, price and charge fields reject invalid or empty values - ValidatorEmailRegEx, ValidatorUKPriceRegEx, AdministrationChargeCurrency RegExValidator"
+      ],
+      "steps": [
+        {
+          "action": "Open the settings page of the row.",
+          "expected": "The page opens with its heading."
+        },
+        {
+          "action": "Note the current value of the field.",
+          "expected": "The original value is visible."
+        },
+        {
+          "action": "Type the invalid or empty value in the field.",
+          "expected": "A validation indicator is shown or the value is rejected."
+        },
+        {
+          "action": "Try to save.",
+          "expected": "The save does not complete."
+        },
+        {
+          "action": "Open the page again and read the field.",
+          "expected": "The field shows its original value."
+        }
+      ]
+    },
+    {
+      "ref": "TC-132",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Cancel discards a typed settings value",
+      "acs": [
+        "DERIVED: Cancel leaves stored settings unchanged - ButtonCancel and LinkButtonCancel on the settings pages"
+      ],
+      "steps": [
+        {
+          "action": "Open the settings page of the row.",
+          "expected": "The page opens with its heading."
+        },
+        {
+          "action": "Note the current value of the field.",
+          "expected": "The original value is visible."
+        },
+        {
+          "action": "Type a new value in the field.",
+          "expected": "The field shows the typed value."
+        },
+        {
+          "action": "Click Cancel.",
+          "expected": "The edit is discarded."
+        },
+        {
+          "action": "Open the page again and read the field.",
+          "expected": "The field shows its original value."
+        }
+      ]
+    },
+    {
+      "ref": "TC-133",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Distributions search finds nothing for an unknown value",
+      "acs": [
+        "DERIVED: Searching Distributions by Sample Number with an unknown value lists no results - /Distributions/Search.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Distributions > Search.",
+          "expected": "The search page opens with its tabs."
+        },
+        {
+          "action": "Open the Sample Number tab.",
+          "expected": "The Sample Number box and Search button are shown."
+        },
+        {
+          "action": "Type ZZ-NO-SUCH-VALUE in the Sample Number box.",
+          "expected": "The box accepts the text."
+        },
+        {
+          "action": "Click Search.",
+          "expected": "The search completes without a server error."
+        },
+        {
+          "action": "Read the result area.",
+          "expected": "The page shows There are no Results to Display."
+        }
+      ]
+    },
+    {
+      "ref": "TC-134",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Participant Address Labels search finds nothing for an unknown value and limits input length",
+      "acs": [
+        "DERIVED: Lab Code allows 8 characters, Lab Name and Contact Name 50 - /Distributions/ParticipantAddress.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Distributions > Participant Address Labels.",
+          "expected": "The page opens with the Lab Code, Lab Name and Contact Name search boxes."
+        },
+        {
+          "action": "Check the maximum length of the search box of the row.",
+          "expected": "It accepts at most 8 (Lab Code) or 50 (Lab Name, Contact Name) characters."
+        },
+        {
+          "action": "Type ZZ-NOSUCH in that search box.",
+          "expected": "The box accepts the text."
+        },
+        {
+          "action": "Click Search.",
+          "expected": "The search completes without a server error."
+        },
+        {
+          "action": "Check the page after the search.",
+          "expected": "The Participant Address Labels page is still shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-135",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Exports menu links open their page without an error",
+      "acs": [
+        "DERIVED: Each Export link opens its page - /Contracts Admin/ExportMenu.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Exports.",
+          "expected": "The Exports menu opens with four export links."
+        },
+        {
+          "action": "Click the export link of the row.",
+          "expected": "The export page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page content.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Check the page heading.",
+          "expected": "A heading is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-136",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity). The database has a backup.",
+        "Cleanup: every changed value is put back to its original value after the test, even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A tabulation waiting for sign-off can be opened from Results Sign-off",
+      "acs": [
+        "DERIVED: Each waiting tabulation has a View link - /Results Sign-off/SignOff.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Results Sign-off.",
+          "expected": "The list of tabulations ready to be signed off is shown."
+        },
+        {
+          "action": "Check the list has a View link.",
+          "expected": "At least one View link is shown."
+        },
+        {
+          "action": "Click the first View link.",
+          "expected": "The tabulation page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page content.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source and a read-only probe; confirm they are the intended behaviour.",
+    "TODO: expected validation message text for invalid email, price and charge values (taken from resource files, not asserted).",
+    "TODO: a known Lab Code, Lab Name and Contact Name for a positive Participant Address Labels search (no seeded participant is known).",
+    "TODO: Group Address Labels Print, Renew pricing plan, Create Scheme and Create Customer create or print real data and are not automated."
+  ]
+}

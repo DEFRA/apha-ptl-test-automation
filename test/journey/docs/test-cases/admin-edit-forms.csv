@@ -1,0 +1,72 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,"A field of an existing record is changed, kept after reloading and restored",Step 1,Open the first record of the kind of the row from its list.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the current value of the field of the row.,The original value is known.,,,
+,,,Step 3,Enter the value of the row and click Save.,The record is saved.,,,
+,,,Step 4,Reload the page and read the field.,The field shows the new value.,,,
+,,,Step 5,Put the original value back and save.,The original value is stored.,,,
+,Test Case,An invalid value in an existing record blocks the save,Step 1,Open the first record of the kind of the row from its list.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Enter the invalid or empty value in the field of the row.,The field shows the value.,,,
+,,,Step 3,Click Save.,A validation indicator is shown.,,,
+,,,Step 4,Check that the record was not saved.,The page stays on the form.,,,
+,,,Step 5,Check the page after the action.,No server error page is shown.,,,
+,Test Case,A customer search by another field lists matches or none,Step 1,Open Manage Contracts > Search.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type the value of the row in the field of the row.,The box accepts the text.,,,
+,,,Step 3,Click Search.,The search completes.,,,
+,,,Step 4,Read the result area.,"It lists matches, or says There are no Results to Display, as in the row.",,,
+,,,Step 5,Check the page after the action.,No server error page is shown.,,,
+,Test Case,"A participant search by lab code, lab name or contact lists matches or none",Step 1,Open Manage Contracts > Search.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the Participants tab.,The participant search boxes are shown.,,,
+,,,Step 3,Type the value of the row in the participant field of the row.,The box accepts the text.,,,
+,,,Step 4,Click Search on the participant tab.,The search completes.,,,
+,,,Step 5,Read the result area.,"It lists matches, or says There are no Results to Display, as in the row.",,,
+,,,Step 6,Check the page after the action.,No server error page is shown.,,,
+,Test Case,A viewer is added to a participant,Step 1,Open Manage Contracts > Customers and the Viewers page of the first participant.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the first possible viewer.,The viewer is highlighted.,,,
+,,,Step 3,Click Add.,The viewer moves to the selected list.,,,
+,,,Step 4,Click Save.,The change is saved.,,,
+,,,Step 5,Count the selected viewers.,There is one more than before.,,,
+,Test Case,A customer is made inactive and shows its inactive date,Step 1,Open Manage Contracts > Customers > Create Customer.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Fill every required field with synthetic values and click Save.,The customer is saved.,,,
+,,,Step 3,Untick Active.,The inactive date appears.,,,
+,,,Step 4,Click Save.,The change is saved.,,,
+,,,Step 5,Read the Inactive date.,It is not empty.,,,
+,Test Case,Copying the contact details fills the invoice details,Step 1,Open Manage Contracts > Customers > Create Customer.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Fill every required contact field.,The fields show the values.,,,
+,,,Step 3,Click Copy from Customer Contact.,The invoice fields are filled.,,,
+,,,Step 4,Read the invoice email.,It shows the contact email.,,,
+,,,Step 5,Do not save.,No customer is created.,,,
+,Test Case,An address label is printed from a customer or participant,Step 1,Open the first record of the kind of the row from its list.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the button of the row.,The page reloads.,,,
+,,,Step 3,Read the message above the form.,It says Label sent to Printer or Error Printing Label.,,,
+,,,Step 4,Check the page.,No server error page is shown.,,,
+,,,Step 5,Check the record.,The record is unchanged.,,,
+,Test Case,A contract item opens its View / Edit page,Step 1,Open Manage Contracts > Customers and the Contracts list of the first customer.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Contract Items on the first contract.,The contract items page opens.,,,
+,,,Step 3,Click View / Edit on the first item.,The page starts to open.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the address.,The page is ParticipantScheme.aspx with no server error.,,,
+,Test Case,The Renew link of a scheme opens the renewal form,Step 1,Open Manage Schemes > Schemes.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Renew on the first scheme.,The page starts to open.,,,
+,,,Step 3,Wait for the page to load.,The page loads.,,,
+,,,Step 4,Check the address.,The page is Scheme.aspx.,,,
+,,,Step 5,Do not save.,No scheme is created.,,,
+,Test Case,The Invoice Generation page actions are pressed,Step 1,Open Manage Roles and tick Generate Invoices for yourself.,The role is saved.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open Home and Manage Contracts.,Invoice Generation is listed.,,,
+,,,Step 3,Click Invoice Generation.,The page opens.,,,
+,,,Step 4,Click the button of the row.,The action runs.,,,
+,,,Step 5,Check the page after the action.,No server error page is shown.,,,
+,Test Case,Draw tabulation is pressed on a tabulation waiting for sign-off,Step 1,Open Results Sign-off.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Expand the first row and click View.,The tabulation page opens.,,,
+,,,Step 3,Click Draw tabulation.,The tabulation is drawn.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page after the action.,No server error page is shown.,,,
+,Test Case,A consultant is made inactive and active again,Step 1,Open System Administration > Internal Test Consultant Department.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the status of the first consultant.,The status is known.,,,
+,,,Step 3,Click the status link.,The status changes.,,,
+,,,Step 4,Read the status again.,It differs from before.,,,
+,,,Step 5,Click the status link again.,The original status is restored.,,,
+,Test Case,"The two external site messages are changed, kept after reloading and restored",Step 1,Open System Administration > External Site Management.,The page opens without an error.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Change the Further Information and Important Message texts.,The editors show the new text.,,,
+,,,Step 3,Click Save.,The messages are saved.,,,
+,,,Step 4,Open the page again.,The page opens.,,,
+,,,Step 5,Read both editors.,They show the new text; the originals are put back afterwards.,,,

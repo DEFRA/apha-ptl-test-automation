@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A participant is created for a customer,Step 1,Open Manage Contracts > Customers and click Participants on the first customer.,The Participants list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Create Participant form.,An empty Participant form opens for that customer.,,,
+,,,Step 3,"Fill Lab Code, Lab Name, contact, address, country, telephone, email and Lab Type with synthetic values.",The fields show the values.,,,
+,,,Step 4,Click Save.,The participant is saved.,,,
+,,,Step 5,Check the page after the save.,No server error page is shown.,,,
+,Test Case,A contract is created for a customer,Step 1,Open Manage Contracts > Customers and click Contracts on the first customer.,The Contracts list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Create Contract form.,An empty Contract form opens for that customer.,,,
+,,,Step 3,Enter a UTFT number and choose a Year.,The fields show the values.,,,
+,,,Step 4,Click Save.,The contract is saved.,,,
+,,,Step 5,Check the page after the save.,No server error page is shown.,,,
+,Test Case,A tabulation is signed off or rejected,Step 1,Open Results Sign-off.,The list of tabulations opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Expand the first row and click View.,The tabulation page opens.,,,
+,,,Step 3,Click the action of the row (Authorise or Reject).,The action is applied.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page after the action.,No server error page is shown.,,,

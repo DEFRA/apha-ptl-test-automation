@@ -1,0 +1,46 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A customer's participant and contract rows open their detail pages,Step 1,Open Manage Contracts > Customers.,The Customers list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the list link of the row on the first customer.,The Participants or Contracts list opens.,,,
+,,,Step 3,Click the row link of the row on the first line.,The target page starts to open.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page address and content.,The address is the one of the row and no server error page is shown.,,,
+,Test Case,A contract can be exported as a document,Step 1,Open Manage Contracts > Customers.,The Customers list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Contracts on the first customer.,The Contracts list opens.,,,
+,,,Step 3,Click the export link of the row on the first contract.,The export starts.,,,
+,,,Step 4,Wait for the download.,A file is downloaded.,,,
+,,,Step 5,Check the file name.,The file has a name.,,,
+,Test Case,The tabulation sign-off page shows its actions,Step 1,Open Results Sign-off.,The list of tabulations ready for sign-off opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Expand the first row.,Its View link is shown.,,,
+,,,Step 3,Click View.,The tabulation page opens.,,,
+,,,Step 4,Check the buttons.,The button of the row is shown.,,,
+,,,Step 5,Do not click Authorise or Reject.,Nothing is signed off.,,,
+,Test Case,Cancel on the tabulation sign-off page returns to Results Sign-off,Step 1,Open Results Sign-off.,The list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Expand the first row and click View.,The tabulation page opens.,,,
+,,,Step 3,Click Cancel.,The page changes.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the heading.,The heading is Results Sign-off.,,,
+,Test Case,A directory user is created and then removed,Step 1,Open System Administration > Create User.,The search page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Search for the configured directory user (E2E_DIRECTORY_USER).,The user is listed.,,,
+,,,Step 3,"Choose the user, enter a department and click Create User.",Setup Roles is offered.,,,
+,,,Step 4,"Open Remove User, choose the same user and click Remove User.",The user is removed.,,,
+,,,Step 5,Check the page after the removal.,Remove Another is offered.,,,
+,Test Case,A new scheme for the current year is created with its required fields,Step 1,Open Manage Schemes > Schemes.,The Schemes list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Create Scheme for Current Year.,The empty scheme form opens.,,,
+,,,Step 3,Fill the required fields and choose a value in each required list.,The fields show the values.,,,
+,,,Step 4,Click Save.,The scheme is saved.,,,
+,,,Step 5,Check the page after the save.,No server error page is shown.,,,
+,Test Case,"A customer's notes are changed, kept after reloading and restored",Step 1,Open Manage Contracts > Customers and open the first customer.,Customer Details opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Change Notes to a unique value and click Save.,The customer is saved.,,,
+,,,Step 3,Reload the page.,The page reloads.,,,
+,,,Step 4,Read Notes.,It shows the new value.,,,
+,,,Step 5,Put the original notes back and save.,The original notes are stored.,,,
+,Test Case,A pricing plan is renewed for the next financial year,Step 1,Open System Administration and the pricing plan page of the row.,The page opens with a Renew button for the next year.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the year in the Renew button.,The year is known.,,,
+,,,Step 3,Click Renew.,The plan is renewed.,,,
+,,,Step 4,Open the financial year list.,The list is shown.,,,
+,,,Step 5,Look for the renewed year.,The year is listed.,,,
+,Test Case,Participant Address Labels search by a partial value lists matches,Step 1,Open Distributions > Participant Address Labels.,The page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type the value of the row in the search box of the row.,The box accepts the text.,,,
+,,,Step 3,Click Search.,The search completes.,,,
+,,,Step 4,Read the result area.,It does not say There are no Results to Display.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,

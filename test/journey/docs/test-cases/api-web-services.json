@@ -1,0 +1,86 @@
+{
+  "feature": "api-web-services",
+  "test_cases": [
+    {
+      "ref": "TC-079",
+      "layer": "api",
+      "title": "Every web service publishes a WSDL description",
+      "area_path": "Proficiency Testing\\Web Services",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each .asmx service returns a WSDL document at ?WSDL - 28 services (survey 2026-11-02)"
+      ],
+      "assumptions": [
+        "The web services run at http://localhost:1935 and need no sign-in locally.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 28 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Send GET to http://localhost:1935/<service>?WSDL for the service in the row.",
+          "expected": "The response status is 200."
+        },
+        {
+          "action": "Read the response body.",
+          "expected": "The body is an XML document."
+        },
+        {
+          "action": "Look for the wsdl:definitions element.",
+          "expected": "The element is present."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every service publishes a description."
+        },
+        {
+          "action": "Check the response for an error page.",
+          "expected": "No error page is returned."
+        }
+      ]
+    },
+    {
+      "ref": "TC-080",
+      "layer": "api",
+      "title": "Every web service description lists its operations",
+      "area_path": "Proficiency Testing\\Web Services",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each service description lists the operations recorded by the survey - 43 operations"
+      ],
+      "assumptions": [
+        "The web services run at http://localhost:1935 and need no sign-in locally.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 43 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Send GET to http://localhost:1935/<service>?WSDL for the service in the row.",
+          "expected": "The response status is 200."
+        },
+        {
+          "action": "Read the wsdl:portType operations.",
+          "expected": "The operation list is present."
+        },
+        {
+          "action": "Look for the operation named in the row.",
+          "expected": "The operation is listed."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every operation is listed."
+        },
+        {
+          "action": "Check the response for an error page.",
+          "expected": "No error page is returned."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from a survey of the running apps and the page source; confirm the headings and messages are the intended behaviour."
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "feature": "admin-home-menu",
+  "test_cases": [
+    {
+      "ref": "TC-018",
+      "layer": "ui",
+      "title": "Admin home page shows the Home heading and the menu links",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /home.aspx shows h1 Home and the links Home, Help, System Administration, Manage Contracts, Manage Schemes, Distributions, Test Consultant, Assessor, Results Sign-off and System information - route /home.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Menu link data: Home; Help; System Administration; Manage Contracts; Manage Schemes; Distributions; Test Consultant; Assessor; Results Sign-off; System information."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx as a signed-in admin user.",
+          "expected": "The page loads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Home."
+        },
+        {
+          "action": "Look for the Home and Help links in the menu.",
+          "expected": "The links Home and Help are visible."
+        },
+        {
+          "action": "Look for the System Administration, Manage Contracts and Manage Schemes links in the menu.",
+          "expected": "The links System Administration, Manage Contracts and Manage Schemes are visible."
+        },
+        {
+          "action": "Look for the Distributions, Test Consultant, Assessor and Results Sign-off links in the menu.",
+          "expected": "The links Distributions, Test Consultant, Assessor and Results Sign-off are visible."
+        },
+        {
+          "action": "Look for the System information link in the menu without selecting it.",
+          "expected": "The System information link is visible and the h1 is still Home."
+        }
+      ]
+    },
+    {
+      "ref": "TC-019",
+      "layer": "ui",
+      "title": "Each menu link opens its menu page without an error page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each menu link on /home.aspx opens its destination page with the stated h1 and no server error page - routes listed in the data set"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Data set (link -> route -> h1): System Administration -> /Admin/MenuAdmin.aspx -> System Administration; Manage Contracts -> /Contracts Admin/MenuContracts.aspx -> Manage Contracts; Manage Schemes -> /Scheme Admin/MenuSchemes.aspx -> Manage Schemes; Distributions -> /Distributions/MenuDistributions.aspx -> Distributions; Test Consultant -> /Test Consultant/MenuTestConsultants.aspx -> Test Consultant; Assessor -> /Assessor/MenuAssessor.aspx -> Assessor; Results Sign-off -> /Results Sign-off/SignOff.aspx -> Results Sign-off.",
+        "Links on each destination page are not followed.",
+        "Representative sample: one row stands for the 7 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx as a signed-in admin user.",
+          "expected": "The page loads with the h1 Home."
+        },
+        {
+          "action": "Click the System Administration link, then read the main heading.",
+          "expected": "The address path is /Admin/MenuAdmin.aspx, the h1 reads System Administration and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button, then click the Manage Contracts link and read the main heading.",
+          "expected": "The address path is /Contracts Admin/MenuContracts.aspx, the h1 reads Manage Contracts and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button, then click the Manage Schemes link and read the main heading.",
+          "expected": "The address path is /Scheme Admin/MenuSchemes.aspx, the h1 reads Manage Schemes and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button, then click the Distributions link and read the main heading.",
+          "expected": "The address path is /Distributions/MenuDistributions.aspx, the h1 reads Distributions and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button, then click the Test Consultant link and read the main heading.",
+          "expected": "The address path is /Test Consultant/MenuTestConsultants.aspx, the h1 reads Test Consultant and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button, then click the Assessor link and read the main heading.",
+          "expected": "The address path is /Assessor/MenuAssessor.aspx, the h1 reads Assessor and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button, then click the Results Sign-off link and read the main heading.",
+          "expected": "The address path is /Results Sign-off/SignOff.aspx, the h1 reads Results Sign-off and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-020",
+      "layer": "ui",
+      "title": "Help link points to the quick reference guide",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The Help link on /home.aspx points to QuickReferenceGuide.pdf - route /home.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "The link target is inspected only; whether the PDF opens in a new tab is not asserted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx as a signed-in admin user.",
+          "expected": "The page loads with the h1 Home."
+        },
+        {
+          "action": "Locate the Help link in the menu.",
+          "expected": "The Help link is visible."
+        },
+        {
+          "action": "Inspect the address (href) of the Help link without opening it.",
+          "expected": "The href contains QuickReferenceGuide.pdf."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Confirm the current page is still the home page.",
+          "expected": "The address path is /home.aspx and the h1 is still Home."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl only; confirm menu names and destination headings are the intended behaviour.",
+    "TODO: the System information link is a postback and its result is not recorded in the facts; it is not followed.",
+    "TODO: confirm whether the Help PDF opens in a new tab and its full address (facts give the file name only).",
+    "No source file:line is recorded in coverage-plan.md for these pages; evidence is by route.",
+    "Confirm how spaces in routes (for example /Contracts Admin/) are written in the real address (%20 or space)."
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "feature": "customer-update",
+  "test_cases": [
+    {
+      "ref": "TC-095",
+      "layer": "ui",
+      "title": "Submitting a changed customer contact name locks the form",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: After UPDATE DETAILS with a changed contact name the customer details form is locked until an admin reviews it (EditCustomerDetails/EditParticipantDetails.aspx.vb DisableForm)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user, linked by data/seed/apply.sql to the participant with Lab Code 1300 of customer QAL/0432. The admin site runs at http://localhost:1946 with Windows identity dt2\\ns000134.",
+        "Cleanup: the test declines any pending update of the seeded customer or participant in a separate admin browser, even when it fails, so the form is never left locked.",
+        "Creates a pending update; it is declined by the cleanup."
+      ],
+      "steps": [
+        {
+          "action": "Make sure no pending customer update exists, then open the customer details page.",
+          "expected": "The customer details form is editable."
+        },
+        {
+          "action": "Type a unique value in Contact Name and tab out of the box.",
+          "expected": "UPDATE DETAILS becomes enabled."
+        },
+        {
+          "action": "Click UPDATE DETAILS.",
+          "expected": "The page reloads."
+        },
+        {
+          "action": "Look at the form fields.",
+          "expected": "Contact Name and the other fields are disabled."
+        },
+        {
+          "action": "Look at UPDATE DETAILS.",
+          "expected": "The button is disabled."
+        }
+      ]
+    },
+    {
+      "ref": "TC-096",
+      "layer": "ui",
+      "title": "An admin declines a pending customer update and the customer can edit again",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Decline on PendingCustomerUpdateDetails.aspx discards the pending update and unlocks the customer form (Customer updates declined successfully)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user, linked by data/seed/apply.sql to the participant with Lab Code 1300 of customer QAL/0432. The admin site runs at http://localhost:1946 with Windows identity dt2\\ns000134.",
+        "Cleanup: the test declines any pending update of the seeded customer or participant in a separate admin browser, even when it fails, so the form is never left locked.",
+        "Creates a pending update and declines it."
+      ],
+      "steps": [
+        {
+          "action": "Submit a changed Contact Name as the customer.",
+          "expected": "The form is locked."
+        },
+        {
+          "action": "As admin open /Contracts Admin/ReviewPendingCustomerUpdates.aspx and find the QAL/0432 row.",
+          "expected": "The pending update is listed."
+        },
+        {
+          "action": "Click Details, then Decline.",
+          "expected": "A message \"Customer updates declined successfully\" is shown and the list reopens."
+        },
+        {
+          "action": "As the customer open the details page again.",
+          "expected": "The form is editable."
+        },
+        {
+          "action": "Read Contact Name.",
+          "expected": "It shows the original value, not the submitted one."
+        }
+      ]
+    },
+    {
+      "ref": "TC-097",
+      "layer": "ui",
+      "title": "An admin approves a pending customer update that changes nothing",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Approve on PendingCustomerUpdateDetails.aspx applies the pending update and unlocks the customer form (ButtonApprove_Click)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user, linked by data/seed/apply.sql to the participant with Lab Code 1300 of customer QAL/0432. The admin site runs at http://localhost:1946 with Windows identity dt2\\ns000134.",
+        "Cleanup: the test declines any pending update of the seeded customer or participant in a separate admin browser, even when it fails, so the form is never left locked.",
+        "The submitted values equal the current values, so approving leaves the data unchanged."
+      ],
+      "steps": [
+        {
+          "action": "Submit the unchanged Contact Name as the customer (focus out enables the button).",
+          "expected": "The form is locked."
+        },
+        {
+          "action": "As admin open /Contracts Admin/ReviewPendingCustomerUpdates.aspx and find the QAL/0432 row.",
+          "expected": "The pending update is listed."
+        },
+        {
+          "action": "Click Details, then Approve.",
+          "expected": "The update is applied and the list reopens."
+        },
+        {
+          "action": "As the customer open the details page again.",
+          "expected": "The form is editable."
+        },
+        {
+          "action": "Read Contact Name.",
+          "expected": "It still shows the original value."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the source code and local probes; confirm they are the intended behaviour.",
+    "TODO: Approve with changed values is not automated because it would alter customer data."
+  ]
+}

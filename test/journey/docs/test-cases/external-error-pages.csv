@@ -1,0 +1,21 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Page not found error page shows its heading,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Open http://localhost:1688/ErrorPageNotFound.aspx.,The page loads and the address path is /ErrorPageNotFound.aspx.,,,
+,,,Step 3,Read the main heading of the page.,The h1 reads Page not found.,,,
+,,,Step 4,Reload the page.,The h1 still reads Page not found.,,,
+,,,Step 5,Check the page for a server error message.,No unhandled server error page is shown; only the Page not found page is displayed.,,,
+,Test Case,Generic error page shows its heading,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Open http://localhost:1688/ErrorGeneric.aspx.,The page loads and the address path is /ErrorGeneric.aspx.,,,
+,,,Step 3,Read the main heading of the page.,The h1 reads Error.,,,
+,,,Step 4,Reload the page.,The h1 still reads Error.,,,
+,,,Step 5,Check the page for an unhandled server error message.,No unhandled server error page is shown; only the Error page is displayed.,,,
+,Test Case,User inactive error page shows the Invalid Permissions heading,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Open http://localhost:1688/ErrorUserInactive.aspx.,The page loads and the address path is /ErrorUserInactive.aspx.,,,
+,,,Step 3,Read the main heading of the page.,The h1 reads Invalid Permissions.,,,
+,,,Step 4,Reload the page.,The h1 still reads Invalid Permissions.,,,
+,,,Step 5,Check the page for an unhandled server error message.,No unhandled server error page is shown; only the Invalid Permissions page is displayed.,,,
+,Test Case,Unknown route returns HTTP 404,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Open http://localhost:1688/DoesNotExist.aspx.,The server responds with HTTP status 404.,,,
+,,,Step 3,Check the response status code in the browser developer tools network tab.,The status code for /DoesNotExist.aspx is 404 and not 200 or 500.,,,
+,,,Step 4,Check the page content for a server error message.,No HTTP 500 server error page is shown.,,,
+,,,Step 5,Open http://localhost:1688/Home.aspx again.,"The home page loads with the h1 VETQAS Proficiency Testing, so the site still works after the 404.",,,

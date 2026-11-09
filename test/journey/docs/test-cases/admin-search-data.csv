@@ -1,0 +1,11 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A customer search by a known QAL number lists that customer,Step 1,"Open http://localhost:1946/home.aspx, click Manage Contracts then Search.",The Search page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type the QAL number of the row in the QAL Number box.,The box shows the QAL number.,,,
+,,,Step 3,Click Search.,The page reloads with the h1 Search.,,,
+,,,Step 4,Read the results.,A row for the QAL number is listed.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,A scheme search by a known name lists that scheme,Step 1,"Open http://localhost:1946/home.aspx, click Scheme Administration then Search.",The Search page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type the scheme name of the row in the scheme name box.,The box shows the name.,,,
+,,,Step 3,Click Search.,The page reloads with the h1 Search.,,,
+,,,Step 4,Read the results.,A row for the scheme is listed.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,

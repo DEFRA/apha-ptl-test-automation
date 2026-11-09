@@ -1,0 +1,236 @@
+{
+  "feature": "admin-customer-scheme-lists",
+  "test_cases": [
+    {
+      "ref": "TC-063",
+      "layer": "ui",
+      "title": "Customers list shows its columns, links and status filter options",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Customers list has the columns QAL Number, Name, Organisation, Details, Participants and Contracts and a status filter - /Contracts Admin/CustomerList.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/CustomerList.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Customers and no server error page is shown."
+        },
+        {
+          "action": "Read the column headings of the table.",
+          "expected": "The columns QAL Number, Name, Organisation, Details, Participants and Contracts are shown."
+        },
+        {
+          "action": "Read the links above the table.",
+          "expected": "The links Create Customer, Review Pending Customer Updates, Review Pending Participant Updates and Review Pending Orders are shown. Do not click them."
+        },
+        {
+          "action": "Open the status dropdown.",
+          "expected": "The options Active Only, Inactive Only and All are listed."
+        },
+        {
+          "action": "Look for the Filter button.",
+          "expected": "The Filter button is visible."
+        }
+      ]
+    },
+    {
+      "ref": "TC-064",
+      "layer": "ui",
+      "title": "Filtering the Customers list by Inactive Only and All keeps the page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The status filter reloads the Customers list - /Contracts Admin/CustomerList.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The number of rows after filtering is not asserted.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/CustomerList.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Customers and no server error page is shown."
+        },
+        {
+          "action": "Select Inactive Only in the status dropdown and click Filter.",
+          "expected": "The page reloads with the h1 Customers and no server error page is shown."
+        },
+        {
+          "action": "Read the column headings of the table.",
+          "expected": "The columns QAL Number, Name, Organisation, Details, Participants and Contracts are still shown."
+        },
+        {
+          "action": "Select All in the status dropdown and click Filter.",
+          "expected": "The page reloads with the h1 Customers and no server error page is shown."
+        },
+        {
+          "action": "Look at the table.",
+          "expected": "At least one customer row is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-065",
+      "layer": "ui",
+      "title": "Review Pending Customer Updates link opens its page from Customers",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Customers links to Review Pending Customer Updates - /Contracts Admin/CustomerList.aspx and ReviewPendingCustomerUpdates.aspx"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Only the heading is asserted; nothing on the review page is selected.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/CustomerList.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Customers and no server error page is shown."
+        },
+        {
+          "action": "Look for the Review Pending Customer Updates link.",
+          "expected": "The link is visible."
+        },
+        {
+          "action": "Click the Review Pending Customer Updates link.",
+          "expected": "The browser opens the review page."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Review Pending Customer Updates."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Review Pending Customer Updates."
+        }
+      ]
+    },
+    {
+      "ref": "TC-066",
+      "layer": "ui",
+      "title": "Schemes list shows its columns and links",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Schemes list has the columns Identifier, Name, Current Year, Next Year and History and the create links - /Scheme Admin/SchemeList.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Create and Renew are not selected.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme Admin/SchemeList.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Schemes and no server error page is shown."
+        },
+        {
+          "action": "Read the column headings of the table.",
+          "expected": "The columns Identifier, Name, Current Year, Next Year and History are shown."
+        },
+        {
+          "action": "Read the links above the table.",
+          "expected": "The links Create Scheme for Current Year, Create Scheme for Next Year and Printable Schemes are shown."
+        },
+        {
+          "action": "Look at the first data row.",
+          "expected": "The row has an identifier and a name, and Details and Renew links."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Schemes."
+        }
+      ]
+    },
+    {
+      "ref": "TC-067",
+      "layer": "ui",
+      "title": "Schemes list shows the seeded PT0001 African Horse Sickness row",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Schemes list contains the seeded scheme PT0001 African Horse Sickness (AHS) - /Scheme Admin/SchemeList.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The seeded scheme exists in the local data.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme Admin/SchemeList.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Schemes and no server error page is shown."
+        },
+        {
+          "action": "Look for the row with the identifier PT0001.",
+          "expected": "The row is shown."
+        },
+        {
+          "action": "Read the name in that row.",
+          "expected": "The name reads African Horse Sickness (AHS)."
+        },
+        {
+          "action": "Look for the Details link in that row.",
+          "expected": "The Details link is visible. Do not click it."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Schemes."
+        }
+      ]
+    },
+    {
+      "ref": "TC-068",
+      "layer": "ui",
+      "title": "Printable Schemes link opens without a server error",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Schemes list links to Printable Schemes - /Scheme Admin/SchemeList.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The destination may open in the same tab or a new tab.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme Admin/SchemeList.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Schemes and no server error page is shown."
+        },
+        {
+          "action": "Look for the Printable Schemes link.",
+          "expected": "The link is visible."
+        },
+        {
+          "action": "Click the Printable Schemes link.",
+          "expected": "A page opens."
+        },
+        {
+          "action": "Check the opened page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Return to the Schemes list.",
+          "expected": "The h1 reads Schemes."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from probes of the running app and the page source; confirm the headings and messages are the intended behaviour.",
+    "TODO: the heading and tab behaviour of Printable Schemes are not recorded, so only the absence of a server error is asserted."
+  ]
+}

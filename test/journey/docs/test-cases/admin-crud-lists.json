@@ -1,0 +1,199 @@
+{
+  "feature": "admin-crud-lists",
+  "test_cases": [
+    {
+      "ref": "TC-125",
+      "layer": "ui",
+      "title": "A new record is added, listed, kept after reload and removed",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Create, read and delete work on Manage Countries, Manage External Test Consultants, Test Types, Test Result Items, Test Method Items, Category Items, Criterion Items"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). The database has a backup.",
+        "Cleanup: the test removes every record it created (names start with E2E and end with the run id), even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "steps": [
+        {
+          "action": "Open the list page of the row from Home > its section.",
+          "expected": "The list opens."
+        },
+        {
+          "action": "Type a unique name in the add form and click Add.",
+          "expected": "The page reloads without an error."
+        },
+        {
+          "action": "Find the new record in the list (use the pager if needed) after reloading the page.",
+          "expected": "The record is listed."
+        },
+        {
+          "action": "Click Remove on the record.",
+          "expected": "The record is removed."
+        },
+        {
+          "action": "Reload the list and look for the record.",
+          "expected": "The record is no longer listed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-126",
+      "layer": "ui",
+      "title": "A record can be renamed and the new name is kept",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Update works on Manage Countries, Manage External Test Consultants, Test Types, Test Result Items, Test Method Items, Category Items, Criterion Items"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). The database has a backup.",
+        "Cleanup: the test removes every record it created (names start with E2E and end with the run id), even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "steps": [
+        {
+          "action": "Open the list page and add a record with a unique name.",
+          "expected": "The record is listed."
+        },
+        {
+          "action": "Click Edit on the record.",
+          "expected": "The name becomes editable."
+        },
+        {
+          "action": "Type a new unique name and click Save.",
+          "expected": "The page reloads without an error."
+        },
+        {
+          "action": "Reload the list and look for the new name.",
+          "expected": "The new name is listed."
+        },
+        {
+          "action": "Look for the old name.",
+          "expected": "The old name is not listed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-127",
+      "layer": "ui",
+      "title": "A record cannot be added without a name",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The add form on Manage Countries, Manage External Test Consultants, Test Types, Test Result Items, Test Method Items, Category Items, Criterion Items requires a name (RequiredFieldValidator)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). The database has a backup.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is saved."
+      ],
+      "steps": [
+        {
+          "action": "Open the list page of the row.",
+          "expected": "The list opens."
+        },
+        {
+          "action": "Note the number of rows.",
+          "expected": "The number is noted."
+        },
+        {
+          "action": "Leave the name empty and click Add.",
+          "expected": "A required message is shown."
+        },
+        {
+          "action": "Check the list.",
+          "expected": "No row was added."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-128",
+      "layer": "ui",
+      "title": "A list can be searched by name",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Test Result Items and Test Method Items can be searched by item name"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). The database has a backup.",
+        "Cleanup: the test removes every record it created (names start with E2E and end with the run id), even when it fails.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "steps": [
+        {
+          "action": "Open the list page and add a record with a unique name.",
+          "expected": "The record is listed."
+        },
+        {
+          "action": "Type the unique name in the search box and click Search.",
+          "expected": "The list is filtered."
+        },
+        {
+          "action": "Look at the rows.",
+          "expected": "The record is shown."
+        },
+        {
+          "action": "Search for ZZ-NO-SUCH-ITEM.",
+          "expected": "The list is filtered."
+        },
+        {
+          "action": "Look at the rows.",
+          "expected": "No row has that name."
+        }
+      ]
+    },
+    {
+      "ref": "TC-129",
+      "layer": "ui",
+      "title": "A country that already exists cannot be added twice",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Adding a country with an existing name shows \"This country already exists\" (ManageCountries.aspx.vb:121)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). The database has a backup.",
+        "Cleanup: the test removes every record it created (names start with E2E and end with the run id), even when it fails."
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Countries.",
+          "expected": "The list opens."
+        },
+        {
+          "action": "Add a country with a unique name.",
+          "expected": "The country is listed."
+        },
+        {
+          "action": "Add a country with the same name again.",
+          "expected": "A message says the country already exists."
+        },
+        {
+          "action": "Reload the list.",
+          "expected": "The name is listed once."
+        },
+        {
+          "action": "Cleanup: remove the country.",
+          "expected": "The country is gone."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source and a read-only probe; confirm they are the intended behaviour.",
+    "TODO: records that are in use cannot be edited or removed (the page alerts); this is not covered because it needs a record linked to a distribution.",
+    "TODO: Create User, Remove User and Manage Viewers are not covered (the first needs a directory lookup, the last does not load)."
+  ]
+}

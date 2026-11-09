@@ -1,0 +1,165 @@
+{
+  "feature": "admin-detail-pages",
+  "test_cases": [
+    {
+      "ref": "TC-083",
+      "layer": "ui",
+      "title": "Detail pages show their action buttons",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Customer, participant, contract, scheme and assessment pages show their buttons - 26 buttons (data/depth.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Buttons are checked for presence only and are not clicked, except Cancel in TC-086.",
+        "Representative sample: one row stands for the 26 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx and click the links of the path in the current row.",
+          "expected": "The detail page opens with its heading."
+        },
+        {
+          "action": "Look for the button named in the row.",
+          "expected": "The button is visible."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every button is shown."
+        },
+        {
+          "action": "Do not click the button.",
+          "expected": "Nothing is changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-084",
+      "layer": "ui",
+      "title": "Detail pages show their field labels",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Detail pages show their field labels - 40 labels (data/depth.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 40 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx and click the links of the path in the current row.",
+          "expected": "The detail page opens with its heading."
+        },
+        {
+          "action": "Look for the field label named in the row.",
+          "expected": "The label is visible."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every label is shown."
+        },
+        {
+          "action": "Do not change any field.",
+          "expected": "Nothing is changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-085",
+      "layer": "ui",
+      "title": "Scheme Details shows its tabs",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Scheme Details has the tabs Details, Tests, Distribution Level Data, Results Tabulations, Test consultants, Viewers (data/depth.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "The content of each tab is not checked."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx and click the links of the path in the current row.",
+          "expected": "The detail page opens with its heading."
+        },
+        {
+          "action": "Read the tab names.",
+          "expected": "The tab named in the row is shown."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every tab is shown."
+        },
+        {
+          "action": "Do not change any field.",
+          "expected": "Nothing is changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-086",
+      "layer": "ui",
+      "title": "Cancel on a detail page returns to its list without saving",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Cancel on a detail page returns to the list it came from - 5 pages (data/depth.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "No field is changed before Cancel, so nothing is saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx and click the links of the path in the current row.",
+          "expected": "The detail page opens with its heading."
+        },
+        {
+          "action": "Click Cancel.",
+          "expected": "The browser leaves the form."
+        },
+        {
+          "action": "Read the main heading of the page that opened.",
+          "expected": "The h1 matches the heading in the row."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Look at the list.",
+          "expected": "The list is shown unchanged."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from read-only surveys of the running apps; confirm the labels and buttons are the intended behaviour.",
+    "TODO: Cancel on a changed form may show a confirmation; the test does not change any field."
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "feature": "admin-list-pages",
+  "test_cases": [
+    {
+      "ref": "TC-021",
+      "layer": "ui",
+      "title": "Contracts Admin list pages load with their expected heading",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Contracts Admin pages load and show their h1 with no server error page - routes /Contracts Admin/CustomerList.aspx, Search.aspx, GroupAddressList.aspx, ExportMenu.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Data set (route -> h1): /Contracts Admin/CustomerList.aspx -> Customers; /Contracts Admin/Search.aspx -> Search; /Contracts Admin/GroupAddressList.aspx -> Group Addresses; /Contracts Admin/ExportMenu.aspx -> Exports.",
+        "Pages are only opened and read. No search, export or save action is performed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts%20Admin/CustomerList.aspx as a signed-in admin user.",
+          "expected": "The page loads, the h1 reads Customers and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Contracts%20Admin/Search.aspx.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Contracts%20Admin/GroupAddressList.aspx.",
+          "expected": "The page loads, the h1 reads Group Addresses and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Contracts%20Admin/ExportMenu.aspx.",
+          "expected": "The page loads, the h1 reads Exports and no server error page is shown."
+        },
+        {
+          "action": "Reload the Exports page.",
+          "expected": "The h1 still reads Exports and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-022",
+      "layer": "ui",
+      "title": "Scheme Admin list pages load with their expected heading",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Scheme Admin pages load and show their h1 with no server error page - routes /Scheme Admin/SchemeList.aspx, Search.aspx, TestTypeList.aspx, TestResultItemTypeList.aspx, TestMethodItemTypeList.aspx, CategoryItemTypeList.aspx, CriterionItemTypeList.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Data set (route -> h1): SchemeList.aspx -> Schemes; Search.aspx -> Search; TestTypeList.aspx -> Test Types; TestResultItemTypeList.aspx -> Test Result Items; TestMethodItemTypeList.aspx -> Test Method Items; CategoryItemTypeList.aspx -> Category Items; CriterionItemTypeList.aspx -> Criterion Items. All routes are under /Scheme Admin/.",
+        "Pages are only opened and read. No search or save action is performed.",
+        "Representative sample: one row stands for the 7 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/SchemeList.aspx as a signed-in admin user.",
+          "expected": "The page loads, the h1 reads Schemes and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/Search.aspx.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/TestTypeList.aspx.",
+          "expected": "The page loads, the h1 reads Test Types and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/TestResultItemTypeList.aspx.",
+          "expected": "The page loads, the h1 reads Test Result Items and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/TestMethodItemTypeList.aspx.",
+          "expected": "The page loads, the h1 reads Test Method Items and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/CategoryItemTypeList.aspx.",
+          "expected": "The page loads, the h1 reads Category Items and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Scheme%20Admin/CriterionItemTypeList.aspx.",
+          "expected": "The page loads, the h1 reads Criterion Items and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-023",
+      "layer": "ui",
+      "title": "Distributions label pages load with their expected heading",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Distributions pages load and show their h1 with no server error page - routes /Distributions/ParticipantAddress.aspx, GroupAddress.aspx, Search.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Data set (route -> h1): /Distributions/ParticipantAddress.aspx -> Participant Address Labels; /Distributions/GroupAddress.aspx -> Group Address Labels; /Distributions/Search.aspx -> Search.",
+        "Pages are only opened and read. No label is generated, printed or saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Distributions/ParticipantAddress.aspx as a signed-in admin user.",
+          "expected": "The page loads, the h1 reads Participant Address Labels and no server error page is shown."
+        },
+        {
+          "action": "Reload the Participant Address Labels page.",
+          "expected": "The h1 still reads Participant Address Labels and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Distributions/GroupAddress.aspx.",
+          "expected": "The page loads, the h1 reads Group Address Labels and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Distributions/Search.aspx.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Distributions/MenuDistributions.aspx.",
+          "expected": "The page loads, the h1 reads Distributions and no server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl only; confirm the page headings are the intended behaviour.",
+    "TODO: the list contents, columns and any filters on these pages are not recorded in the facts and are not checked.",
+    "No source file:line is recorded in coverage-plan.md for these pages; evidence is by route.",
+    "Confirm how spaces in routes (for example /Contracts Admin/) are written in the real address (%20 or space)."
+  ]
+}

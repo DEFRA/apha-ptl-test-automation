@@ -1,0 +1,23 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Enter comments card on Home opens the Distributions page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Look for the Enter comments card under the Results section.,The Enter comments card is visible.,,,
+,,,Step 3,Click the Enter comments card.,The browser navigates to the address path /DistributionComments.aspx or /CommentsEntry.aspx.,,,
+,,,Step 4,Read the main heading of the page that opened.,The h1 reads Distributions.,,,
+,,,Step 5,Read the browser tab title.,The title reads Distribution comments - Proficiency Testing and no server error page is shown.,,,
+,Test Case,Distributions comments page shows the search labels and buttons,Step 1,Open http://localhost:1688/DistributionComments.aspx as a signed-in external user.,The page loads with the h1 Distributions and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the labels of the search form.,"The labels Distribution Reference, Scheme Name and Scheme Code are shown.",,,
+,,,Step 3,Look for the SEARCH button.,The SEARCH button is visible.,,,
+,,,Step 4,Look for the SHOW ALL button.,The SHOW ALL button is visible.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Distributions.,,,
+,Test Case,Searching distribution comments with an unknown reference then SHOW ALL keeps the page working,Step 1,Open http://localhost:1688/DistributionComments.aspx as a signed-in external user.,The page loads with the h1 Distributions.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Type ZZ-NO-SUCH-REF in the Distribution Reference box.,The box shows ZZ-NO-SUCH-REF.,,,
+,,,Step 3,Click the SEARCH button.,The page reloads with the h1 Distributions and no server error page is shown.,,,
+,,,Step 4,Look at the results area below the search form.,No distribution row is listed for ZZ-NO-SUCH-REF.,,,
+,,,Step 5,Click the SHOW ALL button.,The page reloads with the h1 Distributions and the search form is still shown.,,,
+,,,Step 6,Read the Distribution Reference box.,The Distribution Reference box is cleared or empty.,,,
+,Test Case,Distributions comments page keeps its heading after a reload and Back returns to Home,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Click the Enter comments card.,The h1 reads Distributions.,,,
+,,,Step 3,Reload the page.,The page reloads and no server error page is shown.,,,
+,,,Step 4,Read the main heading of the page.,The h1 is still Distributions.,,,
+,,,Step 5,Select the browser Back button.,The browser returns to the address path /Home.aspx.,,,
+,,,Step 6,Read the main heading of the page.,The h1 reads VETQAS Proficiency Testing and no server error page is shown.,,,

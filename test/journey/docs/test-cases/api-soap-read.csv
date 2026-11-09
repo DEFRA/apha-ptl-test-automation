@@ -1,0 +1,6 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A read-only web service operation returns its response,Step 1,Send a SOAP POST for the operation in the row to the service in the row.,The response status is 200.,Proficiency Testing\Web Services,QA,Design
+,,,Step 2,Read the response body.,The body is a SOAP envelope.,,,
+,,,Step 3,Look for the <operation>Response element.,The element is present.,,,
+,,,Step 4,Check for a soap:Fault element.,No fault is returned.,,,
+,,,Step 5,Repeat for every row.,Every operation responds.,,,

@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Submitting a changed participant contact name locks the form,Step 1,"Make sure no pending participant update exists, then open the participant details page.",The participant details form is editable.,Proficiency Testing\External,QA,Design
+,,,Step 2,Type a unique value in Contact Name and tab out of the box.,UPDATE DETAILS becomes enabled.,,,
+,,,Step 3,Click UPDATE DETAILS.,The page reloads.,,,
+,,,Step 4,Look at the form fields.,Contact Name and the other fields are disabled.,,,
+,,,Step 5,Look at UPDATE DETAILS.,The button is disabled.,,,
+,Test Case,An admin declines a pending participant update and the participant can edit again,Step 1,Submit a changed Contact Name as the participant.,The form is locked.,Proficiency Testing\External,QA,Design
+,,,Step 2,As admin open /Contracts Admin/ReviewPendingParticipantUpdates.aspx and find the Lab Code 1300 row.,The pending update is listed.,,,
+,,,Step 3,"Click Details, then Decline.","A message ""Participant updates declined successfully"" is shown and the list reopens.",,,
+,,,Step 4,As the participant open the details page again.,The form is editable.,,,
+,,,Step 5,Read Contact Name.,"It shows the original value, not the submitted one.",,,
+,Test Case,An admin approves a pending participant update that changes nothing,Step 1,Submit the unchanged Contact Name as the participant (focus out enables the button).,The form is locked.,Proficiency Testing\External,QA,Design
+,,,Step 2,As admin open /Contracts Admin/ReviewPendingParticipantUpdates.aspx and find the Lab Code 1300 row.,The pending update is listed.,,,
+,,,Step 3,"Click Details, then Approve.",The update is applied and the list reopens.,,,
+,,,Step 4,As the participant open the details page again.,The form is editable.,,,
+,,,Step 5,Read Contact Name.,It still shows the original value.,,,

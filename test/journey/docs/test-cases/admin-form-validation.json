@@ -1,0 +1,123 @@
+{
+  "feature": "admin-form-validation",
+  "test_cases": [
+    {
+      "ref": "TC-075",
+      "layer": "ui",
+      "title": "Saving an empty customer form shows each required message",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Client validators on Contracts Admin/Customer.aspx block an empty save and show 13 message(s) (survey 2026-11-02)"
+      ],
+      "assumptions": [
+        "The customer form is Contracts Admin/Customer.aspx opened without parameters.",
+        "13 validation messages are expected, one per Examples row.",
+        "The empty save is blocked by the client validators, so nothing is saved.",
+        "Representative sample: one row stands for the 13 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/Customer.aspx as a signed-in Admin.",
+          "expected": "The form loads with empty fields."
+        },
+        {
+          "action": "Leave every field empty.",
+          "expected": "No value is entered."
+        },
+        {
+          "action": "Click the Save button (ButtonSave).",
+          "expected": "The page stays on the form and nothing is saved."
+        },
+        {
+          "action": "Read the validation messages.",
+          "expected": "Each message of the Examples table is shown."
+        },
+        {
+          "action": "Check for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-076",
+      "layer": "ui",
+      "title": "Saving an empty scheme form shows each required message",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Client validators on Scheme Admin/Scheme.aspx block an empty save and show 1 message(s) (survey 2026-11-02)"
+      ],
+      "assumptions": [
+        "The scheme form is Scheme Admin/Scheme.aspx opened without parameters.",
+        "1 validation messages are expected, one per Examples row.",
+        "The empty save is blocked by the client validators, so nothing is saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme Admin/Scheme.aspx as a signed-in Admin.",
+          "expected": "The form loads with empty fields."
+        },
+        {
+          "action": "Leave every field empty.",
+          "expected": "No value is entered."
+        },
+        {
+          "action": "Click the Save button (ButtonSave1).",
+          "expected": "The page stays on the form and nothing is saved."
+        },
+        {
+          "action": "Read the validation messages.",
+          "expected": "Each message of the Examples table is shown."
+        },
+        {
+          "action": "Check for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-077",
+      "layer": "ui",
+      "title": "Saving an empty groupAddress form shows each required message",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Client validators on Contracts Admin/GroupAddress.aspx block an empty save and show 4 message(s) (survey 2026-11-02)"
+      ],
+      "assumptions": [
+        "The groupAddress form is Contracts Admin/GroupAddress.aspx opened without parameters.",
+        "4 validation messages are expected, one per Examples row.",
+        "The empty save is blocked by the client validators, so nothing is saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/GroupAddress.aspx as a signed-in Admin.",
+          "expected": "The form loads with empty fields."
+        },
+        {
+          "action": "Leave every field empty.",
+          "expected": "No value is entered."
+        },
+        {
+          "action": "Click the Save button (ButtonSave).",
+          "expected": "The page stays on the form and nothing is saved."
+        },
+        {
+          "action": "Read the validation messages.",
+          "expected": "Each message of the Examples table is shown."
+        },
+        {
+          "action": "Check for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from a survey of the running apps and the page source; confirm the headings and messages are the intended behaviour."
+  ]
+}

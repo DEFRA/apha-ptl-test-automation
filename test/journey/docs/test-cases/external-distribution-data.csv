@@ -1,0 +1,26 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Previous Distributions finds a distribution by its reference,Step 1,Open Previous Distributions.,The list and its search form are shown.,Proficiency Testing\External,QA,Design
+,,,Step 2,Type the reference of the row in Distribution Reference.,The box shows the reference.,,,
+,,,Step 3,Click SEARCH.,The list reloads.,,,
+,,,Step 4,Look for the row.,A row with the reference and scheme code is listed.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Previous Distributions finds distributions by scheme code,Step 1,Open Previous Distributions.,The list and its search form are shown.,Proficiency Testing\External,QA,Design
+,,,Step 2,Type the scheme code of the row in Scheme Code.,The box shows the code.,,,
+,,,Step 3,Click SEARCH.,The list reloads.,,,
+,,,Step 4,Look for the row.,A row with the reference and scheme code is listed.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,View opens the results of a previous distribution,Step 1,Open Previous Distributions.,The list is shown.,Proficiency Testing\External,QA,Design
+,,,Step 2,Click View on the row with the reference.,The View Results page opens.,,,
+,,,Step 3,Read the main heading.,The h1 is View Results.,,,
+,,,Step 4,Read the page text.,It shows the distribution reference.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,View opens the report of a distribution,Step 1,Open Reports.,The list is shown.,Proficiency Testing\External,QA,Design
+,,,Step 2,Click View on the row with the reference.,The View reports page opens.,,,
+,,,Step 3,Read the main heading and text.,The h1 is View reports and the text shows the reference.,,,
+,,,Step 4,Look for the buttons.,GENERATE PDF and BACK are shown.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,BACK on a results or report page returns to its list,Step 1,Open the list in the row (Previous Distributions or Reports).,The list is shown.,Proficiency Testing\External,QA,Design
+,,,Step 2,Click View on the first row.,The results or report page opens.,,,
+,,,Step 3,Click BACK.,The browser leaves the page.,,,
+,,,Step 4,Read the main heading.,The list heading is shown.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,

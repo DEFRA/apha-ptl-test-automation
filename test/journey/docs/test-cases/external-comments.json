@@ -1,0 +1,173 @@
+{
+  "feature": "external-comments",
+  "test_cases": [
+    {
+      "ref": "TC-040",
+      "layer": "ui",
+      "title": "Enter comments card on Home opens the Distributions page",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The Enter comments card on /Home.aspx opens /DistributionComments.aspx with h1 Distributions and title Distribution comments - Proficiency Testing - route /Home.aspx to /DistributionComments.aspx (also served at /CommentsEntry.aspx)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "The card opens the page by postback.",
+        "The page also responds at /CommentsEntry.aspx; the address path after the click is not asserted beyond the two known routes."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Look for the Enter comments card under the Results section.",
+          "expected": "The Enter comments card is visible."
+        },
+        {
+          "action": "Click the Enter comments card.",
+          "expected": "The browser navigates to the address path /DistributionComments.aspx or /CommentsEntry.aspx."
+        },
+        {
+          "action": "Read the main heading of the page that opened.",
+          "expected": "The h1 reads Distributions."
+        },
+        {
+          "action": "Read the browser tab title.",
+          "expected": "The title reads Distribution comments - Proficiency Testing and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-041",
+      "layer": "ui",
+      "title": "Distributions comments page shows the search labels and buttons",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /DistributionComments.aspx shows the search labels Distribution Reference, Scheme Name and Scheme Code and the buttons SEARCH and SHOW ALL - route /DistributionComments.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active.",
+        "Search is read-only. Nothing is entered into the search boxes in this case.",
+        "No empty-state message was observed locally, so none is asserted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/DistributionComments.aspx as a signed-in external user.",
+          "expected": "The page loads with the h1 Distributions and no server error page is shown."
+        },
+        {
+          "action": "Read the labels of the search form.",
+          "expected": "The labels Distribution Reference, Scheme Name and Scheme Code are shown."
+        },
+        {
+          "action": "Look for the SEARCH button.",
+          "expected": "The SEARCH button is visible."
+        },
+        {
+          "action": "Look for the SHOW ALL button.",
+          "expected": "The SHOW ALL button is visible."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Distributions."
+        }
+      ]
+    },
+    {
+      "ref": "TC-042",
+      "layer": "ui",
+      "title": "Searching distribution comments with an unknown reference then SHOW ALL keeps the page working",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: A search on /DistributionComments.aspx with a reference that does not exist returns the page without error, and SHOW ALL restores the list - route /DistributionComments.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active.",
+        "Search is read-only. No comment is entered, saved or submitted.",
+        "Search data: Distribution Reference ZZ-NO-SUCH-REF.",
+        "The empty-result message text is not recorded; only the page heading and search form are asserted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/DistributionComments.aspx as a signed-in external user.",
+          "expected": "The page loads with the h1 Distributions."
+        },
+        {
+          "action": "Type ZZ-NO-SUCH-REF in the Distribution Reference box.",
+          "expected": "The box shows ZZ-NO-SUCH-REF."
+        },
+        {
+          "action": "Click the SEARCH button.",
+          "expected": "The page reloads with the h1 Distributions and no server error page is shown."
+        },
+        {
+          "action": "Look at the results area below the search form.",
+          "expected": "No distribution row is listed for ZZ-NO-SUCH-REF."
+        },
+        {
+          "action": "Click the SHOW ALL button.",
+          "expected": "The page reloads with the h1 Distributions and the search form is still shown."
+        },
+        {
+          "action": "Read the Distribution Reference box.",
+          "expected": "The Distribution Reference box is cleared or empty."
+        }
+      ]
+    },
+    {
+      "ref": "TC-043",
+      "layer": "ui",
+      "title": "Distributions comments page keeps its heading after a reload and Back returns to Home",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /DistributionComments.aspx reloads without error and keeps the h1 Distributions, and browser Back returns to /Home.aspx - route /Home.aspx to /DistributionComments.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active.",
+        "The Enter comments card opens the page by postback, so browser Back may re-request the home page."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Click the Enter comments card.",
+          "expected": "The h1 reads Distributions."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The page reloads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 is still Distributions."
+        },
+        {
+          "action": "Select the browser Back button.",
+          "expected": "The browser returns to the address path /Home.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads VETQAS Proficiency Testing and no server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl and DistributionComments.aspx only; confirm the heading, labels and title are the intended behaviour.",
+    "DistributionComments.aspx line numbers are not recorded in coverage-plan.md; add file:line evidence if required.",
+    "TODO: confirm the empty-state message text for this page; none observed locally.",
+    "TODO: confirm the result table columns and the comment entry controls when distributions exist; none observed locally and not covered.",
+    "TODO: confirm whether SHOW ALL clears the typed Distribution Reference value; the empty-box step is inferred.",
+    "TODO: confirm which address path (/DistributionComments.aspx or /CommentsEntry.aspx) the card postback lands on."
+  ]
+}

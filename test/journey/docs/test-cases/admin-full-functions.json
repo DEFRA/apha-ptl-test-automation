@@ -1,0 +1,348 @@
+{
+  "feature": "admin-full-functions",
+  "test_cases": [
+    {
+      "ref": "TC-143",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A customer's participant and contract rows open their detail pages",
+      "acs": [
+        "DERIVED: Participant and contract rows link to Details, Viewers and Contract Items pages - ParticipantList.aspx, ContractList.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers.",
+          "expected": "The Customers list opens."
+        },
+        {
+          "action": "Click the list link of the row on the first customer.",
+          "expected": "The Participants or Contracts list opens."
+        },
+        {
+          "action": "Click the row link of the row on the first line.",
+          "expected": "The target page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page address and content.",
+          "expected": "The address is the one of the row and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-144",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Contracts for the first customer must exist on the target environment."
+      ],
+      "title": "A contract can be exported as a document",
+      "acs": [
+        "DERIVED: Each contract row offers Contract, Address Confirmation, Job Sheet and Renewal Letter exports - ContractList.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers.",
+          "expected": "The Customers list opens."
+        },
+        {
+          "action": "Click Contracts on the first customer.",
+          "expected": "The Contracts list opens."
+        },
+        {
+          "action": "Click the export link of the row on the first contract.",
+          "expected": "The export starts."
+        },
+        {
+          "action": "Wait for the download.",
+          "expected": "A file is downloaded."
+        },
+        {
+          "action": "Check the file name.",
+          "expected": "The file has a name."
+        }
+      ]
+    },
+    {
+      "ref": "TC-145",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "The tabulation sign-off page shows its actions",
+      "acs": [
+        "DERIVED: A tabulation offers Draw tabulation, Authorise, Reject and Cancel - Tabulation.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Results Sign-off.",
+          "expected": "The list of tabulations ready for sign-off opens."
+        },
+        {
+          "action": "Expand the first row.",
+          "expected": "Its View link is shown."
+        },
+        {
+          "action": "Click View.",
+          "expected": "The tabulation page opens."
+        },
+        {
+          "action": "Check the buttons.",
+          "expected": "The button of the row is shown."
+        },
+        {
+          "action": "Do not click Authorise or Reject.",
+          "expected": "Nothing is signed off."
+        }
+      ]
+    },
+    {
+      "ref": "TC-146",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Cancel on the tabulation sign-off page returns to Results Sign-off",
+      "acs": [
+        "DERIVED: Cancel on a tabulation returns to the sign-off list - Tabulation.aspx BtnCancel"
+      ],
+      "steps": [
+        {
+          "action": "Open Results Sign-off.",
+          "expected": "The list opens."
+        },
+        {
+          "action": "Expand the first row and click View.",
+          "expected": "The tabulation page opens."
+        },
+        {
+          "action": "Click Cancel.",
+          "expected": "The page changes."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the heading.",
+          "expected": "The heading is Results Sign-off."
+        }
+      ]
+    },
+    {
+      "ref": "TC-147",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Needs a real user id or name in E2E_DIRECTORY_USER on the target environment."
+      ],
+      "title": "A directory user is created and then removed",
+      "acs": [
+        "DERIVED: A user found in the directory can be created and removed - UserCreate.aspx, UserDelete.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration > Create User.",
+          "expected": "The search page opens."
+        },
+        {
+          "action": "Search for the configured directory user (E2E_DIRECTORY_USER).",
+          "expected": "The user is listed."
+        },
+        {
+          "action": "Choose the user, enter a department and click Create User.",
+          "expected": "Setup Roles is offered."
+        },
+        {
+          "action": "Open Remove User, choose the same user and click Remove User.",
+          "expected": "The user is removed."
+        },
+        {
+          "action": "Check the page after the removal.",
+          "expected": "Remove Another is offered."
+        }
+      ]
+    },
+    {
+      "ref": "TC-148",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The application has no way to delete a scheme, so the test leaves it."
+      ],
+      "title": "A new scheme for the current year is created with its required fields",
+      "acs": [
+        "DERIVED: A scheme needs Identifier, Sample Volume and Customs Description - Scheme.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes.",
+          "expected": "The Schemes list opens."
+        },
+        {
+          "action": "Click Create Scheme for Current Year.",
+          "expected": "The empty scheme form opens."
+        },
+        {
+          "action": "Fill the required fields and choose a value in each required list.",
+          "expected": "The fields show the values."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The scheme is saved."
+        },
+        {
+          "action": "Check the page after the save.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-149",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A customer's notes are changed, kept after reloading and restored",
+      "acs": [
+        "DERIVED: Customer Notes can be edited and saved - Customer.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and open the first customer.",
+          "expected": "Customer Details opens."
+        },
+        {
+          "action": "Change Notes to a unique value and click Save.",
+          "expected": "The customer is saved."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The page reloads."
+        },
+        {
+          "action": "Read Notes.",
+          "expected": "It shows the new value."
+        },
+        {
+          "action": "Put the original notes back and save.",
+          "expected": "The original notes are stored."
+        }
+      ]
+    },
+    {
+      "ref": "TC-150",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Renewal cannot be undone; the test is meant for an environment that can be restored."
+      ],
+      "title": "A pricing plan is renewed for the next financial year",
+      "acs": [
+        "DERIVED: Renew pricing plan creates the next financial year - WeightedPricingPlan.aspx, PostagePricingPlan.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration and the pricing plan page of the row.",
+          "expected": "The page opens with a Renew button for the next year."
+        },
+        {
+          "action": "Note the year in the Renew button.",
+          "expected": "The year is known."
+        },
+        {
+          "action": "Click Renew.",
+          "expected": "The plan is renewed."
+        },
+        {
+          "action": "Open the financial year list.",
+          "expected": "The list is shown."
+        },
+        {
+          "action": "Look for the renewed year.",
+          "expected": "The year is listed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-151",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The value must match at least one seeded participant on the target environment."
+      ],
+      "title": "Participant Address Labels search by a partial value lists matches",
+      "acs": [
+        "DERIVED: Lab Name and Contact Name search match partial values - ParticipantAddress.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Distributions > Participant Address Labels.",
+          "expected": "The page opens."
+        },
+        {
+          "action": "Type the value of the row in the search box of the row.",
+          "expected": "The box accepts the text."
+        },
+        {
+          "action": "Click Search.",
+          "expected": "The search completes."
+        },
+        {
+          "action": "Read the result area.",
+          "expected": "It does not say There are no Results to Display."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source and a read-only probe; confirm they are the intended behaviour.",
+    "TODO: Authorise and Reject on a tabulation change real results and are not clicked.",
+    "TODO: Create Participant, Create Contract and the exact response of Print need a real environment to confirm."
+  ]
+}

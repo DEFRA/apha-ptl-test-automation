@@ -1,0 +1,123 @@
+{
+  "feature": "surface-external-pages",
+  "test_cases": [
+    {
+      "ref": "TC-072",
+      "layer": "ui",
+      "title": "Every external page loads with its expected heading",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each surveyed external page loads with the heading recorded by the survey - 20 pages (data/pages.json)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688. 20 pages are listed in the Examples table.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 20 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688 followed by the route of the page in the current row.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The h1 matches the heading recorded for that page (or the title when the page has no h1)."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Repeat for every row of the Examples table.",
+          "expected": "Every page loads."
+        },
+        {
+          "action": "Look at the accessibility scan result for the page.",
+          "expected": "The page was scanned once and the result is in the accessibility report."
+        }
+      ]
+    },
+    {
+      "ref": "TC-073",
+      "layer": "ui",
+      "title": "Every external page keeps its heading after a reload",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: A reloaded external page shows the same heading - 20 pages (data/pages.json)"
+      ],
+      "assumptions": [
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 20 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open the page in the current row of http://localhost:1688.",
+          "expected": "The page loads with its heading."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The page reloads."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The heading is unchanged."
+        },
+        {
+          "action": "Check for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every page keeps its heading."
+        }
+      ]
+    },
+    {
+      "ref": "TC-074",
+      "layer": "ui",
+      "title": "The Home breadcrumb link on every external page returns to Home",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Every external page has a Home link that returns to the Home page (data/pages.json)"
+      ],
+      "assumptions": [
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 16 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open the page in the current row of http://localhost:1688.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Find the Home link in the breadcrumb or header.",
+          "expected": "The Home link is visible."
+        },
+        {
+          "action": "Click the Home link.",
+          "expected": "The browser navigates to the Home page."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The h1 reads VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every page links back to Home."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from a survey of the running apps and the page source; confirm the headings and messages are the intended behaviour."
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "feature": "admin-group-address",
+  "test_cases": [
+    {
+      "ref": "TC-044",
+      "layer": "ui",
+      "title": "Admin edits an existing group address and the change is saved",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Save on a valid Edit Group Address form returns to the Group Addresses list and keeps the change - app/ProficiencyTestingWeb/Contracts Admin/GroupAddress.aspx.vb:56-62 (route /Contracts Admin/GroupAddress.aspx)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Test data: unique value E2E packing note <run id>; <run id> is a unique run identifier such as a timestamp.",
+        "Changes data. The final step restores the original Packing Instructions."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Group Addresses and the table shows the columns Identifier, Address 1 and Edit."
+        },
+        {
+          "action": "Select the Edit link on the first row of the table.",
+          "expected": "The h1 reads Edit Group Address and the form is filled with the saved values of that group address."
+        },
+        {
+          "action": "Note the current value of Packing Instructions as <original packing instructions> and the Identifier of the record.",
+          "expected": "The original Packing Instructions value and the Identifier are recorded for later steps."
+        },
+        {
+          "action": "Replace the Packing Instructions value with E2E packing note <run id>.",
+          "expected": "The Packing Instructions field shows E2E packing note <run id>."
+        },
+        {
+          "action": "Select Save.",
+          "expected": "The page returns to Group Addresses and the h1 reads Group Addresses."
+        },
+        {
+          "action": "Select Edit on the row with the same Identifier.",
+          "expected": "The h1 reads Edit Group Address and Packing Instructions shows E2E packing note <run id>."
+        },
+        {
+          "action": "Cleanup: replace the Packing Instructions value with <original packing instructions> and select Save.",
+          "expected": "The page returns to Group Addresses and the record holds its original Packing Instructions again."
+        }
+      ]
+    },
+    {
+      "ref": "TC-045",
+      "layer": "ui",
+      "title": "Admin cancels an edit of a group address and nothing changes",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Cancel on Edit Group Address leaves the page without saving - app/ProficiencyTestingWeb/Contracts Admin/GroupAddress.aspx (route /Contracts Admin/GroupAddress.aspx; Cancel behaviour observed in the crawl, destination TODO)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Test data: unique value E2E cancelled note <run id>.",
+        "Nothing is saved, so no data cleanup is needed. The cancel destination is not confirmed (see open_questions)."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Group Addresses."
+        },
+        {
+          "action": "Select the Edit link on the first row of the table.",
+          "expected": "The h1 reads Edit Group Address."
+        },
+        {
+          "action": "Note the current value of Packing Instructions as <original packing instructions> and the Identifier of the record.",
+          "expected": "The original value and the Identifier are recorded."
+        },
+        {
+          "action": "Replace the Packing Instructions value with E2E cancelled note <run id>.",
+          "expected": "The Packing Instructions field shows E2E cancelled note <run id>."
+        },
+        {
+          "action": "Select Cancel.",
+          "expected": "The page leaves Edit Group Address without showing a server error page."
+        },
+        {
+          "action": "Open the Edit link for the row with the same Identifier on Group Addresses.",
+          "expected": "The h1 reads Edit Group Address and Packing Instructions shows <original packing instructions>, not E2E cancelled note <run id>."
+        },
+        {
+          "action": "Cleanup: select Cancel to leave the form.",
+          "expected": "The form closes and no data has been changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-046",
+      "layer": "ui",
+      "title": "Required fields block saving a new group address",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Saving an empty Create Group Address form shows the four required validations (Identifier, Address 1, Address 2, Country) and stays on the page - app/ProficiencyTestingWeb/Contracts Admin/GroupAddress.aspx:1-52 (route /Contracts Admin/GroupAddress.aspx)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The validation messages are shown as an image whose alt text starts: An identifier m..., At least two Ad..., The Country for...; the full text is not recorded.",
+        "Nothing is saved, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Group Addresses."
+        },
+        {
+          "action": "Select the Create Group Address link.",
+          "expected": "The h1 reads Create Group Address and every field is empty."
+        },
+        {
+          "action": "Leave every field empty and select Save.",
+          "expected": "The page stays on Create Group Address and no server error page is shown."
+        },
+        {
+          "action": "Look at the validation next to Identifier.",
+          "expected": "A validation marker whose text starts An identifier m is shown."
+        },
+        {
+          "action": "Look at the validation next to Address 1 and Address 2.",
+          "expected": "A validation marker whose text starts At least two Ad is shown for Address 1 and for Address 2."
+        },
+        {
+          "action": "Look at the validation next to Country.",
+          "expected": "A validation marker whose text starts The Country for is shown."
+        },
+        {
+          "action": "Cleanup: select Cancel and open the Group Addresses list.",
+          "expected": "The list shows no new row, because nothing was saved."
+        }
+      ]
+    },
+    {
+      "ref": "TC-047",
+      "layer": "ui",
+      "title": "Admin creates a new group address and it is listed",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Save on a valid Create Group Address form returns to the Group Addresses list, which then lists the new identifier - app/ProficiencyTestingWeb/Contracts Admin/GroupAddress.aspx.vb:56-62 (route /Contracts Admin/GroupAddressList.aspx)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Test data: Identifier E2E-<run id>; Address 1 1 Test Street; Address 2 Testtown; Country <any listed country>.",
+        "NOT repeatable without a reset: the UI has no Delete, so the created record cannot be removed from the UI. Cleanup needs a database reset (see open_questions)."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Group Addresses."
+        },
+        {
+          "action": "Select the Create Group Address link.",
+          "expected": "The h1 reads Create Group Address."
+        },
+        {
+          "action": "Enter E2E-<run id> in Identifier, 1 Test Street in Address 1 and Testtown in Address 2.",
+          "expected": "The three fields show the entered values."
+        },
+        {
+          "action": "Choose <any listed country> in Country.",
+          "expected": "The Country field shows the chosen country."
+        },
+        {
+          "action": "Select Save.",
+          "expected": "The page returns to Group Addresses and the h1 reads Group Addresses."
+        },
+        {
+          "action": "Look for the identifier E2E-<run id> in the table.",
+          "expected": "A row with Identifier E2E-<run id> and Address 1 1 Test Street is listed."
+        },
+        {
+          "action": "Cleanup: ask the environment owner to reset the database, because the UI offers no Delete.",
+          "expected": "The group address E2E-<run id> is no longer present after the reset."
+        }
+      ]
+    },
+    {
+      "ref": "TC-048",
+      "layer": "ui",
+      "title": "Admin changes the Telephone of a group address and restores it",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Save on a valid Edit Group Address form keeps the changed Telephone - app/ProficiencyTestingWeb/Contracts Admin/GroupAddress.aspx.vb:56-62 (route /Contracts Admin/GroupAddress.aspx)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Test data: Telephone <synthetic telephone number>, for example 01632 960000. The Telephone pattern rule is not recorded, so the value must be accepted by the validator (see open_questions).",
+        "Changes data. The final steps restore the original Telephone."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Group Addresses."
+        },
+        {
+          "action": "Select the Edit link on the first row of the table.",
+          "expected": "The h1 reads Edit Group Address."
+        },
+        {
+          "action": "Note the current value of Telephone as <original telephone> and the Identifier of the record.",
+          "expected": "The original Telephone and the Identifier are recorded."
+        },
+        {
+          "action": "Replace the Telephone value with <synthetic telephone number> and select Save.",
+          "expected": "The page returns to Group Addresses."
+        },
+        {
+          "action": "Select Edit on the row with the same Identifier.",
+          "expected": "The h1 reads Edit Group Address and Telephone shows <synthetic telephone number>."
+        },
+        {
+          "action": "Cleanup: replace the Telephone value with <original telephone>.",
+          "expected": "The Telephone field shows <original telephone>."
+        },
+        {
+          "action": "Select Save.",
+          "expected": "The page returns to Group Addresses and the record holds its original Telephone again."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "TODO: The UI has no Delete, so TC-047 leaves a group address behind. Confirm how the environment is reset (database reset) between runs.",
+    "TODO: Confirm where Cancel on Edit Group Address leads (TC-045 asserts only that the edit is not saved).",
+    "TODO: The Telephone pattern validator message and accepted format are unknown (TC-048 uses a synthetic number to be confirmed).",
+    "TODO: Confirm the full text of the four required-field messages (TC-046).",
+    "TODO: Confirm the business rules behind the derived criteria; no requirements document exists."
+  ]
+}

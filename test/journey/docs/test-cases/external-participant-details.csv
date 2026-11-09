@@ -1,0 +1,27 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Participant details page shows the fields and buttons,Step 1,Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user.,The page loads and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the main heading of the page.,The h1 reads My account and a second heading reads Edit Participant Details.,,,
+,,,Step 3,Look at the contact and address fields.,"The fields Contact Name, Organisation Name, Address 1, Address 2, Address 3, Address 4 and Address 5 are visible.",,,
+,,,Step 4,"Look at the Country, Telephone and email fields.","The fields Country, Telephone, Email (Primary) and Email (Secondary) are visible.",,,
+,,,Step 5,Open the Country list without choosing a value.,The list is populated and contains Afghanistan.,,,
+,,,Step 6,Look at the buttons below the form without selecting them.,The buttons UPDATE DETAILS and CANCEL are visible.,,,
+,Test Case,Submitting participant details without a Country is blocked,Step 1,Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user.,The h1 reads My account and the form is editable.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Clear the Country field so that no country is selected.,The Country field shows no selected country.,,,
+,,,Step 3,Select UPDATE DETAILS.,The page stays on Edit Participant Details.,,,
+,,,Step 4,Read the message shown for Country.,The message The Country for this participant must be specified is shown.,,,
+,,,Step 5,Look for the submitted message.,The message Updated details submitted is not shown.,,,
+,,,Step 6,Check the form fields and the UPDATE DETAILS button.,The fields are still editable and the form is not locked.,,,
+,,,Step 7,Cleanup: select CANCEL.,The page leaves the form and no data has been changed.,,,
+,Test Case,Cancel on participant details returns to Home without saving,Step 1,Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user.,The h1 reads My account.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Note the current value of Contact Name as <original contact name>.,The original value is recorded.,,,
+,,,Step 3,Replace the Contact Name value with Cancelled Contact <run id>.,The Contact Name field shows Cancelled Contact <run id>.,,,
+,,,Step 4,Select CANCEL.,The browser opens /Home.aspx and the h1 reads VETQAS Proficiency Testing.,,,
+,,,Step 5,Open http://localhost:1688/EditParticipantDetails.aspx again.,"The h1 reads My account and Contact Name shows <original contact name>, not Cancelled Contact <run id>.",,,
+,,,Step 6,Cleanup: select CANCEL.,The browser returns to /Home.aspx and no data has been changed.,,,
+,Test Case,A valid participant update is submitted and the confirmation shows,Step 1,Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user whose form is not locked.,The h1 reads My account and the form is editable.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Enter Jane Smith in Contact Name and test@example.com in Email (Primary).,The two fields show the entered values.,,,
+,,,Step 3,Enter <synthetic telephone number> in Telephone.,The Telephone field shows the entered value.,,,
+,,,Step 4,Choose Afghanistan in Country and check that every required field is filled.,Country shows Afghanistan and no validation message is shown.,,,
+,,,Step 5,Select UPDATE DETAILS.,The message Updated details submitted is shown.,,,
+,,,Step 6,Read the text that follows the message.,The text reads Changes have already been submitted. Please wait for those changes to be approved or rejected before submitting further changes.,,,
+,,,Step 7,Cleanup: ask the environment owner to reset the database to remove the pending update.,The form on /EditParticipantDetails.aspx is editable again after the reset.,,,

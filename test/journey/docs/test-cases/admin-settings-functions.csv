@@ -1,0 +1,36 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,"A settings value is changed, kept after reloading and restored",Step 1,Open the settings page of the row (System Administration menu).,The page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Change the field of the row to the new value.,The field shows the new value.,,,
+,,,Step 3,"Save (page Save button, row Save link, or leave the box for Administration Charges).",The save completes without an error page.,,,
+,,,Step 4,Open the page again and read the field.,The field shows the new value.,,,
+,,,Step 5,Put the original value back.,The original value is stored.,,,
+,Test Case,An invalid settings value is not kept,Step 1,Open the settings page of the row.,The page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the current value of the field.,The original value is visible.,,,
+,,,Step 3,Type the invalid or empty value in the field.,A validation indicator is shown or the value is rejected.,,,
+,,,Step 4,Try to save.,The save does not complete.,,,
+,,,Step 5,Open the page again and read the field.,The field shows its original value.,,,
+,Test Case,Cancel discards a typed settings value,Step 1,Open the settings page of the row.,The page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the current value of the field.,The original value is visible.,,,
+,,,Step 3,Type a new value in the field.,The field shows the typed value.,,,
+,,,Step 4,Click Cancel.,The edit is discarded.,,,
+,,,Step 5,Open the page again and read the field.,The field shows its original value.,,,
+,Test Case,Distributions search finds nothing for an unknown value,Step 1,Open Distributions > Search.,The search page opens with its tabs.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Sample Number tab.,The Sample Number box and Search button are shown.,,,
+,,,Step 3,Type ZZ-NO-SUCH-VALUE in the Sample Number box.,The box accepts the text.,,,
+,,,Step 4,Click Search.,The search completes without a server error.,,,
+,,,Step 5,Read the result area.,The page shows There are no Results to Display.,,,
+,Test Case,Participant Address Labels search finds nothing for an unknown value and limits input length,Step 1,Open Distributions > Participant Address Labels.,"The page opens with the Lab Code, Lab Name and Contact Name search boxes.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Check the maximum length of the search box of the row.,"It accepts at most 8 (Lab Code) or 50 (Lab Name, Contact Name) characters.",,,
+,,,Step 3,Type ZZ-NOSUCH in that search box.,The box accepts the text.,,,
+,,,Step 4,Click Search.,The search completes without a server error.,,,
+,,,Step 5,Check the page after the search.,The Participant Address Labels page is still shown.,,,
+,Test Case,Exports menu links open their page without an error,Step 1,Open Manage Contracts > Exports.,The Exports menu opens with four export links.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the export link of the row.,The export page starts to open.,,,
+,,,Step 3,Wait for the page to load.,The page loads.,,,
+,,,Step 4,Check the page content.,No server error page is shown.,,,
+,,,Step 5,Check the page heading.,A heading is shown.,,,
+,Test Case,A tabulation waiting for sign-off can be opened from Results Sign-off,Step 1,Open Results Sign-off.,The list of tabulations ready to be signed off is shown.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Check the list has a View link.,At least one View link is shown.,,,
+,,,Step 3,Click the first View link.,The tabulation page starts to open.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page content.,No server error page is shown.,,,

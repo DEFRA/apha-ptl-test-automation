@@ -1,0 +1,6 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Following the menu and list links reaches the page that needs an id,Step 1,Open http://localhost:1946/home.aspx.,The Home page loads.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,"Click the links of the path in the current row, in order.",Each click opens the next page.,,,
+,,,Step 3,Read the main heading of the destination page.,The h1 matches the heading in the row.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Repeat for every row.,Every path reaches its page.,,,

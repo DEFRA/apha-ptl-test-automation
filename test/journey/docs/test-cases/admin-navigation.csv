@@ -1,0 +1,21 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Home shows a card for every section,Step 1,Open http://localhost:1946/Home.aspx.,The Home page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the section cards.,Seven cards are shown.,,,
+,,,Step 3,Compare the card names.,"They are System Administration, Manage Contracts, Manage Schemes, Distributions, Test Consultant, Assessor and Results Sign-off.",,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Do not click any card.,Nothing is changed.,,,
+,Test Case,A section menu lists its items,Step 1,Open Home and click the section card in the row.,The section page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the menu on the left.,The menu items are listed.,,,
+,,,Step 3,Compare with the items in the row.,The items and their order match.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Do not click any item.,Nothing is changed.,,,
+,Test Case,Home to section to menu item opens the page,Step 1,Open Home and click the section card in the row.,The section page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the menu item in the row.,The item page opens.,,,
+,,,Step 3,Read the address of the page.,It ends with the route in the row.,,,
+,,,Step 4,Read the main heading.,The h1 matches the heading in the row.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Home opens Results Sign-off,Step 1,Open http://localhost:1946/Home.aspx.,The Home page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the Results Sign-off card.,The Results Sign-off page opens.,,,
+,,,Step 3,Read the address.,It ends with /Results Sign-off/SignOff.aspx.,,,
+,,,Step 4,Read the main heading.,The h1 is Results Sign-off.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,

@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Ticking Generate Invoices shows Invoice Generation in Manage Contracts,Step 1,Open Manage Roles and find your own row.,Only Admin is ticked.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Tick Generate Invoices.,The role is saved and you are signed in again.,,,
+,,,Step 3,Open Home > Manage Contracts.,"The menu lists Customers, Search, Group Addresses, Exports and Invoice Generation.",,,
+,,,Step 4,Click Invoice Generation.,The Invoice Generation page opens.,,,
+,,,Step 5,Cleanup: untick Generate Invoices.,Only Admin is ticked again.,,,
+,Test Case,Unticking Generate Invoices hides Invoice Generation again,Step 1,Open Manage Roles and tick Generate Invoices for yourself.,The role is saved.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Untick Generate Invoices.,The role is removed.,,,
+,,,Step 3,Open Home > Manage Contracts.,"The menu lists Customers, Search, Group Addresses and Exports only.",,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Cleanup: make sure only Admin is ticked.,Only Admin is ticked.,,,
+,Test Case,Ticking one more role leaves every section menu unchanged,Step 1,Open Manage Roles and tick the role in the row for yourself.,The role is saved.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open each section from Home.,Each section page opens.,,,
+,,,Step 3,Read the menu of each section.,The items match the Navigations pictures (Manage Contracts without Invoice Generation).,,,
+,,,Step 4,Check each page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Cleanup: untick the role.,Only Admin is ticked again.,,,

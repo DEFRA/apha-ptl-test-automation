@@ -1,0 +1,31 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Scheme search with an unknown name shows no results,Step 1,Open http://localhost:1946/Scheme Admin/Search.aspx as a signed-in Admin.,"The page loads, the h1 reads Search and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the text above the search box.,The text reads: This page can be used to search for Schemes.,,,
+,,,Step 3,Type ZZ-NO-SUCH-SCHEME in the Scheme Name box.,The box shows ZZ-NO-SUCH-SCHEME.,,,
+,,,Step 4,Click the Search button.,The page reloads with the h1 Search and no server error page is shown.,,,
+,,,Step 5,Read the Search Results area.,The message reads: There are no Results to Display.,,,
+,Test Case,Scheme search with a known name lists results,Step 1,Open http://localhost:1946/Scheme Admin/Search.aspx as a signed-in Admin.,"The page loads, the h1 reads Search and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type African Horse Sickness in the Scheme Name box.,The box shows African Horse Sickness.,,,
+,,,Step 3,Click the Search button.,The page reloads with the h1 Search and no server error page is shown.,,,
+,,,Step 4,Read the Search Results area.,The message There are no Results to Display is not shown.,,,
+,,,Step 5,Look for the scheme name in the results.,A result containing African Horse Sickness is listed.,,,
+,Test Case,Distribution search by an unknown number shows no results,Step 1,Open http://localhost:1946/Distributions/Search.aspx as a signed-in Admin.,"The page loads, the h1 reads Search and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Look at the Distribution Number box.,The Distribution Number box and the Search button are visible.,,,
+,,,Step 3,Type ZZ-NO-SUCH-DIST in the Distribution Number box.,The box shows ZZ-NO-SUCH-DIST.,,,
+,,,Step 4,Click the Search button.,The page reloads with the h1 Search and no server error page is shown.,,,
+,,,Step 5,Read the Search Results area.,The message reads: There are no Results to Display.,,,
+,Test Case,Distributions Search shows the Distribution Number and Sample Number tabs,Step 1,Open http://localhost:1946/Distributions/Search.aspx as a signed-in Admin.,"The page loads, the h1 reads Search and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the tab names above the search box.,The tabs Distribution Number and Sample Number are shown.,,,
+,,,Step 3,Read the text below the tabs.,The text reads: Use the search box below to identify the required Scheme by Distribution Number.,,,
+,,,Step 4,Look at the search box on the Distribution Number tab.,The Distribution Number box and the Search button are visible.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Search.,,,
+,Test Case,Contracts customer search shows its fields and an unknown QAL keeps the page,Step 1,Open http://localhost:1946/Contracts Admin/Search.aspx as a signed-in Admin.,"The page loads, the h1 reads Search and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the tab names.,The tabs Customers and Participants are shown.,,,
+,,,Step 3,Read the field labels on the Customers tab.,"The labels QAL Number, Account Number, Name, Contact Name, Organisation and Country are shown.",,,
+,,,Step 4,Type ZZ-NO-SUCH-QAL in the QAL Number box and click Search.,The page reloads with the h1 Search.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Search.,,,
+,Test Case,Create User search with an unknown id keeps the page and creates no user,Step 1,Open http://localhost:1946/Admin/UserCreate.aspx as a signed-in Admin.,"The page loads, the h1 reads Create User and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the instruction text.,"The text reads: Type in the Id number (eg m123456), forename or surname of the user to be created.",,,
+,,,Step 3,Type zz999999 in the search box.,The box shows zz999999.,,,
+,,,Step 4,Click the Search button.,The page reloads with the h1 Create User.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Create User.,,,

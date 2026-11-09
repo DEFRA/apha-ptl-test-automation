@@ -1,0 +1,6 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Clearing a required field on an existing record blocks the save and shows its message,Step 1,Follow the click path in the current row to the record.,The record form opens with its values.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Clear the field named in the row.,The field is empty.,,,
+,,,Step 3,Click Save.,The page stays on the form and nothing is saved.,,,
+,,,Step 4,Read the validation messages.,The message in the row is shown.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,

@@ -1,0 +1,6 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A customer found by QAL number opens its details,Step 1,Open Manage Contracts > Search.,The Search page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type the QAL number of the row and click Search.,The customer is listed.,,,
+,,,Step 3,Click the customer in the results.,The customer details page opens.,,,
+,,,Step 4,Read the page text.,The QAL number is shown.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,

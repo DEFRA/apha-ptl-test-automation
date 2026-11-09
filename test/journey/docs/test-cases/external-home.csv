@@ -1,0 +1,28 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Home page shows the heading and the five sections in order,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the main heading of the page.,The h1 reads VETQAS Proficiency Testing.,,,
+,,,Step 3,Read the first section heading (h2) on the page.,The first h2 reads Important.,,,
+,,,Step 4,Read the second and third section headings (h2) on the page.,The second h2 reads Orders and the third h2 reads Schemes.,,,
+,,,Step 5,Read the fourth and fifth section headings (h2) on the page.,The fourth h2 reads Results and the fifth h2 reads Accounts.,,,
+,Test Case,Home page shows the nine action cards,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Look at the cards under the Orders section.,The cards Create order for current year and Create order for next year are visible.,,,
+,,,Step 3,Look at the cards under the Schemes section.,The card View schemes is visible.,,,
+,,,Step 4,Look at the cards under the Results section.,"The cards Enter results, View results, View reports and Enter comments are visible.",,,
+,,,Step 5,Look at the cards under the Accounts section.,The cards Edit customer details and Edit participant details are visible.,,,
+,,,Step 6,Count the cards shown on the page.,Nine cards are shown and the h1 is still VETQAS Proficiency Testing.,,,
+,Test Case,Header shows the signed-in user name and the header links,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the logged-in label in the header.,The label Logged in as : is visible followed by the name Local Debug User.,,,
+,,,Step 3,Look for the APHA Science Services link in the header.,The APHA Science Services link is visible.,,,
+,,,Step 4,Look for the User Manual link in the header.,The User Manual link is visible.,,,
+,,,Step 5,Look for the My account link in the header.,The My account link is visible.,,,
+,,,Step 6,Look for the Log out button in the header without selecting it.,The Log out button is visible and the user is still on /Home.aspx.,,,
+,Test Case,View Information link opens the Information page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Look for the View Information link on the home page.,The View Information link is visible.,,,
+,,,Step 3,Click the View Information link.,The browser navigates to the address path /ViewInformation.aspx.,,,
+,,,Step 4,Read the main heading of the page that opened.,The h1 reads Information.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Information.,,,
+,Test Case,My account link opens the My account page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Click the My account link in the header.,The browser navigates to the address path /EditParticipantDetails.aspx.,,,
+,,,Step 3,Read the main heading of the page that opened.,The h1 reads My account.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Leave the page without changing or saving anything.,No confirmation or saved message is shown and the h1 is still My account.,,,

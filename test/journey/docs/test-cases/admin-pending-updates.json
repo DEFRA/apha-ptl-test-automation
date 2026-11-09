@@ -1,0 +1,176 @@
+{
+  "feature": "admin-pending-updates",
+  "test_cases": [
+    {
+      "ref": "TC-053",
+      "layer": "ui",
+      "title": "Pending customer updates list shows QAL Number, Customer Name and Details",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Review Pending Customer Updates lists QAL Number, Customer Name and Details with at least one row - route /Contracts Admin/ReviewPendingCustomerUpdates.aspx (crawl, docs/discovery/coverage-plan.md)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Read-only: nothing is changed. The seed data holds two rows (QAL/0344, QAL/03086); only at least one row is asserted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.",
+          "expected": "The page loads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Review Pending Customer Updates."
+        },
+        {
+          "action": "Look at the first column heading of the table.",
+          "expected": "The column heading QAL Number is shown."
+        },
+        {
+          "action": "Look at the second and third column headings of the table.",
+          "expected": "The column headings Customer Name and Details are shown."
+        },
+        {
+          "action": "Count the data rows in the table.",
+          "expected": "At least one data row is shown, with a QAL Number, a Customer Name and a Details link."
+        }
+      ]
+    },
+    {
+      "ref": "TC-054",
+      "layer": "ui",
+      "title": "Pending customer update details show Approve, Decline and Cancel and Cancel changes nothing",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Details opens PendingCustomerUpdateDetails.aspx?CustomerId=<guid> with the buttons Approve, Decline and Cancel; Cancel returns to the list - route /Contracts Admin/PendingCustomerUpdateDetails.aspx (crawl; Cancel destination TODO)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Approve and Decline are checked for presence only and are not selected, because they consume seed data.",
+        "Nothing is changed, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Review Pending Customer Updates and at least one row is shown."
+        },
+        {
+          "action": "Note the QAL Number and Customer Name of the first row as <first QAL number> and <first customer name>.",
+          "expected": "The two values are recorded."
+        },
+        {
+          "action": "Select the Details link on the first row.",
+          "expected": "The page PendingCustomerUpdateDetails.aspx opens and no server error page is shown."
+        },
+        {
+          "action": "Look at the buttons on the page without selecting Approve or Decline.",
+          "expected": "The buttons Approve, Decline and Cancel are visible."
+        },
+        {
+          "action": "Select Cancel.",
+          "expected": "The page returns to the Review Pending Customer Updates list."
+        },
+        {
+          "action": "Look for the row with <first QAL number> and <first customer name>.",
+          "expected": "The row is still listed, so nothing was approved or declined."
+        }
+      ]
+    },
+    {
+      "ref": "TC-055",
+      "layer": "ui",
+      "title": "Pending participant updates page opens with its heading",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Review Pending Participant Updates opens with its h1 and shows There are no pending participants to display. only when none exist - route /Contracts Admin/ReviewPendingParticipantUpdates.aspx (crawl, docs/discovery/coverage-plan.md)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "Read-only: the number of pending participants is not asserted because it depends on the data.",
+        "The message There are no pending participants to display. is checked only when the list is empty."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Review Pending Customer Updates."
+        },
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/ReviewPendingParticipantUpdates.aspx.",
+          "expected": "The page loads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Review Pending Participant Updates."
+        },
+        {
+          "action": "Look at the content under the heading.",
+          "expected": "Either a table of pending participants or the message There are no pending participants to display. is shown."
+        },
+        {
+          "action": "If no pending participants are listed, read the message.",
+          "expected": "The message reads There are no pending participants to display."
+        }
+      ]
+    },
+    {
+      "ref": "TC-056",
+      "layer": "ui",
+      "title": "Admin approves and declines pending customer updates",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Approve and Decline on PendingCustomerUpdateDetails.aspx resolve the pending customer update - route /Contracts Admin/PendingCustomerUpdateDetails.aspx (buttons seen in the crawl; outcome TODO)"
+      ],
+      "assumptions": [
+        "NOT repeatable: each Approve or Decline consumes a seeded pending update (two rows exist). Automate as @wip.",
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The outcome messages and list behaviour after Approve and Decline are not recorded (see open_questions).",
+        "Cleanup is not possible from the UI; the seed data needs a reset."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.",
+          "expected": "The h1 reads Review Pending Customer Updates and at least two rows are shown."
+        },
+        {
+          "action": "Note the QAL Number of the first row as <approve QAL number> and of the second row as <decline QAL number>.",
+          "expected": "The two QAL Numbers are recorded."
+        },
+        {
+          "action": "Select Details on the row for <approve QAL number>, then select Approve.",
+          "expected": "<outcome message after Approve> is shown and the page leaves the details view."
+        },
+        {
+          "action": "Check the Review Pending Customer Updates list.",
+          "expected": "The row for <approve QAL number> is no longer listed."
+        },
+        {
+          "action": "Select Details on the row for <decline QAL number>, then select Decline.",
+          "expected": "<outcome message after Decline> is shown and the page leaves the details view."
+        },
+        {
+          "action": "Check the Review Pending Customer Updates list.",
+          "expected": "The row for <decline QAL number> is no longer listed."
+        },
+        {
+          "action": "Cleanup: ask the environment owner to reset the seed data.",
+          "expected": "Both pending customer updates are listed again after the reset."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "TODO: Confirm where Cancel on PendingCustomerUpdateDetails.aspx leads (TC-054 assumes the pending customers list).",
+    "TODO: Confirm the outcome message and list behaviour after Approve and after Decline (TC-056).",
+    "TODO: TC-056 consumes seed data. Confirm how the two pending updates are re-seeded between runs.",
+    "TODO: Confirm the layout of the pending participants list when rows exist (TC-055 does not assert it).",
+    "TODO: Confirm the business rules behind the derived criteria; no requirements document exists."
+  ]
+}

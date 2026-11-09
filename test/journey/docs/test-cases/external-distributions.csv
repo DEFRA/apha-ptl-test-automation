@@ -1,0 +1,27 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Enter results card on Home opens the Current Distributions page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Look for the Enter results card under the Results section.,The Enter results card is visible.,,,
+,,,Step 3,Click the Enter results card.,The browser navigates to the address path /DistributionsCurrent.aspx or /ResultsEntry.aspx.,,,
+,,,Step 4,Read the main heading of the page that opened.,The h1 reads Current Distributions.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Current Distributions shows the empty-state message and no search form,Step 1,Open http://localhost:1688/DistributionsCurrent.aspx as a signed-in external user.,The page loads with the h1 Current Distributions and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the message in the main content area.,The message reads There are no current distributions to display.,,,
+,,,Step 3,"Look for the labels Distribution Reference, Scheme Code and Scheme Name.",None of these search labels are shown.,,,
+,,,Step 4,Look for the SEARCH and SHOW ALL buttons.,Neither button is shown.,,,
+,,,Step 5,Reload the page.,The h1 is still Current Distributions and the message is still shown.,,,
+,Test Case,View results card on Home opens the Previous Distributions page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Look for the View results card under the Results section.,The View results card is visible.,,,
+,,,Step 3,Click the View results card.,The browser navigates to the address path /DistributionsPrevious.aspx or /ResultsView.aspx.,,,
+,,,Step 4,Read the main heading of the page that opened.,The h1 reads Previous Distributions.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Previous Distributions shows the search form and the empty-state message,Step 1,Open http://localhost:1688/DistributionsPrevious.aspx as a signed-in external user.,The page loads with the h1 Previous Distributions and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the labels of the search form.,"The labels Distribution Reference, Scheme Code and Scheme Name are shown.",,,
+,,,Step 3,Look for the search buttons.,The SEARCH button and the SHOW ALL button are visible.,,,
+,,,Step 4,Read the message below the search form.,The message reads There are no distributions to display.,,,
+,,,Step 5,Reload the page.,The h1 is still Previous Distributions and the search form is still shown.,,,
+,Test Case,Searching Previous Distributions with an unknown reference keeps the empty result,Step 1,Open http://localhost:1688/DistributionsPrevious.aspx as a signed-in external user.,The page loads with the h1 Previous Distributions.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Type ZZ-NO-SUCH-REF in the Distribution Reference box.,The box shows ZZ-NO-SUCH-REF.,,,
+,,,Step 3,Click the SEARCH button.,The page reloads with the h1 Previous Distributions and no server error page is shown.,,,
+,,,Step 4,Read the message below the search form.,The message reads There are no distributions to display.,,,
+,,,Step 5,Click the SHOW ALL button.,The page reloads with the h1 Previous Distributions and the search form is still shown.,,,
+,,,Step 6,Read the Distribution Reference box and the message.,The Distribution Reference box is cleared or empty and the message reads There are no distributions to display.,,,

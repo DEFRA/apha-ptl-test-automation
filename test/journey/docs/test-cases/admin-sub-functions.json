@@ -1,0 +1,236 @@
+{
+  "feature": "admin-sub-functions",
+  "test_cases": [
+    {
+      "ref": "TC-173",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The expected menu and access result per role is derived from the site map and folder names; confirm it with the application owner."
+      ],
+      "title": "Unticking one role for dt2\\ns000134 leaves the menus and sub menus as expected",
+      "acs": [
+        "DERIVED: Roles are assigned on Manage Roles and gate pages by folder; Invoice Generation is listed only with Generate Invoices - UserRoles.aspx, MasterContent.master.vb:50"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration > Manage Roles and tick every optional role for dt2\\ns000134.",
+          "expected": "Every optional role is ticked."
+        },
+        {
+          "action": "Untick the role of the row.",
+          "expected": "The role is saved."
+        },
+        {
+          "action": "Open Home and each section (System Administration, Manage Contracts, Manage Schemes, Distributions).",
+          "expected": "Each section menu lists its items, with Invoice Generation under Manage Contracts as in the row."
+        },
+        {
+          "action": "Open the page of the row.",
+          "expected": "The page opens or shows Access Denied as in the row."
+        },
+        {
+          "action": "Open every sub menu page of the section of the row and of System Administration.",
+          "expected": "Each page is allowed or denied as in the row; untick the remaining roles afterwards to restore the Admin-only baseline."
+        }
+      ]
+    },
+    {
+      "ref": "TC-178",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "title": "Ticking one role for dt2\\ns000134 gives access to its menus and sub menus",
+      "acs": [
+        "DERIVED: Each role gives access to the pages of its folder; Invoice Generation is listed only with Generate Invoices - UserRoles.aspx, MasterContent.master.vb:50"
+      ],
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The expected menu and access result per role is derived from the site map and folder names; confirm it with the application owner."
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Roles; make sure only the Admin role is ticked for dt2\\ns000134.",
+          "expected": "No optional role is ticked."
+        },
+        {
+          "action": "Tick the role of the row.",
+          "expected": "The role is saved."
+        },
+        {
+          "action": "Open Home and each section.",
+          "expected": "Each section menu lists its items, with Invoice Generation only for Generate Invoices."
+        },
+        {
+          "action": "Open the page of the row.",
+          "expected": "The page opens without Access Denied."
+        },
+        {
+          "action": "Open every sub menu page of the section of the row and of System Administration.",
+          "expected": "Each page opens without Access Denied; untick the role afterwards."
+        }
+      ]
+    },
+    {
+      "ref": "TC-174",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Each tab of a scheme opens without an error",
+      "acs": [
+        "DERIVED: A scheme has Details, Tests, Distribution Level Data, Results Tabulations and Test consultants tabs - Scheme.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes.",
+          "expected": "The Schemes list opens."
+        },
+        {
+          "action": "Click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Click the tab of the row.",
+          "expected": "The tab content shows."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-175",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "A pending order must exist on the target environment."
+      ],
+      "title": "A pending order opens from Review Pending Orders",
+      "acs": [
+        "DERIVED: Pending orders link to their detail page - ReviewPendingOrders.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers.",
+          "expected": "The Customers list opens."
+        },
+        {
+          "action": "Click Review Pending Orders.",
+          "expected": "The pending orders list opens."
+        },
+        {
+          "action": "Click Details on the first order.",
+          "expected": "The pending order page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the address.",
+          "expected": "The page is PendingContractOrder.aspx with no server error."
+        }
+      ]
+    },
+    {
+      "ref": "TC-176",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The link is shown only for contracts that allow import permits; the first customer needs one."
+      ],
+      "title": "Import Permit opens from a contract and Cancel returns to the contract list",
+      "acs": [
+        "DERIVED: Import Permit(s) is reached from the contract list and offers Save, Apply and Cancel - ContractList.aspx, ImportPermit.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and click Contracts on the first customer.",
+          "expected": "The Contracts list opens."
+        },
+        {
+          "action": "Click Import Permit(s).",
+          "expected": "The Import Permit page opens."
+        },
+        {
+          "action": "Check the buttons.",
+          "expected": "Save and Apply are shown."
+        },
+        {
+          "action": "Click Cancel.",
+          "expected": "The Contracts list opens again."
+        },
+        {
+          "action": "Check the address.",
+          "expected": "The page is ContractList.aspx with no server error."
+        }
+      ]
+    },
+    {
+      "ref": "TC-177",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A field of an external test consultant is edited and kept",
+      "acs": [
+        "DERIVED: Department and Email of an external test consultant can be edited - ManageExternalTCs.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration > Manage External Test Consultants.",
+          "expected": "The list opens."
+        },
+        {
+          "action": "Add a consultant with a unique name and click Save.",
+          "expected": "The consultant is listed."
+        },
+        {
+          "action": "Click Edit on the consultant and change the field of the row to the value of the row.",
+          "expected": "The edit boxes show the value."
+        },
+        {
+          "action": "Click the row Save link and the page Save button.",
+          "expected": "The change is saved."
+        },
+        {
+          "action": "Find the consultant in the list.",
+          "expected": "The row shows the new value; the test removes the consultant afterwards."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the site map, page source and probes; confirm the expected role behaviour.",
+    "TODO: Scheme Tests, Distribution Level Data and Test consultants tab content edits need their control ids from a live scheme.",
+    "TODO: Manage Roles for users other than dt2\\ns000134 needs another user account."
+  ]
+}

@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,The Customers list moves to its next page,Step 1,"Open http://localhost:1946/home.aspx, click Manage Contracts then Customers.",The Customers list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the first row of the list.,A customer row is shown.,,,
+,,,Step 3,Click page 2 in the pager.,The list reloads with the h1 Customers.,,,
+,,,Step 4,Read the first row of the list again.,The first row differs from the one on page 1.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Selecting a year keeps the page and shows no error,Step 1,Open http://localhost:1946/home.aspx and click the links of the path in the current row.,The detail page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the year named in the row from the year dropdown.,The page reloads.,,,
+,,,Step 3,Read the main heading.,The h1 matches the heading in the row.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Do not change any price.,Nothing is changed.,,,
+,Test Case,A customer search by a known QAL number lists that customer,Step 1,"Open http://localhost:1946/home.aspx, click Manage Contracts then Search.",The Search page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type QAL/0344 in the QAL Number box.,The box shows QAL/0344.,,,
+,,,Step 3,Click Search.,The page reloads with the h1 Search.,,,
+,,,Step 4,Read the results.,A row for QAL/0344 is listed.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,

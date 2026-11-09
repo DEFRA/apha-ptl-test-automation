@@ -1,0 +1,21 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Detail pages show their action buttons,Step 1,Open http://localhost:1946/home.aspx and click the links of the path in the current row.,The detail page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Look for the button named in the row.,The button is visible.,,,
+,,,Step 3,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 4,Repeat for every row.,Every button is shown.,,,
+,,,Step 5,Do not click the button.,Nothing is changed.,,,
+,Test Case,Detail pages show their field labels,Step 1,Open http://localhost:1946/home.aspx and click the links of the path in the current row.,The detail page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Look for the field label named in the row.,The label is visible.,,,
+,,,Step 3,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 4,Repeat for every row.,Every label is shown.,,,
+,,,Step 5,Do not change any field.,Nothing is changed.,,,
+,Test Case,Scheme Details shows its tabs,Step 1,Open http://localhost:1946/home.aspx and click the links of the path in the current row.,The detail page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the tab names.,The tab named in the row is shown.,,,
+,,,Step 3,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 4,Repeat for every row.,Every tab is shown.,,,
+,,,Step 5,Do not change any field.,Nothing is changed.,,,
+,Test Case,Cancel on a detail page returns to its list without saving,Step 1,Open http://localhost:1946/home.aspx and click the links of the path in the current row.,The detail page opens with its heading.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Cancel.,The browser leaves the form.,,,
+,,,Step 3,Read the main heading of the page that opened.,The h1 matches the heading in the row.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Look at the list.,The list is shown unchanged.,,,

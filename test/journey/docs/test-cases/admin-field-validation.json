@@ -1,0 +1,49 @@
+{
+  "feature": "admin-field-validation",
+  "test_cases": [
+    {
+      "ref": "TC-082",
+      "layer": "ui",
+      "title": "Clearing a required field on an existing record blocks the save and shows its message",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Client validators block saving when a required field is cleared on existing records - 20 fields (data/field-validation.json, survey 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The record is the first one in its list. Only one field is cleared per execution and the page is left without a successful save.",
+        "The Lab Code field on Participant Details posts back when cleared and is not covered.",
+        "Representative sample: one row stands for the 20 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Follow the click path in the current row to the record.",
+          "expected": "The record form opens with its values."
+        },
+        {
+          "action": "Clear the field named in the row.",
+          "expected": "The field is empty."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The page stays on the form and nothing is saved."
+        },
+        {
+          "action": "Read the validation messages.",
+          "expected": "The message in the row is shown."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from read-only surveys of the running app and the page source; confirm the headings and messages are the intended behaviour.",
+    "TODO: confirm the server also rejects a blank value if the client validators are bypassed."
+  ]
+}

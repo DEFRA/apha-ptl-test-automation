@@ -1,0 +1,22 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,An exported file is deleted from its export page,Step 1,Open Manage Contracts > Exports.,The Exports menu opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the export link of the row.,The export page opens with its list of files.,,,
+,,,Step 3,Click Delete on the first file and confirm.,The file is removed.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page after the delete.,No server error page is shown.,,,
+,Test Case,An item is removed from a contract,Step 1,Open Manage Contracts > Customers and click Contracts on the first customer.,The Contracts list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Contract Items on the first contract.,The contract items page opens.,,,
+,,,Step 3,Click Remove on the first item.,The item is removed.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page after the remove.,No server error page is shown.,,,
+,Test Case,A viewer is removed from a participant,Step 1,Open Manage Contracts > Customers and click Participants on the first customer.,The Participants list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Viewers on the first participant.,The viewers page opens.,,,
+,,,Step 3,Click <--Remove.,The selected viewer is removed.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page after the remove.,No server error page is shown.,,,
+,Test Case,An item is removed from a scheme,Step 1,Open Manage Schemes > Schemes.,The Schemes list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Details on the first scheme.,The scheme page opens.,,,
+,,,Step 3,Click the Tests tab.,The tests of the scheme are shown.,,,
+,,,Step 4,Click the first visible Remove and confirm.,The item is removed from the scheme.,,,
+,,,Step 5,Wait for the page to load.,The page loads.,,,
+,,,Step 6,Check the page after the remove.,No server error page is shown.,,,

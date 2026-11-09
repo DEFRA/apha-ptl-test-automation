@@ -1,0 +1,117 @@
+{
+  "feature": "navigation",
+  "test_cases": [
+    {
+      "ref": "TC-004",
+      "layer": "ui",
+      "title": "Logo returns the user to the home page from another page",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Clicking the logo in the navigation bar opens /Home.aspx - app/ProficiencyTestingExternalWeb/NavigationBar.ascx:43"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "/Help.aspx is used as the non-home starting page."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Help.aspx as a signed-in external user.",
+          "expected": "The Help page loads with the h1 Help and the logo with alt text Proficiency Testing homepage is visible in the navigation bar."
+        },
+        {
+          "action": "Confirm the browser address ends with /Help.aspx.",
+          "expected": "The address path is /Help.aspx, so the user is not on the home page."
+        },
+        {
+          "action": "Click the logo in the navigation bar.",
+          "expected": "The browser navigates to the home page and the address path is /Home.aspx."
+        },
+        {
+          "action": "Read the main heading of the page that opened.",
+          "expected": "The h1 reads VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Stop on the home page without selecting anything else.",
+          "expected": "The user remains on /Home.aspx and no error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-005",
+      "layer": "ui",
+      "title": "Footer links open the expected internal page for each link",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Footer Help link opens Help.aspx - app/ProficiencyTestingExternalWeb/Footer.ascx:12",
+        "DERIVED: Footer Accessibility Statement link opens AccessibilityStatement.aspx - app/ProficiencyTestingExternalWeb/Footer.ascx:13",
+        "DERIVED: Footer System Information link opens About.aspx - app/ProficiencyTestingExternalWeb/Footer.ascx:14",
+        "DERIVED: Footer Privacy Policy link opens PrivacyPolicy.aspx - app/ProficiencyTestingExternalWeb/Footer.ascx:15"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "All four footer links are internal and open in the same tab.",
+        "Data set: Help -> h1 Help; Accessibility Statement -> h1 Accessibility statement for the PT-LIMS website; System Information -> h1 About; Privacy Policy -> h1 VETQAS Privacy Notice."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user and scroll to the footer.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing and the footer shows the links Help, Accessibility Statement, System Information and Privacy Policy."
+        },
+        {
+          "action": "Click the Help link in the footer.",
+          "expected": "The page opens in the same tab and the address path is /Help.aspx."
+        },
+        {
+          "action": "Read the main heading of the Help page.",
+          "expected": "The h1 reads Help."
+        },
+        {
+          "action": "Use the browser Back button to return to the home page.",
+          "expected": "The home page is shown with the h1 VETQAS Proficiency Testing and the footer links are visible."
+        },
+        {
+          "action": "Click the Accessibility Statement link in the footer.",
+          "expected": "The page opens in the same tab and the address path is /AccessibilityStatement.aspx."
+        },
+        {
+          "action": "Read the main heading of the Accessibility Statement page.",
+          "expected": "The h1 reads Accessibility statement for the PT-LIMS website."
+        },
+        {
+          "action": "Use the browser Back button to return to the home page.",
+          "expected": "The home page is shown with the h1 VETQAS Proficiency Testing and the footer links are visible."
+        },
+        {
+          "action": "Click the System Information link in the footer.",
+          "expected": "The page opens in the same tab and the address path is /About.aspx."
+        },
+        {
+          "action": "Read the main heading of the System Information page.",
+          "expected": "The h1 reads About."
+        },
+        {
+          "action": "Use the browser Back button to return to the home page.",
+          "expected": "The home page is shown with the h1 VETQAS Proficiency Testing and the footer links are visible."
+        },
+        {
+          "action": "Click the Privacy Policy link in the footer.",
+          "expected": "The page opens in the same tab and the address path is /PrivacyPolicy.aspx."
+        },
+        {
+          "action": "Read the main heading of the Privacy Policy page.",
+          "expected": "The h1 reads VETQAS Privacy Notice."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "Confirm the exact footer link text in the browser: navigation.md notes it comes from local resources.",
+    "TODO: the Help link text is set in code behind (LnkHelp); confirm its resource key (navigation.md).",
+    "Is the Help link destination expected to include the #contextHelpHome fragment in the address? (Footer.ascx:12)",
+    "DERIVED criteria come from code and crawl only; confirm the footer destinations and headings are the intended behaviour."
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "feature": "external-home",
+  "test_cases": [
+    {
+      "ref": "TC-006",
+      "layer": "ui",
+      "title": "Home page shows the heading and the five sections in order",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /Home.aspx shows h1 VETQAS Proficiency Testing and the h2 sections Important, Orders, Schemes, Results, Accounts in that order - app/ProficiencyTestingExternalWeb/Home.aspx (route /Home.aspx)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Section order data: 1 Important; 2 Orders; 3 Schemes; 4 Results; 5 Accounts."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Read the first section heading (h2) on the page.",
+          "expected": "The first h2 reads Important."
+        },
+        {
+          "action": "Read the second and third section headings (h2) on the page.",
+          "expected": "The second h2 reads Orders and the third h2 reads Schemes."
+        },
+        {
+          "action": "Read the fourth and fifth section headings (h2) on the page.",
+          "expected": "The fourth h2 reads Results and the fifth h2 reads Accounts."
+        }
+      ]
+    },
+    {
+      "ref": "TC-007",
+      "layer": "ui",
+      "title": "Home page shows the nine action cards",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /Home.aspx shows nine cards (h3) for the order, scheme, result, report, comment and account actions - app/ProficiencyTestingExternalWeb/Home.aspx (route /Home.aspx)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Only the presence of each card is checked. The card destinations for orders, schemes, results, reports and comments return HTTP 500 locally (data blocker ENV-002) and are not followed.",
+        "Card data: Create order for current year; Create order for next year; View schemes; Enter results; View results; View reports; Enter comments; Edit customer details; Edit participant details."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing and no server error page is shown."
+        },
+        {
+          "action": "Look at the cards under the Orders section.",
+          "expected": "The cards Create order for current year and Create order for next year are visible."
+        },
+        {
+          "action": "Look at the cards under the Schemes section.",
+          "expected": "The card View schemes is visible."
+        },
+        {
+          "action": "Look at the cards under the Results section.",
+          "expected": "The cards Enter results, View results, View reports and Enter comments are visible."
+        },
+        {
+          "action": "Look at the cards under the Accounts section.",
+          "expected": "The cards Edit customer details and Edit participant details are visible."
+        },
+        {
+          "action": "Count the cards shown on the page.",
+          "expected": "Nine cards are shown and the h1 is still VETQAS Proficiency Testing."
+        }
+      ]
+    },
+    {
+      "ref": "TC-008",
+      "layer": "ui",
+      "title": "Header shows the signed-in user name and the header links",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The header shows Logged in as : followed by the user name and the links APHA Science Services, User Manual, My account and a Log out button - app/ProficiencyTestingExternalWeb/NavigationBar.ascx (route /Home.aspx)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active; the user name shown is Local Debug User.",
+        "The Log out button is checked for presence only and is not selected."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing and no server error page is shown."
+        },
+        {
+          "action": "Read the logged-in label in the header.",
+          "expected": "The label Logged in as : is visible followed by the name Local Debug User."
+        },
+        {
+          "action": "Look for the APHA Science Services link in the header.",
+          "expected": "The APHA Science Services link is visible."
+        },
+        {
+          "action": "Look for the User Manual link in the header.",
+          "expected": "The User Manual link is visible."
+        },
+        {
+          "action": "Look for the My account link in the header.",
+          "expected": "The My account link is visible."
+        },
+        {
+          "action": "Look for the Log out button in the header without selecting it.",
+          "expected": "The Log out button is visible and the user is still on /Home.aspx."
+        }
+      ]
+    },
+    {
+      "ref": "TC-009",
+      "layer": "ui",
+      "title": "View Information link opens the Information page",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The View Information link on the home page opens /ViewInformation.aspx with h1 Information - route /Home.aspx to /ViewInformation.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Look for the View Information link on the home page.",
+          "expected": "The View Information link is visible."
+        },
+        {
+          "action": "Click the View Information link.",
+          "expected": "The browser navigates to the address path /ViewInformation.aspx."
+        },
+        {
+          "action": "Read the main heading of the page that opened.",
+          "expected": "The h1 reads Information."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Information."
+        }
+      ]
+    },
+    {
+      "ref": "TC-010",
+      "layer": "ui",
+      "title": "My account link opens the My account page",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The My account link posts back and opens /EditParticipantDetails.aspx with h1 My account - route /Home.aspx to /EditParticipantDetails.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "The My account page is only opened and read. No field is changed and nothing is saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Click the My account link in the header.",
+          "expected": "The browser navigates to the address path /EditParticipantDetails.aspx."
+        },
+        {
+          "action": "Read the main heading of the page that opened.",
+          "expected": "The h1 reads My account."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Leave the page without changing or saving anything.",
+          "expected": "No confirmation or saved message is shown and the h1 is still My account."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl and Home.aspx only; confirm the section names, card names and order are the intended behaviour.",
+    "Home.aspx and NavigationBar.ascx line numbers are not recorded in coverage-plan.md; add file:line evidence if required.",
+    "Order, scheme, result, report and comment card destinations return HTTP 500 locally (ENV-002) and are not covered.",
+    "TODO: confirm whether the User Manual and APHA Science Services links open in a new tab and their target addresses."
+  ]
+}

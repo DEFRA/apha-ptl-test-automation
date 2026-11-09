@@ -1,0 +1,161 @@
+{
+  "feature": "admin-navigation",
+  "test_cases": [
+    {
+      "ref": "TC-118",
+      "layer": "ui",
+      "title": "Home shows a card for every section",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Home shows the cards System Administration, Manage Contracts, Manage Schemes, Distributions, Test Consultant, Assessor and Results Sign-off (Navigations folder, MasterPage)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Read-only: nothing is created, saved or deleted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Home.aspx.",
+          "expected": "The Home page opens."
+        },
+        {
+          "action": "Read the section cards.",
+          "expected": "Seven cards are shown."
+        },
+        {
+          "action": "Compare the card names.",
+          "expected": "They are System Administration, Manage Contracts, Manage Schemes, Distributions, Test Consultant, Assessor and Results Sign-off."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Do not click any card.",
+          "expected": "Nothing is changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-119",
+      "layer": "ui",
+      "title": "A section menu lists its items",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each section menu lists the items of the Navigations pictures: System Administration 11 items, Manage Contracts 4 (Invoice Generation needs the Generate Invoices role), Manage Schemes 7, Distributions 3 (data/nav-items.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted."
+      ],
+      "steps": [
+        {
+          "action": "Open Home and click the section card in the row.",
+          "expected": "The section page opens."
+        },
+        {
+          "action": "Read the menu on the left.",
+          "expected": "The menu items are listed."
+        },
+        {
+          "action": "Compare with the items in the row.",
+          "expected": "The items and their order match."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Do not click any item.",
+          "expected": "Nothing is changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-120",
+      "layer": "ui",
+      "title": "Home to section to menu item opens the page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Every menu item of every section opens its page from Home > Section > Item with its heading - 25 items (data/nav-items.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted.",
+        "Example: Home > System Administration > Manage Roles."
+      ],
+      "steps": [
+        {
+          "action": "Open Home and click the section card in the row.",
+          "expected": "The section page opens."
+        },
+        {
+          "action": "Click the menu item in the row.",
+          "expected": "The item page opens."
+        },
+        {
+          "action": "Read the address of the page.",
+          "expected": "It ends with the route in the row."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The h1 matches the heading in the row."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-121",
+      "layer": "ui",
+      "title": "Home opens Results Sign-off",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The Results Sign-off card opens the Results Sign-off page (Navigations folder)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Read-only: nothing is created, saved or deleted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Home.aspx.",
+          "expected": "The Home page opens."
+        },
+        {
+          "action": "Click the Results Sign-off card.",
+          "expected": "The Results Sign-off page opens."
+        },
+        {
+          "action": "Read the address.",
+          "expected": "It ends with /Results Sign-off/SignOff.aspx."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The h1 is Results Sign-off."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the Navigations pictures and a walk of the running site; confirm they are the intended behaviour.",
+    "TODO: Manage Viewers did not open in the menu walk (the click timed out); TC-120 keeps it so the result is visible.",
+    "TODO: the Test Consultant and Assessor sections are not walked item by item (no pictures were supplied)."
+  ]
+}

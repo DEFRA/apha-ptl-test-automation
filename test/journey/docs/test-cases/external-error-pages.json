@@ -1,0 +1,157 @@
+{
+  "feature": "external-error-pages",
+  "test_cases": [
+    {
+      "ref": "TC-014",
+      "layer": "ui",
+      "title": "Page not found error page shows its heading",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /ErrorPageNotFound.aspx shows h1 Page not found - route /ErrorPageNotFound.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Open http://localhost:1688/ErrorPageNotFound.aspx.",
+          "expected": "The page loads and the address path is /ErrorPageNotFound.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Page not found."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The h1 still reads Page not found."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No unhandled server error page is shown; only the Page not found page is displayed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-015",
+      "layer": "ui",
+      "title": "Generic error page shows its heading",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /ErrorGeneric.aspx shows h1 Error - route /ErrorGeneric.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Open http://localhost:1688/ErrorGeneric.aspx.",
+          "expected": "The page loads and the address path is /ErrorGeneric.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Error."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The h1 still reads Error."
+        },
+        {
+          "action": "Check the page for an unhandled server error message.",
+          "expected": "No unhandled server error page is shown; only the Error page is displayed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-016",
+      "layer": "ui",
+      "title": "User inactive error page shows the Invalid Permissions heading",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /ErrorUserInactive.aspx shows h1 Invalid Permissions - route /ErrorUserInactive.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "The page is opened directly by address; the conditions that redirect a user here are not tested."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Open http://localhost:1688/ErrorUserInactive.aspx.",
+          "expected": "The page loads and the address path is /ErrorUserInactive.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Invalid Permissions."
+        },
+        {
+          "action": "Reload the page.",
+          "expected": "The h1 still reads Invalid Permissions."
+        },
+        {
+          "action": "Check the page for an unhandled server error message.",
+          "expected": "No unhandled server error page is shown; only the Invalid Permissions page is displayed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-017",
+      "layer": "ui",
+      "title": "Unknown route returns HTTP 404",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: An unknown route such as /DoesNotExist.aspx returns HTTP 404 - route /DoesNotExist.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "/DoesNotExist.aspx is an address that does not exist in the application."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Open http://localhost:1688/DoesNotExist.aspx.",
+          "expected": "The server responds with HTTP status 404."
+        },
+        {
+          "action": "Check the response status code in the browser developer tools network tab.",
+          "expected": "The status code for /DoesNotExist.aspx is 404 and not 200 or 500."
+        },
+        {
+          "action": "Check the page content for a server error message.",
+          "expected": "No HTTP 500 server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/Home.aspx again.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing, so the site still works after the 404."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl only; confirm the headings are the intended behaviour.",
+    "TODO: the content shown for the 404 response (custom page or default) is not recorded in the facts; only the status code is checked.",
+    "TODO: the body text of the three error pages is not recorded and is not checked.",
+    "No source file:line is recorded in coverage-plan.md for these pages; evidence is by route."
+  ]
+}

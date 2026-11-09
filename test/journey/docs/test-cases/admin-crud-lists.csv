@@ -1,0 +1,26 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,"A new record is added, listed, kept after reload and removed",Step 1,Open the list page of the row from Home > its section.,The list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type a unique name in the add form and click Add.,The page reloads without an error.,,,
+,,,Step 3,Find the new record in the list (use the pager if needed) after reloading the page.,The record is listed.,,,
+,,,Step 4,Click Remove on the record.,The record is removed.,,,
+,,,Step 5,Reload the list and look for the record.,The record is no longer listed.,,,
+,Test Case,A record can be renamed and the new name is kept,Step 1,Open the list page and add a record with a unique name.,The record is listed.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Edit on the record.,The name becomes editable.,,,
+,,,Step 3,Type a new unique name and click Save.,The page reloads without an error.,,,
+,,,Step 4,Reload the list and look for the new name.,The new name is listed.,,,
+,,,Step 5,Look for the old name.,The old name is not listed.,,,
+,Test Case,A record cannot be added without a name,Step 1,Open the list page of the row.,The list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the number of rows.,The number is noted.,,,
+,,,Step 3,Leave the name empty and click Add.,A required message is shown.,,,
+,,,Step 4,Check the list.,No row was added.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,A list can be searched by name,Step 1,Open the list page and add a record with a unique name.,The record is listed.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Type the unique name in the search box and click Search.,The list is filtered.,,,
+,,,Step 3,Look at the rows.,The record is shown.,,,
+,,,Step 4,Search for ZZ-NO-SUCH-ITEM.,The list is filtered.,,,
+,,,Step 5,Look at the rows.,No row has that name.,,,
+,Test Case,A country that already exists cannot be added twice,Step 1,Open Manage Countries.,The list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Add a country with a unique name.,The country is listed.,,,
+,,,Step 3,Add a country with the same name again.,A message says the country already exists.,,,
+,,,Step 4,Reload the list.,The name is listed once.,,,
+,,,Step 5,Cleanup: remove the country.,The country is gone.,,,

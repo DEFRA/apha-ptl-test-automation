@@ -1,0 +1,11 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A page shows the seeded customer and participant identifiers,Step 1,Open the route in the row.,The page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Look for the text in the row.,The text is shown.,,,
+,,,Step 3,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 4,Do not change any field.,Nothing is changed.,,,
+,,,Step 5,Repeat for every row.,Every row passes.,,,
+,Test Case,A list page of the seeded customer loads without a server error,Step 1,Open the route in the row.,The page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Look for the text in the row.,The text is shown.,,,
+,,,Step 3,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 4,Do not click any button.,Nothing is changed.,,,
+,,,Step 5,Repeat for every row.,Every row passes.,,,

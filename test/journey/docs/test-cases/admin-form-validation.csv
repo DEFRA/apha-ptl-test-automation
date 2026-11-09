@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Saving an empty customer form shows each required message,Step 1,Open http://localhost:1946/Contracts Admin/Customer.aspx as a signed-in Admin.,The form loads with empty fields.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Leave every field empty.,No value is entered.,,,
+,,,Step 3,Click the Save button (ButtonSave).,The page stays on the form and nothing is saved.,,,
+,,,Step 4,Read the validation messages.,Each message of the Examples table is shown.,,,
+,,,Step 5,Check for a server error message.,No server error page is shown.,,,
+,Test Case,Saving an empty scheme form shows each required message,Step 1,Open http://localhost:1946/Scheme Admin/Scheme.aspx as a signed-in Admin.,The form loads with empty fields.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Leave every field empty.,No value is entered.,,,
+,,,Step 3,Click the Save button (ButtonSave1).,The page stays on the form and nothing is saved.,,,
+,,,Step 4,Read the validation messages.,Each message of the Examples table is shown.,,,
+,,,Step 5,Check for a server error message.,No server error page is shown.,,,
+,Test Case,Saving an empty groupAddress form shows each required message,Step 1,Open http://localhost:1946/Contracts Admin/GroupAddress.aspx as a signed-in Admin.,The form loads with empty fields.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Leave every field empty.,No value is entered.,,,
+,,,Step 3,Click the Save button (ButtonSave).,The page stays on the form and nothing is saved.,,,
+,,,Step 4,Read the validation messages.,Each message of the Examples table is shown.,,,
+,,,Step 5,Check for a server error message.,No server error page is shown.,,,

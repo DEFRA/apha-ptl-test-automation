@@ -1,0 +1,124 @@
+{
+  "feature": "admin-lists-behaviour",
+  "test_cases": [
+    {
+      "ref": "TC-087",
+      "layer": "ui",
+      "title": "The Customers list moves to its next page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The pager on Customers moves to the next page of customers (data/depth2.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx, click Manage Contracts then Customers.",
+          "expected": "The Customers list opens."
+        },
+        {
+          "action": "Read the first row of the list.",
+          "expected": "A customer row is shown."
+        },
+        {
+          "action": "Click page 2 in the pager.",
+          "expected": "The list reloads with the h1 Customers."
+        },
+        {
+          "action": "Read the first row of the list again.",
+          "expected": "The first row differs from the one on page 1."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-088",
+      "layer": "ui",
+      "title": "Selecting a year keeps the page and shows no error",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Year selectors on Weighted Pricing Plan, Postage Pricing Plan and Test Types reload the page - 9 years (data/depth2.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "The table contents for each year are not checked.",
+        "Representative sample: one row stands for the 9 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx and click the links of the path in the current row.",
+          "expected": "The detail page opens with its heading."
+        },
+        {
+          "action": "Select the year named in the row from the year dropdown.",
+          "expected": "The page reloads."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The h1 matches the heading in the row."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Do not change any price.",
+          "expected": "Nothing is changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-089",
+      "layer": "ui",
+      "title": "A customer search by a known QAL number lists that customer",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Searching Manage Contracts > Search by QAL number QAL/0344 lists that customer (data/depth2.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "The seeded customer QAL/0344 exists in the local data."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx, click Manage Contracts then Search.",
+          "expected": "The Search page opens."
+        },
+        {
+          "action": "Type QAL/0344 in the QAL Number box.",
+          "expected": "The box shows QAL/0344."
+        },
+        {
+          "action": "Click Search.",
+          "expected": "The page reloads with the h1 Search."
+        },
+        {
+          "action": "Read the results.",
+          "expected": "A row for QAL/0344 is listed."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from read-only surveys of the running apps; confirm the labels and buttons are the intended behaviour.",
+    "TODO: the paging behaviour on other lists is not covered."
+  ]
+}

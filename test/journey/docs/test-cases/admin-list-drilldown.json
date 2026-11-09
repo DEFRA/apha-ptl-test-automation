@@ -1,0 +1,46 @@
+{
+  "feature": "admin-list-drilldown",
+  "test_cases": [
+    {
+      "ref": "TC-078",
+      "layer": "ui",
+      "title": "Following a list link opens the expected page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: List links open the pages recorded by the survey - 7 links (data/drill.json)"
+      ],
+      "assumptions": [
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 7 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open the list in the current row of http://localhost:1946.",
+          "expected": "The list loads."
+        },
+        {
+          "action": "Click the link named in the row.",
+          "expected": "A page opens."
+        },
+        {
+          "action": "Read the main heading.",
+          "expected": "The h1 matches the heading in the row."
+        },
+        {
+          "action": "Check for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Return to the list.",
+          "expected": "The list is shown again."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from a survey of the running apps and the page source; confirm the headings and messages are the intended behaviour."
+  ]
+}

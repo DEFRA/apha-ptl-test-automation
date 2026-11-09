@@ -1,0 +1,278 @@
+{
+  "feature": "admin-scheme-tabs",
+  "test_cases": [
+    {
+      "ref": "TC-179",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A tabulation is added to a scheme, renamed and removed",
+      "acs": [
+        "DERIVED: The Results Tabulations tab adds, renames and removes tabulations - Scheme.aspx lnkAddTabulation, lnkRenameTabulation"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the Results Tabulations tab, click Add New Tabulation, enter a unique name and click Add Tabulation, then Save.",
+          "expected": "The tabulation is listed after a reload."
+        },
+        {
+          "action": "Click Rename on it, enter a new name, click Rename Tabulation and Save.",
+          "expected": "The tabulation is listed under the new name."
+        },
+        {
+          "action": "Click Remove on it, confirm and Save.",
+          "expected": "The tabulation is gone after a reload."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-180",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A test consultant of a scheme is changed, kept after reloading and restored",
+      "acs": [
+        "DERIVED: The Test consultants tab keeps three consultant choices - Scheme.aspx DropDownTestConsultant1..3"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the Test consultants tab and note the choice of the slot of the row.",
+          "expected": "The original choice is known."
+        },
+        {
+          "action": "Choose another consultant in that slot and click Save.",
+          "expected": "The change is saved."
+        },
+        {
+          "action": "Reload the scheme and open the tab again.",
+          "expected": "The slot shows the new choice."
+        },
+        {
+          "action": "Put the original choice back and Save.",
+          "expected": "The original choice is stored."
+        }
+      ]
+    },
+    {
+      "ref": "TC-181",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Apply and Cancel on a scheme tab keep the page without an error",
+      "acs": [
+        "DERIVED: Each scheme tab offers Save, Apply and Cancel - Scheme.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the tab of the row.",
+          "expected": "The tab shows."
+        },
+        {
+          "action": "Click the action of the row (Apply or Cancel).",
+          "expected": "The action runs."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-182",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A method item of a scheme test is moved down and back up",
+      "acs": [
+        "DERIVED: Method items of a scheme test can be reordered - Scheme.aspx lnkMoveMethodItemDown, lnkMoveMethodItemUp"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the Tests tab.",
+          "expected": "The tests and their method items show."
+        },
+        {
+          "action": "Click Move down on the first method item.",
+          "expected": "The item moves down."
+        },
+        {
+          "action": "Click Move up on the item that is now second.",
+          "expected": "The original order is restored."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-183",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A test is added to a scheme and removed again",
+      "acs": [
+        "DERIVED: Tests can be added to and removed from a scheme - Scheme.aspx hypAddTest, lnkRemoveTest"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the Tests tab and note the number of tests.",
+          "expected": "The count is known."
+        },
+        {
+          "action": "Click Add New Test, choose the last test type and click Add Test.",
+          "expected": "The scheme shows one more test."
+        },
+        {
+          "action": "Click Remove Test on the last test and confirm.",
+          "expected": "The scheme shows its original number of tests."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-184",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A result, method or category item is added to the first test and removed again",
+      "acs": [
+        "DERIVED: Result, method and category items can be added to and removed from a test - Scheme.aspx lnkAddResult, lnkAddMethod, lnkAddCategory"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the Tests tab and note the number of items of the kind of the row in the first test.",
+          "expected": "The count is known."
+        },
+        {
+          "action": "Click the Add link of the kind, keep the first type and click the Add button.",
+          "expected": "The test shows one more item of that kind."
+        },
+        {
+          "action": "Click Remove on the last item of that kind and confirm where asked.",
+          "expected": "The test shows its original number of items."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-185",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "The test works on the first scheme in the list and puts every change back.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A criterion item is added to a new category of the first test and removed again",
+      "acs": [
+        "DERIVED: Criterion items can be added to and removed from a category - Scheme.aspx lnkAddCriterion, lnkRemove"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes and click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Open the Tests tab, click Add Category Item on the first test and click Add Category.",
+          "expected": "A new category is listed last."
+        },
+        {
+          "action": "Click Add Criterion Item on the new category, keep the first type and click Add Criterion.",
+          "expected": "The test shows one more criterion."
+        },
+        {
+          "action": "Click Remove on the last criterion.",
+          "expected": "The test shows its original number of criteria."
+        },
+        {
+          "action": "Click Remove on the new category and confirm.",
+          "expected": "The category is gone."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source and a read-only probe; confirm they are the intended behaviour."
+  ]
+}

@@ -1,0 +1,11 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,A read-only web service operation returns its result for known identifiers,Step 1,Send a SOAP POST for the operation and arguments in the row.,The response status is 200.,Proficiency Testing\Web Services,QA,Design
+,,,Step 2,Read the response body.,The body is a SOAP envelope.,,,
+,,,Step 3,Look for the <operation>Response element.,The element is present.,,,
+,,,Step 4,Check for a soap:Fault element.,No fault is returned.,,,
+,,,Step 5,Repeat for every row.,Every operation responds.,,,
+,Test Case,A read-only web service operation answers with a SOAP envelope for unknown identifiers,Step 1,Send a SOAP POST for the operation with empty identifiers.,A response is returned.,Proficiency Testing\Web Services,QA,Design
+,,,Step 2,Read the response body.,The body is a SOAP envelope.,,,
+,,,Step 3,Check that the body is not an HTML page.,No HTML error page is returned.,,,
+,,,Step 4,Check the status.,The status is 200 or 500 with a soap:Fault.,,,
+,,,Step 5,Repeat for every row.,Every operation answers.,,,

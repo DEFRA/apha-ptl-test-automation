@@ -1,0 +1,121 @@
+{
+  "feature": "external-information-pages",
+  "test_cases": [
+    {
+      "ref": "TC-011",
+      "layer": "ui",
+      "title": "Information pages load with their expected heading for each page",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each information page loads and shows its h1 - routes /ViewInformation.aspx, /Help.aspx, /About.aspx, /AccessibilityStatement.aspx, /PrivacyPolicy.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Data set (route -> h1): /ViewInformation.aspx -> Information; /Help.aspx -> Help; /About.aspx -> About; /AccessibilityStatement.aspx -> Accessibility statement for the PT-LIMS website (the hyphen in PT-LIMS is U+2011, a non-breaking hyphen); /PrivacyPolicy.aspx -> VETQAS Privacy Notice."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/ViewInformation.aspx as a signed-in external user.",
+          "expected": "The page loads, the h1 reads Information and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/Help.aspx.",
+          "expected": "The page loads, the h1 reads Help and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/About.aspx.",
+          "expected": "The page loads, the h1 reads About and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/AccessibilityStatement.aspx.",
+          "expected": "The page loads, the h1 reads Accessibility statement for the PT-LIMS website (with a non-breaking hyphen in PT-LIMS) and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/PrivacyPolicy.aspx.",
+          "expected": "The page loads, the h1 reads VETQAS Privacy Notice and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-012",
+      "layer": "ui",
+      "title": "Information pages keep their heading after the page is reloaded",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Each information page keeps its h1 after a reload and shows no server error page - routes /ViewInformation.aspx, /Help.aspx, /About.aspx, /AccessibilityStatement.aspx, /PrivacyPolicy.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Data set (route -> h1): /ViewInformation.aspx -> Information; /Help.aspx -> Help; /About.aspx -> About; /AccessibilityStatement.aspx -> Accessibility statement for the PT-LIMS website; /PrivacyPolicy.aspx -> VETQAS Privacy Notice.",
+        "Reloading is a read-only GET and submits no data."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/ViewInformation.aspx and reload the page.",
+          "expected": "The h1 still reads Information and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/Help.aspx and reload the page.",
+          "expected": "The h1 still reads Help and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/About.aspx and reload the page.",
+          "expected": "The h1 still reads About and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/AccessibilityStatement.aspx and reload the page.",
+          "expected": "The h1 still reads Accessibility statement for the PT-LIMS website and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1688/PrivacyPolicy.aspx and reload the page.",
+          "expected": "The h1 still reads VETQAS Privacy Notice and no server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-013",
+      "layer": "ui",
+      "title": "Information page opens from the home page and the user can return",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The View Information link on /Home.aspx opens /ViewInformation.aspx and Back returns to /Home.aspx - routes /Home.aspx, /ViewInformation.aspx"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/Home.aspx as a signed-in external user.",
+          "expected": "The home page loads with the h1 VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Click the View Information link.",
+          "expected": "The address path is /ViewInformation.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Information and no server error page is shown."
+        },
+        {
+          "action": "Use the browser Back button.",
+          "expected": "The address path is /Home.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads VETQAS Proficiency Testing and no server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl only; confirm the page headings are the intended behaviour.",
+    "No source file:line is recorded in coverage-plan.md for these pages; evidence is by route.",
+    "TODO: the page body content (sections, links) of each information page is not recorded in the facts and is not checked."
+  ]
+}

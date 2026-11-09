@@ -1,0 +1,36 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Admin edits an existing group address and the change is saved,Step 1,Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.,"The h1 reads Group Addresses and the table shows the columns Identifier, Address 1 and Edit.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the Edit link on the first row of the table.,The h1 reads Edit Group Address and the form is filled with the saved values of that group address.,,,
+,,,Step 3,Note the current value of Packing Instructions as <original packing instructions> and the Identifier of the record.,The original Packing Instructions value and the Identifier are recorded for later steps.,,,
+,,,Step 4,Replace the Packing Instructions value with E2E packing note <run id>.,The Packing Instructions field shows E2E packing note <run id>.,,,
+,,,Step 5,Select Save.,The page returns to Group Addresses and the h1 reads Group Addresses.,,,
+,,,Step 6,Select Edit on the row with the same Identifier.,The h1 reads Edit Group Address and Packing Instructions shows E2E packing note <run id>.,,,
+,,,Step 7,Cleanup: replace the Packing Instructions value with <original packing instructions> and select Save.,The page returns to Group Addresses and the record holds its original Packing Instructions again.,,,
+,Test Case,Admin cancels an edit of a group address and nothing changes,Step 1,Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.,The h1 reads Group Addresses.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the Edit link on the first row of the table.,The h1 reads Edit Group Address.,,,
+,,,Step 3,Note the current value of Packing Instructions as <original packing instructions> and the Identifier of the record.,The original value and the Identifier are recorded.,,,
+,,,Step 4,Replace the Packing Instructions value with E2E cancelled note <run id>.,The Packing Instructions field shows E2E cancelled note <run id>.,,,
+,,,Step 5,Select Cancel.,The page leaves Edit Group Address without showing a server error page.,,,
+,,,Step 6,Open the Edit link for the row with the same Identifier on Group Addresses.,"The h1 reads Edit Group Address and Packing Instructions shows <original packing instructions>, not E2E cancelled note <run id>.",,,
+,,,Step 7,Cleanup: select Cancel to leave the form.,The form closes and no data has been changed.,,,
+,Test Case,Required fields block saving a new group address,Step 1,Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.,The h1 reads Group Addresses.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the Create Group Address link.,The h1 reads Create Group Address and every field is empty.,,,
+,,,Step 3,Leave every field empty and select Save.,The page stays on Create Group Address and no server error page is shown.,,,
+,,,Step 4,Look at the validation next to Identifier.,A validation marker whose text starts An identifier m is shown.,,,
+,,,Step 5,Look at the validation next to Address 1 and Address 2.,A validation marker whose text starts At least two Ad is shown for Address 1 and for Address 2.,,,
+,,,Step 6,Look at the validation next to Country.,A validation marker whose text starts The Country for is shown.,,,
+,,,Step 7,Cleanup: select Cancel and open the Group Addresses list.,"The list shows no new row, because nothing was saved.",,,
+,Test Case,Admin creates a new group address and it is listed,Step 1,Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.,The h1 reads Group Addresses.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the Create Group Address link.,The h1 reads Create Group Address.,,,
+,,,Step 3,"Enter E2E-<run id> in Identifier, 1 Test Street in Address 1 and Testtown in Address 2.",The three fields show the entered values.,,,
+,,,Step 4,Choose <any listed country> in Country.,The Country field shows the chosen country.,,,
+,,,Step 5,Select Save.,The page returns to Group Addresses and the h1 reads Group Addresses.,,,
+,,,Step 6,Look for the identifier E2E-<run id> in the table.,A row with Identifier E2E-<run id> and Address 1 1 Test Street is listed.,,,
+,,,Step 7,"Cleanup: ask the environment owner to reset the database, because the UI offers no Delete.",The group address E2E-<run id> is no longer present after the reset.,,,
+,Test Case,Admin changes the Telephone of a group address and restores it,Step 1,Open http://localhost:1946/Contracts Admin/GroupAddressList.aspx as a signed-in Admin.,The h1 reads Group Addresses.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select the Edit link on the first row of the table.,The h1 reads Edit Group Address.,,,
+,,,Step 3,Note the current value of Telephone as <original telephone> and the Identifier of the record.,The original Telephone and the Identifier are recorded.,,,
+,,,Step 4,Replace the Telephone value with <synthetic telephone number> and select Save.,The page returns to Group Addresses.,,,
+,,,Step 5,Select Edit on the row with the same Identifier.,The h1 reads Edit Group Address and Telephone shows <synthetic telephone number>.,,,
+,,,Step 6,Cleanup: replace the Telephone value with <original telephone>.,The Telephone field shows <original telephone>.,,,
+,,,Step 7,Select Save.,The page returns to Group Addresses and the record holds its original Telephone again.,,,

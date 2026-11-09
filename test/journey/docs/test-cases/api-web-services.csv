@@ -1,0 +1,11 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Every web service publishes a WSDL description,Step 1,Send GET to http://localhost:1935/<service>?WSDL for the service in the row.,The response status is 200.,Proficiency Testing\Web Services,QA,Design
+,,,Step 2,Read the response body.,The body is an XML document.,,,
+,,,Step 3,Look for the wsdl:definitions element.,The element is present.,,,
+,,,Step 4,Repeat for every row.,Every service publishes a description.,,,
+,,,Step 5,Check the response for an error page.,No error page is returned.,,,
+,Test Case,Every web service description lists its operations,Step 1,Send GET to http://localhost:1935/<service>?WSDL for the service in the row.,The response status is 200.,Proficiency Testing\Web Services,QA,Design
+,,,Step 2,Read the wsdl:portType operations.,The operation list is present.,,,
+,,,Step 3,Look for the operation named in the row.,The operation is listed.,,,
+,,,Step 4,Repeat for every row.,Every operation is listed.,,,
+,,,Step 5,Check the response for an error page.,No error page is returned.,,,

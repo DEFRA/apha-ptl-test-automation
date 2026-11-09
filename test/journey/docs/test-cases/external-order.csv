@@ -1,0 +1,44 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Selecting an available scheme ticks it and enables Next,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Tick the last scheme in the lists that is enabled and not yet selected.,The scheme is ticked and its month strip appears.,,,
+,,,Step 3,Wait for the page update.,The scheme stays ticked.,,,
+,,,Step 4,Look at the Next button.,Next is enabled.,,,
+,,,Step 5,Do not click Next.,Nothing else changes.,,,
+,Test Case,Next opens the pending order summary with its buttons,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Tick the last scheme in the lists that is enabled and not yet selected.,The scheme is ticked and its month strip appears.,,,
+,,,Step 3,Click Next.,The page title changes to Pending Order.,,,
+,,,Step 4,Read the summary.,The Schemes you have selected section is shown.,,,
+,,,Step 5,Look at the buttons.,"SUBMIT is disabled; PREVIOUS, SAVE and PRINT are shown.",,,
+,Test Case,PREVIOUS returns from the summary to the first step,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Tick the last scheme in the lists that is enabled and not yet selected.,The scheme is ticked and its month strip appears.,,,
+,,,Step 3,Click Next.,The Pending Order summary is shown.,,,
+,,,Step 4,Click PREVIOUS.,The Create New Order step is shown again.,,,
+,,,Step 5,Look at the scheme.,The scheme is still ticked.,,,
+,Test Case,Accepting the terms enables SUBMIT on the summary,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Tick the last scheme in the lists that is enabled and not yet selected.,The scheme is ticked and its month strip appears.,,,
+,,,Step 3,Click Next.,The Pending Order summary is shown.,,,
+,,,Step 4,Tick the terms and conditions box.,The page updates.,,,
+,,,Step 5,Look at SUBMIT.,SUBMIT is enabled.,,,
+,,,Step 6,Do not click SUBMIT.,Nothing is submitted.,,,
+,Test Case,SAVE keeps the pending order on the summary,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\External,QA,Design
+,,,Step 2,Tick the last scheme in the lists that is enabled and not yet selected.,The scheme is ticked and its month strip appears.,,,
+,,,Step 3,Click Next.,The Pending Order summary is shown.,,,
+,,,Step 4,Click SAVE.,The page reloads without an error.,,,
+,,,Step 5,Read the page.,A message says the pending contract order saved successfully.,,,
+,Test Case,"A customer submits an order and the admin declines it, leaving no order behind",Step 1,"As admin, open Manage Contracts > Review Pending Orders and decline any order for QAL/0432.",No order for QAL/0432 is waiting for review.,Proficiency Testing\External,QA,Design
+,,,Step 2,"As the customer, open http://localhost:1688/PendingContractOrder.aspx?year=current and tick the last scheme that has a month available to order.",The scheme and its months are ticked.,,,
+,,,Step 3,"Click Next, tick the terms and conditions and any consent declarations shown.",The Pending Order summary is shown and SUBMIT is enabled.,,,
+,,,Step 4,Click SUBMIT.,The customer is returned to Home.,,,
+,,,Step 5,"As admin, open Review Pending Orders.",An order for QAL/0432 is listed.,,,
+,,,Step 6,Open the order with Details and click Decline.,The order is removed from the list.,,,
+,,,Step 7,"As the customer, open the order page again.",A new order starts with no scheme selected and Next disabled.,,,
+,Test Case,Next stays disabled while no scheme is selected,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current.,The Create New Order page opens.,Proficiency Testing\\External,QA,Design
+,,,Step 2,Untick every scheme that is ticked and enabled.,No scheme is selected.,,,
+,,,Step 3,Wait for the page update.,The page finishes updating.,,,
+,,,Step 4,Look at the Next button.,Next is disabled.,,,
+,,,Step 5,Do not click any other button.,Nothing else changes.,,,
+,Test Case,Deselecting the only selected scheme disables Next again,Step 1,Open http://localhost:1688/PendingContractOrder.aspx?year=current and untick every selected scheme.,No scheme is selected.,Proficiency Testing\\External,QA,Design
+,,,Step 2,Tick the last scheme that has a month available to order.,The scheme and a month are ticked.,,,
+,,,Step 3,Look at the Next button.,Next is enabled.,,,
+,,,Step 4,Untick the same scheme.,The scheme is unticked.,,,
+,,,Step 5,Look at the Next button.,Next is disabled.,,,

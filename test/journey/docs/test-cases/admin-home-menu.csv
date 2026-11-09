@@ -1,0 +1,20 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Admin home page shows the Home heading and the menu links,Step 1,Open http://localhost:1946/home.aspx as a signed-in admin user.,The page loads and no server error page is shown.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the main heading of the page.,The h1 reads Home.,,,
+,,,Step 3,Look for the Home and Help links in the menu.,The links Home and Help are visible.,,,
+,,,Step 4,"Look for the System Administration, Manage Contracts and Manage Schemes links in the menu.","The links System Administration, Manage Contracts and Manage Schemes are visible.",,,
+,,,Step 5,"Look for the Distributions, Test Consultant, Assessor and Results Sign-off links in the menu.","The links Distributions, Test Consultant, Assessor and Results Sign-off are visible.",,,
+,,,Step 6,Look for the System information link in the menu without selecting it.,The System information link is visible and the h1 is still Home.,,,
+,Test Case,Each menu link opens its menu page without an error page,Step 1,Open http://localhost:1946/home.aspx as a signed-in admin user.,The page loads with the h1 Home.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,"Click the System Administration link, then read the main heading.","The address path is /Admin/MenuAdmin.aspx, the h1 reads System Administration and no server error page is shown.",,,
+,,,Step 3,"Use the browser Back button, then click the Manage Contracts link and read the main heading.","The address path is /Contracts Admin/MenuContracts.aspx, the h1 reads Manage Contracts and no server error page is shown.",,,
+,,,Step 4,"Use the browser Back button, then click the Manage Schemes link and read the main heading.","The address path is /Scheme Admin/MenuSchemes.aspx, the h1 reads Manage Schemes and no server error page is shown.",,,
+,,,Step 5,"Use the browser Back button, then click the Distributions link and read the main heading.","The address path is /Distributions/MenuDistributions.aspx, the h1 reads Distributions and no server error page is shown.",,,
+,,,Step 6,"Use the browser Back button, then click the Test Consultant link and read the main heading.","The address path is /Test Consultant/MenuTestConsultants.aspx, the h1 reads Test Consultant and no server error page is shown.",,,
+,,,Step 7,"Use the browser Back button, then click the Assessor link and read the main heading.","The address path is /Assessor/MenuAssessor.aspx, the h1 reads Assessor and no server error page is shown.",,,
+,,,Step 8,"Use the browser Back button, then click the Results Sign-off link and read the main heading.","The address path is /Results Sign-off/SignOff.aspx, the h1 reads Results Sign-off and no server error page is shown.",,,
+,Test Case,Help link points to the quick reference guide,Step 1,Open http://localhost:1946/home.aspx as a signed-in admin user.,The page loads with the h1 Home.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Locate the Help link in the menu.,The Help link is visible.,,,
+,,,Step 3,Inspect the address (href) of the Help link without opening it.,The href contains QuickReferenceGuide.pdf.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Confirm the current page is still the home page.,The address path is /home.aspx and the h1 is still Home.,,,

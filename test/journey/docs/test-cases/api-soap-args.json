@@ -1,0 +1,88 @@
+{
+  "feature": "api-soap-args",
+  "test_cases": [
+    {
+      "ref": "TC-108",
+      "layer": "api",
+      "title": "A read-only web service operation returns its result for known identifiers",
+      "area_path": "Proficiency Testing\\Web Services",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Parameterised Get/Fetch/List/Find/Is/Has/Count operations return a SOAP result for existing identifiers - 22 operations (web service source)"
+      ],
+      "assumptions": [
+        "The web services run at http://localhost:1935 and need no sign-in locally. Identifiers come from the local database and Web.config (data in scripts/generate-soap-args.mjs).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Only read-style operations are called, so nothing is written.",
+        "Identifiers that were not found in the data are sent as the empty Guid.",
+        "Representative sample: one row stands for the 22 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Send a SOAP POST for the operation and arguments in the row.",
+          "expected": "The response status is 200."
+        },
+        {
+          "action": "Read the response body.",
+          "expected": "The body is a SOAP envelope."
+        },
+        {
+          "action": "Look for the <operation>Response element.",
+          "expected": "The element is present."
+        },
+        {
+          "action": "Check for a soap:Fault element.",
+          "expected": "No fault is returned."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every operation responds."
+        }
+      ]
+    },
+    {
+      "ref": "TC-109",
+      "layer": "api",
+      "title": "A read-only web service operation answers with a SOAP envelope for unknown identifiers",
+      "area_path": "Proficiency Testing\\Web Services",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Operations called with unknown identifiers answer with a SOAP envelope (result or fault), never an HTML error page - 22 operations (web service source)"
+      ],
+      "assumptions": [
+        "The web services run at http://localhost:1935 and need no sign-in locally. Identifiers come from the local database and Web.config (data in scripts/generate-soap-args.mjs).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The token stays valid; every other identifier is the empty Guid or zero.",
+        "Representative sample: one row stands for the 22 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Send a SOAP POST for the operation with empty identifiers.",
+          "expected": "A response is returned."
+        },
+        {
+          "action": "Read the response body.",
+          "expected": "The body is a SOAP envelope."
+        },
+        {
+          "action": "Check that the body is not an HTML page.",
+          "expected": "No HTML error page is returned."
+        },
+        {
+          "action": "Check the status.",
+          "expected": "The status is 200 or 500 with a soap:Fault."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every operation answers."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the web service source; confirm the expected behaviour for unknown identifiers.",
+    "TODO: operations that create, update or delete data are not called."
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "feature": "admin-system-administration",
+  "test_cases": [
+    {
+      "ref": "TC-024",
+      "layer": "ui",
+      "title": "Manage Roles and Create User pages load without saving anything",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /Admin/UserRoles.aspx shows h1 Manage Roles and /Admin/UserCreate.aspx shows h1 Create User - routes /Admin/UserRoles.aspx, /Admin/UserCreate.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Data set (route -> h1): /Admin/UserRoles.aspx -> Manage Roles; /Admin/UserCreate.aspx -> Create User.",
+        "Pages are only opened and read. No user is created, no role is changed and no form is submitted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Admin/MenuAdmin.aspx as a signed-in admin user.",
+          "expected": "The page loads with the h1 System Administration."
+        },
+        {
+          "action": "Open http://localhost:1946/Admin/UserRoles.aspx.",
+          "expected": "The page loads, the h1 reads Manage Roles and no server error page is shown."
+        },
+        {
+          "action": "Reload the Manage Roles page.",
+          "expected": "The h1 still reads Manage Roles and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Admin/UserCreate.aspx.",
+          "expected": "The page loads, the h1 reads Create User and no server error page is shown."
+        },
+        {
+          "action": "Leave the Create User page without entering or saving any data.",
+          "expected": "No confirmation or saved message is shown and the h1 is still Create User."
+        }
+      ]
+    },
+    {
+      "ref": "TC-025",
+      "layer": "ui",
+      "title": "Internal Test Consultant Department page loads with its heading",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /Admin/TCDepartment.aspx shows h1 Internal Test Consultant Department - route /Admin/TCDepartment.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "The page is only opened and read. No department is added, changed or saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx as a signed-in admin user.",
+          "expected": "The page loads with the h1 Home."
+        },
+        {
+          "action": "Click the System Administration link.",
+          "expected": "The address path is /Admin/MenuAdmin.aspx and the h1 reads System Administration."
+        },
+        {
+          "action": "Open http://localhost:1946/Admin/TCDepartment.aspx.",
+          "expected": "The page loads and the address path is /Admin/TCDepartment.aspx."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads Internal Test Consultant Department."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-026",
+      "layer": "ui",
+      "title": "Pricing plan pages load with their expected heading for each page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /Admin/WeightedPricingPlan.aspx shows h1 Weighted Pricing Plan and /Admin/PostagePricingPlan.aspx shows h1 Postage Pricing Plan - routes /Admin/WeightedPricingPlan.aspx, /Admin/PostagePricingPlan.aspx"
+      ],
+      "assumptions": [
+        "The user is signed in with Windows integrated authentication and holds the admin role (project admin).",
+        "Data set (route -> h1): /Admin/WeightedPricingPlan.aspx -> Weighted Pricing Plan; /Admin/PostagePricingPlan.aspx -> Postage Pricing Plan.",
+        "Pages are only opened and read. No price is changed and nothing is saved."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Admin/MenuAdmin.aspx as a signed-in admin user.",
+          "expected": "The page loads with the h1 System Administration."
+        },
+        {
+          "action": "Open http://localhost:1946/Admin/WeightedPricingPlan.aspx.",
+          "expected": "The page loads, the h1 reads Weighted Pricing Plan and no server error page is shown."
+        },
+        {
+          "action": "Reload the Weighted Pricing Plan page.",
+          "expected": "The h1 still reads Weighted Pricing Plan and no server error page is shown."
+        },
+        {
+          "action": "Open http://localhost:1946/Admin/PostagePricingPlan.aspx.",
+          "expected": "The page loads, the h1 reads Postage Pricing Plan and no server error page is shown."
+        },
+        {
+          "action": "Reload the Postage Pricing Plan page.",
+          "expected": "The h1 still reads Postage Pricing Plan and no server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the crawl only; confirm the page headings are the intended behaviour.",
+    "ManageExternalTCs, ManageViewers, ManageCountries, EditMessageOnWebsite and AdministrationChargeCurrency return an error locally and are excluded; confirm the cause (environment or defect).",
+    "TODO: the form fields, tables and buttons on these pages are not recorded in the facts and are not checked.",
+    "No source file:line is recorded in coverage-plan.md for these pages; evidence is by route."
+  ]
+}

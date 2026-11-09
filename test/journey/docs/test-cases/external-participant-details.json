@@ -1,0 +1,189 @@
+{
+  "feature": "external-participant-details",
+  "test_cases": [
+    {
+      "ref": "TC-049",
+      "layer": "ui",
+      "title": "Participant details page shows the fields and buttons",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: /EditParticipantDetails.aspx shows h1 My account, the participant fields and the buttons UPDATE DETAILS and CANCEL - route /EditParticipantDetails.aspx (crawl, docs/discovery/coverage-plan.md)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Read-only: nothing is changed and no button is selected.",
+        "Field data: Contact Name, Organisation Name, Address 1, Address 2, Address 3 (optional), Address 4 (optional), Address 5 (optional), Country, Telephone, Email (Primary), Email (Secondary) (optional)."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user.",
+          "expected": "The page loads and no server error page is shown."
+        },
+        {
+          "action": "Read the main heading of the page.",
+          "expected": "The h1 reads My account and a second heading reads Edit Participant Details."
+        },
+        {
+          "action": "Look at the contact and address fields.",
+          "expected": "The fields Contact Name, Organisation Name, Address 1, Address 2, Address 3, Address 4 and Address 5 are visible."
+        },
+        {
+          "action": "Look at the Country, Telephone and email fields.",
+          "expected": "The fields Country, Telephone, Email (Primary) and Email (Secondary) are visible."
+        },
+        {
+          "action": "Open the Country list without choosing a value.",
+          "expected": "The list is populated and contains Afghanistan."
+        },
+        {
+          "action": "Look at the buttons below the form without selecting them.",
+          "expected": "The buttons UPDATE DETAILS and CANCEL are visible."
+        }
+      ]
+    },
+    {
+      "ref": "TC-050",
+      "layer": "ui",
+      "title": "Submitting participant details without a Country is blocked",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Submitting with Country empty shows The Country for this participant must be specified and saves nothing - route /EditParticipantDetails.aspx (crawl, docs/discovery/coverage-plan.md)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Nothing is saved and the form stays unlocked, so no data cleanup is needed.",
+        "The seeded Country value may be pre-filled; the step that clears it is part of the test (see open_questions)."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user.",
+          "expected": "The h1 reads My account and the form is editable."
+        },
+        {
+          "action": "Clear the Country field so that no country is selected.",
+          "expected": "The Country field shows no selected country."
+        },
+        {
+          "action": "Select UPDATE DETAILS.",
+          "expected": "The page stays on Edit Participant Details."
+        },
+        {
+          "action": "Read the message shown for Country.",
+          "expected": "The message The Country for this participant must be specified is shown."
+        },
+        {
+          "action": "Look for the submitted message.",
+          "expected": "The message Updated details submitted is not shown."
+        },
+        {
+          "action": "Check the form fields and the UPDATE DETAILS button.",
+          "expected": "The fields are still editable and the form is not locked."
+        },
+        {
+          "action": "Cleanup: select CANCEL.",
+          "expected": "The page leaves the form and no data has been changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-051",
+      "layer": "ui",
+      "title": "Cancel on participant details returns to Home without saving",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: CANCEL on /EditParticipantDetails.aspx returns to /Home.aspx without saving - route /EditParticipantDetails.aspx (destination from the EditCustomerDetails.aspx.vb LeavePage pattern, participant page TODO confirm)"
+      ],
+      "assumptions": [
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Test data: unique value Cancelled Contact <run id> typed into Contact Name and never submitted.",
+        "Nothing is saved, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user.",
+          "expected": "The h1 reads My account."
+        },
+        {
+          "action": "Note the current value of Contact Name as <original contact name>.",
+          "expected": "The original value is recorded."
+        },
+        {
+          "action": "Replace the Contact Name value with Cancelled Contact <run id>.",
+          "expected": "The Contact Name field shows Cancelled Contact <run id>."
+        },
+        {
+          "action": "Select CANCEL.",
+          "expected": "The browser opens /Home.aspx and the h1 reads VETQAS Proficiency Testing."
+        },
+        {
+          "action": "Open http://localhost:1688/EditParticipantDetails.aspx again.",
+          "expected": "The h1 reads My account and Contact Name shows <original contact name>, not Cancelled Contact <run id>."
+        },
+        {
+          "action": "Cleanup: select CANCEL.",
+          "expected": "The browser returns to /Home.aspx and no data has been changed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-052",
+      "layer": "ui",
+      "title": "A valid participant update is submitted and the confirmation shows",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: A valid submit shows Updated details submitted and locks the form while the change is pending - route /EditParticipantDetails.aspx (crawl; docs/04-potential-defects.md ENV-005)"
+      ],
+      "assumptions": [
+        "NOT repeatable: after one valid submit the form is locked permanently because the pending update is not visible in admin (ENV-005). Automate as @wip.",
+        "The local debug sign-in bypass is active, so the user is already signed in when the site opens.",
+        "Test data: Contact Name Jane Smith; Telephone <synthetic telephone number>; Email (Primary) test@example.com; Country Afghanistan.",
+        "Cleanup is not possible from the UI; the pending update needs a database reset (see open_questions)."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/EditParticipantDetails.aspx as a signed-in external user whose form is not locked.",
+          "expected": "The h1 reads My account and the form is editable."
+        },
+        {
+          "action": "Enter Jane Smith in Contact Name and test@example.com in Email (Primary).",
+          "expected": "The two fields show the entered values."
+        },
+        {
+          "action": "Enter <synthetic telephone number> in Telephone.",
+          "expected": "The Telephone field shows the entered value."
+        },
+        {
+          "action": "Choose Afghanistan in Country and check that every required field is filled.",
+          "expected": "Country shows Afghanistan and no validation message is shown."
+        },
+        {
+          "action": "Select UPDATE DETAILS.",
+          "expected": "The message Updated details submitted is shown."
+        },
+        {
+          "action": "Read the text that follows the message.",
+          "expected": "The text reads Changes have already been submitted. Please wait for those changes to be approved or rejected before submitting further changes."
+        },
+        {
+          "action": "Cleanup: ask the environment owner to reset the database to remove the pending update.",
+          "expected": "The form on /EditParticipantDetails.aspx is editable again after the reset."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "TODO: Confirm that CANCEL on /EditParticipantDetails.aspx returns to /Home.aspx (inferred from the customer page pattern).",
+    "TODO: TC-052 consumes the one allowed submit (ENV-005). Confirm how the pending update is reset between runs.",
+    "TODO: Confirm whether Country is pre-filled for the seeded participant and how to clear it (TC-050).",
+    "TODO: Confirm the Telephone format accepted by the validator for TC-052.",
+    "TODO: Confirm the business rules behind the derived criteria; no requirements document exists."
+  ]
+}

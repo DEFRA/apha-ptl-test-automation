@@ -1,0 +1,121 @@
+{
+  "feature": "admin-roles-navigation",
+  "test_cases": [
+    {
+      "ref": "TC-122",
+      "layer": "ui",
+      "title": "Ticking Generate Invoices shows Invoice Generation in Manage Contracts",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The Generate Invoices role adds Invoice Generation to the Manage Contracts menu and the page opens (MasterContent.master.vb:50)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Role change: the test ticks and unticks roles for the signed-in user in Manage Roles (saved immediately, the user is signed in again) and always restores them in cleanup. It runs after the other admin tests because it changes the user they run as."
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Roles and find your own row.",
+          "expected": "Only Admin is ticked."
+        },
+        {
+          "action": "Tick Generate Invoices.",
+          "expected": "The role is saved and you are signed in again."
+        },
+        {
+          "action": "Open Home > Manage Contracts.",
+          "expected": "The menu lists Customers, Search, Group Addresses, Exports and Invoice Generation."
+        },
+        {
+          "action": "Click Invoice Generation.",
+          "expected": "The Invoice Generation page opens."
+        },
+        {
+          "action": "Cleanup: untick Generate Invoices.",
+          "expected": "Only Admin is ticked again."
+        }
+      ]
+    },
+    {
+      "ref": "TC-123",
+      "layer": "ui",
+      "title": "Unticking Generate Invoices hides Invoice Generation again",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Removing the Generate Invoices role removes Invoice Generation from the Manage Contracts menu (MasterContent.master.vb:50)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Role change: the test ticks and unticks roles for the signed-in user in Manage Roles (saved immediately, the user is signed in again) and always restores them in cleanup. It runs after the other admin tests because it changes the user they run as."
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Roles and tick Generate Invoices for yourself.",
+          "expected": "The role is saved."
+        },
+        {
+          "action": "Untick Generate Invoices.",
+          "expected": "The role is removed."
+        },
+        {
+          "action": "Open Home > Manage Contracts.",
+          "expected": "The menu lists Customers, Search, Group Addresses and Exports only."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Cleanup: make sure only Admin is ticked.",
+          "expected": "Only Admin is ticked."
+        }
+      ]
+    },
+    {
+      "ref": "TC-124",
+      "layer": "ui",
+      "title": "Ticking one more role leaves every section menu unchanged",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Ticking Contracts Admin, Scheme Admin, Scheduling, Internal User, Test Consultant, Assessor, Results Sign-off, Support or Override Schemes does not change the System Administration, Manage Contracts, Manage Schemes or Distributions menus (the side menus only gate Invoice Generation by role)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134). Only the Admin role is ticked for this user; the menus are compared with the Navigations pictures.",
+        "Role change: the test ticks and unticks roles for the signed-in user in Manage Roles (saved immediately, the user is signed in again) and always restores them in cleanup. It runs after the other admin tests because it changes the user they run as.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Roles and tick the role in the row for yourself.",
+          "expected": "The role is saved."
+        },
+        {
+          "action": "Open each section from Home.",
+          "expected": "Each section page opens."
+        },
+        {
+          "action": "Read the menu of each section.",
+          "expected": "The items match the Navigations pictures (Manage Contracts without Invoice Generation)."
+        },
+        {
+          "action": "Check each page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Cleanup: untick the role.",
+          "expected": "Only Admin is ticked again."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from MasterContent.master.vb and a walk of the running site; confirm the other roles are meant not to change these menus.",
+    "TODO: Distributions page links (Preparation, Packaging, Results, Scheduling, Tabulations) are role gated per distribution row; no current distributions exist to test them."
+  ]
+}

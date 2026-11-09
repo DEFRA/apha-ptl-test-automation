@@ -1,0 +1,122 @@
+{
+  "feature": "customer-account",
+  "test_cases": [
+    {
+      "ref": "TC-001",
+      "layer": "ui",
+      "title": "Customer can update their details with valid contact information",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Edit Customer/Invoice details is reachable and the form accepts valid contact data - app/ProficiencyTestingExternalWeb/EditCustomerDetails.aspx:11-217"
+      ],
+      "assumptions": [
+        "The signed-in user has an existing customer record and can access the edit screen.",
+        "A valid login is available for the external web user role."
+      ],
+      "steps": [
+        {
+          "action": "Open the Edit Customer/Invoice details page for the signed-in customer.",
+          "expected": "The page heading is Edit Customer/Invoice details and the customer and invoice form fields are visible."
+        },
+        {
+          "action": "Fill the required customer fields with valid values for contact name, organisation, address, telephone and email.",
+          "expected": "The entered values match the expected values and no validation warning is shown for the required customer fields."
+        },
+        {
+          "action": "Fill the required invoice details with valid values for organisation, address and email.",
+          "expected": "The invoice section accepts the values and shows no validation warning for the required invoice fields."
+        },
+        {
+          "action": "Submit the updated details by selecting UPDATE DETAILS.",
+          "expected": "The page submits without a client-side validation error and the update request is sent."
+        },
+        {
+          "action": "Review the post-submit state.",
+          "expected": "The customer detail update is confirmed and the user can continue without being blocked by validation errors."
+        }
+      ]
+    },
+    {
+      "ref": "TC-002",
+      "layer": "ui",
+      "title": "Customer is blocked from saving when required contact details are empty",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Required field validation is enforced for customer details on the edit form - app/ProficiencyTestingExternalWeb/EditCustomerDetails.aspx:30-108"
+      ],
+      "assumptions": [
+        "The customer form can be submitted with an incomplete record to trigger validation.",
+        "The exact validation message text is confirmed by the UI once the page is loaded under the real session."
+      ],
+      "steps": [
+        {
+          "action": "Open the Edit Customer/Invoice details page for the signed-in customer.",
+          "expected": "The form is loaded and the required field controls are visible."
+        },
+        {
+          "action": "Clear the Contact Name, Organisation name, Address line 1, Address line 2, Telephone and Email fields.",
+          "expected": "The fields are empty and the form is ready to validate."
+        },
+        {
+          "action": "Attempt to update the customer details.",
+          "expected": "The page stops the save and shows the required-field validation messages for the empty customer data."
+        },
+        {
+          "action": "Check the form state after the validation failure.",
+          "expected": "The required fields remain highlighted and the update is not persisted."
+        },
+        {
+          "action": "Change the Contact Name field to a value and resubmit.",
+          "expected": "The validation error clears only for the Contact Name field and the remaining required fields remain enforced."
+        }
+      ]
+    },
+    {
+      "ref": "TC-003",
+      "layer": "ui",
+      "title": "Customer cannot submit an order until terms and required consent declarations are accepted",
+      "area_path": "Proficiency Testing\\External Web",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: The order wizard cannot move past its first step until a scheme with a distribution month is selected, and SUBMIT stays disabled until the terms and every consent declaration are accepted (PendingContractOrder.aspx.vb NextButtonEnabled, BtnSubmit)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user. The database has a backup.",
+        "Cleanup: the test deselects the scheme it selected. The order is never submitted.",
+        "Consent declarations appear only for some schemes; the test checks that SUBMIT stays disabled until the terms are accepted (TC-113 covers enabling)."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Tick the last scheme that has a month available to order.",
+          "expected": "The scheme is ticked and its months are ticked."
+        },
+        {
+          "action": "Click Next.",
+          "expected": "The Pending Order summary is shown."
+        },
+        {
+          "action": "Leave the terms and conditions unticked.",
+          "expected": "The terms box is unticked."
+        },
+        {
+          "action": "Look at SUBMIT.",
+          "expected": "SUBMIT is disabled."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "What is the canonical login flow for the external website when the local app is running under the expected user account?",
+    "Which route should be considered the default landing page after a successful session for the customer role?",
+    "What success message or confirmation page should be asserted after a valid customer update or order submission in the live service?"
+  ]
+}

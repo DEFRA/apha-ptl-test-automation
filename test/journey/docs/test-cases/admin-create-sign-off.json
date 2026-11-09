@@ -1,0 +1,123 @@
+{
+  "feature": "admin-create-sign-off",
+  "test_cases": [
+    {
+      "ref": "TC-152",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The participant cannot be deleted; the test sets it inactive afterwards."
+      ],
+      "title": "A participant is created for a customer",
+      "acs": [
+        "DERIVED: A participant is created from the Participant form for the customer in session - Participant.aspx.vb"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and click Participants on the first customer.",
+          "expected": "The Participants list opens."
+        },
+        {
+          "action": "Open the Create Participant form.",
+          "expected": "An empty Participant form opens for that customer."
+        },
+        {
+          "action": "Fill Lab Code, Lab Name, contact, address, country, telephone, email and Lab Type with synthetic values.",
+          "expected": "The fields show the values."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The participant is saved."
+        },
+        {
+          "action": "Check the page after the save.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-153",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The contract cannot be deleted; the test sets it inactive afterwards."
+      ],
+      "title": "A contract is created for a customer",
+      "acs": [
+        "DERIVED: A contract is created from the Contract form for the customer in session - Contract.aspx.vb"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and click Contracts on the first customer.",
+          "expected": "The Contracts list opens."
+        },
+        {
+          "action": "Open the Create Contract form.",
+          "expected": "An empty Contract form opens for that customer."
+        },
+        {
+          "action": "Enter a UTFT number and choose a Year.",
+          "expected": "The fields show the values."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The contract is saved."
+        },
+        {
+          "action": "Check the page after the save.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-154",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "This changes real results and cannot be undone. Run it only on an environment that can be restored."
+      ],
+      "title": "A tabulation is signed off or rejected",
+      "acs": [
+        "DERIVED: Authorise and Reject act on a tabulation waiting for sign-off - Tabulation.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Results Sign-off.",
+          "expected": "The list of tabulations opens."
+        },
+        {
+          "action": "Expand the first row and click View.",
+          "expected": "The tabulation page opens."
+        },
+        {
+          "action": "Click the action of the row (Authorise or Reject).",
+          "expected": "The action is applied."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page after the action.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source; confirm they are the intended behaviour.",
+    "TODO: the exact saved message of the participant and contract forms."
+  ]
+}

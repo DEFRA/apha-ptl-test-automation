@@ -1,0 +1,165 @@
+{
+  "feature": "admin-remove-actions",
+  "test_cases": [
+    {
+      "ref": "TC-155",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "This test removes real data and cannot be undone. Run it only on an environment that can be restored.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "An exported file is deleted from its export page",
+      "acs": [
+        "DERIVED: Each export page lists generated files with a Delete link - ExportContracts.aspx, ExportJobSheets.aspx, ExportRenewalLetters.aspx, ExportAddressConfirmationLetters.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Exports.",
+          "expected": "The Exports menu opens."
+        },
+        {
+          "action": "Click the export link of the row.",
+          "expected": "The export page opens with its list of files."
+        },
+        {
+          "action": "Click Delete on the first file and confirm.",
+          "expected": "The file is removed."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page after the delete.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-156",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "This test removes real data and cannot be undone. Run it only on an environment that can be restored.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "An item is removed from a contract",
+      "acs": [
+        "DERIVED: Contract Items offers Remove for each participant scheme - ContractItems.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and click Contracts on the first customer.",
+          "expected": "The Contracts list opens."
+        },
+        {
+          "action": "Click Contract Items on the first contract.",
+          "expected": "The contract items page opens."
+        },
+        {
+          "action": "Click Remove on the first item.",
+          "expected": "The item is removed."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page after the remove.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-157",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "This test removes real data and cannot be undone. Run it only on an environment that can be restored.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A viewer is removed from a participant",
+      "acs": [
+        "DERIVED: Participant Viewers has a Remove button - ParticipantViewers.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and click Participants on the first customer.",
+          "expected": "The Participants list opens."
+        },
+        {
+          "action": "Click Viewers on the first participant.",
+          "expected": "The viewers page opens."
+        },
+        {
+          "action": "Click <--Remove.",
+          "expected": "The selected viewer is removed."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page after the remove.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-158",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "This test removes real data and cannot be undone. Run it only on an environment that can be restored.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "An item is removed from a scheme",
+      "acs": [
+        "DERIVED: A scheme offers Remove for its tests, result items, method items, categories and criteria - Scheme.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes.",
+          "expected": "The Schemes list opens."
+        },
+        {
+          "action": "Click Details on the first scheme.",
+          "expected": "The scheme page opens."
+        },
+        {
+          "action": "Click the Tests tab.",
+          "expected": "The tests of the scheme are shown."
+        },
+        {
+          "action": "Click the first visible Remove and confirm.",
+          "expected": "The item is removed from the scheme."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page after the remove.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source; confirm they are the intended behaviour.",
+    "TODO: expected confirmation text of each remove action."
+  ]
+}

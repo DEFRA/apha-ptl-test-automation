@@ -1,0 +1,48 @@
+{
+  "feature": "api-soap-read",
+  "test_cases": [
+    {
+      "ref": "TC-090",
+      "layer": "api",
+      "title": "A read-only web service operation returns its response",
+      "area_path": "Proficiency Testing\\Web Services",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Zero-argument read-only operations (Get, Fetch, List, Find, Is, Has, Count) return a SOAP response - 1 operation(s) (data/depth.json)"
+      ],
+      "assumptions": [
+        "The web services run at http://localhost:1935 and need no sign-in locally.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Only zero-argument operations whose names start with Get, Fetch, List, Find, Is, Has or Count are called, so nothing is written.",
+        "The response content is not checked beyond the response element."
+      ],
+      "steps": [
+        {
+          "action": "Send a SOAP POST for the operation in the row to the service in the row.",
+          "expected": "The response status is 200."
+        },
+        {
+          "action": "Read the response body.",
+          "expected": "The body is a SOAP envelope."
+        },
+        {
+          "action": "Look for the <operation>Response element.",
+          "expected": "The element is present."
+        },
+        {
+          "action": "Check for a soap:Fault element.",
+          "expected": "No fault is returned."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every operation responds."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from read-only surveys of the running apps; confirm the labels and buttons are the intended behaviour.",
+    "TODO: operations with parameters are not called because valid inputs are unknown."
+  ]
+}

@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Every external page loads with its expected heading,Step 1,Open http://localhost:1688 followed by the route of the page in the current row.,The page loads.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the main heading.,The h1 matches the heading recorded for that page (or the title when the page has no h1).,,,
+,,,Step 3,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 4,Repeat for every row of the Examples table.,Every page loads.,,,
+,,,Step 5,Look at the accessibility scan result for the page.,The page was scanned once and the result is in the accessibility report.,,,
+,Test Case,Every external page keeps its heading after a reload,Step 1,Open the page in the current row of http://localhost:1688.,The page loads with its heading.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Reload the page.,The page reloads.,,,
+,,,Step 3,Read the main heading.,The heading is unchanged.,,,
+,,,Step 4,Check for a server error message.,No server error page is shown.,,,
+,,,Step 5,Repeat for every row.,Every page keeps its heading.,,,
+,Test Case,The Home breadcrumb link on every external page returns to Home,Step 1,Open the page in the current row of http://localhost:1688.,The page loads.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Find the Home link in the breadcrumb or header.,The Home link is visible.,,,
+,,,Step 3,Click the Home link.,The browser navigates to the Home page.,,,
+,,,Step 4,Read the main heading.,The h1 reads VETQAS Proficiency Testing.,,,
+,,,Step 5,Repeat for every row.,Every page links back to Home.,,,

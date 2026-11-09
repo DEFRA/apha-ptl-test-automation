@@ -1,0 +1,31 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,"Customers list shows its columns, links and status filter options",Step 1,Open http://localhost:1946/Contracts Admin/CustomerList.aspx as a signed-in Admin.,"The page loads, the h1 reads Customers and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the column headings of the table.,"The columns QAL Number, Name, Organisation, Details, Participants and Contracts are shown.",,,
+,,,Step 3,Read the links above the table.,"The links Create Customer, Review Pending Customer Updates, Review Pending Participant Updates and Review Pending Orders are shown. Do not click them.",,,
+,,,Step 4,Open the status dropdown.,"The options Active Only, Inactive Only and All are listed.",,,
+,,,Step 5,Look for the Filter button.,The Filter button is visible.,,,
+,Test Case,Filtering the Customers list by Inactive Only and All keeps the page,Step 1,Open http://localhost:1946/Contracts Admin/CustomerList.aspx as a signed-in Admin.,"The page loads, the h1 reads Customers and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Select Inactive Only in the status dropdown and click Filter.,The page reloads with the h1 Customers and no server error page is shown.,,,
+,,,Step 3,Read the column headings of the table.,"The columns QAL Number, Name, Organisation, Details, Participants and Contracts are still shown.",,,
+,,,Step 4,Select All in the status dropdown and click Filter.,The page reloads with the h1 Customers and no server error page is shown.,,,
+,,,Step 5,Look at the table.,At least one customer row is shown.,,,
+,Test Case,Review Pending Customer Updates link opens its page from Customers,Step 1,Open http://localhost:1946/Contracts Admin/CustomerList.aspx as a signed-in Admin.,"The page loads, the h1 reads Customers and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Look for the Review Pending Customer Updates link.,The link is visible.,,,
+,,,Step 3,Click the Review Pending Customer Updates link.,The browser opens the review page.,,,
+,,,Step 4,Read the main heading of the page.,The h1 reads Review Pending Customer Updates.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Review Pending Customer Updates.,,,
+,Test Case,Schemes list shows its columns and links,Step 1,Open http://localhost:1946/Scheme Admin/SchemeList.aspx as a signed-in Admin.,"The page loads, the h1 reads Schemes and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the column headings of the table.,"The columns Identifier, Name, Current Year, Next Year and History are shown.",,,
+,,,Step 3,Read the links above the table.,"The links Create Scheme for Current Year, Create Scheme for Next Year and Printable Schemes are shown.",,,
+,,,Step 4,Look at the first data row.,"The row has an identifier and a name, and Details and Renew links.",,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Schemes.,,,
+,Test Case,Schemes list shows the seeded PT0001 African Horse Sickness row,Step 1,Open http://localhost:1946/Scheme Admin/SchemeList.aspx as a signed-in Admin.,"The page loads, the h1 reads Schemes and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Look for the row with the identifier PT0001.,The row is shown.,,,
+,,,Step 3,Read the name in that row.,The name reads African Horse Sickness (AHS).,,,
+,,,Step 4,Look for the Details link in that row.,The Details link is visible. Do not click it.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still Schemes.,,,
+,Test Case,Printable Schemes link opens without a server error,Step 1,Open http://localhost:1946/Scheme Admin/SchemeList.aspx as a signed-in Admin.,"The page loads, the h1 reads Schemes and no server error page is shown.",Proficiency Testing\Admin,QA,Design
+,,,Step 2,Look for the Printable Schemes link.,The link is visible.,,,
+,,,Step 3,Click the Printable Schemes link.,A page opens.,,,
+,,,Step 4,Check the opened page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Return to the Schemes list.,The h1 reads Schemes.,,,

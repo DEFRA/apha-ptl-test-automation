@@ -1,0 +1,21 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,View schemes card on Home opens the View Schemes page,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Click the View schemes card under the Schemes section.,The browser navigates to the address path /SchemeList.aspx.,,,
+,,,Step 3,Read the main heading of the page that opened.,The h1 reads View Schemes.,,,
+,,,Step 4,Check the page for a server error message.,No server error page is shown.,,,
+,,,Step 5,Read the browser tab title.,The title reads Scheme list - Proficiency Testing.,,,
+,Test Case,Scheme list shows the table columns and at least one scheme,Step 1,Open http://localhost:1688/SchemeList.aspx as a signed-in external user.,The page loads with the h1 View Schemes and no server error page is shown.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the table column headings.,"The columns Scheme Code, Scheme Name, Participating and Current Contract Year are shown.",,,
+,,,Step 3,Look at the rows below the column headings.,At least one scheme row is shown.,,,
+,,,Step 4,Read the first scheme row.,The row has a value in the Scheme Code and Scheme Name columns.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown and the h1 is still View Schemes.,,,
+,Test Case,Scheme list keeps its heading after a reload,Step 1,Open http://localhost:1688/SchemeList.aspx as a signed-in external user.,The page loads with the h1 View Schemes.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Read the browser tab title.,The title reads Scheme list - Proficiency Testing.,,,
+,,,Step 3,Reload the page.,The page reloads and no server error page is shown.,,,
+,,,Step 4,Read the main heading and the table column headings again.,The h1 is still View Schemes and the four columns are still shown.,,,
+,,,Step 5,Look at the rows below the column headings.,At least one scheme row is still shown.,,,
+,Test Case,Browser Back from the scheme list returns to Home,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user.,The home page loads with the h1 VETQAS Proficiency Testing.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Click the View schemes card.,The h1 reads View Schemes.,,,
+,,,Step 3,Select the browser Back button.,The browser returns to the address path /Home.aspx.,,,
+,,,Step 4,Read the main heading of the page.,The h1 reads VETQAS Proficiency Testing and no server error page is shown.,,,
+,,,Step 5,Look for the View schemes card under the Schemes section.,The View schemes card is still visible.,,,

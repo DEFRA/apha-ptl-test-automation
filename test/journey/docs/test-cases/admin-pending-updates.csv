@@ -1,0 +1,24 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,"Pending customer updates list shows QAL Number, Customer Name and Details",Step 1,Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.,The page loads and no server error page is shown.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Read the main heading of the page.,The h1 reads Review Pending Customer Updates.,,,
+,,,Step 3,Look at the first column heading of the table.,The column heading QAL Number is shown.,,,
+,,,Step 4,Look at the second and third column headings of the table.,The column headings Customer Name and Details are shown.,,,
+,,,Step 5,Count the data rows in the table.,"At least one data row is shown, with a QAL Number, a Customer Name and a Details link.",,,
+,Test Case,"Pending customer update details show Approve, Decline and Cancel and Cancel changes nothing",Step 1,Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.,The h1 reads Review Pending Customer Updates and at least one row is shown.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the QAL Number and Customer Name of the first row as <first QAL number> and <first customer name>.,The two values are recorded.,,,
+,,,Step 3,Select the Details link on the first row.,The page PendingCustomerUpdateDetails.aspx opens and no server error page is shown.,,,
+,,,Step 4,Look at the buttons on the page without selecting Approve or Decline.,"The buttons Approve, Decline and Cancel are visible.",,,
+,,,Step 5,Select Cancel.,The page returns to the Review Pending Customer Updates list.,,,
+,,,Step 6,Look for the row with <first QAL number> and <first customer name>.,"The row is still listed, so nothing was approved or declined.",,,
+,Test Case,Pending participant updates page opens with its heading,Step 1,Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.,The h1 reads Review Pending Customer Updates.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open http://localhost:1946/Contracts Admin/ReviewPendingParticipantUpdates.aspx.,The page loads and no server error page is shown.,,,
+,,,Step 3,Read the main heading of the page.,The h1 reads Review Pending Participant Updates.,,,
+,,,Step 4,Look at the content under the heading.,Either a table of pending participants or the message There are no pending participants to display. is shown.,,,
+,,,Step 5,"If no pending participants are listed, read the message.",The message reads There are no pending participants to display.,,,
+,Test Case,Admin approves and declines pending customer updates,Step 1,Open http://localhost:1946/Contracts Admin/ReviewPendingCustomerUpdates.aspx as a signed-in Admin.,The h1 reads Review Pending Customer Updates and at least two rows are shown.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Note the QAL Number of the first row as <approve QAL number> and of the second row as <decline QAL number>.,The two QAL Numbers are recorded.,,,
+,,,Step 3,"Select Details on the row for <approve QAL number>, then select Approve.",<outcome message after Approve> is shown and the page leaves the details view.,,,
+,,,Step 4,Check the Review Pending Customer Updates list.,The row for <approve QAL number> is no longer listed.,,,
+,,,Step 5,"Select Details on the row for <decline QAL number>, then select Decline.",<outcome message after Decline> is shown and the page leaves the details view.,,,
+,,,Step 6,Check the Review Pending Customer Updates list.,The row for <decline QAL number> is no longer listed.,,,
+,,,Step 7,Cleanup: ask the environment owner to reset the seed data.,Both pending customer updates are listed again after the reset.,,,

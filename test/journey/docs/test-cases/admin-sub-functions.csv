@@ -1,0 +1,31 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Unticking one role for dt2\ns000134 leaves the menus and sub menus as expected,Step 1,Open System Administration > Manage Roles and tick every optional role for dt2\ns000134.,Every optional role is ticked.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Untick the role of the row.,The role is saved.,,,
+,,,Step 3,"Open Home and each section (System Administration, Manage Contracts, Manage Schemes, Distributions).","Each section menu lists its items, with Invoice Generation under Manage Contracts as in the row.",,,
+,,,Step 4,Open the page of the row.,The page opens or shows Access Denied as in the row.,,,
+,,,Step 5,Open every sub menu page of the section of the row and of System Administration.,Each page is allowed or denied as in the row; untick the remaining roles afterwards to restore the Admin-only baseline.,,,
+,Test Case,Ticking one role for dt2\ns000134 gives access to its menus and sub menus,Step 1,Open Manage Roles; make sure only the Admin role is ticked for dt2\ns000134.,No optional role is ticked.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Tick the role of the row.,The role is saved.,,,
+,,,Step 3,Open Home and each section.,"Each section menu lists its items, with Invoice Generation only for Generate Invoices.",,,
+,,,Step 4,Open the page of the row.,The page opens without Access Denied.,,,
+,,,Step 5,Open every sub menu page of the section of the row and of System Administration.,Each page opens without Access Denied; untick the role afterwards.,,,
+,Test Case,Each tab of a scheme opens without an error,Step 1,Open Manage Schemes > Schemes.,The Schemes list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Details on the first scheme.,The scheme page opens.,,,
+,,,Step 3,Click the tab of the row.,The tab content shows.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,
+,Test Case,A pending order opens from Review Pending Orders,Step 1,Open Manage Contracts > Customers.,The Customers list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Review Pending Orders.,The pending orders list opens.,,,
+,,,Step 3,Click Details on the first order.,The pending order page starts to open.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the address.,The page is PendingContractOrder.aspx with no server error.,,,
+,Test Case,Import Permit opens from a contract and Cancel returns to the contract list,Step 1,Open Manage Contracts > Customers and click Contracts on the first customer.,The Contracts list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click Import Permit(s).,The Import Permit page opens.,,,
+,,,Step 3,Check the buttons.,Save and Apply are shown.,,,
+,,,Step 4,Click Cancel.,The Contracts list opens again.,,,
+,,,Step 5,Check the address.,The page is ContractList.aspx with no server error.,,,
+,Test Case,A field of an external test consultant is edited and kept,Step 1,Open System Administration > Manage External Test Consultants.,The list opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Add a consultant with a unique name and click Save.,The consultant is listed.,,,
+,,,Step 3,Click Edit on the consultant and change the field of the row to the value of the row.,The edit boxes show the value.,,,
+,,,Step 4,Click the row Save link and the page Save button.,The change is saved.,,,
+,,,Step 5,Find the consultant in the list.,The row shows the new value; the test removes the consultant afterwards.,,,

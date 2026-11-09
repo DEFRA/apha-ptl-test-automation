@@ -1,0 +1,240 @@
+{
+  "feature": "admin-search",
+  "test_cases": [
+    {
+      "ref": "TC-057",
+      "layer": "ui",
+      "title": "Scheme search with an unknown name shows no results",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Scheme search by name shows \"There are no Results to Display\" when nothing matches - /Scheme Admin/Search.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "ZZ-NO-SUCH-SCHEME matches no scheme.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme Admin/Search.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Read the text above the search box.",
+          "expected": "The text reads: This page can be used to search for Schemes."
+        },
+        {
+          "action": "Type ZZ-NO-SUCH-SCHEME in the Scheme Name box.",
+          "expected": "The box shows ZZ-NO-SUCH-SCHEME."
+        },
+        {
+          "action": "Click the Search button.",
+          "expected": "The page reloads with the h1 Search and no server error page is shown."
+        },
+        {
+          "action": "Read the Search Results area.",
+          "expected": "The message reads: There are no Results to Display."
+        }
+      ]
+    },
+    {
+      "ref": "TC-058",
+      "layer": "ui",
+      "title": "Scheme search with a known name lists results",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Scheme search by name lists matching schemes - /Scheme Admin/Search.aspx (seeded PT0001 African Horse Sickness (AHS))"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The seeded scheme African Horse Sickness (AHS) exists.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Scheme Admin/Search.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Type African Horse Sickness in the Scheme Name box.",
+          "expected": "The box shows African Horse Sickness."
+        },
+        {
+          "action": "Click the Search button.",
+          "expected": "The page reloads with the h1 Search and no server error page is shown."
+        },
+        {
+          "action": "Read the Search Results area.",
+          "expected": "The message There are no Results to Display is not shown."
+        },
+        {
+          "action": "Look for the scheme name in the results.",
+          "expected": "A result containing African Horse Sickness is listed."
+        }
+      ]
+    },
+    {
+      "ref": "TC-059",
+      "layer": "ui",
+      "title": "Distribution search by an unknown number shows no results",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Distribution search by number shows \"There are no Results to Display\" when nothing matches - /Distributions/Search.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "ZZ-NO-SUCH-DIST matches no distribution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Distributions/Search.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Look at the Distribution Number box.",
+          "expected": "The Distribution Number box and the Search button are visible."
+        },
+        {
+          "action": "Type ZZ-NO-SUCH-DIST in the Distribution Number box.",
+          "expected": "The box shows ZZ-NO-SUCH-DIST."
+        },
+        {
+          "action": "Click the Search button.",
+          "expected": "The page reloads with the h1 Search and no server error page is shown."
+        },
+        {
+          "action": "Read the Search Results area.",
+          "expected": "The message reads: There are no Results to Display."
+        }
+      ]
+    },
+    {
+      "ref": "TC-060",
+      "layer": "ui",
+      "title": "Distributions Search shows the Distribution Number and Sample Number tabs",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Distributions Search has the tabs Distribution Number and Sample Number - /Distributions/Search.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "The content of the Sample Number tab is not checked.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Distributions/Search.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Read the tab names above the search box.",
+          "expected": "The tabs Distribution Number and Sample Number are shown."
+        },
+        {
+          "action": "Read the text below the tabs.",
+          "expected": "The text reads: Use the search box below to identify the required Scheme by Distribution Number."
+        },
+        {
+          "action": "Look at the search box on the Distribution Number tab.",
+          "expected": "The Distribution Number box and the Search button are visible."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Search."
+        }
+      ]
+    },
+    {
+      "ref": "TC-061",
+      "layer": "ui",
+      "title": "Contracts customer search shows its fields and an unknown QAL keeps the page",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Customer search has QAL Number, Account Number, Name, Contact Name, Organisation and Country - /Contracts Admin/Search.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "ZZ-NO-SUCH-QAL matches no customer.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Contracts Admin/Search.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Search and no server error page is shown."
+        },
+        {
+          "action": "Read the tab names.",
+          "expected": "The tabs Customers and Participants are shown."
+        },
+        {
+          "action": "Read the field labels on the Customers tab.",
+          "expected": "The labels QAL Number, Account Number, Name, Contact Name, Organisation and Country are shown."
+        },
+        {
+          "action": "Type ZZ-NO-SUCH-QAL in the QAL Number box and click Search.",
+          "expected": "The page reloads with the h1 Search."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Search."
+        }
+      ]
+    },
+    {
+      "ref": "TC-062",
+      "layer": "ui",
+      "title": "Create User search with an unknown id keeps the page and creates no user",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Create User offers a search box and a Search button and creates nothing on search - /Admin/UserCreate.aspx (probe 2026-11-02)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin.",
+        "zz999999 matches no user. No user is created.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/Admin/UserCreate.aspx as a signed-in Admin.",
+          "expected": "The page loads, the h1 reads Create User and no server error page is shown."
+        },
+        {
+          "action": "Read the instruction text.",
+          "expected": "The text reads: Type in the Id number (eg m123456), forename or surname of the user to be created."
+        },
+        {
+          "action": "Type zz999999 in the search box.",
+          "expected": "The box shows zz999999."
+        },
+        {
+          "action": "Click the Search button.",
+          "expected": "The page reloads with the h1 Create User."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown and the h1 is still Create User."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from probes of the running app and the page source; confirm the headings and messages are the intended behaviour.",
+    "TODO: the results table columns for scheme search are not recorded.",
+    "TODO: the fields on the Sample Number tab are not recorded.",
+    "TODO: the no-result message of the customer search is not recorded, so only the absence of a server error is asserted.",
+    "TODO: the outcome text after a search with no match is not recorded."
+  ]
+}

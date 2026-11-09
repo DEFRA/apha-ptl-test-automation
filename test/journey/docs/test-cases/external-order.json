@@ -1,0 +1,327 @@
+{
+  "feature": "external-order",
+  "test_cases": [
+    {
+      "ref": "TC-110",
+      "layer": "ui",
+      "title": "Selecting an available scheme ticks it and enables Next",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: A selected scheme with an available month is saved to the draft order and enables Next (PendingContractOrder.aspx.vb Check_Clicked, NextButtonEnabled)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (participant Lab Code 1300, customer QAL/0432). The database has a backup, so draft order changes can be restored.",
+        "Cleanup: the test deselects the scheme it selected, in a fresh visit of the order page, even when it fails. The order is never submitted.",
+        "Creates or changes a draft order."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Tick the last scheme in the lists that is enabled and not yet selected.",
+          "expected": "The scheme is ticked and its month strip appears."
+        },
+        {
+          "action": "Wait for the page update.",
+          "expected": "The scheme stays ticked."
+        },
+        {
+          "action": "Look at the Next button.",
+          "expected": "Next is enabled."
+        },
+        {
+          "action": "Do not click Next.",
+          "expected": "Nothing else changes."
+        }
+      ]
+    },
+    {
+      "ref": "TC-111",
+      "layer": "ui",
+      "title": "Next opens the pending order summary with its buttons",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Next shows the Pending Order summary listing the selected scheme with SUBMIT (disabled), PREVIOUS, SAVE and PRINT (PendingContractOrder.aspx.vb BtnNext_Click)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (participant Lab Code 1300, customer QAL/0432). The database has a backup, so draft order changes can be restored.",
+        "Cleanup: the test deselects the scheme it selected, in a fresh visit of the order page, even when it fails. The order is never submitted.",
+        "Creates or changes a draft order."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Tick the last scheme in the lists that is enabled and not yet selected.",
+          "expected": "The scheme is ticked and its month strip appears."
+        },
+        {
+          "action": "Click Next.",
+          "expected": "The page title changes to Pending Order."
+        },
+        {
+          "action": "Read the summary.",
+          "expected": "The Schemes you have selected section is shown."
+        },
+        {
+          "action": "Look at the buttons.",
+          "expected": "SUBMIT is disabled; PREVIOUS, SAVE and PRINT are shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-112",
+      "layer": "ui",
+      "title": "PREVIOUS returns from the summary to the first step",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: PREVIOUS returns from the summary to the scheme selection and keeps the selection (PendingContractOrder.aspx.vb BtnBackToView1_Click)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (participant Lab Code 1300, customer QAL/0432). The database has a backup, so draft order changes can be restored.",
+        "Cleanup: the test deselects the scheme it selected, in a fresh visit of the order page, even when it fails. The order is never submitted.",
+        "Creates or changes a draft order."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Tick the last scheme in the lists that is enabled and not yet selected.",
+          "expected": "The scheme is ticked and its month strip appears."
+        },
+        {
+          "action": "Click Next.",
+          "expected": "The Pending Order summary is shown."
+        },
+        {
+          "action": "Click PREVIOUS.",
+          "expected": "The Create New Order step is shown again."
+        },
+        {
+          "action": "Look at the scheme.",
+          "expected": "The scheme is still ticked."
+        }
+      ]
+    },
+    {
+      "ref": "TC-113",
+      "layer": "ui",
+      "title": "Accepting the terms enables SUBMIT on the summary",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: On the summary, accepting the terms and conditions enables SUBMIT when no consent declarations are required (PendingContractOrder.aspx.vb:1159)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (participant Lab Code 1300, customer QAL/0432). The database has a backup, so draft order changes can be restored.",
+        "Cleanup: the test deselects the scheme it selected, in a fresh visit of the order page, even when it fails. The order is never submitted.",
+        "Consent declarations appear only for some schemes; the test uses a scheme that shows none.",
+        "The order is never submitted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Tick the last scheme in the lists that is enabled and not yet selected.",
+          "expected": "The scheme is ticked and its month strip appears."
+        },
+        {
+          "action": "Click Next.",
+          "expected": "The Pending Order summary is shown."
+        },
+        {
+          "action": "Tick the terms and conditions box.",
+          "expected": "The page updates."
+        },
+        {
+          "action": "Look at SUBMIT.",
+          "expected": "SUBMIT is enabled."
+        },
+        {
+          "action": "Do not click SUBMIT.",
+          "expected": "Nothing is submitted."
+        }
+      ]
+    },
+    {
+      "ref": "TC-114",
+      "layer": "ui",
+      "title": "SAVE keeps the pending order on the summary",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: SAVE stores the draft and leaves the Pending Order summary open (PendingContractOrder.aspx.vb BtnSave_Click)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (participant Lab Code 1300, customer QAL/0432). The database has a backup, so draft order changes can be restored.",
+        "Cleanup: the test deselects the scheme it selected, in a fresh visit of the order page, even when it fails. The order is never submitted.",
+        "Creates or changes a draft order."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Tick the last scheme in the lists that is enabled and not yet selected.",
+          "expected": "The scheme is ticked and its month strip appears."
+        },
+        {
+          "action": "Click Next.",
+          "expected": "The Pending Order summary is shown."
+        },
+        {
+          "action": "Click SAVE.",
+          "expected": "The page reloads without an error."
+        },
+        {
+          "action": "Read the page.",
+          "expected": "A message says the pending contract order saved successfully."
+        }
+      ]
+    },
+    {
+      "ref": "TC-115",
+      "layer": "ui",
+      "title": "A customer submits an order and the admin declines it, leaving no order behind",
+      "area_path": "Proficiency Testing\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: SUBMIT with the terms accepted sends the order to Review Pending Orders and returns the customer to Home; an admin Decline removes the order and its schemes (PendingContractOrder.aspx.vb BtnSubmit_Click; Contracts Admin PendingContractOrder.aspx.vb ButtonDecline_Click)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (customer QAL/0432). The admin site runs at http://localhost:1946 with Windows identity dt2\\ns000134.",
+        "Repeatable: before the test and in its cleanup, any submitted order of QAL/0432 is declined in a separate admin browser, which deletes the order and its pending schemes. No database restore is needed.",
+        "Cleanup also deselects the scheme the test selected, even when the test fails.",
+        "Decline sends notification emails; the local mail server at localhost:5615 may be absent."
+      ],
+      "steps": [
+        {
+          "action": "As admin, open Manage Contracts > Review Pending Orders and decline any order for QAL/0432.",
+          "expected": "No order for QAL/0432 is waiting for review."
+        },
+        {
+          "action": "As the customer, open http://localhost:1688/PendingContractOrder.aspx?year=current and tick the last scheme that has a month available to order.",
+          "expected": "The scheme and its months are ticked."
+        },
+        {
+          "action": "Click Next, tick the terms and conditions and any consent declarations shown.",
+          "expected": "The Pending Order summary is shown and SUBMIT is enabled."
+        },
+        {
+          "action": "Click SUBMIT.",
+          "expected": "The customer is returned to Home."
+        },
+        {
+          "action": "As admin, open Review Pending Orders.",
+          "expected": "An order for QAL/0432 is listed."
+        },
+        {
+          "action": "Open the order with Details and click Decline.",
+          "expected": "The order is removed from the list."
+        },
+        {
+          "action": "As the customer, open the order page again.",
+          "expected": "A new order starts with no scheme selected and Next disabled."
+        }
+      ]
+    },
+    {
+      "ref": "TC-116",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "title": "Next stays disabled while no scheme is selected",
+      "acs": [
+        "DERIVED: Next is disabled until a selected scheme has a month available to order (PendingContractOrder.aspx.vb NextButtonEnabled)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (customer QAL/0432). The database has a backup.",
+        "Cleanup: the test deselects the scheme it selected, even when it fails. The order is never submitted.",
+        "Before the check, the test deselects any scheme left selected on the draft order."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current.",
+          "expected": "The Create New Order page opens."
+        },
+        {
+          "action": "Untick every scheme that is ticked and enabled.",
+          "expected": "No scheme is selected."
+        },
+        {
+          "action": "Wait for the page update.",
+          "expected": "The page finishes updating."
+        },
+        {
+          "action": "Look at the Next button.",
+          "expected": "Next is disabled."
+        },
+        {
+          "action": "Do not click any other button.",
+          "expected": "Nothing else changes."
+        }
+      ]
+    },
+    {
+      "ref": "TC-117",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\\\External",
+      "assigned_to": "QA",
+      "state": "Design",
+      "title": "Deselecting the only selected scheme disables Next again",
+      "acs": [
+        "DERIVED: Unticking the only selected scheme removes it from the draft order and disables Next (PendingContractOrder.aspx.vb Check_Clicked, NextButtonEnabled)"
+      ],
+      "assumptions": [
+        "The external site runs at http://localhost:1688 with the local debug SSO user (customer QAL/0432). The database has a backup.",
+        "Cleanup: the test deselects the scheme it selected, even when it fails. The order is never submitted."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1688/PendingContractOrder.aspx?year=current and untick every selected scheme.",
+          "expected": "No scheme is selected."
+        },
+        {
+          "action": "Tick the last scheme that has a month available to order.",
+          "expected": "The scheme and a month are ticked."
+        },
+        {
+          "action": "Look at the Next button.",
+          "expected": "Next is enabled."
+        },
+        {
+          "action": "Untick the same scheme.",
+          "expected": "The scheme is unticked."
+        },
+        {
+          "action": "Look at the Next button.",
+          "expected": "Next is disabled."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the source code and local probes; confirm they are the intended behaviour.",
+    "TODO: consent declarations and the purchase order number are not covered.",
+    "TODO: approving a submitted order is not automated because it creates a real contract that cannot be reversed from the UI."
+  ]
+}

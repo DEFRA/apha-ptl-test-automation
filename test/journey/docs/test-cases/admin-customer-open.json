@@ -1,0 +1,48 @@
+{
+  "feature": "admin-customer-open",
+  "test_cases": [
+    {
+      "ref": "TC-107",
+      "layer": "ui",
+      "title": "A customer found by QAL number opens its details",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: A customer listed by QAL search opens its details page - 15 customers (data/seed/samples.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table lists every row; each row is one execution.",
+        "Read-only: nothing is created, saved or deleted, so no data cleanup is needed.",
+        "Representative sample: one row stands for the 15 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Search.",
+          "expected": "The Search page opens."
+        },
+        {
+          "action": "Type the QAL number of the row and click Search.",
+          "expected": "The customer is listed."
+        },
+        {
+          "action": "Click the customer in the results.",
+          "expected": "The customer details page opens."
+        },
+        {
+          "action": "Read the page text.",
+          "expected": "The QAL number is shown."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from read-only probes; confirm they are the intended behaviour.",
+    "TODO: the exact result link markup was not probed; the step finds a link by the QAL text."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "feature": "admin-click-paths",
+  "test_cases": [
+    {
+      "ref": "TC-081",
+      "layer": "ui",
+      "title": "Following the menu and list links reaches the page that needs an id",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "acs": [
+        "DERIVED: Pages that need a record id (customer, participant, contract, scheme, assessment items) are reached by clicking from the menu and lists - 9 paths (data/drill-chains.json)"
+      ],
+      "assumptions": [
+        "The admin site runs at http://localhost:1946 and the user is signed in as an Admin (Windows identity dt2\\ns000134).",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Read-only: only view links are followed (Details, Participants, Contracts, View, Viewers).",
+        "Opening these pages directly without an id is expected to fail (for example PendingCustomerUpdateDetails.aspx throws \"CustomerId is required as querystring parameter\"), so they are only tested through navigation.",
+        "Representative sample: one row stands for the 9 similar rows; the full list is kept in docs/full-examples/ and can be restored."
+      ],
+      "steps": [
+        {
+          "action": "Open http://localhost:1946/home.aspx.",
+          "expected": "The Home page loads."
+        },
+        {
+          "action": "Click the links of the path in the current row, in order.",
+          "expected": "Each click opens the next page."
+        },
+        {
+          "action": "Read the main heading of the destination page.",
+          "expected": "The h1 matches the heading in the row."
+        },
+        {
+          "action": "Check the page for a server error message.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Repeat for every row.",
+          "expected": "Every path reaches its page."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from read-only surveys of the running app and the page source; confirm the headings and messages are the intended behaviour.",
+    "TODO: the paths to Contract Items, Pending Customer Update Details and Pending Participant Update Details need a seeded pending record or a contract with items."
+  ]
+}

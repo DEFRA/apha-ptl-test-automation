@@ -1,0 +1,18 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Logo returns the user to the home page from another page,Step 1,Open http://localhost:1688/Help.aspx as a signed-in external user.,The Help page loads with the h1 Help and the logo with alt text Proficiency Testing homepage is visible in the navigation bar.,Proficiency Testing\External Web,QA,Design
+,,,Step 2,Confirm the browser address ends with /Help.aspx.,"The address path is /Help.aspx, so the user is not on the home page.",,,
+,,,Step 3,Click the logo in the navigation bar.,The browser navigates to the home page and the address path is /Home.aspx.,,,
+,,,Step 4,Read the main heading of the page that opened.,The h1 reads VETQAS Proficiency Testing.,,,
+,,,Step 5,Stop on the home page without selecting anything else.,The user remains on /Home.aspx and no error page is shown.,,,
+,Test Case,Footer links open the expected internal page for each link,Step 1,Open http://localhost:1688/Home.aspx as a signed-in external user and scroll to the footer.,"The home page loads with the h1 VETQAS Proficiency Testing and the footer shows the links Help, Accessibility Statement, System Information and Privacy Policy.",Proficiency Testing\External Web,QA,Design
+,,,Step 2,Click the Help link in the footer.,The page opens in the same tab and the address path is /Help.aspx.,,,
+,,,Step 3,Read the main heading of the Help page.,The h1 reads Help.,,,
+,,,Step 4,Use the browser Back button to return to the home page.,The home page is shown with the h1 VETQAS Proficiency Testing and the footer links are visible.,,,
+,,,Step 5,Click the Accessibility Statement link in the footer.,The page opens in the same tab and the address path is /AccessibilityStatement.aspx.,,,
+,,,Step 6,Read the main heading of the Accessibility Statement page.,The h1 reads Accessibility statement for the PT-LIMS website.,,,
+,,,Step 7,Use the browser Back button to return to the home page.,The home page is shown with the h1 VETQAS Proficiency Testing and the footer links are visible.,,,
+,,,Step 8,Click the System Information link in the footer.,The page opens in the same tab and the address path is /About.aspx.,,,
+,,,Step 9,Read the main heading of the System Information page.,The h1 reads About.,,,
+,,,Step 10,Use the browser Back button to return to the home page.,The home page is shown with the h1 VETQAS Proficiency Testing and the footer links are visible.,,,
+,,,Step 11,Click the Privacy Policy link in the footer.,The page opens in the same tab and the address path is /PrivacyPolicy.aspx.,,,
+,,,Step 12,Read the main heading of the Privacy Policy page.,The h1 reads VETQAS Privacy Notice.,,,

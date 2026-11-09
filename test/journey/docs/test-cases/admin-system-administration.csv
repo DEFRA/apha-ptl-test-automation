@@ -1,0 +1,16 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Manage Roles and Create User pages load without saving anything,Step 1,Open http://localhost:1946/Admin/MenuAdmin.aspx as a signed-in admin user.,The page loads with the h1 System Administration.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open http://localhost:1946/Admin/UserRoles.aspx.,"The page loads, the h1 reads Manage Roles and no server error page is shown.",,,
+,,,Step 3,Reload the Manage Roles page.,The h1 still reads Manage Roles and no server error page is shown.,,,
+,,,Step 4,Open http://localhost:1946/Admin/UserCreate.aspx.,"The page loads, the h1 reads Create User and no server error page is shown.",,,
+,,,Step 5,Leave the Create User page without entering or saving any data.,No confirmation or saved message is shown and the h1 is still Create User.,,,
+,Test Case,Internal Test Consultant Department page loads with its heading,Step 1,Open http://localhost:1946/home.aspx as a signed-in admin user.,The page loads with the h1 Home.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Click the System Administration link.,The address path is /Admin/MenuAdmin.aspx and the h1 reads System Administration.,,,
+,,,Step 3,Open http://localhost:1946/Admin/TCDepartment.aspx.,The page loads and the address path is /Admin/TCDepartment.aspx.,,,
+,,,Step 4,Read the main heading of the page.,The h1 reads Internal Test Consultant Department.,,,
+,,,Step 5,Check the page for a server error message.,No server error page is shown.,,,
+,Test Case,Pricing plan pages load with their expected heading for each page,Step 1,Open http://localhost:1946/Admin/MenuAdmin.aspx as a signed-in admin user.,The page loads with the h1 System Administration.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open http://localhost:1946/Admin/WeightedPricingPlan.aspx.,"The page loads, the h1 reads Weighted Pricing Plan and no server error page is shown.",,,
+,,,Step 3,Reload the Weighted Pricing Plan page.,The h1 still reads Weighted Pricing Plan and no server error page is shown.,,,
+,,,Step 4,Open http://localhost:1946/Admin/PostagePricingPlan.aspx.,"The page loads, the h1 reads Postage Pricing Plan and no server error page is shown.",,,
+,,,Step 5,Reload the Postage Pricing Plan page.,The h1 still reads Postage Pricing Plan and no server error page is shown.,,,

@@ -1,0 +1,37 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,"A tabulation is added to a scheme, renamed and removed",Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,"Open the Results Tabulations tab, click Add New Tabulation, enter a unique name and click Add Tabulation, then Save.",The tabulation is listed after a reload.,,,
+,,,Step 3,"Click Rename on it, enter a new name, click Rename Tabulation and Save.",The tabulation is listed under the new name.,,,
+,,,Step 4,"Click Remove on it, confirm and Save.",The tabulation is gone after a reload.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,
+,Test Case,"A test consultant of a scheme is changed, kept after reloading and restored",Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Test consultants tab and note the choice of the slot of the row.,The original choice is known.,,,
+,,,Step 3,Choose another consultant in that slot and click Save.,The change is saved.,,,
+,,,Step 4,Reload the scheme and open the tab again.,The slot shows the new choice.,,,
+,,,Step 5,Put the original choice back and Save.,The original choice is stored.,,,
+,Test Case,Apply and Cancel on a scheme tab keep the page without an error,Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the tab of the row.,The tab shows.,,,
+,,,Step 3,Click the action of the row (Apply or Cancel).,The action runs.,,,
+,,,Step 4,Wait for the page to load.,The page loads.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,
+,Test Case,A method item of a scheme test is moved down and back up,Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Tests tab.,The tests and their method items show.,,,
+,,,Step 3,Click Move down on the first method item.,The item moves down.,,,
+,,,Step 4,Click Move up on the item that is now second.,The original order is restored.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,
+,Test Case,A test is added to a scheme and removed again,Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Tests tab and note the number of tests.,The count is known.,,,
+,,,Step 3,"Click Add New Test, choose the last test type and click Add Test.",The scheme shows one more test.,,,
+,,,Step 4,Click Remove Test on the last test and confirm.,The scheme shows its original number of tests.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,
+,Test Case,"A result, method or category item is added to the first test and removed again",Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,Open the Tests tab and note the number of items of the kind of the row in the first test.,The count is known.,,,
+,,,Step 3,"Click the Add link of the kind, keep the first type and click the Add button.",The test shows one more item of that kind.,,,
+,,,Step 4,Click Remove on the last item of that kind and confirm where asked.,The test shows its original number of items.,,,
+,,,Step 5,Check the page.,No server error page is shown.,,,
+,Test Case,A criterion item is added to a new category of the first test and removed again,Step 1,Open Manage Schemes > Schemes and click Details on the first scheme.,The scheme page opens.,Proficiency Testing\Admin,QA,Design
+,,,Step 2,"Open the Tests tab, click Add Category Item on the first test and click Add Category.",A new category is listed last.,,,
+,,,Step 3,"Click Add Criterion Item on the new category, keep the first type and click Add Criterion.",The test shows one more criterion.,,,
+,,,Step 4,Click Remove on the last criterion.,The test shows its original number of criteria.,,,
+,,,Step 5,Click Remove on the new category and confirm.,The category is gone.,,,
+,,,Step 6,Check the page.,No server error page is shown.,,,

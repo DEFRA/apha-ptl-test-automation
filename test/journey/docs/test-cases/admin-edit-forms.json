@@ -1,0 +1,538 @@
+{
+  "feature": "admin-edit-forms",
+  "test_cases": [
+    {
+      "ref": "TC-159",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A field of an existing record is changed, kept after reloading and restored",
+      "acs": [
+        "DERIVED: Customer, participant, contract and scheme forms save changed fields - Customer.aspx, Participant.aspx, Contract.aspx, Scheme.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open the first record of the kind of the row from its list.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Note the current value of the field of the row.",
+          "expected": "The original value is known."
+        },
+        {
+          "action": "Enter the value of the row and click Save.",
+          "expected": "The record is saved."
+        },
+        {
+          "action": "Reload the page and read the field.",
+          "expected": "The field shows the new value."
+        },
+        {
+          "action": "Put the original value back and save.",
+          "expected": "The original value is stored."
+        }
+      ]
+    },
+    {
+      "ref": "TC-160",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "An invalid value in an existing record blocks the save",
+      "acs": [
+        "DERIVED: Email, telephone, rate, price and required fields are validated before saving - ValidatorEmailRegEx, ValidatorTelephoneRegEx and the contract and scheme validators"
+      ],
+      "steps": [
+        {
+          "action": "Open the first record of the kind of the row from its list.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Enter the invalid or empty value in the field of the row.",
+          "expected": "The field shows the value."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "A validation indicator is shown."
+        },
+        {
+          "action": "Check that the record was not saved.",
+          "expected": "The page stays on the form."
+        },
+        {
+          "action": "Check the page after the action.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-161",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Rows that expect matches need a seeded customer whose name or organisation contains E2E, or a contact named Jane."
+      ],
+      "title": "A customer search by another field lists matches or none",
+      "acs": [
+        "DERIVED: Customer search works by Name, Account Number, Contact Name and Organisation - /Contracts Admin/Search.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Search.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Type the value of the row in the field of the row.",
+          "expected": "The box accepts the text."
+        },
+        {
+          "action": "Click Search.",
+          "expected": "The search completes."
+        },
+        {
+          "action": "Read the result area.",
+          "expected": "It lists matches, or says There are no Results to Display, as in the row."
+        },
+        {
+          "action": "Check the page after the action.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-162",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Rows that expect matches need a seeded participant whose lab name contains E2E, or a contact named Jane."
+      ],
+      "title": "A participant search by lab code, lab name or contact lists matches or none",
+      "acs": [
+        "DERIVED: Participant search works by Lab Code, Lab Name and Contact Name - /Contracts Admin/Search.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Search.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Click the Participants tab.",
+          "expected": "The participant search boxes are shown."
+        },
+        {
+          "action": "Type the value of the row in the participant field of the row.",
+          "expected": "The box accepts the text."
+        },
+        {
+          "action": "Click Search on the participant tab.",
+          "expected": "The search completes."
+        },
+        {
+          "action": "Read the result area.",
+          "expected": "It lists matches, or says There are no Results to Display, as in the row."
+        },
+        {
+          "action": "Check the page after the action.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-163",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The test removes the added viewer afterwards."
+      ],
+      "title": "A viewer is added to a participant",
+      "acs": [
+        "DERIVED: Participant Viewers moves a possible viewer to the selected list - ParticipantViewers.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and the Viewers page of the first participant.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Select the first possible viewer.",
+          "expected": "The viewer is highlighted."
+        },
+        {
+          "action": "Click Add.",
+          "expected": "The viewer moves to the selected list."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The change is saved."
+        },
+        {
+          "action": "Count the selected viewers.",
+          "expected": "There is one more than before."
+        }
+      ]
+    },
+    {
+      "ref": "TC-164",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Unticking Active also sets the customer participants inactive."
+      ],
+      "title": "A customer is made inactive and shows its inactive date",
+      "acs": [
+        "DERIVED: Unticking Active and saving sets the inactive date - Customer.aspx.vb"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers > Create Customer.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Fill every required field with synthetic values and click Save.",
+          "expected": "The customer is saved."
+        },
+        {
+          "action": "Untick Active.",
+          "expected": "The inactive date appears."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The change is saved."
+        },
+        {
+          "action": "Read the Inactive date.",
+          "expected": "It is not empty."
+        }
+      ]
+    },
+    {
+      "ref": "TC-165",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Copying the contact details fills the invoice details",
+      "acs": [
+        "DERIVED: Copy from Customer Contact copies the contact fields to the invoice fields - Customer.aspx ButtonCopyDetails"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers > Create Customer.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Fill every required contact field.",
+          "expected": "The fields show the values."
+        },
+        {
+          "action": "Click Copy from Customer Contact.",
+          "expected": "The invoice fields are filled."
+        },
+        {
+          "action": "Read the invoice email.",
+          "expected": "It shows the contact email."
+        },
+        {
+          "action": "Do not save.",
+          "expected": "No customer is created."
+        }
+      ]
+    },
+    {
+      "ref": "TC-166",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "This sends one label request to the configured printer service."
+      ],
+      "title": "An address label is printed from a customer or participant",
+      "acs": [
+        "DERIVED: Print buttons report the result of the label request - Customer.aspx, Participant.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open the first record of the kind of the row from its list.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Click the button of the row.",
+          "expected": "The page reloads."
+        },
+        {
+          "action": "Read the message above the form.",
+          "expected": "It says Label sent to Printer or Error Printing Label."
+        },
+        {
+          "action": "Check the page.",
+          "expected": "No server error page is shown."
+        },
+        {
+          "action": "Check the record.",
+          "expected": "The record is unchanged."
+        }
+      ]
+    },
+    {
+      "ref": "TC-167",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A contract item opens its View / Edit page",
+      "acs": [
+        "DERIVED: Each contract item links to its participant scheme page - ContractItems.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Contracts > Customers and the Contracts list of the first customer.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Click Contract Items on the first contract.",
+          "expected": "The contract items page opens."
+        },
+        {
+          "action": "Click View / Edit on the first item.",
+          "expected": "The page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the address.",
+          "expected": "The page is ParticipantScheme.aspx with no server error."
+        }
+      ]
+    },
+    {
+      "ref": "TC-168",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "The Renew link of a scheme opens the renewal form",
+      "acs": [
+        "DERIVED: The Renew link opens the scheme form in renewal mode - SchemeList.aspx.vb"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Schemes > Schemes.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Click Renew on the first scheme.",
+          "expected": "The page starts to open."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the address.",
+          "expected": "The page is Scheme.aspx."
+        },
+        {
+          "action": "Do not save.",
+          "expected": "No scheme is created."
+        }
+      ]
+    },
+    {
+      "ref": "TC-169",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "Generating or resetting invoices changes real data and cannot be undone. Run it only on an environment that can be restored."
+      ],
+      "title": "The Invoice Generation page actions are pressed",
+      "acs": [
+        "DERIVED: Invoice Generation offers Generate Invoices and a UAT-only reset - InvoiceGeneration.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open Manage Roles and tick Generate Invoices for yourself.",
+          "expected": "The role is saved."
+        },
+        {
+          "action": "Open Home and Manage Contracts.",
+          "expected": "Invoice Generation is listed."
+        },
+        {
+          "action": "Click Invoice Generation.",
+          "expected": "The page opens."
+        },
+        {
+          "action": "Click the button of the row.",
+          "expected": "The action runs."
+        },
+        {
+          "action": "Check the page after the action.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-170",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "Draw tabulation is pressed on a tabulation waiting for sign-off",
+      "acs": [
+        "DERIVED: Draw tabulation draws the tabulation - Tabulation.aspx btnDrawTabulation"
+      ],
+      "steps": [
+        {
+          "action": "Open Results Sign-off.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Expand the first row and click View.",
+          "expected": "The tabulation page opens."
+        },
+        {
+          "action": "Click Draw tabulation.",
+          "expected": "The tabulation is drawn."
+        },
+        {
+          "action": "Wait for the page to load.",
+          "expected": "The page loads."
+        },
+        {
+          "action": "Check the page after the action.",
+          "expected": "No server error page is shown."
+        }
+      ]
+    },
+    {
+      "ref": "TC-171",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution."
+      ],
+      "title": "A consultant is made inactive and active again",
+      "acs": [
+        "DERIVED: The Status link of a consultant toggles Active and Inactive - TCDepartment.aspx ToggleInactive_Click"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration > Internal Test Consultant Department.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Note the status of the first consultant.",
+          "expected": "The status is known."
+        },
+        {
+          "action": "Click the status link.",
+          "expected": "The status changes."
+        },
+        {
+          "action": "Read the status again.",
+          "expected": "It differs from before."
+        },
+        {
+          "action": "Click the status link again.",
+          "expected": "The original status is restored."
+        }
+      ]
+    },
+    {
+      "ref": "TC-172",
+      "layer": "ui",
+      "area_path": "Proficiency Testing\\Admin",
+      "assigned_to": "QA",
+      "state": "Design",
+      "assumptions": [
+        "The admin site runs at the PROFICIENCY_TESTING_WEB_URL of the target environment and the user is signed in as an Admin.",
+        "Data table: the Examples table of the matching scenario outline lists every row; each row is one execution.",
+        "The Important Message appears on the external site home page while it is set."
+      ],
+      "title": "The two external site messages are changed, kept after reloading and restored",
+      "acs": [
+        "DERIVED: The Further Information and Important messages are saved - EditMessageOnWebsite.aspx"
+      ],
+      "steps": [
+        {
+          "action": "Open System Administration > External Site Management.",
+          "expected": "The page opens without an error."
+        },
+        {
+          "action": "Change the Further Information and Important Message texts.",
+          "expected": "The editors show the new text."
+        },
+        {
+          "action": "Click Save.",
+          "expected": "The messages are saved."
+        },
+        {
+          "action": "Open the page again.",
+          "expected": "The page opens."
+        },
+        {
+          "action": "Read both editors.",
+          "expected": "They show the new text; the originals are put back afterwards."
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    "DERIVED criteria come from the page source and read-only probes; confirm they are the intended behaviour.",
+    "TODO: ExternalTC edit of department and email, Weighted Pricing row edit, and Manage Roles for other users are not automated (no stable control found, or no second user)."
+  ]
+}
