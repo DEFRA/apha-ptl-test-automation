@@ -53,12 +53,15 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Check required settings
         env:
-          UI_BASE_URL: ${{ vars.UI_BASE_URL }}
+          PROFICIENCY_TESTING_EXTERNAL_WEB_URL: ${{ vars.PROFICIENCY_TESTING_EXTERNAL_WEB_URL }}
+          PROFICIENCY_TESTING_WEB_URL: ${{ vars.PROFICIENCY_TESTING_WEB_URL }}
         run: |
-          if [ -z "$UI_BASE_URL" ]; then
-            echo "::error::Repository variable UI_BASE_URL is not set."
-            exit 1
-          fi
+          for name in PROFICIENCY_TESTING_EXTERNAL_WEB_URL PROFICIENCY_TESTING_WEB_URL; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Repository variable $name is not set."
+              exit 1
+            fi
+          done
       - name: Select suite
         id: suite
         env:
@@ -76,8 +79,8 @@ jobs:
         env:
           CI: 'true'
           UI_PROFILE: ${{ matrix.profile }}
-          UI_BASE_URL: ${{ vars.UI_BASE_URL }}
-          API_BASE_URL: ${{ vars.API_BASE_URL }}
+          PROFICIENCY_TESTING_EXTERNAL_WEB_URL: ${{ vars.PROFICIENCY_TESTING_EXTERNAL_WEB_URL }}
+          PROFICIENCY_TESTING_WEB_URL: ${{ vars.PROFICIENCY_TESTING_WEB_URL }}
           PW_GREP: ${{ steps.suite.outputs.grep }}
           PLAYWRIGHT_JUNIT_OUTPUT_FILE: ${{ env.JUNIT_FILE }}
         run: npx bddgen && npx playwright test ${PW_GREP:+--grep "$PW_GREP"}

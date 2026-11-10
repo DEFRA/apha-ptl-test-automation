@@ -1,19 +1,28 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { test as setup, expect } from '@playwright/test'
-import { roles, uiBaseUrl } from './env.js'
+import { credentials, roles, uiBaseUrl } from './env.js'
 
 /**
- * For this app, the server-side local debug SSO bypass is the real authentication path.
- * The configured `LocalDebugDisableSso` and `LocalDebugUserTokenId` values are read by the
- * ASP.NET app itself during `Application_AuthenticateRequest`, so there is no UI sign-in flow
- * to automate and no secret credentials are required for the journey setup.
+ * Local runs use the server-side debug SSO bypass, so no sign-in is needed. When
+ * EXTERNAL_WEB_<ROLE>_USER and EXTERNAL_WEB_<ROLE>_PASSWORD are set (UAT), the setup signs in on the login page.
  */
 const AUTH_DIR = '.auth'
 
 for (const role of roles()) {
   setup(`authenticate as ${role}`, async ({ page }) => {
     fs.mkdirSync(AUTH_DIR, { recursive: true })
+
+    const { username, password } = credentials(role)
+    if (username && password) {
+      await page.goto(uiBaseUrl())
+      await page.getByLabel('Username').fill(username) // source: crawl https://uat-science.apha.gov.uk/VLAServices/Login.aspx
+      await page.getByLabel('Password', { exact: true }).fill(password) // source: same page
+      await page.getByRole('button', { name: 'Login' }).click() // source: same page
+      await expect(page).not.toHaveURL(/Login\.aspx/i)
+      await page.context().storageState({ path: path.join(AUTH_DIR, `${role}.json`) })
+      return
+    }
 
     const startUrl = uiBaseUrl().endsWith('/Home.aspx') ? uiBaseUrl() : `${uiBaseUrl()}/Home.aspx`
     await page.goto(startUrl)

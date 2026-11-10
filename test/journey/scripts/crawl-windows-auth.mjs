@@ -13,7 +13,7 @@
  *     --depth 3 --max 50
  *
  * Options
- *   --base <url>        start page (default UI_BASE_URL)
+ *   --base <url>        start page (default PROFICIENCY_TESTING_WEB_URL)
  *   --out <path>        output JSON (default docs/discovery/crawl.json)
  *   --auth <path>       storageState for the crawl role; omit to crawl anonymously
  *   --depth <n>         link depth from the start page (default 3)
@@ -34,7 +34,7 @@ const arg = (name, fallback) => {
   const index = args.indexOf(name)
   return index >= 0 && args[index + 1] ? args[index + 1] : fallback
 }
-const BASE = (arg('--base', process.env.UI_BASE_URL) ?? '').replace(/\/$/, '')
+const BASE = (arg('--base', process.env.PROFICIENCY_TESTING_WEB_URL) ?? '').replace(/\/$/, '')
 const OUT = arg('--out', path.join('docs', 'discovery', 'crawl.json'))
 const AUTH = arg('--auth', null)
 const DEPTH = Number(arg('--depth', '3'))
@@ -44,7 +44,7 @@ const INCLUDE = arg('--include', null) ? new RegExp(arg('--include')) : null
 const EXCLUDE = arg('--exclude', null) ? new RegExp(arg('--exclude')) : null
 
 if (!BASE) {
-  console.error('No base URL. Pass --base or set UI_BASE_URL.')
+  console.error('No base URL. Pass --base or set PROFICIENCY_TESTING_WEB_URL.')
   process.exit(2)
 }
 

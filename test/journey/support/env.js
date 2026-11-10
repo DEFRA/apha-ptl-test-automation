@@ -49,8 +49,8 @@ export const uiProfile = () => (process.env.UI_PROFILE ?? 'legacy').toLowerCase(
 export function credentials(role) {
   const key = role.toUpperCase().replace(/[^A-Z0-9]/g, '_')
   return {
-    username: read(`E2E_${key}_USER`),
-    password: read(`E2E_${key}_PASSWORD`)
+    username: read(`EXTERNAL_WEB_${key}_USER`, { required: false }),
+    password: read(`EXTERNAL_WEB_${key}_PASSWORD`, { required: false })
   }
 }
 
