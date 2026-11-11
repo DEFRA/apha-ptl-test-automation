@@ -12,6 +12,10 @@ on:
         type: choice
         options: [regression, smoke]
         default: regression
+      environment:
+        description: GitHub environment holding the URLs and credentials
+        type: string
+        default: test
 
 permissions:
   contents: read
@@ -30,6 +34,7 @@ jobs:
   e2e:
     name: E2E (${{ matrix.profile }})
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || vars.E2E_ENVIRONMENT || 'test' }}
     timeout-minutes: 60
     defaults:
       run:
@@ -81,6 +86,8 @@ jobs:
           UI_PROFILE: ${{ matrix.profile }}
           PROFICIENCY_TESTING_EXTERNAL_WEB_URL: ${{ vars.PROFICIENCY_TESTING_EXTERNAL_WEB_URL }}
           PROFICIENCY_TESTING_WEB_URL: ${{ vars.PROFICIENCY_TESTING_WEB_URL }}
+          EXTERNAL_WEB_APPLICANT_USER: ${{ vars.EXTERNAL_WEB_APPLICANT_USER }}
+          EXTERNAL_WEB_APPLICANT_PASSWORD: ${{ secrets.EXTERNAL_WEB_APPLICANT_PASSWORD }}
           PW_GREP: ${{ steps.suite.outputs.grep }}
           PLAYWRIGHT_JUNIT_OUTPUT_FILE: ${{ env.JUNIT_FILE }}
         run: npx bddgen && npx playwright test ${PW_GREP:+--grep "$PW_GREP"}
