@@ -111,14 +111,20 @@ jobs:
           path: test/journey/${{ env.A11Y_DIR }}
           if-no-files-found: warn
           retention-days: 30
+      - name: Upload Playwright HTML report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report-${{ matrix.profile }}
+          path: test/journey/${{ env.PW_REPORT_DIR }}
+          if-no-files-found: warn
+          retention-days: 30
       - name: Upload failure diagnostics
         if: ${{ failure() }}
         uses: actions/upload-artifact@v7
         with:
           name: failure-diagnostics-${{ matrix.profile }}
-          path: |
-            test/journey/${{ env.PW_REPORT_DIR }}
-            test/journey/test-results
+          path: test/journey/test-results
           if-no-files-found: ignore
           retention-days: 7
       - name: Write run summary
