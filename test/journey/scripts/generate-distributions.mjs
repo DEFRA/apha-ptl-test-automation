@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /* eslint-disable */
 /** Builds the distribution list, results, report and admin search features from data/seed/distributions.json. Run from test/journey. */
 import fs from 'node:fs'
@@ -9,7 +9,7 @@ const rows = (list, cols) => list.map((r) => `    | ${cols.map((c) => r[c]).join
 
 fs.writeFileSync('features/external/external-distribution-data.feature', `Feature: Distribution lists, results and reports with real data
 
-@role:applicant @feature:external-distribution-data @TC-101 @ui
+@feature:external-distribution-data @TC-101 @ui
 Scenario Outline: Previous Distributions finds a distribution by its reference
   Given the customer opens the clean distribution list "previousDistributions"
   When they search the list for the distribution reference "<reference>"
@@ -19,7 +19,7 @@ Scenario Outline: Previous Distributions finds a distribution by its reference
     | reference | code |
 ${rows(prev, ['reference', 'code'])}
 
-@role:applicant @feature:external-distribution-data @TC-102 @ui
+@feature:external-distribution-data @TC-102 @ui
 Scenario Outline: Previous Distributions finds distributions by scheme code
   Given the customer opens the clean distribution list "previousDistributions"
   When they search the list for the scheme code "<part>"
@@ -29,7 +29,7 @@ Scenario Outline: Previous Distributions finds distributions by scheme code
     | code | part |
 ${prev.map((r) => `    | ${r.code} | ${r.code.replace(/^PT/, '')} |`).join('\n')}
 
-@role:applicant @feature:external-distribution-data @TC-103 @ui
+@feature:external-distribution-data @TC-103 @ui
 Scenario Outline: View opens the results of a previous distribution
   Given the customer opens the clean distribution list "previousDistributions"
   When they open the "View" link of the row "<reference>"
@@ -40,7 +40,7 @@ Scenario Outline: View opens the results of a previous distribution
     | reference |
 ${rows(prev, ['reference'])}
 
-@role:applicant @feature:external-distribution-data @TC-104 @ui
+@feature:external-distribution-data @TC-104 @ui
 Scenario Outline: View opens the report of a distribution
   Given the customer opens the clean distribution list "reports"
   When they open the "View" link of the row "<reference>"
@@ -52,7 +52,7 @@ Scenario Outline: View opens the report of a distribution
     | reference |
 ${rows(reps, ['reference'])}
 
-@role:applicant @feature:external-distribution-data @TC-105 @ui
+@feature:external-distribution-data @TC-105 @ui
 Scenario Outline: BACK on a results or report page returns to its list
   Given the customer opens the clean distribution list "<list>"
   When they open the "View" link of the first row

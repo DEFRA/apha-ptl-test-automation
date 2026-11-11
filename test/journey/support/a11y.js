@@ -29,6 +29,8 @@ let baselineCache = null
  */
 export function loadBaseline() {
   if (baselineCache) return baselineCache
+  // Report-only runs do not need a baseline; every violation is then listed as new in the report.
+  if (!FAIL_ON_NEW && !ENFORCE && !fs.existsSync(BASELINE_FILE)) return new Set()
   if (!fs.existsSync(BASELINE_FILE)) {
     throw new Error(`Accessibility baseline is missing: ${BASELINE_FILE}. Create it or set A11Y_BASELINE.`)
   }

@@ -1,13 +1,16 @@
-﻿Feature: Order wizard
+Feature: Order wizard
 
-@role:applicant @feature:external-order @TC-110 @ui @creates-data
+  Background:
+    Given the customer is logged in
+
+@feature:external-order @TC-110 @ui @creates-data
 Scenario: Selecting an available scheme ticks it and enables Next
   Given the customer has the order page open
   When they select an available scheme
   Then the selected scheme is ticked
   And the next button is enabled
 
-@role:applicant @feature:external-order @TC-111 @ui @creates-data
+@feature:external-order @TC-111 @ui @creates-data
 Scenario: Next opens the pending order summary with its buttons
   Given the customer has the order page open
   When they select an available scheme
@@ -15,7 +18,7 @@ Scenario: Next opens the pending order summary with its buttons
   Then the pending order summary lists the scheme and its buttons
   And the order submit button is disabled
 
-@role:applicant @feature:external-order @TC-112 @ui @creates-data
+@feature:external-order @TC-112 @ui @creates-data
 Scenario: PREVIOUS returns from the summary to the first step
   Given the customer has the order page open
   When they select an available scheme
@@ -24,7 +27,7 @@ Scenario: PREVIOUS returns from the summary to the first step
   Then the first step of the order is shown again
   And the selected scheme is ticked
 
-@role:applicant @feature:external-order @TC-113 @ui @creates-data
+@feature:external-order @TC-113 @ui @creates-data
 Scenario: Accepting the terms enables SUBMIT on the summary
   Given the customer has the order page open
   When they select an available scheme
@@ -32,7 +35,7 @@ Scenario: Accepting the terms enables SUBMIT on the summary
   And they accept the terms and conditions
   Then the order submit button is enabled
 
-@role:applicant @feature:external-order @TC-114 @ui @creates-data
+@feature:external-order @TC-114 @ui @creates-data
 Scenario: SAVE keeps the pending order on the summary
   Given the customer has the order page open
   When they select an available scheme
@@ -41,7 +44,7 @@ Scenario: SAVE keeps the pending order on the summary
   Then the pending order is reported as saved
 
 
-@role:applicant @feature:external-order @TC-115 @ui @creates-data
+@feature:external-order @TC-115 @ui @creates-data
 Scenario: A customer submits an order and the admin declines it, leaving no order behind
   Given the seeded customer has no order awaiting review
   When they select an available scheme
@@ -55,12 +58,12 @@ Scenario: A customer submits an order and the admin declines it, leaving no orde
   Then the order is no longer waiting for admin review
   And a new order starts without a selection
 
-@role:applicant @feature:external-order @TC-116 @ui @creates-data
+@feature:external-order @TC-116 @ui @creates-data
 Scenario: Next stays disabled while no scheme is selected
   Given the customer has the order page open
   Then the next button is disabled
 
-@role:applicant @feature:external-order @TC-117 @ui @creates-data
+@feature:external-order @TC-117 @ui @creates-data
 Scenario: Deselecting the only selected scheme disables Next again
   Given the customer has the order page open
   When they select an available scheme

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { test as setup, expect } from '@playwright/test'
-import { credentials, roles, uiBaseUrl } from './env.js'
+import { credentials, loginUrl, roles, uiBaseUrl } from './env.js'
 
 /**
  * Local runs use the server-side debug SSO bypass, so no sign-in is needed. When
@@ -15,11 +15,11 @@ for (const role of roles()) {
 
     const { username, password } = credentials(role)
     if (username && password) {
-      await page.goto(uiBaseUrl())
+      await page.goto(loginUrl())
       await page.getByLabel('Username').fill(username) // source: crawl https://uat-science.apha.gov.uk/VLAServices/Login.aspx
       await page.getByLabel('Password', { exact: true }).fill(password) // source: same page
       await page.getByRole('button', { name: 'Login' }).click() // source: same page
-      await expect(page).not.toHaveURL(/Login\.aspx/i)
+      await expect(page.getByText('You have successfully logged in')).toBeVisible() // source: probe of https://uat-science.apha.gov.uk/VLAServices/Login.aspx after login; the URL stays Login.aspx
       await page.context().storageState({ path: path.join(AUTH_DIR, `${role}.json`) })
       return
     }

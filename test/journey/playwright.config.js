@@ -40,7 +40,7 @@ export default defineConfig({
     ['json', { outputFile: 'reports/playwright/results.json' }]
   ],
   use: {
-    baseURL: process.env.PROFICIENCY_TESTING_EXTERNAL_WEB_URL ?? 'http://localhost:1688', // ProficiencyTestingExternalWeb
+    baseURL: (process.env.PROFICIENCY_TESTING_EXTERNAL_WEB_URL ?? 'http://localhost:1688').replace(/\/[^/]*\.aspx$/i, ''), // ProficiencyTestingExternalWeb; a page URL such as .../Login.aspx is cut back to the site root
     actionTimeout: 30000, // a missing control fails in 30 s instead of waiting for the whole test timeout
     navigationTimeout: 60000,
     trace: 'on-first-retry',
@@ -55,10 +55,10 @@ export default defineConfig({
       testMatch: /auth\.setup\.js/,
       metadata: { role: 'setup' }
     },
-    // Default journey project. `metadata.role` is checked against a scenario's @role: tag.
+    // Default journey project: every external feature, run as the applicant.
     {
       name: 'journey',
-      grep: /@role:applicant/,
+      testMatch: /features[\\/]external[\\/]/,
       dependencies: ['setup'],
       use: { storageState: '.auth/applicant.json' },
       metadata: { role: 'applicant' }

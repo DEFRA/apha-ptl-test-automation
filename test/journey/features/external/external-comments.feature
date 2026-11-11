@@ -1,6 +1,9 @@
-﻿Feature: External comments
+Feature: External comments
 
-@role:applicant @feature:external-comments @TC-040 @ui @smoke
+  Background:
+    Given the customer is logged in
+
+@feature:external-comments @TC-040 @ui @smoke
 Scenario: Enter comments card on Home opens the Distributions page
   Given a signed-in customer opens the "home" page
   When they select the home card "enterComments"
@@ -8,13 +11,13 @@ Scenario: Enter comments card on Home opens the Distributions page
   And the "comments" page has its expected title
   And no server error page is shown
 
-@role:applicant @feature:external-comments @TC-041 @ui
+@feature:external-comments @TC-041 @ui
 Scenario: Distributions comments page shows the search labels and buttons
   Given a signed-in customer opens the "comments" page
   Then the "comments" search form is shown
   And no server error page is shown
 
-@role:applicant @feature:external-comments @TC-042 @ui @negative
+@feature:external-comments @TC-042 @ui @negative
 Scenario: Searching distribution comments with an unknown reference then SHOW ALL keeps the page working
   Given a signed-in customer opens the "comments" page
   When they enter the unknown distribution reference
@@ -27,7 +30,7 @@ Scenario: Searching distribution comments with an unknown reference then SHOW AL
   And the "comments" search form is shown
   And the distribution reference box is empty
 
-@role:applicant @feature:external-comments @TC-043 @ui
+@feature:external-comments @TC-043 @ui
 Scenario: Distributions comments page keeps its heading after a reload and Back returns to Home
   Given a signed-in customer opens the "home" page
   When they select the home card "enterComments"

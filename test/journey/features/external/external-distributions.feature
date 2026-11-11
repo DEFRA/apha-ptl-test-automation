@@ -1,13 +1,16 @@
-﻿Feature: External distributions
+Feature: External distributions
 
-@role:applicant @feature:external-distributions @TC-031 @ui @smoke
+  Background:
+    Given the customer is logged in
+
+@feature:external-distributions @TC-031 @ui @smoke
 Scenario: Enter results card on Home opens the Current Distributions page
   Given a signed-in customer opens the "home" page
   When they select the home card "enterResults"
   Then the "currentDistributions" page is shown
   And no server error page is shown
 
-@role:applicant @feature:external-distributions @TC-032 @ui
+@feature:external-distributions @TC-032 @ui
 Scenario: Current Distributions shows the empty-state message and no search form
   Given a signed-in customer opens the "currentDistributions" page
   Then no server error page is shown
@@ -17,14 +20,14 @@ Scenario: Current Distributions shows the empty-state message and no search form
   Then the "currentDistributions" page is shown
   And the "noCurrentDistributions" message is shown
 
-@role:applicant @feature:external-distributions @TC-033 @ui
+@feature:external-distributions @TC-033 @ui
 Scenario: View results card on Home opens the Previous Distributions page
   Given a signed-in customer opens the "home" page
   When they select the home card "viewResults"
   Then the "previousDistributions" page is shown
   And no server error page is shown
 
-@role:applicant @feature:external-distributions @TC-034 @ui
+@feature:external-distributions @TC-034 @ui
 Scenario: Previous Distributions shows the search form and the empty-state message
   Given a signed-in customer opens the "previousDistributions" page
   Then no server error page is shown
@@ -34,7 +37,7 @@ Scenario: Previous Distributions shows the search form and the empty-state messa
   Then the "previousDistributions" page is shown
   And the "previousDistributions" search form is shown
 
-@role:applicant @feature:external-distributions @TC-035 @ui @negative
+@feature:external-distributions @TC-035 @ui @negative
 Scenario: Searching Previous Distributions with an unknown reference keeps the empty result
   Given a signed-in customer opens the "previousDistributions" page
   When they enter the unknown distribution reference

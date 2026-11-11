@@ -31,8 +31,19 @@ export const test = bddTest.extend({
     await use(projectRole)
   },
 
-  page: async ({ page, baseURL }, use) => {
-    await use(withBasePath(page, baseURL))
+  page: async ({ page, baseURL }, use, testInfo) => {
+    const guarded = withBasePath(page, baseURL)
+    if (testInfo.project.metadata?.role === 'applicant') {
+      const goto = guarded.goto.bind(guarded)
+      guarded.goto = async (url, options) => {
+        const response = await goto(url, options)
+        if (!/Login\.aspx/i.test(String(url)) && /Login\.aspx/i.test(guarded.url())) {
+          throw new Error(`Not signed in: ${String(url)} redirected to the login page. Check EXTERNAL_WEB_APPLICANT_USER and EXTERNAL_WEB_APPLICANT_PASSWORD.`)
+        }
+        return response
+      }
+    }
+    await use(guarded)
   },
 
   runId: async ({}, use) => {

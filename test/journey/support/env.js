@@ -34,6 +34,9 @@ export const webServicesUrl = () =>
 /** Kept for callers that need the customer-facing origin. @returns {string} */
 export const uiBaseUrl = externalWebUrl
 
+/** Login page of the portal that signs the customer in; defaults to the external site itself. @returns {string} */
+export const loginUrl = () => read('EXTERNAL_WEB_LOGIN_URL', { fallback: externalWebUrl() })
+
 /** REST API under test. Defaults to the web services origin. @returns {string} */
 export const apiBaseUrl = () => read('API_BASE_URL', { fallback: webServicesUrl() }).replace(/\/$/, '')
 
