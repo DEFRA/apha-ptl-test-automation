@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Everything the internal journeys know about PTL.InternalWeb: routes, headings, messages.
  * Each entry is grounded in C:\Dev\apha-ptl-apps-main\src\PTL.InternalWeb (paths are relative to that folder).
  * The default MVC route is {controller=Account}/{action=Login}/{id?} (PTL.ApiClient/PtlWebApplicationExtensions.cs:132).
@@ -51,6 +51,15 @@ const pageList = [
   { path: '/Results%20Sign-off', heading: 'Results Sign-off', policy: 'ResultsSignOff', source: 'Features/ResultsSignOff/ResultsSignOffController.cs [Route("Results Sign-off")]' }
 ]
 
+/** Extra role-gated pages that need query values but are refused before binding. source: Features/Distribution/DistributionController.cs [Authorize] attributes */
+const matrixExtra = [
+  { path: '/Distribution/Preparation?year=2026&monthId=4', policy: 'InternalUser' },
+  { path: '/Distribution/Packaging?year=2026&monthId=4', policy: 'InternalUser' },
+  { path: '/Distribution/ResultsReceipt?year=2026&monthId=4', policy: 'InternalUser' },
+  { path: '/Distribution/Schedule?year=2026&monthId=4', policy: 'Scheduling' },
+  { path: '/Distribution/Tabulations?year=2026&monthId=4', policy: 'Scheduling' }
+]
+
 export const internal = {
   routes: {
     home: '/Home/Index',
@@ -76,6 +85,7 @@ export const internal = {
     search: { heading: 'Search' }
   },
   list: pageList,
+  matrix: [...pageList.map(({ path, policy }) => ({ path, policy })), ...matrixExtra],
   /** Headings that mean a page failed even though it answered. source: Account/AccessDenied.cshtml, Views/Shared/Error.cshtml */
   failureHeadings: ['Access Denied', 'Error', 'Sorry, there is a problem with the service'],
   customers: {
@@ -128,3 +138,4 @@ export const internal = {
     }
   }
 }
+

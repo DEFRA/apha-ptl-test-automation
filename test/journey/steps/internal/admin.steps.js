@@ -6,6 +6,8 @@ import { textPattern } from '../../support/text.js'
 
 const unique = (runId) => `QAT${runId.replace(/[^a-z0-9]/gi, '')}`
 const button = (page, name) => page.getByRole('button', { name, exact: true })
+// Text controls only: a tab or hidden panel can share the label, and hidden panels still carry the attribute.
+const field = (page, label) => page.locator('input:not([type=hidden]), textarea').and(page.getByLabel(label, { exact: true })).first()
 const banner = (page) => page.locator('.govuk-notification-banner').filter({ hasNotText: 'Extend session' })
 
 // ---- generic ----------------------------------------------------------------
@@ -19,7 +21,7 @@ Then('the page heading is {string}', async ({ page }, heading) => {
 })
 
 Then('the first field labelled {string} accepts at most {int} characters', async ({ page }, label, max) => {
-  await expect(page.getByRole('textbox', { name: label, exact: true }).first()).toHaveAttribute('maxlength', String(max)) // role textbox: a tab can share the label
+  await expect(field(page, label)).toHaveAttribute('maxlength', String(max))
 })
 
 Then('the first table has the columns {string}', async ({ page }, columns) => {
@@ -39,7 +41,7 @@ When('the user fills the field containing {string} with {string}', async ({ page
 })
 
 When('the user fills {string} with {string}', async ({ page }, label, value) => {
-  await page.getByRole('textbox', { name: label, exact: true }).first().fill(value)
+  await field(page, label).fill(value)
 })
 
 Then('the page shows no error summary', async ({ page }) => {
@@ -179,11 +181,19 @@ Then('the viewer is not listed in the viewer list', async ({ page, state }) => {
 
 // ---- scheme admin item lists (Add and Yes, remove persist at once) ----------
 
+// The lists are paged and sorted, so a new item can sit on any page: walk the pages until the item is found.
+const openPageWithItem = async (page, path, name) => {
+  for (let n = 1; n <= 20; n++) {
+    await page.goto(`${path}?page=${n}`)
+    if (await page.locator('main tr', { hasText: name }).count()) return true
+    if ((await page.locator('main table tbody tr').count()) === 0) return false
+  }
+  return false
+}
+
 const removeItemIfPresent = async (page, path, name) => {
-  await page.goto(path)
-  const row = page.locator('main tr', { hasText: name })
-  if (await row.count()) {
-    await row.first().getByRole('link', { name: 'Remove' }).click()
+  if (await openPageWithItem(page, path, name)) {
+    await page.locator('main tr', { hasText: name }).first().getByRole('link', { name: 'Remove' }).click()
     await button(page, 'Yes, remove').click()
   }
 }
@@ -197,23 +207,18 @@ When('the user adds an item with a unique name to the list at {string} using the
   await button(page, 'Add').click()
 })
 
-const itemRow = (page, state) => page.locator('main tr', { hasText: state.name })
-
-Then('the item is listed in its list', async ({ page, state }) => {
-  await page.goto(state.path)
-  await expect(itemRow(page, state)).toHaveCount(1)
+Then('the item is listed in its list', async ({ state, page }) => {
+  expect(await openPageWithItem(page, state.path, state.name), `${state.name} listed in ${state.path}`).toBe(true)
 })
 
-Then('the item is not listed in its list', async ({ page, state }) => {
-  await page.goto(state.path)
-  await expect(itemRow(page, state)).toHaveCount(0)
+Then('the item is not listed in its list', async ({ state, page }) => {
+  expect(await openPageWithItem(page, state.path, state.name), `${state.name} listed in ${state.path}`).toBe(false)
 })
 
 When('the user starts removing the item', async ({ page, state }) => {
-  await page.goto(state.path)
+  expect(await openPageWithItem(page, state.path, state.name)).toBe(true)
   await page.locator('main tr', { hasText: state.name }).first().getByRole('link', { name: 'Remove' }).click()
 })
-
 Then('the user is asked to confirm the removal', async ({ page }) => {
   await expect(button(page, 'Yes, remove')).toBeVisible()
 })
@@ -225,4 +230,6 @@ When('the user declines the removal', async ({ page }) => {
 When('the user confirms the removal', async ({ page }) => {
   await button(page, 'Yes, remove').click()
 })
+
+
 

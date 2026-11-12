@@ -76,6 +76,16 @@ export default defineConfig({
       use: { storageState: '.auth/internal.json' },
       metadata: { role: 'internal' }
     },
+    // Optional low-privilege account (INTERNAL_WEB_LIMITED_*): role-refusal scenarios. Skips itself when the account is not configured.
+    {
+      name: 'internal-limited',
+      testMatch: /features[\\/]internal[\\/]/,
+      grep: /@role:limited/,
+      grepInvert: /@wip|@manual/,
+      dependencies: ['internal-setup'],
+      use: { storageState: '.auth/limited.json' },
+      metadata: { role: 'limited' }
+    },
     // Internal pages that need no sign-in, and the redirect for an unauthenticated visitor.
     {
       name: 'internal-anonymous',
@@ -88,4 +98,5 @@ export default defineConfig({
     // features/external and features/admin still exist but no project runs them.
   ]
 })
+
 

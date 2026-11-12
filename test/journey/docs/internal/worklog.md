@@ -39,3 +39,14 @@ Observed while building: Create Participant does not report an empty Lab Code (t
 - Shared test environment: write scenarios need unique data and teardown before they are added.
 - `steps/internal/*.steps.js` disable `playwright/no-standalone-expect`; move assertions into `*.assertions.js`.
 
+
+## 2026-11-12 expansion
+| Unit | Result | Evidence |
+|---|---|---|
+| Live probes (read-only, validation-only) | done: 150 pages, 19 invalid submissions | `docs/internal/discovery/pages.json`, `validation-probe.json` (`scripts/probe-internal.js`, `scripts/probe-validation.js`) |
+| New features | `internal-lists` (columns, selectors, paging, searches), `internal-admin` (validation, country/viewer staging, scheme-admin add/remove), `internal-limits` (63 generated field limits, `scripts/gen-limits-feature.js`) | `features/internal/` |
+| Projects | `internal` (parallel, read-only), `internal-write` (serial, `@write`, cleans up its own `QAT*` records), `internal-anonymous` | `playwright.config.js` |
+| Execution | 246 scenarios: full run passed after fixes (hidden-tab labels, paged lists) | run output |
+
+Observed: `/Assessor` and `/Results Sign-off` return 403 for the test account (role missing); Distribution Search tabs share their label with the input; scheme-admin lists are paged and sorted, so new items can land on page 2.
+Still untested: customer/participant/contract/group-address/scheme create-edit success, pending approvals, exports/imports, invoices, distribution workflow actions, Assessor/Sign-off pages, role matrix.

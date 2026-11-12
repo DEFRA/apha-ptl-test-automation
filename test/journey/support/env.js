@@ -61,10 +61,17 @@ export function credentials(role) {
  * Entra ID account for the internal app (PTL.InternalWeb). Never log the return value.
  * @returns {{ username: string, password: string }}
  */
-export const internalCredentials = () => ({
-  username: read('INTERNAL_WEB_APPLICANT_USER', { required: false }),
-  password: read('INTERNAL_WEB_APPLICANT_PASSWORD', { required: false })
+export const internalCredentials = (kind = 'applicant') => ({
+  username: read(`INTERNAL_WEB_${kind.toUpperCase()}_USER`, { required: false }),
+  password: read(`INTERNAL_WEB_${kind.toUpperCase()}_PASSWORD`, { required: false })
 })
+
+/** Policies (role names from PtlPolicies.cs) the account is expected to hold; set INTERNAL_WEB_ROLES / INTERNAL_WEB_LIMITED_ROLES. */
+export const internalRoles = (kind = 'applicant') =>
+  (process.env[`INTERNAL_WEB_${kind.toUpperCase()}_ROLES`] ?? (kind === 'applicant' ? 'Admin,ContractsAdmin,SchemeAdmin,Distributions,Scheduling,TestConsultant' : ''))
+    .split(',')
+    .map((r) => r.trim())
+    .filter(Boolean)
 
 /** Roles that have credentials, for the auth setup. @returns {string[]} */
 export const roles = () =>
