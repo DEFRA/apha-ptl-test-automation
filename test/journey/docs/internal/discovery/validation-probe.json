@@ -1,0 +1,320 @@
+[
+ {
+  "path": "/SystemAdministration/ExternalTestConsultantManagement",
+  "button": "Submit",
+  "fill": {},
+  "error": "button not found"
+ },
+ {
+  "path": "/SystemAdministration/ExternalTestConsultantManagement",
+  "button": "Submit",
+  "fill": {
+   "Name": "QA Probe",
+   "Email": "not-an-email"
+  },
+  "error": "button not found"
+ },
+ {
+  "path": "/SystemAdministration/ViewerManagement",
+  "button": "Submit",
+  "fill": {},
+  "error": "button not found"
+ },
+ {
+  "path": "/SystemAdministration/ViewerManagement",
+  "button": "Submit",
+  "fill": {
+   "Name": "QA Probe",
+   "Email": "not-an-email"
+  },
+  "error": "button not found"
+ },
+ {
+  "path": "/SystemAdministration/CountryManagement",
+  "button": "Submit",
+  "fill": {},
+  "error": "button not found"
+ },
+ {
+  "path": "/SystemAdministration/CreateUser",
+  "button": "Search",
+  "fill": {},
+  "url": "/SystemAdministration/CreateUserSearch",
+  "h1": "Create user",
+  "summary": [
+   "Enter an employee number, first name or last name"
+  ],
+  "inline": [
+   "Error: Enter an employee number, first name or last name"
+  ],
+  "banner": [],
+  "text": "There is a problemEnter an employee number, first name or last name Create user Search for a userEnter an employee number (for example, m123456), first name or last name.Error: Enter an employee number, first name or last name Search"
+ },
+ {
+  "path": "/SystemAdministration/ExternalSiteManagement",
+  "button": "Save",
+  "fill": {
+   "Edit error screen email address": "not-an-email"
+  },
+  "url": "/SystemAdministration/ExternalSiteManagement",
+  "h1": "External Site Management",
+  "summary": [
+   "The Email Address is invalid"
+  ],
+  "inline": [
+   "Error: The Email Address is invalid"
+  ],
+  "banner": [],
+  "text": "External Site Management There is a problemThe Email Address is invalid Further Information messageUpdate content of Further Information screen on External site.&lt;div class=&quot;&amp;quot;govuk-hint&amp;quot;&quot;&gt;ection to provide an urgent message on the external site homepage. Clearing thi"
+ },
+ {
+  "path": "/SystemAdministration/AdministrationCharge",
+  "button": "Save",
+  "fill": {
+   "GBP": "abc"
+  },
+  "url": "/SystemAdministration/AdministrationCharge",
+  "h1": "Administration Charges",
+  "summary": [
+   "Enter a valid value for Price"
+  ],
+  "inline": [
+   "Error: Enter a valid value for Price"
+  ],
+  "banner": [],
+  "text": "Administration Charges There is a problemEnter a valid value for Price Charge £ - GBP € - Euro Standard Standard price in £ - GBP Error: Enter a valid value for Price Standard price in € - Euro Save Cancel"
+ },
+ {
+  "path": "/SystemAdministration/AdministrationCharge",
+  "button": "Save",
+  "fill": {
+   "GBP": "-5"
+  },
+  "url": "/SystemAdministration/AdministrationCharge",
+  "h1": "Administration Charges",
+  "summary": [
+   "Price must not be negative"
+  ],
+  "inline": [
+   "Error: Price must not be negative"
+  ],
+  "banner": [],
+  "text": "Administration Charges There is a problemPrice must not be negative Charge £ - GBP € - Euro Standard Standard price in £ - GBP Error: Price must not be negative Standard price in € - Euro Save Cancel"
+ },
+ {
+  "path": "/SchemeAdmin/CategoryItemType",
+  "button": "Add",
+  "fill": {},
+  "url": "/SchemeAdmin/CategoryItemTypeAdd",
+  "h1": "Category Items",
+  "summary": [
+   "Enter a new category name"
+  ],
+  "inline": [
+   "Error: Enter a new category name"
+  ],
+  "banner": [],
+  "text": "Category Items This page defines the Category Item Types that will be available for use on Tests. There is a problemEnter a new category name Select Year to Edit: 2026 2027 View Category item type name No longer in use Actions 1 New Test Category No longer in use - 1 New Test Category Edit Remove Co"
+ },
+ {
+  "path": "/SchemeAdmin/TestType",
+  "button": "Add",
+  "fill": {},
+  "url": "/SchemeAdmin/TestTypeAdd",
+  "h1": "Test Types",
+  "summary": [
+   "Enter a new test type name"
+  ],
+  "inline": [
+   "Error: Enter a new test type name"
+  ],
+  "banner": [],
+  "text": "Test Types This page defines the types of Test that will be available for use when setting up next year's Schemes. There is a problemEnter a new test type name Select Year to Edit: 2026 2027 View Test type name No longer in use Actions 1 A B Testing No longer in use - 1 A B Testing Edit Remove Why c"
+ },
+ {
+  "path": "/SchemeAdmin/CriterionItemType",
+  "button": "Add",
+  "fill": {},
+  "url": "/SchemeAdmin/CriterionItemTypeAdd",
+  "h1": "Criterion Items",
+  "summary": [
+   "Enter a new criterion item name"
+  ],
+  "inline": [
+   "Error: Enter a new criterion item name"
+  ],
+  "banner": [],
+  "text": "Criterion Items This page defines the Criterion Item Types that will be available for use on Tests. There is a problemEnter a new criterion item name Select Year to Edit: 2026 2027 View Criterion item type name No longer in use Actions 1 New Criterion Item No longer in use - 1 New Criterion Item Edi"
+ },
+ {
+  "path": "/SchemeAdmin/TestResultItemType",
+  "button": "Add",
+  "fill": {},
+  "url": "/SchemeAdmin/TestResultItemTypeAdd",
+  "h1": "Test Result Items",
+  "summary": [
+   "Enter a new test result item name",
+   "Select a return type"
+  ],
+  "inline": [
+   "Error: Enter a new test result item name",
+   "Error: Select a return type"
+  ],
+  "banner": [],
+  "text": "Test Result Items This page defines the Test Result Items (and their Return Types) that will be available for use when setting up next year's Schemes. There is a problemEnter a new test result item nameSelect a return type Select Year to Edit: 2026 2027 View Search by name: Search Test result item n"
+ },
+ {
+  "path": "/SchemeAdmin/TestMethodItemType",
+  "button": "Add",
+  "fill": {},
+  "url": "/SchemeAdmin/TestMethodItemTypeAdd",
+  "h1": "Test Method Items",
+  "summary": [
+   "Enter a new test method item name",
+   "Select a return type"
+  ],
+  "inline": [
+   "Error: Enter a new test method item name",
+   "Error: Select a return type"
+  ],
+  "banner": [],
+  "text": "Test Method Items This page defines the Test Method Items (and their Return Types) that will be available for use when setting up next year's Schemes. There is a problemEnter a new test method item nameSelect a return type Select Year to Edit: 2026 2027 View Search by name: Search Test method item n"
+ },
+ {
+  "path": "/Scheme/Create",
+  "button": "Save",
+  "fill": {
+   "Identifier": "ABC"
+  },
+  "url": "/Scheme/Create#tab-details",
+  "h1": "Create Scheme",
+  "summary": [
+   "Identifier must be in the format PT0000 or 0000",
+   "Enter the scheme name",
+   "Select a schedule",
+   "Select a schedule code",
+   "Distribution must have at least one selected month or be marked as as available",
+   "Enter the number of samples",
+   "Enter the sample origin",
+   "Enter the deadline",
+   "Enter the customs volume",
+   "Enter a price for every currency",
+   "Enter a price for every currency",
+   "Enter the customs description",
+   "Enter the instructions",
+   "You must define at least two Tabulations - one for the Test Consultant and one that can be Published",
+   "Select a Primary Test Consultant"
+  ],
+  "inline": [
+   "Error: Identifier must be in the format PT0000 or 0000",
+   "Error: Enter the scheme name",
+   "Error: Select a schedule",
+   "Error: Select a schedule code",
+   "Error: Distribution must have at least one selected month or be marked as as available",
+   "Error: Enter the number of samples",
+   "Error: Enter the sample origin",
+   "Error: Enter the deadline",
+   "Error: Enter the customs volume",
+   "Error: Enter a price for every currency",
+   "Error: Enter a price for every currency",
+   "Error: Enter the customs description",
+   "Error: Enter the instructions",
+   "Error: You must define at least two Tabulations - one for the Test Consultant and one that can be Published",
+   "Error: Select a Primary Test Consultant"
+  ],
+  "banner": [],
+  "text": "Create Scheme There is a problemIdentifier must be in the format PT0000 or 0000Enter the scheme nameSelect a scheduleSelect a schedule codeDistribution must have at least one selected month or be marked as as availableEnter the number of samplesEnter the sample originEnter the deadlineEnter the cust"
+ },
+ {
+  "path": "/Scheme/Create",
+  "button": "Save",
+  "fill": {},
+  "url": "/Scheme/Create#tab-details",
+  "h1": "Create Scheme",
+  "summary": [
+   "Enter the scheme identifier",
+   "Enter the scheme name",
+   "Select a schedule",
+   "Select a schedule code",
+   "Distribution must have at least one selected month or be marked as as available",
+   "Enter the number of samples",
+   "Enter the sample origin",
+   "Enter the deadline",
+   "Enter the customs volume",
+   "Enter a price for every currency",
+   "Enter a price for every currency",
+   "Enter the customs description",
+   "Enter the instructions",
+   "You must define at least two Tabulations - one for the Test Consultant and one that can be Published",
+   "Select a Primary Test Consultant"
+  ],
+  "inline": [
+   "Error: Enter the scheme identifier",
+   "Error: Enter the scheme name",
+   "Error: Select a schedule",
+   "Error: Select a schedule code",
+   "Error: Distribution must have at least one selected month or be marked as as available",
+   "Error: Enter the number of samples",
+   "Error: Enter the sample origin",
+   "Error: Enter the deadline",
+   "Error: Enter the customs volume",
+   "Error: Enter a price for every currency",
+   "Error: Enter a price for every currency",
+   "Error: Enter the customs description",
+   "Error: Enter the instructions",
+   "Error: You must define at least two Tabulations - one for the Test Consultant and one that can be Published",
+   "Error: Select a Primary Test Consultant"
+  ],
+  "banner": [],
+  "text": "Create Scheme There is a problemEnter the scheme identifierEnter the scheme nameSelect a scheduleSelect a schedule codeDistribution must have at least one selected month or be marked as as availableEnter the number of samplesEnter the sample originEnter the deadlineEnter the customs volumeEnter a pr"
+ },
+ {
+  "path": "/GroupAddress/Create",
+  "button": "Save",
+  "fill": {
+   "Telephone": "abc"
+  },
+  "url": "/GroupAddress/Create",
+  "h1": "Create Group Address",
+  "summary": [
+   "Enter an identifier",
+   "Enter address line 1",
+   "Enter address line 2",
+   "Select a country",
+   "Telephone contains characters that are not allowed"
+  ],
+  "inline": [
+   "Error: Enter an identifier",
+   "Error: Enter address line 1",
+   "Error: Enter address line 2",
+   "Error: Select a country",
+   "Error: Telephone contains characters that are not allowed"
+  ],
+  "banner": [],
+  "text": "Create Group Address There is a problemEnter an identifierEnter address line 1Enter address line 2Select a countryTelephone contains characters that are not allowed IdentifierError: Enter an identifier Address 1Error: Enter address line 1 Address 2Error: Enter address line 2 Address 3 Address 4 Addr"
+ },
+ {
+  "path": "/Distribution/Search",
+  "button": "Search",
+  "fill": {},
+  "url": "/Distribution/Search?tab=DistributionNumber&DistributionNumber.DistributionNumber=#distribution-number",
+  "h1": "Search",
+  "summary": [],
+  "inline": [],
+  "banner": [],
+  "text": "Search This page can be used to search for Schemes. Contents Distribution Number Sample Number Use the search box below to identify the required Scheme by Distribution Number. Distribution Number Search Search Results: Distribution Number search results Distribution Number Scheme Name Scheme Identif"
+ },
+ {
+  "path": "/Scheme/Search",
+  "button": "Search",
+  "fill": {
+   "Scheme Name": "zzzz-no-such-scheme"
+  },
+  "url": "/Scheme/Search?searched=true&schemeName=zzzz-no-such-scheme",
+  "h1": "Search",
+  "summary": [],
+  "inline": [],
+  "banner": [],
+  "text": "Search This page can be used to search for Schemes. Use the search box below to identify the required Scheme by Scheme Name. Scheme Name Search Search Results: There are no Results to Display"
+ }
+]

@@ -57,6 +57,15 @@ export function credentials(role) {
   }
 }
 
+/**
+ * Entra ID account for the internal app (PTL.InternalWeb). Never log the return value.
+ * @returns {{ username: string, password: string }}
+ */
+export const internalCredentials = () => ({
+  username: read('INTERNAL_WEB_APPLICANT_USER', { required: false }),
+  password: read('INTERNAL_WEB_APPLICANT_PASSWORD', { required: false })
+})
+
 /** Roles that have credentials, for the auth setup. @returns {string[]} */
 export const roles = () =>
   (process.env.E2E_ROLES ?? 'applicant')

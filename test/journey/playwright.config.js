@@ -15,8 +15,7 @@ const testDir = defineBddConfig({
 
 const ci = !!process.env.CI
 
-const adminHost = new URL(process.env.PROFICIENCY_TESTING_WEB_URL ?? 'http://localhost:1946').hostname
-// Windows authentication: Chromium passes the current Windows identity, so no credentials are read here
+const internalUrl = (process.env.PROFICIENCY_TESTING_WEB_URL ?? 'http://localhost:1946').replace(/\/+$/, '') // PTL.InternalWeb, signs in through Microsoft Entra ID
 
 export default defineConfig({
   testDir,
@@ -40,7 +39,7 @@ export default defineConfig({
     ['json', { outputFile: 'reports/playwright/results.json' }]
   ],
   use: {
-    baseURL: (process.env.PROFICIENCY_TESTING_EXTERNAL_WEB_URL ?? 'http://localhost:1688').replace(/\/[^/]*\.aspx$/i, ''), // ProficiencyTestingExternalWeb; a page URL such as .../Login.aspx is cut back to the site root
+    baseURL: internalUrl,
     actionTimeout: 30000, // a missing control fails in 30 s instead of waiting for the whole test timeout
     navigationTimeout: 60000,
     trace: 'on-first-retry',
@@ -48,78 +47,45 @@ export default defineConfig({
     testIdAttribute: 'data-testid'
   },
   projects: [
-    // Logs in once per role and writes .auth/<role>.json. Add or remove roles here.
+    // Signs in to the internal app through Entra ID once and writes .auth/internal.json (INTERNAL_WEB_APPLICANT_USER / INTERNAL_WEB_APPLICANT_PASSWORD).
     {
-      name: 'setup',
+      name: 'internal-setup',
       testDir: './support',
-      testMatch: /auth\.setup\.js/,
+      testMatch: /internal-auth\.setup\.js/,
       metadata: { role: 'setup' }
     },
-    // Default journey project: every external feature, run as the applicant.
+    // Internal journeys as a signed-in user.
     {
-      name: 'journey',
-      testMatch: /features[\\/]external[\\/]/,
-      dependencies: ['setup'],
-      use: { storageState: '.auth/applicant.json' },
-      metadata: { role: 'applicant' }
+      name: 'internal',
+      testMatch: /features[\\/]internal[\\/]/,
+      grep: /@role:internal/,
+      grepInvert: /@wip|@manual|@write/,
+      dependencies: ['internal-setup'],
+      use: { storageState: '.auth/internal.json' },
+      metadata: { role: 'internal' }
     },
-    // Copy this block per additional role, then run with --project=<name>.
-    // ProficiencyTestingWeb uses Windows authentication: Chromium passes the current Windows identity.
+    // Scenarios that add and remove records share the user's server-side staging, so they run one at a time after the read-only ones.
     {
-      name: 'admin',
-      teardown: 'admin-crud', // the editable lists run after this project even when some of its tests failed
-      timeout: 180000, // slow Assessor pages
-      grep: /@role:admin/,
-      grepInvert: /@wip|@roles|@feature:admin-crud-lists|@TC-177/, // role changes and the editable lists run alone after this project
-      use: {
-        baseURL: process.env.PROFICIENCY_TESTING_WEB_URL ?? 'http://localhost:1946', // ProficiencyTestingWeb
-        launchOptions: { args: [`--auth-server-allowlist=${adminHost}`] }
-      },
-      metadata: { role: 'admin' }
-    },
-    // The editable lists change shared records and redirect to the menu under parallel load, so they run one at a time after the admin project.
-    {
-      name: 'admin-crud',
-      timeout: 900000,
-      grep: /@feature:admin-crud-lists|@TC-177/,
+      name: 'internal-write',
+      testMatch: /features[\\/]internal[\\/]/,
+      grep: /@write/,
       grepInvert: /@wip|@manual/,
       fullyParallel: false,
-      use: {
-        baseURL: process.env.PROFICIENCY_TESTING_WEB_URL ?? 'http://localhost:1946', // ProficiencyTestingWeb
-        launchOptions: { args: [`--auth-server-allowlist=${adminHost}`] }
-      },
-      metadata: { role: 'admin' }
+      workers: 1,
+      dependencies: ['internal'],
+      use: { storageState: '.auth/internal.json' },
+      metadata: { role: 'internal' }
     },
-    // Changes the roles of the signed-in admin, so it runs alone and only after the admin project.
+    // Internal pages that need no sign-in, and the redirect for an unauthenticated visitor.
     {
-      name: 'admin-roles',
-      timeout: 600000,
-      grep: /@roles/,
-      grepInvert: /@manual/, // SSO environments cannot change roles; these stay as ADO test cases
-      fullyParallel: false,
-      dependencies: ['admin'],
-      use: {
-        baseURL: process.env.PROFICIENCY_TESTING_WEB_URL ?? 'http://localhost:1946', // ProficiencyTestingWeb
-        launchOptions: { args: [`--auth-server-allowlist=${adminHost}`] }
-      },
-      metadata: { role: 'admin' }
-    },
-    // No saved session: login and permission scenarios.
-    {
-      name: 'anonymous',
+      name: 'internal-anonymous',
+      testMatch: /features[\\/]internal[\\/]/,
       grep: /@role:anonymous/,
+      grepInvert: /@wip|@manual/,
       metadata: { role: 'anonymous' }
     }
+    // Parked: the external (customer-facing) and legacy admin projects. The features under
+    // features/external and features/admin still exist but no project runs them.
   ]
 })
-
-
-
-
-
-
-
-
-
-
 

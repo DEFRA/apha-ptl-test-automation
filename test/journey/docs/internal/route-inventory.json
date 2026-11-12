@@ -1,0 +1,1746 @@
+{
+  "Account": {
+    "files": [
+      "Features/Account/AccountController.cs:13"
+    ],
+    "classAuthorize": [],
+    "actions": [
+      {
+        "action": "Login",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:22"
+      },
+      {
+        "action": "Login",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:30"
+      },
+      {
+        "action": "Logout",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:43"
+      },
+      {
+        "action": "SignedOut",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:48"
+      },
+      {
+        "action": "ExtendSession",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:57"
+      },
+      {
+        "action": "SessionExpired",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:71"
+      },
+      {
+        "action": "NotPermitted",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:91"
+      },
+      {
+        "action": "AccessDenied",
+        "verb": "GET",
+        "route": "/AccessDenied",
+        "authorize": [],
+        "source": "Features/Account/AccountController.cs:97"
+      }
+    ]
+  },
+  "Assessor": {
+    "files": [
+      "Features/Assessor/AssessorController.cs:16"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.Assessor)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": "",
+        "authorize": [],
+        "source": "Features/Assessor/AssessorController.cs:26"
+      },
+      {
+        "action": "AssessmentItemList",
+        "verb": "GET",
+        "route": "AssessmentItemList",
+        "authorize": [],
+        "source": "Features/Assessor/AssessorController.cs:35"
+      },
+      {
+        "action": "AssessmentEntry",
+        "verb": "GET",
+        "route": "AssessmentEntry",
+        "authorize": [],
+        "source": "Features/Assessor/AssessorController.cs:44"
+      },
+      {
+        "action": "AssessmentEntry",
+        "verb": "POST",
+        "route": "AssessmentEntry",
+        "authorize": [],
+        "source": "Features/Assessor/AssessorController.cs:54"
+      },
+      {
+        "action": "Submit",
+        "verb": "POST",
+        "route": "Submit",
+        "authorize": [],
+        "source": "Features/Assessor/AssessorController.cs:112"
+      }
+    ]
+  },
+  "Contract": {
+    "files": [
+      "Features/Contract/ContractController.cs:19"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ContractsAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "ManageContracts",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:126"
+      },
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:128"
+      },
+      {
+        "action": "ContractItems",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:167"
+      },
+      {
+        "action": "RemoveContractItem",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:194"
+      },
+      {
+        "action": "AuditContractItemRemovals",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:222"
+      },
+      {
+        "action": "AuditContractItemRemovals",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:244"
+      },
+      {
+        "action": "Export",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:287"
+      },
+      {
+        "action": "Exports",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:349"
+      },
+      {
+        "action": "ExportContracts",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:360"
+      },
+      {
+        "action": "ExportJobSheets",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:364"
+      },
+      {
+        "action": "ExportRenewalLetters",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:368"
+      },
+      {
+        "action": "ExportAddressConfirmationLetters",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:372"
+      },
+      {
+        "action": "UploadExportTemplate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:377"
+      },
+      {
+        "action": "DownloadExportTemplate",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:404"
+      },
+      {
+        "action": "SelectExportTemplate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:418"
+      },
+      {
+        "action": "DeleteExportTemplate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:431"
+      },
+      {
+        "action": "RunExport",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:458"
+      },
+      {
+        "action": "ImportPermits",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:604"
+      },
+      {
+        "action": "ImportPermits",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:623"
+      },
+      {
+        "action": "RenewContracts",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:790"
+      },
+      {
+        "action": "RenewContracts",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:798"
+      },
+      {
+        "action": "Details",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:880"
+      },
+      {
+        "action": "Create",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:894"
+      },
+      {
+        "action": "Create",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:911"
+      },
+      {
+        "action": "Edit",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:939"
+      },
+      {
+        "action": "Edit",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:956"
+      },
+      {
+        "action": "ReviewPendingOrders",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:981"
+      },
+      {
+        "action": "PendingOrderDetails",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:988"
+      },
+      {
+        "action": "UpdatePendingOrderScheme",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:998"
+      },
+      {
+        "action": "RemovePendingOrderScheme",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:1016"
+      },
+      {
+        "action": "ApprovePendingOrder",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:1038"
+      },
+      {
+        "action": "DeclinePendingOrder",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Contract/ContractController.cs:1065"
+      }
+    ]
+  },
+  "Customer": {
+    "files": [
+      "Features/Customer/CustomerController.cs:16"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ContractsAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:60"
+      },
+      {
+        "action": "Details",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:71"
+      },
+      {
+        "action": "Create",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:97"
+      },
+      {
+        "action": "Create",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:109"
+      },
+      {
+        "action": "Edit",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:135"
+      },
+      {
+        "action": "Edit",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:150"
+      },
+      {
+        "action": "ReviewPendingCustomerUpdates",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:176"
+      },
+      {
+        "action": "PendingCustomerUpdateDetails",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:190"
+      },
+      {
+        "action": "EditPendingCustomerUpdate",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:205"
+      },
+      {
+        "action": "EditPendingCustomerUpdate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:220"
+      },
+      {
+        "action": "ApprovePendingCustomerUpdate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:248"
+      },
+      {
+        "action": "DeclinePendingCustomerUpdate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:271"
+      },
+      {
+        "action": "PrintContactLabel",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:289"
+      },
+      {
+        "action": "PrintContactLabel",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:293"
+      },
+      {
+        "action": "PrintInvoiceLabel",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:298"
+      },
+      {
+        "action": "PrintInvoiceLabel",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Customer/CustomerController.cs:302"
+      }
+    ]
+  },
+  "Distribution": {
+    "files": [
+      "Features/Distribution/DistributionController.AmendResults.cs:16",
+      "Features/Distribution/DistributionController.Comments.cs:12",
+      "Features/Distribution/DistributionController.cs:34",
+      "Features/Distribution/DistributionController.GroupAddressLabels.cs:12",
+      "Features/Distribution/DistributionController.ParticipantAddressLabels.cs:13",
+      "Features/Distribution/DistributionController.Search.cs:12",
+      "Features/Distribution/DistributionController.Tabulation.cs:11",
+      "Features/Distribution/DistributionController.TabulationSend.cs:13"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.Distributions)]"
+    ],
+    "actions": [
+      {
+        "action": "AmendResults",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.AmendResults.cs:30"
+      },
+      {
+        "action": "AmendResults",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.AmendResults.cs:42"
+      },
+      {
+        "action": "ViewComments",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Comments.cs:21"
+      },
+      {
+        "action": "ViewComments",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Comments.cs:37"
+      },
+      {
+        "action": "ViewCommentsUpload",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Comments.cs:108"
+      },
+      {
+        "action": "ViewCommentsRemoveAttachment",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Comments.cs:157"
+      },
+      {
+        "action": "ViewCommentsAttachment",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Comments.cs:186"
+      },
+      {
+        "action": "ViewCommentsStagedAttachment",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Comments.cs:191"
+      },
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.cs:51"
+      },
+      {
+        "action": "ViewStage",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.cs:77"
+      },
+      {
+        "action": "InitialiseMonth",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:89"
+      },
+      {
+        "action": "Schedule",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:126"
+      },
+      {
+        "action": "Schedule",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:144"
+      },
+      {
+        "action": "ToggleCancelled",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:209"
+      },
+      {
+        "action": "Preparation",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:263"
+      },
+      {
+        "action": "Preparation",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:280"
+      },
+      {
+        "action": "ResultsReceipt",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:314"
+      },
+      {
+        "action": "ResultsReceipt",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:328"
+      },
+      {
+        "action": "Tabulations",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:363"
+      },
+      {
+        "action": "SampleReceipt",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:385"
+      },
+      {
+        "action": "SampleReceipt",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:398"
+      },
+      {
+        "action": "ActualResults",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:459"
+      },
+      {
+        "action": "ActualResults",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:474"
+      },
+      {
+        "action": "Packaging",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:695"
+      },
+      {
+        "action": "Packaging",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:708"
+      },
+      {
+        "action": "SampleNumbers",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:908"
+      },
+      {
+        "action": "SampleNumbers",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:941"
+      },
+      {
+        "action": "IntendedResults",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1127"
+      },
+      {
+        "action": "IntendedResults",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1151"
+      },
+      {
+        "action": "PrintableResults",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.InternalUser)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1228"
+      },
+      {
+        "action": "Participants",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1468"
+      },
+      {
+        "action": "ChangeDeadline",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1480"
+      },
+      {
+        "action": "EditDeadline",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1525"
+      },
+      {
+        "action": "RepeatDistribution",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.cs:1573"
+      },
+      {
+        "action": "GroupAddressLabels",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.GroupAddressLabels.cs:15"
+      },
+      {
+        "action": "PrintGroupAddressLabel",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.GroupAddressLabels.cs:28"
+      },
+      {
+        "action": "ParticipantAddressLabels",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.ParticipantAddressLabels.cs:21"
+      },
+      {
+        "action": "PrintParticipantAddressLabel",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.ParticipantAddressLabels.cs:45"
+      },
+      {
+        "action": "Search",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Distribution/DistributionController.Search.cs:22"
+      },
+      {
+        "action": "Tabulation",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:15"
+      },
+      {
+        "action": "PublishedTabulations",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:29"
+      },
+      {
+        "action": "PublishedTabulation",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:42"
+      },
+      {
+        "action": "TabulationAssessmentResults",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:63"
+      },
+      {
+        "action": "PublishedAssessmentResults",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:83"
+      },
+      {
+        "action": "TabulationAttachment",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:106"
+      },
+      {
+        "action": "PublishedTabulationAttachment",
+        "verb": "GET",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.Tabulation.cs:111"
+      },
+      {
+        "action": "Tabulations",
+        "verb": "POST",
+        "route": null,
+        "authorize": [
+          "[Authorize(Policy = PtlPolicies.Scheduling)]"
+        ],
+        "source": "Features/Distribution/DistributionController.TabulationSend.cs:20"
+      }
+    ]
+  },
+  "GroupAddress": {
+    "files": [
+      "Features/GroupAddress/GroupAddressController.cs:13"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ContractsAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/GroupAddress/GroupAddressController.cs:16"
+      },
+      {
+        "action": "Details",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/GroupAddress/GroupAddressController.cs:29"
+      },
+      {
+        "action": "Create",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/GroupAddress/GroupAddressController.cs:44"
+      },
+      {
+        "action": "Create",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/GroupAddress/GroupAddressController.cs:53"
+      },
+      {
+        "action": "Edit",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/GroupAddress/GroupAddressController.cs:74"
+      },
+      {
+        "action": "Edit",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/GroupAddress/GroupAddressController.cs:89"
+      }
+    ]
+  },
+  "Home": {
+    "files": [
+      "Features/Home/HomeController.cs:5"
+    ],
+    "classAuthorize": [],
+    "actions": []
+  },
+  "Invoice": {
+    "files": [
+      "Features/Invoice/InvoiceController.cs:16"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.InvoiceGeneration)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Invoice/InvoiceController.cs:39"
+      },
+      {
+        "action": "Generate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Invoice/InvoiceController.cs:49"
+      },
+      {
+        "action": "Reset",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Invoice/InvoiceController.cs:92"
+      },
+      {
+        "action": "Download",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Invoice/InvoiceController.cs:107"
+      }
+    ]
+  },
+  "Participant": {
+    "files": [
+      "Features/Participant/ParticipantController.cs:17"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ContractsAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:59"
+      },
+      {
+        "action": "SendLoginInstructions",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:69"
+      },
+      {
+        "action": "Details",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:86"
+      },
+      {
+        "action": "Create",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:108"
+      },
+      {
+        "action": "Create",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:122"
+      },
+      {
+        "action": "Edit",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:172"
+      },
+      {
+        "action": "Edit",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:189"
+      },
+      {
+        "action": "ReviewPendingParticipantUpdates",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:242"
+      },
+      {
+        "action": "PendingParticipantUpdateDetails",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:256"
+      },
+      {
+        "action": "EditPendingParticipantUpdate",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:271"
+      },
+      {
+        "action": "EditPendingParticipantUpdate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:286"
+      },
+      {
+        "action": "ApprovePendingParticipantUpdate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:314"
+      },
+      {
+        "action": "DeclinePendingParticipantUpdate",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:337"
+      },
+      {
+        "action": "Viewers",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:351"
+      },
+      {
+        "action": "Viewers",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:368"
+      },
+      {
+        "action": "PrintAddressLabel",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:500"
+      },
+      {
+        "action": "PrintAddressLabel",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Participant/ParticipantController.cs:532"
+      }
+    ]
+  },
+  "ParticipantScheme": {
+    "files": [
+      "Features/ParticipantScheme/ParticipantSchemeController.cs:19"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ContractsAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "Details",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/ParticipantScheme/ParticipantSchemeController.cs:67"
+      },
+      {
+        "action": "Create",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/ParticipantScheme/ParticipantSchemeController.cs:101"
+      },
+      {
+        "action": "Create",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/ParticipantScheme/ParticipantSchemeController.cs:141"
+      },
+      {
+        "action": "Edit",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/ParticipantScheme/ParticipantSchemeController.cs:210"
+      },
+      {
+        "action": "Edit",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/ParticipantScheme/ParticipantSchemeController.cs:236"
+      }
+    ]
+  },
+  "ResultsSignOff": {
+    "files": [
+      "Features/ResultsSignOff/ResultsSignOffController.cs:15"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ResultsSignOff)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": "",
+        "authorize": [],
+        "source": "Features/ResultsSignOff/ResultsSignOffController.cs:28"
+      },
+      {
+        "action": "Tabulation",
+        "verb": "GET",
+        "route": "Tabulation",
+        "authorize": [],
+        "source": "Features/ResultsSignOff/ResultsSignOffController.cs:32"
+      },
+      {
+        "action": "AssessmentResults",
+        "verb": "GET",
+        "route": "AssessmentResults",
+        "authorize": [],
+        "source": "Features/ResultsSignOff/ResultsSignOffController.cs:47"
+      },
+      {
+        "action": "Attachment",
+        "verb": "GET",
+        "route": "Attachment",
+        "authorize": [],
+        "source": "Features/ResultsSignOff/ResultsSignOffController.cs:60"
+      },
+      {
+        "action": "Authorise",
+        "verb": "POST",
+        "route": "Authorise",
+        "authorize": [],
+        "source": "Features/ResultsSignOff/ResultsSignOffController.cs:74"
+      },
+      {
+        "action": "Reject",
+        "verb": "POST",
+        "route": "Reject",
+        "authorize": [],
+        "source": "Features/ResultsSignOff/ResultsSignOffController.cs:110"
+      }
+    ]
+  },
+  "Scheme": {
+    "files": [
+      "Features/Scheme/SchemeController.cs:22"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.SchemeAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "ManageSchemes",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:78"
+      },
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:82"
+      },
+      {
+        "action": "Search",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:89"
+      },
+      {
+        "action": "PrintableSchemes",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:107"
+      },
+      {
+        "action": "PrintableScheme",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:120"
+      },
+      {
+        "action": "Details",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:132"
+      },
+      {
+        "action": "History",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:147"
+      },
+      {
+        "action": "Renew",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:169"
+      },
+      {
+        "action": "Create",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:194"
+      },
+      {
+        "action": "Create",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:202"
+      },
+      {
+        "action": "CreateForCurrentYear",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:257"
+      },
+      {
+        "action": "Edit",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:322"
+      },
+      {
+        "action": "Edit",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:340"
+      },
+      {
+        "action": "Apply",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Scheme/SchemeController.cs:380"
+      }
+    ]
+  },
+  "SchemeAdmin": {
+    "files": [
+      "Features/SchemeAdmin/SchemeAdminController.cs:18"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.SchemeAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "CategoryItemType",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:59"
+      },
+      {
+        "action": "CategoryItemTypeAdd",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:68"
+      },
+      {
+        "action": "CategoryItemTypeSave",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:98"
+      },
+      {
+        "action": "CategoryItemTypeSaveAllNoLongerInUse",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:138"
+      },
+      {
+        "action": "CategoryItemTypeRemove",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:160"
+      },
+      {
+        "action": "TestType",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:327"
+      },
+      {
+        "action": "TestTypeAdd",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:336"
+      },
+      {
+        "action": "TestTypeSave",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:366"
+      },
+      {
+        "action": "TestTypeSaveAllNoLongerInUse",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:402"
+      },
+      {
+        "action": "TestTypeRemove",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:424"
+      },
+      {
+        "action": "CriterionItemType",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:487"
+      },
+      {
+        "action": "CriterionItemTypeAdd",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:496"
+      },
+      {
+        "action": "CriterionItemTypeSave",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:526"
+      },
+      {
+        "action": "CriterionItemTypeSaveAllNoLongerInUse",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:561"
+      },
+      {
+        "action": "CriterionItemTypeRemove",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:583"
+      },
+      {
+        "action": "TestResultItemType",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:646"
+      },
+      {
+        "action": "TestResultItemTypeAdd",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:655"
+      },
+      {
+        "action": "TestResultItemTypeSave",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:685"
+      },
+      {
+        "action": "TestResultItemTypeSaveAllNoLongerInUse",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:721"
+      },
+      {
+        "action": "TestResultItemTypeRemove",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:743"
+      },
+      {
+        "action": "TestMethodItemType",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:829"
+      },
+      {
+        "action": "TestMethodItemTypeAdd",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:838"
+      },
+      {
+        "action": "TestMethodItemTypeSave",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:868"
+      },
+      {
+        "action": "TestMethodItemTypeSaveAllNoLongerInUse",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:904"
+      },
+      {
+        "action": "TestMethodItemTypeRemove",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SchemeAdmin/SchemeAdminController.cs:926"
+      }
+    ]
+  },
+  "Search": {
+    "files": [
+      "Features/Search/SearchController.cs:12"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.ContractsAdmin)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/Search/SearchController.cs:19"
+      }
+    ]
+  },
+  "SystemAdministration": {
+    "files": [
+      "Features/SystemAdministration/SystemAdministrationController.CountryManagement.cs:11",
+      "Features/SystemAdministration/SystemAdministrationController.cs:27",
+      "Features/SystemAdministration/SystemAdministrationController.ExternalTestConsultantManagement.cs:10",
+      "Features/SystemAdministration/SystemAdministrationController.InternalTestConsultantDepartment.cs:10",
+      "Features/SystemAdministration/SystemAdministrationController.ViewerManagement.cs:10"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.Admin)]"
+    ],
+    "actions": [
+      {
+        "action": "CountryManagement",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.CountryManagement.cs:16"
+      },
+      {
+        "action": "CountryManagement",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.CountryManagement.cs:32"
+      },
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:113"
+      },
+      {
+        "action": "AdministrationCharge",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:115"
+      },
+      {
+        "action": "AdministrationCharge",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:123"
+      },
+      {
+        "action": "WeightedPricingPlan",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:154"
+      },
+      {
+        "action": "Renew",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:163"
+      },
+      {
+        "action": "PostagePricingPlan",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:201"
+      },
+      {
+        "action": "PostagePricingPlanSave",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:208"
+      },
+      {
+        "action": "PostagePricingPlanRenew",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:240"
+      },
+      {
+        "action": "ExternalSiteManagement",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:268"
+      },
+      {
+        "action": "ExternalSiteManagement",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:280"
+      },
+      {
+        "action": "CreateUser",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:313"
+      },
+      {
+        "action": "CreateUserSearch",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:320"
+      },
+      {
+        "action": "CreateUserConfirm",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:343"
+      },
+      {
+        "action": "ManageUserRoles",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:451"
+      },
+      {
+        "action": "ManageUserRoles",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:462"
+      },
+      {
+        "action": "RemoveUser",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:518"
+      },
+      {
+        "action": "RemoveUser",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.cs:526"
+      },
+      {
+        "action": "ExternalTestConsultantManagement",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.ExternalTestConsultantManagement.cs:12"
+      },
+      {
+        "action": "ExternalTestConsultantManagement",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.ExternalTestConsultantManagement.cs:35"
+      },
+      {
+        "action": "InternalTestConsultantDepartment",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.InternalTestConsultantDepartment.cs:12"
+      },
+      {
+        "action": "InternalTestConsultantDepartment",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.InternalTestConsultantDepartment.cs:34"
+      },
+      {
+        "action": "ViewerManagement",
+        "verb": "GET",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.ViewerManagement.cs:18"
+      },
+      {
+        "action": "ViewerManagement",
+        "verb": "POST",
+        "route": null,
+        "authorize": [],
+        "source": "Features/SystemAdministration/SystemAdministrationController.ViewerManagement.cs:32"
+      }
+    ]
+  },
+  "TestConsultant": {
+    "files": [
+      "Features/TestConsultant/TestConsultantController.cs:17"
+    ],
+    "classAuthorize": [
+      "[Authorize(Policy = PtlPolicies.TestConsultant)]"
+    ],
+    "actions": [
+      {
+        "action": "Index",
+        "verb": "GET",
+        "route": "",
+        "authorize": [],
+        "source": "Features/TestConsultant/TestConsultantController.cs:29"
+      },
+      {
+        "action": "Tabulation",
+        "verb": "GET",
+        "route": "Tabulation",
+        "authorize": [],
+        "source": "Features/TestConsultant/TestConsultantController.cs:44"
+      },
+      {
+        "action": "Tabulation",
+        "verb": "POST",
+        "route": "Tabulation",
+        "authorize": [],
+        "source": "Features/TestConsultant/TestConsultantController.cs:60"
+      }
+    ]
+  }
+}

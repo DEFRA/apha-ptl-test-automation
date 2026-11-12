@@ -46,6 +46,11 @@ export const test = bddTest.extend({
     await use(guarded)
   },
 
+  /** Per-scenario scratch space for values passed between steps. */
+  state: async ({}, use) => {
+    await use({})
+  },
+
   runId: async ({}, use) => {
     await use(`${Date.now().toString(36)}-${randomUUID().slice(0, 6)}`)
   },
