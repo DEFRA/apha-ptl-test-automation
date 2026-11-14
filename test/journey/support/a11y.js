@@ -1,9 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
-import AxeBuilder from '@axe-core/playwright'
+import { analyse, collectAxeAccessibilityIssues, wcagResult } from 'wcag-js-v2'
 import { PROFILE } from './profiles.js'
 import { fingerprint, hash, normaliseRoute, violationKey } from './page-key.js'
+import { lighthouseOptions } from './a11y-lighthouse.js'
 
 export const DIR = path.resolve(process.env.A11Y_DIR ?? 'reports/a11y')
 const KEEP_PARAMS = (process.env.A11Y_KEEP_PARAMS ?? '').split(',').filter(Boolean)
@@ -66,6 +67,13 @@ function record(folder, data) {
   fs.writeFileSync(path.join(dir, `${randomUUID()}.json`), JSON.stringify(data))
 }
 
+/** What the library recorded for one page; `analyse()` owns the run state the wcag reports read. */
+function readLibraryScan(reportUrl) {
+  const violationsEntry = [...wcagResult.axeViolations].reverse().find((entry) => entry[reportUrl])
+  const statistics = [...wcagResult.axeStatistics].reverse().find((entry) => entry.url === reportUrl)
+  return { raw: violationsEntry?.[reportUrl] ?? [], checked: Number(statistics?.totalElements ?? 0) }
+}
+
 /**
  * Scan the current page with axe-core once per unique route + variant + role, and once per
  * page template. Duplicates are skipped and recorded with the reason, so the report can tell
@@ -95,16 +103,41 @@ export async function scanPage(page, { variant = 'default', role = 'anonymous' }
     return { scanned: false, skipped: 'duplicate template', violations: [], newViolations: [] }
   }
 
-  const results = await new AxeBuilder({ page }).withTags(TAGS).analyze()
+  // The library keys a repeated audit of the same URL with the variant and role.
+  const pageKey = variant === 'default' && role === 'anonymous' ? '' : `${variant}, ${role}`
+  const reportUrl = pageKey ? `${url}[${pageKey}]` : url
+  if (wcagResult.visitedPageUrls.has(reportUrl)) {
+    record('skipped', { url, route, variant, role, reason: 'duplicate page' })
+    return { scanned: false, skipped: 'duplicate page', violations: [], newViolations: [] }
+  }
+
+  page.setDefaultTimeout(120000)
+  try {
+    if (/^https?:/i.test(url)) {
+      try {
+        await analyse(page, pageKey, { settleTimeMs: 0, tags: TAGS, lighthouse: await lighthouseOptions(page, url) })
+      } catch (error) {
+        // Lighthouse runs first, so its failure must not cost the axe scan.
+        console.warn(`a11y: analyse failed on ${route}: ${error instanceof Error ? error.message : String(error)}; scanning with axe only`)
+        await collectAxeAccessibilityIssues(page, reportUrl, TAGS)
+      }
+    } else {
+      await collectAxeAccessibilityIssues(page, reportUrl, TAGS)
+    }
+  } finally {
+    page.setDefaultTimeout(30000)
+  }
+
+  const { raw, checked } = readLibraryScan(reportUrl)
   // Element snippets can contain page text. Run only against synthetic data.
-  const violations = results.violations.map((v) => ({
+  const violations = raw.map((v) => ({
     id: v.id,
     impact: v.impact,
     help: v.help,
     helpUrl: v.helpUrl,
     tags: v.tags.filter((tag) => tag.startsWith('wcag')),
     nodeCount: v.nodes.length,
-    nodes: v.nodes.slice(0, 5).map((n) => ({ target: [n.target].flat(2).join(' '), html: n.html.slice(0, 200) }))
+    nodes: v.nodes.slice(0, 5).map((n) => ({ target: [n.target].flat(2).join(' '), html: String(n.html ?? '').slice(0, 200) }))
   }))
 
   const known = loadBaseline()
@@ -113,7 +146,7 @@ export async function scanPage(page, { variant = 'default', role = 'anonymous' }
   record('results', {
     route, url, variant, role, profile: PROFILE, title: facts.title, h1: facts.h1,
     scannedAt: new Date().toISOString(),
-    passes: results.passes.length, incomplete: results.incomplete.length,
+    checked,
     violations, newViolationCount: newViolations.length
   })
 

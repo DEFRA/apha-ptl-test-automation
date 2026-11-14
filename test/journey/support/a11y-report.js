@@ -3,6 +3,7 @@ import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { PROFILE } from './profiles.js'
 import { normaliseRoute } from './page-key.js'
+import { writeWcagReportsFromWorkers } from './a11y-wcag-report.js'
 
 export const DIR = path.resolve(process.env.A11Y_DIR ?? 'reports/a11y')
 const IMPACTS = ['critical', 'serious', 'moderate', 'minor']
@@ -23,7 +24,7 @@ function pageSection(p) {
     : '<p>No violations found by automated checks.</p>'
   const role = p.role && p.role !== 'anonymous' ? ` Â· role ${esc(p.role)}` : ''
   const variant = p.variant === 'default' ? '' : ` (${esc(p.variant)})`
-  return `<section><h2>${esc(p.route)}${variant}</h2><p>${esc(p.h1)}${role} Â· ${p.violations.length} violated rule(s) Â· ${p.passes} passed Â· ${p.incomplete} need review</p>${table}</section>`
+  return `<section><h2>${esc(p.route)}${variant}</h2><p>${esc(p.h1)}${role} Â· ${p.violations.length} violated rule(s) Â· ${p.checked ?? 0} checks run</p>${table}</section>`
 }
 
 /**
@@ -94,9 +95,14 @@ export function buildReport({ inventoryPath = 'data/page-inventory.json' } = {})
 
 const reliedOn = (set) => [...set].sort()
 
-/** Playwright globalTeardown: build the report after the run. */
+/** Playwright globalTeardown: writes the four wcag-js-v2 reports once all workers finish; A11Y_SCAN=false turns it off. */
 export default async function globalTeardown() {
-  buildReport()
+  if (process.env.A11Y_SCAN === 'false') return
+  try {
+    await writeWcagReportsFromWorkers()
+  } catch (error) {
+    console.warn(`wcag-js-v2: reports not written: ${error instanceof Error ? error.message : String(error)}`)
+  }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) buildReport()

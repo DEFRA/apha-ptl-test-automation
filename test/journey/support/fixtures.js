@@ -3,9 +3,13 @@
 import { test as bddTest } from 'playwright-bdd'
 import { expect } from '@playwright/test'
 import { createBdd } from 'playwright-bdd'
+import { init, resetWcagResult } from 'wcag-js-v2'
 import { randomUUID } from 'node:crypto'
 import { apiBaseUrl } from './env.js'
 import { withBasePath } from './base-path.js'
+import { installNavigationScanner } from './a11y-navigation.js'
+import { persistWcagState } from './a11y-wcag-report.js'
+import { browserWithDebuggingPort } from './a11y-browser.js'
 
 /**
  * The single test object every step uses. It adds:
@@ -15,6 +19,32 @@ import { withBasePath } from './base-path.js'
  *   role     the role this test runs as, checked against the @role: tag
  */
 export const test = bddTest.extend({
+  // Each worker launches Chromium on its own debugging port so Lighthouse can attach to it.
+  browser: [browserWithDebuggingPort, { scope: 'worker' }],
+
+  /** Starts the wcag-js-v2 run per worker; the four reports are written once by the global teardown. */
+  a11yReports: [async ({}, use, workerInfo) => {
+    if (process.env.A11Y_SCAN === 'false') {
+      await use()
+      return
+    }
+    resetWcagResult()
+    await init()
+    await use()
+    persistWcagState(workerInfo.workerIndex)
+  }, { scope: 'worker', auto: true }],
+
+  /**
+   * Automatic accessibility scanning on navigation. Scans are queued in the background and
+   * flushed after each test so failures are attributed to the scenario that caused them.
+   */
+  a11yNavigation: [async ({ page }, use) => {
+    const scanner = installNavigationScanner(page)
+    await use(scanner)
+    await scanner.flush()
+    scanner.stop()
+  }, { auto: true }],
+
   /**
    * Fails fast when a scenario's @role: tag disagrees with the project it is running in,
    * instead of quietly testing with the wrong saved session.
